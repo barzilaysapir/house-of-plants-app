@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import { ReactNode } from "react";
-import Header from "./Header";
+import { FC, ReactNode } from "react";
+import UserHeader from "./UserHeader";
 import { User } from "shared/types/User";
 
 type LayoutProps = {
@@ -8,13 +8,15 @@ type LayoutProps = {
     userInfo: User;
 };
 
-const Layout = (props: LayoutProps) => {
+const Layout: FC<LayoutProps> = (props) => {
     const { children, userInfo } = props;
 
     return (
         <Box>
-            <Header {...userInfo} />
-            {children}
+            <UserHeader {...userInfo} />
+            <Box>
+                {children}
+            </Box>
         </Box>
     );
 }

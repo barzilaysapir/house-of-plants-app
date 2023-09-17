@@ -1,12 +1,15 @@
-import { Avatar, Box, Typography, css } from "@mui/material";
+import { Avatar, Box, Typography } from "@mui/material";
 import { green } from "@mui/material/colors";
 import { User } from "shared/types/User";
 import UserImage from "mocks/images/user.jpg"
+import LOCALE from "shared/utils/Locale";
 
-type HeaderProps = User;
+type UserHeaderProps = User;
 
-const Header = (props: HeaderProps) => {
+const UserHeader = (props: UserHeaderProps) => {
     const { initials, title } = props;
+
+    const GREETING = LOCALE.formatString(LOCALE.userHeader.greeting, title)
 
     return (
         <Box
@@ -22,11 +25,11 @@ const Header = (props: HeaderProps) => {
                 color={green[500]}
                 fontFamily="Dancing Script, cursive"
             >
-                Hi {title}!
+                {GREETING}
             </Typography>
             <Avatar
                 sx={{ bgcolor: green[500] }}
-                alt="Remy Sharp"
+                alt={LOCALE.userHeader.avatarAlt}
                 src={UserImage}
             >
                 {initials}
@@ -35,4 +38,4 @@ const Header = (props: HeaderProps) => {
     );
 }
 
-export default Header;
+export default UserHeader;

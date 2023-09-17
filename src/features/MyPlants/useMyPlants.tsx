@@ -5,7 +5,7 @@ type UseMyPlantsListProps = {
     plants: Plant[]
 }
 
-const useMyPlantsList = (props: UseMyPlantsListProps) => {
+const useMyPlants = (props: UseMyPlantsListProps) => {
     const { plants } = props;
     const [filteredPlants, setFilteredPlants] = useState<Plant[]>(plants);
 
@@ -25,4 +25,4 @@ const useMyPlantsList = (props: UseMyPlantsListProps) => {
 }
 
 
-export default useMyPlantsList;
+export default useMyPlants;

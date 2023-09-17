@@ -3,21 +3,21 @@ import PageTitle from "components/PageTitle";
 import { MY_PLANTS } from "../mocks/MyPlants";
 import { Plant } from "shared/types/Plant";
 import { Box } from "@mui/material";
-import MyPlantsList from "features/MyPlantsList/MyPlantsList";
+import MyPlantsContent from "features/MyPlants/MyPlants";
 import LOCALE from "shared/utils/Locale";
 
 type MyPlantsProps = {}
 
 const MyPlants: FC<MyPlantsProps> = props => {
-    const subtitle = LOCALE.formatString(LOCALE.myPlants.subtitle, MY_PLANTS.total) as string;
+    const SUBTITLE = LOCALE.formatString(LOCALE.myPlants.subtitle, MY_PLANTS.total) as string;
 
     return (
-        <Box>
-            <PageTitle title={LOCALE.myPlants.title} subtitle={subtitle} />
-            <main>
-                <MyPlantsList plants={MY_PLANTS.data as Plant[]} />
-            </main>
-        </Box>
+        <>
+            <PageTitle title={LOCALE.myPlants.title} subtitle={SUBTITLE} />
+            <Box component="main">
+                <MyPlantsContent plants={MY_PLANTS.data as Plant[]} />
+            </Box>
+        </>
     )
 }
 

@@ -9,7 +9,7 @@ type PlantCardProps = Plant & {
 };
 
 const PlantCard: FC<PlantCardProps> = (props) => {
-    const { horizontal = false, primary_name, common_name, scientific_name, default_image } = props;
+    const { horizontal = false, primary_name, scientific_name, default_image } = props;
 
     return (
         <Card sx={{
@@ -23,7 +23,7 @@ const PlantCard: FC<PlantCardProps> = (props) => {
                 justifyContent: "flex-start",
                 flexDirection: horizontal ? "row" : "column"
             }}>
-                <PlantCardImage common_name={common_name} default_image={default_image} />
+                <PlantCardImage image={default_image.thumbnail} />
                 <PlantCardContent title={primary_name} subtitle={scientific_name[0]} />
             </CardActionArea>
         </Card >

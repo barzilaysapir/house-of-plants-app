@@ -2,17 +2,17 @@ import { Box, Grid, Input } from "@mui/material";
 import { FC } from "react";
 import { Plant } from "shared/types/Plant";
 import PlantCard from "components/PlantCard/PlantCard";
-import useMyPlantsList from "./useMyPlantsList";
+import useMyPlants from "./useMyPlants";
 import LOCALE from "shared/utils/Locale";
 
-type MyPlantsListProps = {
+type MyPlantsProps = {
     plants: Plant[]
 }
 
-const MyPlantsList: FC<MyPlantsListProps> = (props) => {
+const MyPlants: FC<MyPlantsProps> = (props) => {
     const { plants } = props;
 
-    const { onSearchPlant, filteredPlants } = useMyPlantsList({ plants })
+    const { onSearchPlant, filteredPlants } = useMyPlants({ plants })
 
     return (
         <Box>
@@ -34,4 +34,4 @@ const MyPlantsList: FC<MyPlantsListProps> = (props) => {
 }
 
 
-export default MyPlantsList;
+export default MyPlants;

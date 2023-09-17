@@ -14,7 +14,7 @@ const PlantCardContent: FC<PlantCardContentProps> = (props) => {
             <Typography variant="body1" component="h3" fontWeight={600}>
                 {title}
             </Typography>
-            <Typography variant="body2">
+            <Typography variant="body2" color="textSecondary">
                 {subtitle}
             </Typography>
         </CardContent>
