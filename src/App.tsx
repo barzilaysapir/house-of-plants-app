@@ -1,11 +1,22 @@
-import React from 'react';
-// import MyPlants from 'pages/MyPlants/MyPlants';
-import FindPlants from 'pages/FindPlants/FindPlants';
+import MyPlantsList from 'pages/MyPlants/MyPlants';
+import { ThemeProvider } from '@emotion/react';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
+import { Container } from '@mui/material';
+// import FindPlants from 'pages/FindPlants/FindPlants';
+
+let theme = createTheme();
+theme = responsiveFontSizes(theme);
 
 function App() {
   return (
-    // <MyPlants />
-    <FindPlants />
+    <Container maxWidth="xl">
+      <ThemeProvider theme={theme}>
+        {/* <GlobalStyle /> */}
+        {/* <AppRouter /> */}
+        <MyPlantsList />
+        {/* <FindPlants /> */}
+      </ThemeProvider>
+    </Container>
   );
 }
 
