@@ -1,6 +1,6 @@
 import { Box, Grid, Input } from "@mui/material";
 import { FC } from "react";
-import { Plant } from "shared/types";
+import { Plant } from "shared/types/Plant";
 import PlantCard from "components/PlantCard/PlantCard";
 import useMyPlantsList from "./useMyPlantsList";
 

@@ -1,6 +1,6 @@
 import { Card, CardActionArea } from "@mui/material";
 import { FC } from "react";
-import { Plant } from "shared/types";
+import { Plant } from "shared/types/Plant";
 import PlantCardContent from "./components/PlantCardContent";
 import PlantCardImage from "./components/PlantCardImage";
 

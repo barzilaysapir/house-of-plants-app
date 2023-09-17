@@ -1,17 +1,17 @@
+// @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Gloria+Hallelujah&display=swap');
+
 html {
   font-size: 16px;
 }
 
 :root {
   --bg-color: #f9f9f9;
+  --bg-color-alpha: rgb(#f9f9f9, 0.8);
 }
 
 body {
   margin: 0;
   padding: 20px 5px;
   background-color: var(--bg-color);
-}
-
-* {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }

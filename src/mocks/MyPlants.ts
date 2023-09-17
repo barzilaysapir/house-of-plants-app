@@ -1,4 +1,4 @@
-export const myPlantsMock = {
+export const MY_PLANTS = {
     "data": [
         {
             "id": 1,

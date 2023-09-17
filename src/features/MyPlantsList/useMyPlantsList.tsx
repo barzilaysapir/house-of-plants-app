@@ -1,5 +1,5 @@
 import { useState, ChangeEvent } from "react";
-import { Plant } from "shared/types";
+import { Plant } from "shared/types/Plant";
 
 type UseMyPlantsListProps = {
     plants: Plant[]

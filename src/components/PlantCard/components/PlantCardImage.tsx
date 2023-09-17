@@ -1,6 +1,6 @@
 import { Box, CardMedia } from "@mui/material";
 import { FC } from "react";
-import { Plant } from "shared/types";
+import { Plant } from "shared/types/Plant";
 
 type PlantCardImageProps = Pick<Plant, "common_name" | "default_image">;
 
