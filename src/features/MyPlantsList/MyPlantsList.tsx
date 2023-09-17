@@ -3,6 +3,7 @@ import { FC } from "react";
 import { Plant } from "shared/types/Plant";
 import PlantCard from "components/PlantCard/PlantCard";
 import useMyPlantsList from "./useMyPlantsList";
+import LOCALE from "shared/utils/Locale";
 
 type MyPlantsListProps = {
     plants: Plant[]
@@ -17,7 +18,7 @@ const MyPlantsList: FC<MyPlantsListProps> = (props) => {
         <Box>
             <Input
                 onChange={onSearchPlant}
-                placeholder="Search in your plants"
+                placeholder={LOCALE.myPlants.searchPlaceholder}
                 fullWidth
             />
 

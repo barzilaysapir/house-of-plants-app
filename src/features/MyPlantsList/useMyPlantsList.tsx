@@ -11,9 +11,9 @@ const useMyPlantsList = (props: UseMyPlantsListProps) => {
 
     const onSearchPlant = (event: ChangeEvent<HTMLInputElement>) => {
         const searchTerm = event.target.value;
-        const filteredPlants = plants.filter((plant) => {
-            return plant.primary_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                plant.scientific_name.some((sc_name) => sc_name.toLowerCase().includes(searchTerm.toLowerCase()))
+        const filteredPlants = plants.filter(({ primary_name, common_name, scientific_name }) => {
+            const names = [primary_name, common_name, ...scientific_name].map(name => name.toLowerCase())
+            return names.some(name => name.includes(searchTerm.toLowerCase()))
         })
         setFilteredPlants(filteredPlants);
     }

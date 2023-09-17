@@ -1,25 +1,22 @@
 import MyPlantsList from 'pages/MyPlants';
-import { ThemeProvider } from '@emotion/react';
-import { createTheme, responsiveFontSizes } from '@mui/material/styles';
-import { Container } from '@mui/material';
+import { CacheProvider, ThemeProvider } from '@emotion/react';
+import { Container, Direction } from '@mui/material';
 import Layout from 'components/Layout';
 import { USER } from 'mocks/User';
 import { useEffect, useState } from 'react';
 import { User } from 'shared/types/User';
-// import FindPlants from 'pages/FindPlants/FindPlants';
-
-let theme = createTheme({
-  typography: {
-    fontFamily: "Segoe UI, Tahoma, Geneva, Verdana, sans-serif"
-  }
-});
-theme = responsiveFontSizes(theme);
+import theme from 'shared/utils/Theme';
+import cacheRtl from 'shared/utils/CacheRtl';
+import LOCALE from 'shared/utils/Locale';
 
 function App() {
-  const [userInfo, setUserInfo] = useState<User | null>(null);
+  const [userInfo, setUserInfo] = useState<User | null>(null); // change to context
+  const [direction, setDirection] = useState<Direction>('ltr'); // change to context
 
   useEffect(() => {
     getUserInfo();
+    // LOCALE.setLanguage('he')
+    // setDirection(LOCALE.direction as Direction)
   }, [])
 
   const getUserInfo = async () => {
@@ -31,13 +28,23 @@ function App() {
 
   return (
     <Container maxWidth="xl">
-      <ThemeProvider theme={theme}>
-        <Layout userInfo={userInfo}>
-          <MyPlantsList />
-          {/* <FindPlants /> */}
-        </Layout>
-      </ThemeProvider>
-    </Container>
+      <CacheProvider value={cacheRtl}>
+        <ThemeProvider theme={theme}>
+
+          <div dir={direction}>
+            {userInfo ?
+              <Layout userInfo={userInfo}>
+                {/* change to router */}
+                <MyPlantsList />
+              </Layout>
+              :
+              <div>Sign in/up</div>
+            }
+          </div>
+
+        </ThemeProvider>
+      </CacheProvider>
+    </Container >
   );
 }
 

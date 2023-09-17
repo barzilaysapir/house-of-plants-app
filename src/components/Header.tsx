@@ -1,4 +1,4 @@
-import { Avatar, Box, Typography } from "@mui/material";
+import { Avatar, Box, Typography, css } from "@mui/material";
 import { green } from "@mui/material/colors";
 import { User } from "shared/types/User";
 import UserImage from "mocks/images/user.jpg"
@@ -9,7 +9,9 @@ const Header = (props: HeaderProps) => {
     const { initials, title } = props;
 
     return (
-        <Box component="header"
+        <Box
+            component="header"
+            dir="ltr"
             display="flex"
             justifyContent="space-between"
             alignItems="center"
@@ -29,7 +31,7 @@ const Header = (props: HeaderProps) => {
             >
                 {initials}
             </Avatar>
-        </Box>
+        </Box >
     );
 }
 

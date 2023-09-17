@@ -74,31 +74,6 @@ export const MY_PLANTS = {
         //     }
         // },
         {
-            "id": 4,
-            "primary_name": "Custom name 4",
-            "common_name": "Wandering Jew 4",
-            "scientific_name": [
-                "Tradescantia-nanouk"
-            ],
-            "other_name": [
-                "Rough-Bark Japanese Maple",
-                "Arakawa Ukon"
-            ],
-            "cycle": "Perennial",
-            "watering": "Average",
-            "sunlight": [
-                "Full sun",
-                "part shade"
-            ],
-            "default_image": {
-                "original_url": "https://www.mydomaine.com/thmb/a-yj-6mfrISRxpWEpiyq2ro6DhM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tradescantia-nanouk-plant-care-7ccdc22c1e714cf78f5cd0472d4211ae.jpeg",
-                "regular_url": "https://www.mydomaine.com/thmb/a-yj-6mfrISRxpWEpiyq2ro6DhM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tradescantia-nanouk-plant-care-7ccdc22c1e714cf78f5cd0472d4211ae.jpeg",
-                "medium_url": "https://www.mydomaine.com/thmb/a-yj-6mfrISRxpWEpiyq2ro6DhM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tradescantia-nanouk-plant-care-7ccdc22c1e714cf78f5cd0472d4211ae.jpeg",
-                "small_url": "https://www.mydomaine.com/thmb/a-yj-6mfrISRxpWEpiyq2ro6DhM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tradescantia-nanouk-plant-care-7ccdc22c1e714cf78f5cd0472d4211ae.jpeg",
-                "thumbnail": "https://www.mydomaine.com/thmb/a-yj-6mfrISRxpWEpiyq2ro6DhM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tradescantia-nanouk-plant-care-7ccdc22c1e714cf78f5cd0472d4211ae.jpeg",
-            }
-        },
-        {
             "id": 5,
             "primary_name": "Custom name 5",
             "common_name": "Snake Plant 5",
@@ -267,6 +242,31 @@ export const MY_PLANTS = {
                 "medium_url": "https://mybageecha.com/cdn/shop/products/Laurentii_2_1024x.jpg?v=1657969100",
                 "small_url": "https://mybageecha.com/cdn/shop/products/Laurentii_2_1024x.jpg?v=1657969100",
                 "thumbnail": "https://mybageecha.com/cdn/shop/products/Laurentii_2_1024x.jpg?v=1657969100",
+            }
+        },
+        {
+            "id": 4,
+            "primary_name": "ננוק",
+            "common_name": "Wandering Jew 4",
+            "scientific_name": [
+                "Tradescantia-nanouk"
+            ],
+            "other_name": [
+                "Rough-Bark Japanese Maple",
+                "Arakawa Ukon"
+            ],
+            "cycle": "Perennial",
+            "watering": "Average",
+            "sunlight": [
+                "Full sun",
+                "part shade"
+            ],
+            "default_image": {
+                "original_url": "https://www.mydomaine.com/thmb/a-yj-6mfrISRxpWEpiyq2ro6DhM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tradescantia-nanouk-plant-care-7ccdc22c1e714cf78f5cd0472d4211ae.jpeg",
+                "regular_url": "https://www.mydomaine.com/thmb/a-yj-6mfrISRxpWEpiyq2ro6DhM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tradescantia-nanouk-plant-care-7ccdc22c1e714cf78f5cd0472d4211ae.jpeg",
+                "medium_url": "https://www.mydomaine.com/thmb/a-yj-6mfrISRxpWEpiyq2ro6DhM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tradescantia-nanouk-plant-care-7ccdc22c1e714cf78f5cd0472d4211ae.jpeg",
+                "small_url": "https://www.mydomaine.com/thmb/a-yj-6mfrISRxpWEpiyq2ro6DhM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tradescantia-nanouk-plant-care-7ccdc22c1e714cf78f5cd0472d4211ae.jpeg",
+                "thumbnail": "https://www.mydomaine.com/thmb/a-yj-6mfrISRxpWEpiyq2ro6DhM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tradescantia-nanouk-plant-care-7ccdc22c1e714cf78f5cd0472d4211ae.jpeg",
             }
         },
     ],
