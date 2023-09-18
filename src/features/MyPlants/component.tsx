@@ -1,9 +1,9 @@
 import { Box, Grid, Input } from "@mui/material";
 import { FC } from "react";
-import { Plant } from "shared/types/Plant";
-import PlantCard from "components/PlantCard/PlantCard";
+import { Plant } from "shared/types/Plants";
+import PlantCard from "components/PlantCard/component";
 import useMyPlants from "./useMyPlants";
-import LOCALE from "shared/utils/Locale";
+import LOCALE from "shared/locale/Locale";
 
 type MyPlantsProps = {
     plants: Plant[]

@@ -1,11 +1,12 @@
-import { Avatar, Box, IconButton, Menu, MenuItem, Tooltip, Typography } from '@mui/material';
-import useTopNav from '../useTopNav';
-import LOCALE from 'shared/utils/Locale';
+import { Avatar, IconButton, Menu, MenuItem, Tooltip, Typography } from '@mui/material';
+import useTopNav from './useTopNav';
+import LOCALE from 'shared/locale/Locale';
 import { green } from '@mui/material/colors';
-import { User } from 'shared/types/User';
+import { User } from 'shared/types/Users';
 import { FC } from 'react';
+import { StyledUserSettings } from './style';
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const SETTINGS = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 type UserSettingsProps = User;
 
@@ -19,7 +20,7 @@ const UserSettings: FC<UserSettingsProps> = (props) => {
     } = useTopNav();
 
     return (
-        <Box sx={{ flexGrow: 0 }}>
+        <StyledUserSettings>
             <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                     <Avatar
@@ -48,13 +49,13 @@ const UserSettings: FC<UserSettingsProps> = (props) => {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
             >
-                {settings.map((setting) => (
+                {SETTINGS.map((setting) => (
                     <MenuItem key={setting} onClick={handleCloseUserMenu}>
                         <Typography textAlign="center">{setting}</Typography>
                     </MenuItem>
                 ))}
             </Menu>
-        </Box>
+        </StyledUserSettings>
     );
 }
 

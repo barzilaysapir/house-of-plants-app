@@ -1,10 +1,10 @@
 import { FC } from "react";
-import PageTitle from "components/PageTitle";
+import PageHeader from "components/PageHeader/component";
 import { MY_PLANTS } from "../mocks/MyPlants";
-import { Plant } from "shared/types/Plant";
+import { Plant } from "shared/types/Plants";
 import { Box } from "@mui/material";
-import MyPlantsContent from "features/MyPlants/MyPlants";
-import LOCALE from "shared/utils/Locale";
+import MyPlantsContent from "features/MyPlants/component";
+import LOCALE from "shared/locale/Locale";
 
 type MyPlantsProps = {}
 
@@ -13,7 +13,7 @@ const MyPlants: FC<MyPlantsProps> = props => {
 
     return (
         <>
-            <PageTitle title={LOCALE.myPlants.title} subtitle={SUBTITLE} />
+            <PageHeader title={LOCALE.myPlants.title} subtitle={SUBTITLE} />
             <Box component="main">
                 <MyPlantsContent plants={MY_PLANTS.data as Plant[]} />
             </Box>

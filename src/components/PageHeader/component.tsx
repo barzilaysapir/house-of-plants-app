@@ -1,12 +1,12 @@
 import { Box, Typography } from "@mui/material";
 import { FC } from "react";
 
-type PageTitleProps = {
+type PageHeaderProps = {
     title: string;
     subtitle?: string | number;
 };
 
-const PageTitle: FC<PageTitleProps> = props => {
+const PageHeader: FC<PageHeaderProps> = props => {
     const { title, subtitle } = props;
     return (
         <Box component="header" marginBottom={1.5} paddingY={1}>
@@ -20,4 +20,4 @@ const PageTitle: FC<PageTitleProps> = props => {
     );
 }
 
-export default PageTitle;
+export default PageHeader;

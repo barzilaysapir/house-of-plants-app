@@ -1,0 +1,18 @@
+{
+    "direction": "ltr",
+    "userHeader": {
+        "greeting": "Hi {0}!",
+        "avatarAlt": "Profile Picture"
+    },
+    "myPlants": {
+        "title": "My Plants",
+        "subtitle": "{0} plants in my collection",
+        "searchPlaceholder": "Search in your plants"
+    },
+    "identify": {
+        "title": "Identify"
+    },
+    "home": {
+        "title": "Home"
+    }
+}

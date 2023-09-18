@@ -1,13 +1,13 @@
 import { CacheProvider, ThemeProvider } from '@emotion/react';
 import { Direction } from '@mui/material';
-import Layout from 'components/Layout';
+import Layout from 'components/Layout/component';
 import { USER } from 'mocks/User';
 import { useEffect, useState } from 'react';
-import { User } from 'shared/types/User';
+import { User } from 'shared/types/Users';
 import theme from 'shared/utils/Theme';
 import cacheRtl from 'shared/utils/CacheRtl';
 import { Outlet, useLoaderData } from 'react-router';
-import LOCALE from 'shared/utils/Locale';
+import LOCALE from 'shared/locale/Locale';
 
 const getUserInfo = async () => {
   // const response = await fetch('/api/user');
@@ -26,8 +26,8 @@ function Root() {
   const userInfo = useLoaderData() as User;
 
   useEffect(() => {
-    // LOCALE.setLanguage('he')
-    // setDirection(LOCALE.direction as Direction)
+    // LOCALE.setLanguage('he');
+    // setDirection(LOCALE.direction as Direction);
   }, [])
 
   return (

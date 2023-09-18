@@ -1,5 +1,5 @@
-import { Box, CardMedia } from "@mui/material";
 import { FC } from "react";
+import { StyledCardMedia, StyledPlantCardImage } from "./style";
 
 type PlantCardImageProps = {
     image: string;
@@ -9,14 +9,12 @@ const PlantCardImage: FC<PlantCardImageProps> = (props) => {
     const { image } = props;
 
     return (
-        <Box sx={{ borderRadius: "inherit" }} >
-            <CardMedia
-                sx={{ borderRadius: "inherit" }}
+        <StyledPlantCardImage>
+            <StyledCardMedia
                 component="img"
-                height={100}
                 image={image}
             />
-        </Box>
+        </StyledPlantCardImage>
     )
 }
 

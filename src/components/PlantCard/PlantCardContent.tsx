@@ -1,5 +1,6 @@
-import { CardContent, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { FC } from "react";
+import { StyledPlantCardContent } from "./style";
 
 type PlantCardContentProps = {
     title: string,
@@ -10,14 +11,14 @@ const PlantCardContent: FC<PlantCardContentProps> = (props) => {
     const { title, subtitle } = props;
 
     return (
-        <CardContent sx={{ padding: "5px 10px" }}>
+        <StyledPlantCardContent>
             <Typography variant="body1" component="h3" fontWeight={600}>
                 {title}
             </Typography>
             <Typography variant="body2" color="textSecondary">
                 {subtitle}
             </Typography>
-        </CardContent>
+        </StyledPlantCardContent>
     )
 }
 

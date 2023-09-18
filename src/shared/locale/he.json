@@ -1,0 +1,18 @@
+{
+    "direction": "rtl",
+    "userHeader": {
+        "greeting": "Hi {0}!",
+        "avatarAlt": "תמונת פרופיל"
+    },
+    "myPlants": {
+        "title": "הצמחים שלי",
+        "subtitle": "{0} צמחים באוסף שלי",
+        "searchPlaceholder": "חיפוש צמח"
+    },
+    "identify": {
+        "title": "זיהוי"
+    },
+    "home": {
+        "title": "בית"
+    }
+}

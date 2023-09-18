@@ -1,9 +1,9 @@
 import { Box, Container } from "@mui/material";
 import { FC, ReactNode } from "react";
-import { User } from "shared/types/User";
-import TopNav from "./TopNav/TopNav";
-import BottomNavbar from "./BottomNavbar";
-import UserHeader from "./UserHeader";
+import { User } from "shared/types/Users";
+import TopNav from "features/TopNav/component";
+import BottomNav from "features/BottomNav/component";
+import { StyledPageWrapper } from "./style";
 
 type LayoutProps = {
     children: ReactNode;
@@ -18,13 +18,12 @@ const Layout: FC<LayoutProps> = (props) => {
             <TopNav userInfo={userInfo} />
 
             <Container maxWidth="xl">
-                {/* <UserHeader {...userInfo} /> */}
-                <Box sx={{ padding: "10px 5px" }}>
+                <StyledPageWrapper>
                     {children}
-                </Box>
+                </StyledPageWrapper>
             </Container>
 
-            <BottomNavbar />
+            <BottomNav />
         </Box>
     );
 }

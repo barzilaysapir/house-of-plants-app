@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.scss';
+import './index.css';
 import Root, { loader as rootLoader } from './Root';
 import reportWebVitals from './reportWebVitals';
 import {
@@ -8,16 +8,26 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import MyPlants from 'pages/MyPlants';
+import Identify from 'pages/Identify';
+import Home from 'pages/Home';
 
-const router = createBrowserRouter([
+const ROUTER = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     loader: rootLoader,
     children: [
       {
+        path: "",
+        element: <Home />,
+      },
+      {
         path: "/myPlants",
         element: <MyPlants />,
+      },
+      {
+        path: "/identify",
+        element: <Identify />,
       }
     ]
   },
@@ -28,7 +38,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={ROUTER} />
   </React.StrictMode>
 );
 

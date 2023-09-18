@@ -1,4 +1,4 @@
-import { Gender, User } from "shared/types/User";
+import { Gender, User } from "shared/types/Users";
 import ProfileImage from "mocks/images/user.jpg";
 
 export const USER: User = {

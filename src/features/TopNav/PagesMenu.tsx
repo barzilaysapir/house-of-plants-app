@@ -1,13 +1,12 @@
-import AppBar from '@mui/material/AppBar';
-import { Toolbar, Container, Typography, Button } from '@mui/material';
+import { Typography, Button } from '@mui/material';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
-import useTopNav from '../useTopNav';
+import useTopNav from './useTopNav';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const PAGES = ['Products', 'Pricing', 'Blog'];
 
 const PagesMenu = () => {
     const {
@@ -48,7 +47,7 @@ const PagesMenu = () => {
                         display: { xs: 'block', md: 'none' },
                     }}
                 >
-                    {pages.map((page) => (
+                    {PAGES.map((page) => (
                         <MenuItem key={page} onClick={handleCloseNavMenu}>
                             <Typography textAlign="center">{page}</Typography>
                         </MenuItem>
@@ -58,7 +57,7 @@ const PagesMenu = () => {
 
             {/* Desktop */}
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                {pages.map((page) => (
+                {PAGES.map((page) => (
                     <Button
                         key={page}
                         onClick={handleCloseNavMenu}
