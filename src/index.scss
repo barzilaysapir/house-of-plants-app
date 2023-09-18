@@ -6,11 +6,10 @@ html {
 
 :root {
   --bg-color: #f9f9f9;
-  --bg-color-alpha: rgb(#f9f9f9, 0.8);
 }
 
 body {
   margin: 0;
-  padding: 20px 5px;
   background-color: var(--bg-color);
+  padding-bottom: 70px;
 }
