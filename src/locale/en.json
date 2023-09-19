@@ -7,7 +7,7 @@
     "myPlants": {
         "title": "My Plants",
         "subtitle": "{0} plants in my collection",
-        "add": "Add",
+        "addButton": "Add",
         "searchPlaceholder": "Search in your plants"
     },
     "identify": {
@@ -15,5 +15,11 @@
     },
     "home": {
         "title": "Home"
-    }
+    },
+    "addPlants": {
+        "title": "Add New Plant",
+        "searchByName": "Search plant by name",
+        "scanImage": "Identify by image"
+    },
+    "or": "or"
 }

@@ -1,10 +1,9 @@
-import { Toolbar, Container } from '@mui/material';
+import { Toolbar, Container, AppBar } from '@mui/material';
 import UserSettings from './UserSettings';
 import PagesMenu from './PagesMenu';
 import Logo from 'components/Logo/component';
 import { User } from 'shared/types/Users';
 import { FC } from 'react';
-import StyledTopNav from './style';
 
 type TopNavProps = {
     userInfo: User;
@@ -14,7 +13,7 @@ const TopNav: FC<TopNavProps> = (props) => {
     const { userInfo } = props
 
     return (
-        <StyledTopNav position="relative" color='inherit'>
+        <AppBar position="sticky">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
 
@@ -24,7 +23,7 @@ const TopNav: FC<TopNavProps> = (props) => {
 
                 </Toolbar>
             </Container>
-        </StyledTopNav>
+        </AppBar>
     );
 }
 

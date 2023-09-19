@@ -8,6 +8,8 @@ import theme from 'shared/utils/Theme';
 import cacheRtl from 'shared/utils/CacheRtl';
 import { Outlet, useLoaderData } from 'react-router';
 import LOCALE from 'locale/Locale';
+import GlobalStyles from 'GlobalStyle';
+import { Global } from "@emotion/react";
 
 const getUserInfo = async () => {
   // const response = await fetch('/api/user');
@@ -34,6 +36,7 @@ function Root() {
     <>
       <CacheProvider value={cacheRtl}>
         <ThemeProvider theme={theme}>
+          <Global styles={GlobalStyles} />
 
           <div dir={direction}>
             <Layout userInfo={userInfo}>
@@ -43,7 +46,7 @@ function Root() {
 
         </ThemeProvider>
       </CacheProvider>
-    </ >
+    </>
   );
 }
 

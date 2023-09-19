@@ -12,7 +12,7 @@ const PlantCardContent: FC<PlantCardContentProps> = (props) => {
 
     return (
         <StyledPlantCardContent>
-            <Typography variant="body1" component="h3" fontWeight={600}>
+            <Typography variant="body1" component="h2" fontWeight={600}>
                 {title}
             </Typography>
             <Typography variant="body2" color="textSecondary">

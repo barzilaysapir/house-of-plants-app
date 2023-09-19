@@ -28,7 +28,7 @@ const MyPlants: FC<MyPlantsProps> = props => {
                 callToAction={{
                     endIcon: <AddIcon sx={{ marginInlineStart: 1 }} />,
                     onClick: handleClickOpen,
-                    label: LOCALE.myPlants.add
+                    label: LOCALE.myPlants.addButton
                 }} />
             <Box component="main">
                 <MyPlantsContent plants={MY_PLANTS.data as Plant[]} />

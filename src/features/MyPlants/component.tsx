@@ -1,9 +1,10 @@
-import { Box, Grid, Input } from "@mui/material";
+import { Box, Grid, Input, InputAdornment, TextField } from "@mui/material";
 import { FC } from "react";
 import { Plant } from "shared/types/Plants";
 import PlantCard from "components/PlantCard/component";
 import useMyPlants from "./useMyPlants";
 import LOCALE from "locale/Locale";
+import { Search } from "@mui/icons-material";
 
 type MyPlantsProps = {
     plants: Plant[]
@@ -16,10 +17,18 @@ const MyPlants: FC<MyPlantsProps> = (props) => {
 
     return (
         <Box>
-            <Input
+            <TextField
                 onChange={onSearchPlant}
                 placeholder={LOCALE.myPlants.searchPlaceholder}
                 fullWidth
+                variant="standard"
+                InputProps={{
+                    endAdornment: (
+                        <InputAdornment position="end">
+                            <Search />
+                        </InputAdornment>
+                    ),
+                }}
             />
 
             <Grid container marginTop={1} spacing={1} columns={{ xs: 1, sm: 2, md: 3, lg: 4 }}>

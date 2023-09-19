@@ -7,7 +7,7 @@
     "myPlants": {
         "title": "הצמחים שלי",
         "subtitle": "{0} צמחים באוסף שלי",
-        "add": "הוסף",
+        "addButton": "הוסף",
         "searchPlaceholder": "חיפוש צמח"
     },
     "identify": {
@@ -15,5 +15,11 @@
     },
     "home": {
         "title": "בית"
-    }
+    },
+    "addPlants": {
+        "title": "הוספת צמח חדש",
+        "searchByName": "חפש צמח לפי שם",
+        "scanImage": "זהה לפי תמונה"
+    },
+    "or": "או"
 }
