@@ -1,7 +1,7 @@
 import { FC } from "react";
 import PageHeader from "components/PageHeader/component";
 import { Box } from "@mui/material";
-import LOCALE from "shared/locale/Locale";
+import LOCALE from "locale/Locale";
 
 type HomeProps = {}
 

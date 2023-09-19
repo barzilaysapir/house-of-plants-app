@@ -1,10 +1,10 @@
 import { Avatar, IconButton, Menu, MenuItem, Tooltip, Typography } from '@mui/material';
 import useTopNav from './useTopNav';
-import LOCALE from 'shared/locale/Locale';
+import LOCALE from 'locale/Locale';
 import { green } from '@mui/material/colors';
 import { User } from 'shared/types/Users';
 import { FC } from 'react';
-import { StyledUserSettings } from './style';
+import { StyledUserSettingsBadge } from './style';
 
 const SETTINGS = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -20,7 +20,15 @@ const UserSettings: FC<UserSettingsProps> = (props) => {
     } = useTopNav();
 
     return (
-        <StyledUserSettings>
+        <StyledUserSettingsBadge
+            color="info"
+            variant="dot"
+            invisible={false}
+            overlap="circular"
+            anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'right',
+            }}>
             <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                     <Avatar
@@ -55,7 +63,7 @@ const UserSettings: FC<UserSettingsProps> = (props) => {
                     </MenuItem>
                 ))}
             </Menu>
-        </StyledUserSettings>
+        </StyledUserSettingsBadge >
     );
 }
 

@@ -1,8 +1,8 @@
 import { Box, Container } from "@mui/material";
 import { FC, ReactNode } from "react";
 import { User } from "shared/types/Users";
-import TopNav from "features/TopNav/component";
-import BottomNav from "features/BottomNav/component";
+import TopNav from "./TopNav/component";
+import BottomNav from "./BottomNav/component";
 import { StyledPageWrapper } from "./style";
 
 type LayoutProps = {

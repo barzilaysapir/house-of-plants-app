@@ -1,13 +1,13 @@
 import { CacheProvider, ThemeProvider } from '@emotion/react';
 import { Direction } from '@mui/material';
-import Layout from 'components/Layout/component';
+import Layout from 'features/Layout/component';
 import { USER } from 'mocks/User';
 import { useEffect, useState } from 'react';
 import { User } from 'shared/types/Users';
 import theme from 'shared/utils/Theme';
 import cacheRtl from 'shared/utils/CacheRtl';
 import { Outlet, useLoaderData } from 'react-router';
-import LOCALE from 'shared/locale/Locale';
+import LOCALE from 'locale/Locale';
 
 const getUserInfo = async () => {
   // const response = await fetch('/api/user');

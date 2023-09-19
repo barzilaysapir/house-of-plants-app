@@ -4,7 +4,7 @@ import QrCodeScannerIcon from '@mui/icons-material/QrCodeScanner';
 import HomeIcon from '@mui/icons-material/Home';
 import { ReactComponent as LeafIcon } from 'assets/icons/leaf.svg';
 import { useState } from 'react';
-import LOCALE from 'shared/locale/Locale';
+import LOCALE from 'locale/Locale';
 import SvgIcon from '@mui/icons-material/QrCodeScanner';
 import { useNavigate } from 'react-router-dom';
 import { StyledBottomNavWrapper } from './style';
@@ -28,8 +28,11 @@ const BOTTOM_NAV_LINKS = [
 ];
 
 const BottomNav = () => {
-    const [value, setValue] = useState(0);
-    let navigate = useNavigate();
+    const [value, setValue] = useState(BOTTOM_NAV_LINKS.findIndex(({ link }) =>
+        link.split("/")[1] === window.location.pathname.split("/")[1])
+    );
+
+    const navigate = useNavigate();
 
     const onLinkClicked = (link: string) => {
         navigate(link)

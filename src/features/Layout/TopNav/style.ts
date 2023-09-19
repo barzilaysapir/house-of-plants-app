@@ -1,7 +1,7 @@
-import { AppBar, Box } from '@mui/material';
+import { AppBar, Badge } from '@mui/material';
 import styled from '@emotion/styled';
 
-export const StyledUserSettings = styled(Box)`
+export const StyledUserSettingsBadge = styled(Badge)`
     flex-grow: 0;
 `;
 

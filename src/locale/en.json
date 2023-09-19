@@ -7,6 +7,7 @@
     "myPlants": {
         "title": "My Plants",
         "subtitle": "{0} plants in my collection",
+        "add": "Add",
         "searchPlaceholder": "Search in your plants"
     },
     "identify": {

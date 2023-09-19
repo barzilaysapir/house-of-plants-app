@@ -3,7 +3,7 @@ import { FC } from "react";
 import { Plant } from "shared/types/Plants";
 import PlantCard from "components/PlantCard/component";
 import useMyPlants from "./useMyPlants";
-import LOCALE from "shared/locale/Locale";
+import LOCALE from "locale/Locale";
 
 type MyPlantsProps = {
     plants: Plant[]
