@@ -11,6 +11,8 @@ export const MY_PLANTS = {
                 "Green Coral Japanese Maple"
             ],
             "cycle": "Perennial",
+            "water_freq": 5,
+            "water_next": 1,
             "watering": "Frequent",
             "sunlight": [
                 "full sun",
@@ -36,6 +38,8 @@ export const MY_PLANTS = {
                 "Arakawa Ukon"
             ],
             "cycle": "Perennial",
+            "water_freq": 10,
+            "water_next": 7,
             "watering": "Average",
             "sunlight": [
                 "Full sun",
@@ -49,30 +53,32 @@ export const MY_PLANTS = {
                 "thumbnail": "https://www.mydomaine.com/thmb/a-yj-6mfrISRxpWEpiyq2ro6DhM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tradescantia-nanouk-plant-care-7ccdc22c1e714cf78f5cd0472d4211ae.jpeg",
             }
         },
-        // {
-        //     "id": 3,
-        //     "primary_name": "Monsty",
-        //     "common_name": "Swiss Cheese Plant",
-        //     "scientific_name": [
-        //         "Monstera Minima"
-        //     ],
-        //     "other_name": [
-        //         "Green Coral Japanese Maple"
-        //     ],
-        //     "cycle": "Perennial",
-        //     "watering": "Frequent",
-        //     "sunlight": [
-        //         "full sun",
-        //         "part shade"
-        //     ],
-        //     "default_image": {
-        //         "original_url": "https://plantura.garden/uk/wp-content/uploads/sites/2/2022/11/mini-monstera-table.jpg",
-        //         "regular_url": "https://plantura.garden/uk/wp-content/uploads/sites/2/2022/11/mini-monstera-table.jpg",
-        //         "medium_url": "https://plantura.garden/uk/wp-content/uploads/sites/2/2022/11/mini-monstera-table.jpg",
-        //         "small_url": "https://plantura.garden/uk/wp-content/uploads/sites/2/2022/11/mini-monstera-table.jpg",
-        //         "thumbnail": "https://plantura.garden/uk/wp-content/uploads/sites/2/2022/11/mini-monstera-table.jpg",
-        //     }
-        // },
+        {
+            "id": 3,
+            "primary_name": "Monsty",
+            "common_name": "Swiss Cheese Plant",
+            "scientific_name": [
+                "Monstera Minima"
+            ],
+            "other_name": [
+                "Green Coral Japanese Maple"
+            ],
+            "cycle": "Perennial",
+            "water_freq": 5,
+            "water_next": 1,
+            "watering": "Frequent",
+            "sunlight": [
+                "full sun",
+                "part shade"
+            ],
+            "default_image": {
+                "original_url": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTxTh3nXLhaZ_HZFLOmkqj9tXb-WTcVjX_8NqKQ0pKWNs50nFF8I_uwye6NaqeWZyXWwpiUqzEVqI-xdEc",
+                "regular_url": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTxTh3nXLhaZ_HZFLOmkqj9tXb-WTcVjX_8NqKQ0pKWNs50nFF8I_uwye6NaqeWZyXWwpiUqzEVqI-xdEc",
+                "medium_url": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTxTh3nXLhaZ_HZFLOmkqj9tXb-WTcVjX_8NqKQ0pKWNs50nFF8I_uwye6NaqeWZyXWwpiUqzEVqI-xdEc",
+                "small_url": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTxTh3nXLhaZ_HZFLOmkqj9tXb-WTcVjX_8NqKQ0pKWNs50nFF8I_uwye6NaqeWZyXWwpiUqzEVqI-xdEc",
+                "thumbnail": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTxTh3nXLhaZ_HZFLOmkqj9tXb-WTcVjX_8NqKQ0pKWNs50nFF8I_uwye6NaqeWZyXWwpiUqzEVqI-xdEc",
+            }
+        },
         {
             "id": 5,
             "primary_name": "Custom name 5",
@@ -84,6 +90,8 @@ export const MY_PLANTS = {
                 "Green Coral Japanese Maple"
             ],
             "cycle": "Perennial",
+            "water_freq": 5,
+            "water_next": 1,
             "watering": "Frequent",
             "sunlight": [
                 "full sun",
@@ -109,6 +117,8 @@ export const MY_PLANTS = {
                 "Arakawa Ukon"
             ],
             "cycle": "Perennial",
+            "water_freq": 10,
+            "water_next": 7,
             "watering": "Average",
             "sunlight": [
                 "Full sun",
@@ -133,6 +143,8 @@ export const MY_PLANTS = {
                 "Green Coral Japanese Maple"
             ],
             "cycle": "Perennial",
+            "water_freq": 5,
+            "water_next": 0,
             "watering": "Frequent",
             "sunlight": [
                 "full sun",
@@ -158,6 +170,8 @@ export const MY_PLANTS = {
                 "Arakawa Ukon"
             ],
             "cycle": "Perennial",
+            "water_freq": 10,
+            "water_next": 7,
             "watering": "Average",
             "sunlight": [
                 "Full sun",
@@ -182,6 +196,8 @@ export const MY_PLANTS = {
                 "Green Coral Japanese Maple"
             ],
             "cycle": "Perennial",
+            "water_freq": 5,
+            "water_next": 0,
             "watering": "Frequent",
             "sunlight": [
                 "full sun",
@@ -207,6 +223,8 @@ export const MY_PLANTS = {
                 "Arakawa Ukon"
             ],
             "cycle": "Perennial",
+            "water_freq": 10,
+            "water_next": 7,
             "watering": "Average",
             "sunlight": [
                 "Full sun",
@@ -231,6 +249,8 @@ export const MY_PLANTS = {
                 "Green Coral Japanese Maple"
             ],
             "cycle": "Perennial",
+            "water_freq": 5,
+            "water_next": 1,
             "watering": "Frequent",
             "sunlight": [
                 "full sun",
@@ -256,6 +276,8 @@ export const MY_PLANTS = {
                 "Arakawa Ukon"
             ],
             "cycle": "Perennial",
+            "water_freq": 10,
+            "water_next": 7,
             "watering": "Average",
             "sunlight": [
                 "Full sun",

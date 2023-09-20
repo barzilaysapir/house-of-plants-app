@@ -20,6 +20,8 @@ export type Plant = {
     cycle: PlantCycle.PERENNIAL,
     watering: PlantWatering.FREQUENT,
     sunlight: PlantSunlight[],
+    water_freq: number,
+    water_next: number,
     default_image: {
         original_url: string,
         regular_url: string,
