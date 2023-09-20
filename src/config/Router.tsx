@@ -27,4 +27,6 @@ export const ROUTER = createBrowserRouter([
             }
         ]
     },
-]);
+], {
+    basename: process.env.PUBLIC_URL
+});
