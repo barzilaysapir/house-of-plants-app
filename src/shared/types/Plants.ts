@@ -1,33 +1,45 @@
-enum PlantCycle {
-    PERENNIAL = "Perennial",
+// enum PlantCycle {
+//     PERENNIAL = "Perennial",
+// }
+
+// enum PlantWatering {
+//     FREQUENT = "Frequent",
+// }
+
+// enum PlantSunlight {
+//     FULL_SUN = "Full Sun",
+//     PART_SHADE = "Part Shade",
+// }
+
+export enum PlantCareRoutine {
+    WATER = "water",
+    FERTILIZE = "fertilize",
+    MIST = "mist",
 }
 
-enum PlantWatering {
-    FREQUENT = "Frequent",
-}
+export type PlantCareRoutineInfo = {
+    freq: number;
+    next: number;
+};
 
-enum PlantSunlight {
-    FULL_SUN = "Full Sun",
-    PART_SHADE = "Part Shade",
-}
+export type PlantCareRoutines = {
+    [key in PlantCareRoutine]: PlantCareRoutineInfo;
+};
 
 export type Plant = {
-    id: number,
-    primary_name: string,
-    common_name: string,
-    scientific_name: string[],
-    other_name: string[],
-    cycle: PlantCycle.PERENNIAL,
-    watering: PlantWatering.FREQUENT,
-    sunlight: PlantSunlight[],
+    id: number;
+    primary_name: string;
+    common_name: string;
+    scientific_name: string[];
+    // other_name: string[];
+    // cycle: PlantCycle.PERENNIAL;
+    // watering: PlantWatering.FREQUENT;
+    // sunlight: PlantSunlight[];
     default_image: {
-        original_url: string,
-        regular_url: string,
-        medium_url: string,
-        small_url: string,
-        thumbnail: string,
-    }
-}
+        thumbnail: string;
+    };
+    care: PlantCareRoutines;
+};
 
 export type PlantsData = {
     total: number,

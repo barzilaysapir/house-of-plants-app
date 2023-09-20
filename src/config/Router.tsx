@@ -19,13 +19,13 @@ export const ROUTER = createBrowserRouter([
             {
                 path: "/myPlants",
                 element: <MyPlants />,
-                loader: myPlantsLoader
+                loader: myPlantsLoader,
             },
             {
                 path: "/identify",
                 element: <Identify />,
-            }
-        ]
+            },
+        ],
     },
 ], {
     basename: process.env.PUBLIC_URL

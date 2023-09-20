@@ -18,14 +18,12 @@ const Layout: FC<LayoutProps> = (props) => {
             <TopNav userInfo={userInfo} />
 
             <Container maxWidth="xl">
-                <StyledPageWrapper>
-                    {children}
-                </StyledPageWrapper>
+                <StyledPageWrapper>{children}</StyledPageWrapper>
             </Container>
 
             <BottomNav />
         </Box>
     );
-}
+};
 
 export default Layout;

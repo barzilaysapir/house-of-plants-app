@@ -8,7 +8,7 @@ type GreetingProps = User;
 const Greeting = (props: GreetingProps) => {
     const { title } = props;
 
-    const GREETING = LOCALE.formatString(LOCALE.userHeader.greeting, title)
+    const GREETING = LOCALE.formatString(LOCALE.userHeader.greeting, title);
 
     return (
         <Typography
@@ -20,6 +20,6 @@ const Greeting = (props: GreetingProps) => {
             {GREETING}
         </Typography>
     );
-}
+};
 
 export default Greeting;

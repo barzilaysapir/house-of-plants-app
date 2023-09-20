@@ -1,5 +1,12 @@
 import { Search, PhotoCameraRounded } from "@mui/icons-material";
-import { Chip, Divider, IconButton, InputAdornment, TextField, Typography } from "@mui/material"
+import {
+    Chip,
+    Divider,
+    IconButton,
+    InputAdornment,
+    TextField,
+    Typography,
+} from "@mui/material";
 import LOCALE from "config/locale/Locale";
 import { FC, RefObject, useState } from "react";
 import VisuallyHiddenInput from "styles/VisuallyHiddenInput";
@@ -12,22 +19,26 @@ type AddPlantDialogContentProps = {
 const AddPlantDialogContent: FC<AddPlantDialogContentProps> = (props) => {
     const { searchInputRef } = props;
 
-    const handleSearchInputBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+    const handleSearchInputBlur = (
+        event: React.FocusEvent<HTMLInputElement>
+    ) => {
         // searchInputRef.value = event.target.value;
     };
 
-    const handleSearchInputFocus = (event: React.FocusEvent<HTMLInputElement>) => {
+    const handleSearchInputFocus = (
+        event: React.FocusEvent<HTMLInputElement>
+    ) => {
         // searchInputRef.value = event.target.value;
         console.log(document.activeElement === searchInputRef.current);
     };
 
-    const [image, setImage] = useState<string>("")
+    const [image, setImage] = useState<string>("");
 
     const onImageChange = (event: any) => {
         if (event.target.files && event.target.files[0]) {
             setImage(URL.createObjectURL(event.target.files[0]));
         }
-    }
+    };
 
     return (
         <StyledAddPlantDialogContent>
@@ -60,9 +71,13 @@ const AddPlantDialogContent: FC<AddPlantDialogContentProps> = (props) => {
                 <Chip label={LOCALE.or} />
             </Divider>
 
-
             <label className="pictureButton">
-                <VisuallyHiddenInput type="file" accept="image/*" capture="environment" onChange={onImageChange} />
+                <VisuallyHiddenInput
+                    type="file"
+                    accept="image/*"
+                    capture="environment"
+                    onChange={onImageChange}
+                />
                 <IconButton
                     color="primary"
                     aria-label="upload picture"
@@ -76,9 +91,8 @@ const AddPlantDialogContent: FC<AddPlantDialogContentProps> = (props) => {
             </label>
 
             {/* <img alt="preview image" src={image} /> */}
-
-        </StyledAddPlantDialogContent >
-    )
+        </StyledAddPlantDialogContent>
+    );
 };
 
 export default AddPlantDialogContent;

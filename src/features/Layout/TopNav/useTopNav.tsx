@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const useTopNav = () => {
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -27,7 +27,7 @@ const useTopNav = () => {
         handleOpenUserMenu,
         handleCloseNavMenu,
         handleCloseUserMenu,
-    }
-}
+    };
+};
 
 export default useTopNav;

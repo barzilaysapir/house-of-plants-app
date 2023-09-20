@@ -1,27 +1,27 @@
 import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import { FC, useRef } from "react";
 import CloseIcon from "@mui/icons-material/Close";
-import StyledAddPlantDialog from "./AddPlantDialog.style";
-import AddPlantDialogContent from "./AddPlantDialogContent";
 import LOCALE from "config/locale/Locale";
+import StyledPlantCareRoutineDialog from "./PlantCareRoutineDialog.style";
 import Transition from "components/Transition/Transition";
+import { PlantCareRoutine } from "shared/types/Plants";
 
-type AddPlantDialogProps = {
+type PlantCareRoutineDialogProps = {
     open: boolean;
+    careRoutine?: PlantCareRoutine | null;
     handleClose: () => void;
 };
 
-const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
-    const { open, handleClose } = props;
+const PlantCareRoutineDialog: FC<PlantCareRoutineDialogProps> = (props) => {
+    const { open, careRoutine, handleClose } = props;
     const searchInputRef = useRef<HTMLInputElement>(null);
 
     return (
-        <StyledAddPlantDialog
+        <StyledPlantCareRoutineDialog
             fullScreen
             open={open}
             onClose={handleClose}
             TransitionComponent={Transition}
-            // focused={document.activeElement === searchInputRef.current}
         >
             <AppBar sx={{ position: "relative" }}>
                 <Toolbar
@@ -29,7 +29,7 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
                     sx={{ justifyContent: "space-between" }}
                 >
                     <Typography variant="h6" component="h3" sx={{ ml: 2 }}>
-                        {LOCALE.addPlants.title}
+                        {careRoutine && LOCALE[careRoutine]}
                     </Typography>
 
                     <IconButton
@@ -42,9 +42,9 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
                 </Toolbar>
             </AppBar>
 
-            <AddPlantDialogContent searchInputRef={searchInputRef} />
-        </StyledAddPlantDialog>
+            {/* <AddPlantDialogContent searchInputRef={searchInputRef} /> */}
+        </StyledPlantCareRoutineDialog>
     );
 };
 
-export default AddPlantDialog;
+export default PlantCareRoutineDialog;

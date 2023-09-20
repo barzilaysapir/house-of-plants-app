@@ -6,13 +6,18 @@ let theme = createTheme({
     direction: "rtl",
     typography: {
         fontFamily: 'Open Sans, sans-serif',
-        // fontFamily: "Segoe UI, Tahoma, Geneva, Verdana, sans-serif"    
+        // fontFamily: "Segoe UI, Tahoma, Geneva, Verdana, sans-serif"
     },
     palette: {
         primary: {
             ...green
         },
     },
+    components: {
+        MuiCircularProgress: {
+
+        }
+    }
 }, heIL);
 theme = responsiveFontSizes(theme);
 
