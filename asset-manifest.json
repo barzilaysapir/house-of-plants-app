@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/houseplantscare-app/static/js/main.eeaf0510.js",
+    "static/js/27.8523a8b7.chunk.js": "/houseplantscare-app/static/js/27.8523a8b7.chunk.js",
+    "static/media/user.jpg": "/houseplantscare-app/static/media/user.81c1a8679ee2aed3d018.jpg",
+    "static/media/leaf.svg": "/houseplantscare-app/static/media/leaf.cc07e7791eee8aa57e0a8c8315dc068f.svg",
+    "index.html": "/houseplantscare-app/index.html"
+  },
+  "entrypoints": [
+    "static/js/main.eeaf0510.js"
+  ]
+}
