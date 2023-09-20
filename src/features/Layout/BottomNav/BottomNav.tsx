@@ -4,10 +4,10 @@ import QrCodeScannerIcon from '@mui/icons-material/QrCodeScanner';
 import HomeIcon from '@mui/icons-material/Home';
 import { ReactComponent as LeafIcon } from 'assets/icons/leaf.svg';
 import { useState } from 'react';
-import LOCALE from 'locale/Locale';
+import LOCALE from 'config/locale/Locale';
 import SvgIcon from '@mui/icons-material/QrCodeScanner';
 import { useNavigate } from 'react-router-dom';
-import { StyledBottomNavWrapper } from './style';
+import { StyledBottomNavWrapper } from './BottomNav.style';
 
 const BOTTOM_NAV_LINKS = [
     {

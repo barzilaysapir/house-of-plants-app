@@ -18,7 +18,7 @@
     },
     "addPlants": {
         "title": "Add New Plant",
-        "searchByName": "Search plant by name",
+        "searchByName": "Search by name",
         "scanImage": "Identify by image"
     },
     "or": "or"

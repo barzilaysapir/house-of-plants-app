@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import { FC } from "react";
-import { StyledPlantCardContent } from "./style";
+import { StyledPlantCardContent } from "./PlantCard.style";
 
 type PlantCardContentProps = {
     title: string,

@@ -1,7 +1,7 @@
 import { Toolbar, Container, AppBar } from '@mui/material';
-import UserSettings from './UserSettings';
-import PagesMenu from './PagesMenu';
-import Logo from 'components/Logo/component';
+import UserSettings from './TopNavMenus/UserSettings';
+import PagesMenu from './TopNavMenus/PagesMenu';
+import Logo from 'components/Logo/Logo';
 import { User } from 'shared/types/Users';
 import { FC } from 'react';
 

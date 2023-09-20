@@ -28,3 +28,8 @@ export type Plant = {
         thumbnail: string,
     }
 }
+
+export type PlantsData = {
+    total: number,
+    data: Plant[],
+}

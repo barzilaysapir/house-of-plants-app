@@ -5,7 +5,8 @@ import { heIL } from '@mui/material/locale';
 let theme = createTheme({
     direction: "rtl",
     typography: {
-        fontFamily: "Segoe UI, Tahoma, Geneva, Verdana, sans-serif"
+        fontFamily: 'Open Sans, sans-serif',
+        // fontFamily: "Segoe UI, Tahoma, Geneva, Verdana, sans-serif"    
     },
     palette: {
         primary: {

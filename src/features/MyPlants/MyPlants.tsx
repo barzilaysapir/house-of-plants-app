@@ -1,9 +1,9 @@
 import { Box, Grid, Input, InputAdornment, TextField } from "@mui/material";
 import { FC } from "react";
 import { Plant } from "shared/types/Plants";
-import PlantCard from "components/PlantCard/component";
+import PlantCard from "components/PlantCard/PlantCard";
 import useMyPlants from "./useMyPlants";
-import LOCALE from "locale/Locale";
+import LOCALE from "config/locale/Locale";
 import { Search } from "@mui/icons-material";
 
 type MyPlantsProps = {

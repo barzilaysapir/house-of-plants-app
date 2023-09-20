@@ -1,10 +1,10 @@
 import { Avatar, IconButton, Menu, MenuItem, Tooltip, Typography } from '@mui/material';
-import useTopNav from './useTopNav';
-import LOCALE from 'locale/Locale';
+import useTopNav from '../useTopNav';
+import LOCALE from 'config/locale/Locale';
 import { green } from '@mui/material/colors';
 import { User } from 'shared/types/Users';
 import { FC } from 'react';
-import { StyledUserSettingsBadge } from './style';
+import { StyledUserSettingsBadge } from '../TopNav.style';
 
 const SETTINGS = ['Profile', 'Account', 'Dashboard', 'Logout'];
 

@@ -1,10 +1,10 @@
 import { AppBar, IconButton, Slide, Toolbar, Typography } from "@mui/material"
 import { TransitionProps } from "@mui/material/transitions";
-import { FC, ReactElement, Ref, forwardRef } from "react";
+import { FC, ReactElement, Ref, forwardRef, useRef } from "react";
 import CloseIcon from '@mui/icons-material/Close';
-import StyledAddPlantDialog from "./style";
-import DialogContent from "./DialogContent/component";
-import LOCALE from "locale/Locale";
+import StyledAddPlantDialog from "./AddPlantDialog.style";
+import AddPlantDialogContent from "./AddPlantDialogContent";
+import LOCALE from "config/locale/Locale";
 
 const Transition = forwardRef(function Transition(
     props: TransitionProps & {
@@ -22,6 +22,7 @@ type AddPlantDialogProps = {
 
 const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
     const { open, handleClose } = props;
+    const searchInputRef = useRef<HTMLInputElement>(null);
 
     return (
         <StyledAddPlantDialog
@@ -29,7 +30,7 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
             open={open}
             onClose={handleClose}
             TransitionComponent={Transition}
-        // transitionDuration={{ enter: 300, exit: 300 }}
+        // focused={document.activeElement === searchInputRef.current}
         >
             <AppBar sx={{ position: 'relative' }}>
                 <Toolbar variant="dense" sx={{ justifyContent: "space-between" }}>
@@ -47,7 +48,7 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
                 </Toolbar>
             </AppBar>
 
-            <DialogContent />
+            <AddPlantDialogContent searchInputRef={searchInputRef} />
 
         </StyledAddPlantDialog>
     )

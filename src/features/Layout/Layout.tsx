@@ -1,9 +1,9 @@
 import { Box, Container } from "@mui/material";
 import { FC, ReactNode } from "react";
 import { User } from "shared/types/Users";
-import TopNav from "./TopNav/component";
-import BottomNav from "./BottomNav/component";
-import { StyledPageWrapper } from "./style";
+import TopNav from "./TopNav/TopNav";
+import BottomNav from "./BottomNav/BottomNav";
+import { StyledPageWrapper } from "./Layout.style";
 
 type LayoutProps = {
     children: ReactNode;

@@ -3,7 +3,7 @@ import { FC } from "react";
 import { Plant } from "shared/types/Plants";
 import PlantCardContent from "./PlantCardContent";
 import PlantCardImage from "./PlantCardImage";
-import { StyledCardActionArea } from "./style";
+import { StyledCardActionArea } from "./PlantCard.style";
 
 type PlantCardProps = Plant & {
     horizontal?: boolean;

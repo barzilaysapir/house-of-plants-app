@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import { green } from "@mui/material/colors";
 import { User } from "shared/types/Users";
-import LOCALE from "locale/Locale";
+import LOCALE from "config/locale/Locale";
 
 type GreetingProps = User;
 

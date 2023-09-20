@@ -7,9 +7,9 @@ const cacheRtl = createCache({
     stylisPlugins: [prefixer, rtlPlugin],
 });
 
-// const emptyCache = createCache({
-//     key: "meaningless-key",
-// });
+const emptyCache = createCache({
+    key: "muirtl",
+});
 
 // <CacheProvider value={ direction === "rtl" ? cacheRtl : emptyCache }>
 

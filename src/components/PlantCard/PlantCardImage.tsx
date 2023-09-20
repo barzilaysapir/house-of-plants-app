@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { StyledCardMedia, StyledPlantCardImage } from "./style";
+import { StyledCardMedia, StyledPlantCardImage } from "./PlantCard.style";
 
 type PlantCardImageProps = {
     image: string;

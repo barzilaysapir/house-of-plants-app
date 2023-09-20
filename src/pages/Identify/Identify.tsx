@@ -1,7 +1,7 @@
 import { FC } from "react";
-import PageHeader from "components/PageHeader/component";
+import PageHeader from "components/PageHeader/PageHeader";
 import { Box } from "@mui/material";
-import LOCALE from "locale/Locale";
+import LOCALE from "config/locale/Locale";
 
 type IdentifyProps = {}
 

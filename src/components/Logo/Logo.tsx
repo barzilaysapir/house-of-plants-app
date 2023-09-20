@@ -1,6 +1,6 @@
 import { ReactComponent as LeafIcon } from 'assets/icons/leaf.svg';
 import SvgIcon from '@mui/icons-material/QrCodeScanner';
-import { StyledLogoTypo } from './style';
+import { StyledLogoTypo } from './Logo.style';
 import { Box } from '@mui/material';
 
 const Logo = () => {
