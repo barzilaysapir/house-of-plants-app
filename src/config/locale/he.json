@@ -21,5 +21,9 @@
         "searchByName": "חפש לפי שם",
         "scanImage": "זהה לפי תמונה"
     },
-    "or": "או"
+    "or": "או",
+    "water": "השקייה",
+    "fertilize": "דישון",
+    "mist": "ריסוס",
+    "pestControl": "ניתור מזיקים"
 }

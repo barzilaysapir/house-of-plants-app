@@ -21,5 +21,9 @@
         "searchByName": "Search by name",
         "scanImage": "Identify by image"
     },
-    "or": "or"
+    "or": "or",
+    "water": "Water",
+    "fertilize": "Fertilize",
+    "mist": "Mist",
+    "pestControl": "Pest Control"
 }

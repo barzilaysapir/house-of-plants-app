@@ -1,8 +1,9 @@
 import { FC, useState } from "react";
-import { Plant } from "shared/types/Plants";
+import { Plant, PlantCareRoutine } from "shared/types/Plants";
 import PlantCardContent from "./PlantCardContent";
 import PlantCardImage from "./PlantCardImage";
 import StyledPlantCard from "./PlantCard.style";
+import PlantCareRoutineDialog from "features/PlantCareRoutineDialog/PlantCareRoutineDialog";
 
 type PlantCardProps = Plant & {
     horizontal?: boolean;
@@ -11,21 +12,24 @@ type PlantCardProps = Plant & {
 const PlantCard: FC<PlantCardProps> = (props) => {
     const {
         horizontal = false,
+        id,
         primary_name,
         scientific_name,
         default_image,
-        water_freq,
-        water_next,
+        ...cardContentProps
     } = props;
 
     const [open, setOpen] = useState<boolean>(false);
+    const [careRoutine, setCareRoutine] = useState<PlantCareRoutine | null>();
 
-    const handleClickOpen = () => {
+    const handleClickOpen = (careRoutine: PlantCareRoutine) => {
         setOpen(true);
+        setCareRoutine(careRoutine);
     };
 
     const handleClose = () => {
         setOpen(false);
+        setCareRoutine(null);
     };
 
     return (
@@ -40,8 +44,13 @@ const PlantCard: FC<PlantCardProps> = (props) => {
             <PlantCardContent
                 title={primary_name}
                 subtitle={scientific_name[0]}
-                water_freq={water_freq}
-                water_next={water_next}
+                handleCareRoutineClick={handleClickOpen}
+                {...cardContentProps}
+            />
+            <PlantCareRoutineDialog
+                open={open}
+                careRoutine={careRoutine}
+                handleClose={handleClose}
             />
         </StyledPlantCard>
     );

@@ -1,4 +1,4 @@
-import { Box, Grid, Input, InputAdornment, TextField } from "@mui/material";
+import { Box, Grid, InputAdornment, TextField } from "@mui/material";
 import { FC } from "react";
 import { Plant } from "shared/types/Plants";
 import PlantCard from "components/PlantCard/PlantCard";
