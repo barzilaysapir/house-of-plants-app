@@ -1,24 +1,20 @@
-import { Typography, Button } from '@mui/material';
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import MenuIcon from '@mui/icons-material/Menu';
-import useTopNav from '../useTopNav';
+import { Typography, Button } from "@mui/material";
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import MenuIcon from "@mui/icons-material/Menu";
+import useTopNav from "../useTopNav";
 
-const PAGES = ['Products', 'Pricing', 'Blog'];
+const PAGES = ["Products", "Pricing", "Blog"];
 
 const PagesMenu = () => {
-    const {
-        anchorElNav,
-        handleOpenNavMenu,
-        handleCloseNavMenu,
-    } = useTopNav();
+    const { anchorElNav, handleOpenNavMenu, handleCloseNavMenu } = useTopNav();
 
     return (
         <>
             {/* Mobile */}
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
                 <IconButton
                     size="large"
                     aria-label="account of current user"
@@ -33,18 +29,18 @@ const PagesMenu = () => {
                     id="menu-appbar"
                     anchorEl={anchorElNav}
                     anchorOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'left',
+                        vertical: "bottom",
+                        horizontal: "left",
                     }}
                     keepMounted
                     transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'left',
+                        vertical: "top",
+                        horizontal: "left",
                     }}
                     open={Boolean(anchorElNav)}
                     onClose={handleCloseNavMenu}
                     sx={{
-                        display: { xs: 'block', md: 'none' },
+                        display: { xs: "block", md: "none" },
                     }}
                 >
                     {PAGES.map((page) => (
@@ -56,12 +52,12 @@ const PagesMenu = () => {
             </Box>
 
             {/* Desktop */}
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
                 {PAGES.map((page) => (
                     <Button
                         key={page}
                         onClick={handleCloseNavMenu}
-                        sx={{ my: 2, color: 'GrayText', display: 'block' }}
+                        sx={{ my: 2, color: "GrayText", display: "block" }}
                     >
                         {page}
                     </Button>
@@ -69,6 +65,6 @@ const PagesMenu = () => {
             </Box>
         </>
     );
-}
+};
 
 export default PagesMenu;

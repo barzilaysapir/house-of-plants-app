@@ -21,8 +21,8 @@ const useMyPlants = (props: UseMyPlantsListProps) => {
     return {
         onSearchPlant,
         filteredPlants,
-    }
-}
+    };
+};
 
 
 export default useMyPlants;

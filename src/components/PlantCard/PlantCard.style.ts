@@ -24,6 +24,9 @@ export const StyledCardMedia = styled(CardMedia) <StyledCardMediaProps>`
 export const StyledPlantCardContent = styled(CardContent)`
     padding: 5px 10px;
     flex: 1;
+    :last-child {
+        padding-bottom: 5px;
+    }
 `;
 
 export const StyledPlantCard = styled(Card) <StyledCardProps>`

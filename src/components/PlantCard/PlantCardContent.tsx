@@ -27,10 +27,17 @@ const PlantCardContent: FC<PlantCardContentProps> = (props) => {
 
                 <Divider />
 
-                <Stack direction="row" justifyContent="space-evenly">
+                {/* replace marginTop with "auto" */}
+                <Stack direction="row" justifyContent="space-evenly" marginTop={1.5}>
                     {CARD_BUTTONS.map(({ label, Icon, color }, index) =>
                         <Tooltip key={index} title={label} enterTouchDelay={0}>
                             <IconButton aria-label={label} color={water_next === 0 ? "error" : color}>
+                                <CircularProgress
+                                    variant="determinate"
+                                    value={100}
+                                    sx={{ position: "absolute", color: "lightgrey" }}
+                                    thickness={1}
+                                />
                                 <CircularProgress
                                     variant="determinate"
                                     value={water_next / water_freq * 100}

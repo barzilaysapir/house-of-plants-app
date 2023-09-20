@@ -1,20 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import reportWebVitals from './reportWebVitals';
-import {
-  RouterProvider,
-} from "react-router-dom";
-import LoaderBackdrop from 'components/LoaderBackdrop/LoaderBackdrop';
-import { ROUTER } from 'config/Router';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
+import { RouterProvider } from "react-router-dom";
+import LoaderBackdrop from "components/LoaderBackdrop/LoaderBackdrop";
+import { ROUTER } from "config/Router";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+    document.getElementById("root") as HTMLElement
 );
 
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={ROUTER} fallbackElement={<LoaderBackdrop />} />
-  </React.StrictMode>
+    <React.StrictMode>
+        <RouterProvider router={ROUTER} fallbackElement={<LoaderBackdrop />} />
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
