@@ -4,7 +4,7 @@ import reportWebVitals from "./reportWebVitals";
 import { RouterProvider } from "react-router-dom";
 import LoaderBackdrop from "components/LoaderBackdrop/LoaderBackdrop";
 import { ROUTER } from "config/Router";
-import "config/i18n/i18n";
+import "config/locales/i18n";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement

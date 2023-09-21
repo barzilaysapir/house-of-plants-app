@@ -1,7 +1,7 @@
 import { FC } from "react";
 import PageHeader from "components/PageHeader/PageHeader";
 import { Box } from "@mui/material";
-import LOCALE from "config/i18n/i18n";
+import LOCALE from "config/locales/i18n";
 import { useTranslation } from "react-i18next";
 
 type HomeProps = {};
