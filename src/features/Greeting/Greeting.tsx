@@ -1,7 +1,6 @@
 import { Typography } from "@mui/material";
 import { green } from "@mui/material/colors";
 import { User } from "shared/types/Users";
-import i18n from "config/i18n/i18n";
 import { useTranslation } from "react-i18next";
 
 type GreetingProps = User;

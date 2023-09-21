@@ -7,7 +7,6 @@ import {
     Typography,
 } from "@mui/material";
 import useTopNav from "../useTopNav";
-import i18n from "config/i18n/i18n";
 import { green } from "@mui/material/colors";
 import { User } from "shared/types/Users";
 import { FC } from "react";

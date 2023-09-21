@@ -3,7 +3,6 @@ import PageHeader from "components/PageHeader/PageHeader";
 import { PlantsData, Plant } from "shared/types/Plants";
 import { Box } from "@mui/material";
 import MyPlantsContent from "features/MyPlants/MyPlants";
-import i18n from "config/i18n/i18n";
 import AddIcon from "@mui/icons-material/Add";
 import AddPlantDialog from "features/AddPlantDialog/AddPlantDialog";
 import { useLoaderData } from "react-router";

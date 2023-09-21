@@ -1,7 +1,6 @@
 import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import { FC } from "react";
 import CloseIcon from "@mui/icons-material/Close";
-import i18n from "config/i18n/i18n";
 import { PlantCareRoutine } from "shared/types/Plants";
 import { useTranslation } from "react-i18next";
 

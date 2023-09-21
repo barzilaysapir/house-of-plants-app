@@ -1,12 +1,12 @@
 {
     "direction": "rtl",
     "userHeader": {
-        "greeting": "Hi {0}!",
+        "greeting": "Hi {{title}}!",
         "avatarAlt": "תמונת פרופיל"
     },
     "myPlants": {
         "title": "הצמחים שלי",
-        "subtitle": "{0} צמחים באוסף שלי",
+        "subtitle": "{{total}} צמחים באוסף שלי",
         "addButton": "הוסף",
         "searchPlaceholder": "חיפוש צמח"
     },
@@ -31,12 +31,16 @@
     "completed": "הושלם",
     "limeSensitive": {
         "title": "שונא ליים",
-        "info": "This type of plant don't like to be watered with tap water, try to avoid it and use fertilize water."
+        "data": "This type of plant don't like to be watered with tap water, try to avoid it and use fertilize water."
     },
         "likeToDry": {
         "title": "Like To Dry",
-        "info": "This plant like to completley dry between watering"
+        "data": "This plant like to completley dry between watering"
     },
-    "xDaysAgo": "לפני {0} ימים",
-    "inXDays": "בעוד {0} ימים"
+    "xDaysAgo_zero": "היום",
+    "xDaysAgo_one": "אתמול",
+    "xDaysAgo_other": "לפני {{count}} ימים",
+    "inXDays_zero": "היום!",
+    "inXDays_one": "מחר",
+    "inXDays_other": "בעוד {{count}} ימים"
 }

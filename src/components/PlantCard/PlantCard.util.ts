@@ -1,7 +1,6 @@
 import { Face2, WaterDrop, Sanitizer } from "@mui/icons-material";
 import { SvgIconTypeMap } from "@mui/material";
 import { OverridableComponent } from "@mui/types";
-import i18n from "config/i18n/i18n";
 import { PlantCareRoutine } from "shared/types/Plants";
 
 export type CardCareRoutine = {

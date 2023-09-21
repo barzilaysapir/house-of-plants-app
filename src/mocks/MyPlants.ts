@@ -16,8 +16,8 @@ const MY_PLANTS_DATA: Plant[] = [
             fertilize: {
                 info: [],
                 freq: 30,
-                last: 20,
-                next: 17,
+                last: 30,
+                next: 0,
             },
             mist: {
                 info: [],

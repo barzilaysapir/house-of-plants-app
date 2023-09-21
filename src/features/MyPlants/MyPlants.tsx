@@ -3,7 +3,6 @@ import { FC } from "react";
 import { Plant } from "shared/types/Plants";
 import PlantCard from "components/PlantCard/PlantCard";
 import useMyPlants from "./useMyPlants";
-import i18n from "config/i18n/i18n";
 import { Search } from "@mui/icons-material";
 import { useTranslation } from "react-i18next";
 

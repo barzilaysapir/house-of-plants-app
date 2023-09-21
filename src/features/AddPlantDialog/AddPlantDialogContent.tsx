@@ -7,7 +7,6 @@ import {
     TextField,
     Typography,
 } from "@mui/material";
-import i18n from "config/i18n/i18n";
 import { FC, RefObject, useState } from "react";
 import VisuallyHiddenInput from "styles/VisuallyHiddenInput";
 import { StyledAddPlantDialogContent } from "./AddPlantDialog.style";

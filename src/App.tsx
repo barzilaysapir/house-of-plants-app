@@ -6,7 +6,6 @@ import { User } from "shared/types/Users";
 import theme from "config/Theme";
 import cacheRtl from "config/CacheRtl";
 import { Outlet, useLoaderData } from "react-router";
-import i18n from "config/i18n/i18n";
 import GlobalStyles from "styles/GlobalStyle";
 import { Global } from "@emotion/react";
 

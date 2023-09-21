@@ -3,7 +3,6 @@ import { FC, useRef } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import StyledAddPlantDialog from "./AddPlantDialog.style";
 import AddPlantDialogContent from "./AddPlantDialogContent";
-import i18n from "config/i18n/i18n";
 import Transition from "components/Transition/Transition";
 import { useTranslation } from "react-i18next";
 

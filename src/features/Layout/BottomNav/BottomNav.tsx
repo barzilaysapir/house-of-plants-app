@@ -4,7 +4,6 @@ import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
 import HomeIcon from "@mui/icons-material/Home";
 import { ReactComponent as LeafIcon } from "assets/icons/leaf.svg";
 import { useState } from "react";
-import i18n from "config/i18n/i18n";
 import SvgIcon from "@mui/icons-material/QrCodeScanner";
 import { useNavigate } from "react-router-dom";
 import { StyledBottomNavWrapper } from "./BottomNav.style";

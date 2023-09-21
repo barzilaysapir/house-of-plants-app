@@ -27,9 +27,9 @@ const PlantCareRoutineButton: FC<PlantCareRoutineButtonProps> = (props) => {
     if (routineData.freq === -1) return null;
 
     return (
-        <Tooltip title={t("cardCareRoutine.label")}>
+        <Tooltip title={t(cardCareRoutine.label)}>
             <IconButton
-                aria-label={t("cardCareRoutine.label")}
+                aria-label={t(cardCareRoutine.label)}
                 color={routineData.next === 0 ? "error" : cardCareRoutine.color}
                 onClick={() =>
                     handleCareRoutineClick(cardCareRoutine.id, routineData)

@@ -1,6 +1,5 @@
 import { Button } from "@mui/material";
 import { FC } from "react";
-import i18n from "config/i18n/i18n";
 import StyledPlantCareRoutineDialog from "./PlantCareRoutineDialog.style";
 import Transition from "components/Transition/Transition";
 import { PlantCareRoutine, PlantCareRoutineData } from "shared/types/Plants";
@@ -37,7 +36,11 @@ const PlantCareRoutineDialog: FC<PlantCareRoutineDialogProps> = (props) => {
 
             <RoutineData routineData={routineData} />
 
-            <Button color="primary" variant="outlined" fullWidth={false}>
+            <Button
+                color="primary"
+                variant="contained"
+                sx={{ alignSelf: "center" }}
+            >
                 {t("completed")}
             </Button>
         </StyledPlantCareRoutineDialog>

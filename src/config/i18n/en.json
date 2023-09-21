@@ -1,7 +1,7 @@
 {
     "direction": "ltr",
     "userHeader": {
-        "greeting": "Hi {0}!",
+        "greeting": "Hi {{title }}!",
         "avatarAlt": "Profile Picture"
     },
     "myPlants": {
@@ -31,12 +31,16 @@
     "completed": "completed",
     "limeSensitive": {
         "title": "Lime Hater",
-        "info": "This type of plant don't like to be watered with tap water, try to avoid it and use fertilize water."
+        "data": "This type of plant don't like to be watered with tap water, try to avoid it and use fertilize water."
     },
     "likeToDry": {
         "title": "Like To Dry",
-        "info": "This plant like to completley dry between watering"
+        "data": "This plant like to completley dry between watering"
     },
-    "xDaysAgo": "{{days}} Days Ago",
-    "inXDays": "In {{days}} Days"
+    "xDaysAgo_zero": "Today",
+    "xDaysAgo_one": "Yesterday",
+    "xDaysAgo_other": "{{count}} Days Ago",
+    "inXDays_zero": "Today!",
+    "inXDays_one": "Tomorrow",
+    "inXDays_other": "In {{count}} Days"
 }

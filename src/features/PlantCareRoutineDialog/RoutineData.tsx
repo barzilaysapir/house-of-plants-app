@@ -1,5 +1,4 @@
 import { Container, List, ListItem, ListItemText, Stack } from "@mui/material";
-import i18n from "config/i18n/i18n";
 import { FC } from "react";
 import { PlantCareRoutineData } from "shared/types/Plants";
 import RoutineDataInfoItem from "./RoutineDataInfoItem";
@@ -26,7 +25,7 @@ const RoutineData: FC<RoutineDataProps> = (props) => {
                     <ListItemText
                         primary={t("lastTime")}
                         secondary={t("xDaysAgo", {
-                            days: routineData.last,
+                            count: routineData.last,
                         })}
                     />
                 </ListItem>
@@ -35,7 +34,7 @@ const RoutineData: FC<RoutineDataProps> = (props) => {
                     <ListItemText
                         primary={t("nextTime")}
                         secondary={t("inXDays", {
-                            days: routineData.next,
+                            count: routineData.next,
                         })}
                     />
                 </ListItem>

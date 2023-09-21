@@ -1,5 +1,4 @@
 import { Chip, ClickAwayListener, Tooltip } from "@mui/material";
-import i18n from "config/i18n/i18n";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import useToggleDisplay from "shared/hooks/useToggleDisplay";
