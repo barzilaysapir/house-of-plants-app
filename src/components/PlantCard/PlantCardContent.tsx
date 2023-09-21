@@ -2,18 +2,25 @@ import { Box, Divider, Stack, Typography } from "@mui/material";
 import { FC } from "react";
 import { StyledPlantCardContent } from "./PlantCard.style";
 import { CARD_CARE_ROUTINES } from "./PlantCard.util";
-import { PlantCareRoutine, PlantCareRoutines } from "shared/types/Plants";
+import {
+    PlantCareRoutine,
+    PlantCareRoutineData,
+    PlantCareRoutines,
+} from "shared/types/Plants";
 import PlantCareRoutineButton from "./PlantCareRoutineButton/PlantCareRoutineButton";
 
 type PlantCardContentProps = {
     title: string;
     subtitle: string;
-    handleCareRoutineClick: (routine: PlantCareRoutine) => void;
+    handleCareRoutineClick: (
+        routineName: PlantCareRoutine,
+        routineData: PlantCareRoutineData
+    ) => void;
     care: PlantCareRoutines;
 };
 
 const PlantCardContent: FC<PlantCardContentProps> = (props) => {
-    const { title, subtitle, care, ...buttonsProps } = props;
+    const { title, subtitle, care, handleCareRoutineClick } = props;
 
     return (
         <StyledPlantCardContent>
@@ -39,9 +46,9 @@ const PlantCardContent: FC<PlantCardContentProps> = (props) => {
                     {CARD_CARE_ROUTINES.map((routineButton, index) => (
                         <PlantCareRoutineButton
                             key={index}
-                            {...routineButton}
-                            {...care[routineButton.id]}
-                            {...buttonsProps}
+                            cardCareRoutine={routineButton}
+                            routineData={care[routineButton.id]}
+                            handleCareRoutineClick={handleCareRoutineClick}
                         />
                     ))}
                 </Stack>

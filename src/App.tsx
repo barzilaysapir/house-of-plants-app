@@ -6,7 +6,7 @@ import { User } from "shared/types/Users";
 import theme from "config/Theme";
 import cacheRtl from "config/CacheRtl";
 import { Outlet, useLoaderData } from "react-router";
-import LOCALE from "config/locale/Locale";
+import i18n from "config/i18n/i18n";
 import GlobalStyles from "styles/GlobalStyle";
 import { Global } from "@emotion/react";
 
@@ -21,15 +21,15 @@ function App() {
 
     return (
         <div dir={direction}>
-            <CacheProvider value={cacheRtl}>
-                <ThemeProvider theme={theme}>
-                    <Global styles={GlobalStyles} />
+            {/* <CacheProvider value={cacheRtl}> */}
+            <ThemeProvider theme={theme}>
+                <Global styles={GlobalStyles} />
 
-                    <Layout userInfo={userInfo}>
-                        <Outlet />
-                    </Layout>
-                </ThemeProvider>
-            </CacheProvider>
+                <Layout userInfo={userInfo}>
+                    <Outlet />
+                </Layout>
+            </ThemeProvider>
+            {/* </CacheProvider> */}
         </div>
     );
 }

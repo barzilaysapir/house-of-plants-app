@@ -3,45 +3,36 @@ import PageHeader from "components/PageHeader/PageHeader";
 import { PlantsData, Plant } from "shared/types/Plants";
 import { Box } from "@mui/material";
 import MyPlantsContent from "features/MyPlants/MyPlants";
-import LOCALE from "config/locale/Locale";
+import i18n from "config/i18n/i18n";
 import AddIcon from "@mui/icons-material/Add";
 import AddPlantDialog from "features/AddPlantDialog/AddPlantDialog";
 import { useLoaderData } from "react-router";
+import useToggleDisplay from "shared/hooks/useToggleDisplay";
+import { useTranslation } from "react-i18next";
 
 type MyPlantsProps = {};
 
 const MyPlants: FC<MyPlantsProps> = (props) => {
-    const [open, setOpen] = useState<boolean>(false);
     const myPlants = useLoaderData() as PlantsData;
 
-    const SUBTITLE = LOCALE.formatString(
-        LOCALE.myPlants.subtitle,
-        myPlants.total
-    ) as string;
-
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
+    const { t } = useTranslation();
+    const { isOpen, handleOpen, handleClose } = useToggleDisplay();
 
     return (
         <>
             <PageHeader
-                title={LOCALE.myPlants.title}
-                subtitle={SUBTITLE}
+                title={t("myPlants.title")}
+                subtitle={t("myPlants.subtitle", { total: myPlants.total })}
                 callToAction={{
                     endIcon: <AddIcon sx={{ marginInlineStart: 1 }} />,
-                    onClick: handleClickOpen,
-                    label: LOCALE.myPlants.addButton,
+                    onClick: handleOpen,
+                    label: t("myPlants.addButton"),
                 }}
             />
 
             <Box component="main">
                 <MyPlantsContent plants={myPlants.data as Plant[]} />
-                <AddPlantDialog open={open} handleClose={handleClose} />
+                <AddPlantDialog open={isOpen} handleClose={handleClose} />
             </Box>
         </>
     );

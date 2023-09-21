@@ -1,7 +1,7 @@
 import { Face2, WaterDrop, Sanitizer } from "@mui/icons-material";
 import { SvgIconTypeMap } from "@mui/material";
 import { OverridableComponent } from "@mui/types";
-import LOCALE from "config/locale/Locale";
+import i18n from "config/i18n/i18n";
 import { PlantCareRoutine } from "shared/types/Plants";
 
 export type CardCareRoutine = {
@@ -23,19 +23,19 @@ export type CardCareRoutine = {
 export const CARD_CARE_ROUTINES: CardCareRoutine[] = [
     {
         id: PlantCareRoutine.WATER,
-        label: LOCALE.water,
+        label: "water",
         color: "info",
         Icon: WaterDrop,
     },
     {
         id: PlantCareRoutine.FERTILIZE,
-        label: LOCALE.fertilize,
+        label: "fertilize",
         color: "success",
         Icon: Sanitizer,
     },
     {
         id: PlantCareRoutine.MIST,
-        label: LOCALE.mist,
+        label: "mist",
         color: "secondary",
         Icon: Face2,
     },

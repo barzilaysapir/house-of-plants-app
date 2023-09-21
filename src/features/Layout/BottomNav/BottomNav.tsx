@@ -4,24 +4,25 @@ import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
 import HomeIcon from "@mui/icons-material/Home";
 import { ReactComponent as LeafIcon } from "assets/icons/leaf.svg";
 import { useState } from "react";
-import LOCALE from "config/locale/Locale";
+import i18n from "config/i18n/i18n";
 import SvgIcon from "@mui/icons-material/QrCodeScanner";
 import { useNavigate } from "react-router-dom";
 import { StyledBottomNavWrapper } from "./BottomNav.style";
+import { Trans } from "react-i18next";
 
 const BOTTOM_NAV_LINKS = [
     {
-        label: LOCALE.home.title,
+        label: <Trans>home.title</Trans>,
         icon: <HomeIcon />,
         link: "/",
     },
     {
-        label: LOCALE.myPlants.title,
+        label: <Trans>myPlants.title</Trans>,
         icon: <SvgIcon component={LeafIcon} viewBox="2000 500 1 5500" />,
         link: "/myPlants",
     },
     {
-        label: LOCALE.identify.title,
+        label: <Trans>identify.title</Trans>,
         icon: <QrCodeScannerIcon />,
         link: "/identify",
     },

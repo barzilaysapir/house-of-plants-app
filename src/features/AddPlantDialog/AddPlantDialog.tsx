@@ -3,8 +3,9 @@ import { FC, useRef } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import StyledAddPlantDialog from "./AddPlantDialog.style";
 import AddPlantDialogContent from "./AddPlantDialogContent";
-import LOCALE from "config/locale/Locale";
+import i18n from "config/i18n/i18n";
 import Transition from "components/Transition/Transition";
+import { useTranslation } from "react-i18next";
 
 type AddPlantDialogProps = {
     open: boolean;
@@ -14,6 +15,8 @@ type AddPlantDialogProps = {
 const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
     const { open, handleClose } = props;
     const searchInputRef = useRef<HTMLInputElement>(null);
+
+    const { t } = useTranslation();
 
     return (
         <StyledAddPlantDialog
@@ -29,7 +32,7 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
                     sx={{ justifyContent: "space-between" }}
                 >
                     <Typography variant="h6" component="h3" sx={{ ml: 2 }}>
-                        {LOCALE.addPlants.title}
+                        {t("addPlants.title")}
                     </Typography>
 
                     <IconButton

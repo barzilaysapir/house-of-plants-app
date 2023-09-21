@@ -17,13 +17,17 @@ export enum PlantCareRoutine {
     MIST = "mist",
 }
 
-export type PlantCareRoutineInfo = {
+export type PlantCareRoutineInfo = "limeSensitive" | "likeToDry";
+
+export type PlantCareRoutineData = {
     freq: number;
+    last: number;
     next: number;
+    info: PlantCareRoutineInfo[];
 };
 
 export type PlantCareRoutines = {
-    [key in PlantCareRoutine]: PlantCareRoutineInfo;
+    [key in PlantCareRoutine]: PlantCareRoutineData;
 };
 
 export type Plant = {

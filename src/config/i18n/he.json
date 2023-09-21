@@ -25,5 +25,18 @@
     "water": "השקייה",
     "fertilize": "דישון",
     "mist": "ריסוס",
-    "pestControl": "ניתור מזיקים"
+    "pestControl": "ניתור מזיקים",
+    "lastTime": "אחרונה",
+    "nextTime": "הבאה",
+    "completed": "הושלם",
+    "limeSensitive": {
+        "title": "שונא ליים",
+        "info": "This type of plant don't like to be watered with tap water, try to avoid it and use fertilize water."
+    },
+        "likeToDry": {
+        "title": "Like To Dry",
+        "info": "This plant like to completley dry between watering"
+    },
+    "xDaysAgo": "לפני {0} ימים",
+    "inXDays": "בעוד {0} ימים"
 }

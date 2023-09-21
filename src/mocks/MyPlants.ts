@@ -8,15 +8,21 @@ const MY_PLANTS_DATA: Plant[] = [
         scientific_name: ["Sansevieria Trifasciata Laurentii"],
         care: {
             water: {
+                info: ["limeSensitive", "likeToDry"],
                 freq: 5,
+                last: 8,
                 next: 1,
             },
             fertilize: {
+                info: [],
                 freq: 30,
+                last: 20,
                 next: 17,
             },
             mist: {
+                info: [],
                 freq: -1,
+                last: 8,
                 next: -1,
             },
         },
@@ -32,15 +38,21 @@ const MY_PLANTS_DATA: Plant[] = [
         scientific_name: ["Tradescantia-nanouk"],
         care: {
             water: {
+                info: [],
                 freq: 10,
+                last: 8,
                 next: 7,
             },
             fertilize: {
+                info: [],
                 freq: 10,
+                last: 20,
                 next: 7,
             },
             mist: {
+                info: [],
                 freq: 10,
+                last: 8,
                 next: 7,
             },
         },
@@ -56,15 +68,21 @@ const MY_PLANTS_DATA: Plant[] = [
         scientific_name: ["Monstera Minima"],
         care: {
             water: {
+                info: ["limeSensitive"],
                 freq: 5,
+                last: 8,
                 next: 1,
             },
             fertilize: {
+                info: [],
                 freq: 5,
+                last: 20,
                 next: 1,
             },
             mist: {
+                info: [],
                 freq: 5,
+                last: 8,
                 next: 1,
             },
         },
@@ -80,15 +98,21 @@ const MY_PLANTS_DATA: Plant[] = [
         scientific_name: ["Sansevieria Trifasciata Laurentii"],
         care: {
             water: {
+                info: ["limeSensitive"],
                 freq: 5,
+                last: 8,
                 next: 1,
             },
             fertilize: {
+                info: [],
                 freq: 30,
+                last: 20,
                 next: 17,
             },
             mist: {
+                info: [],
                 freq: -1,
+                last: 8,
                 next: -1,
             },
         },
@@ -104,15 +128,20 @@ const MY_PLANTS_DATA: Plant[] = [
     //     scientific_name: ["Tradescantia-nanouk"],
     //     care: {
     //         water: {
+    // info: [],
     //             freq: 10,
     //             next: 7,
     //         },
     //         fertilize: {
+    // info: [],
     //             freq: 10,
+    // last: 20,
     //             next: 7,
     //         },
     //         mist: {
+    // info: [],
     //             freq: 10,
+    // last: 8,
     //             next: 7,
     //         },
     //     },
@@ -128,15 +157,20 @@ const MY_PLANTS_DATA: Plant[] = [
     //     scientific_name: ["Sansevieria Trifasciata Laurentii"],
     //     care: {
     //         water: {
+    // info: ["limeSensitive"],
     //             freq: 5,
     //             next: 0,
     //         },
     //         fertilize: {
+    // info: [],
     //             freq: 30,
+    // last: 20,
     //             next: 17,
     //         },
     //         mist: {
+    // info: [],
     //             freq: -1,
+    // last: 8,
     //             next: -1,
     //         },
     //     },
@@ -152,15 +186,20 @@ const MY_PLANTS_DATA: Plant[] = [
     //     scientific_name: ["Tradescantia-nanouk"],
     //     care: {
     //         water: {
+    // info: ["limeSensitive"],
     //             freq: 10,
     //             next: 7,
     //         },
     //         fertilize: {
+    // info: [],
     //             freq: 10,
+    // last: 20,
     //             next: 7,
     //         },
     //         mist: {
+    // info: [],
     //             freq: 10,
+    // last: 8,
     //             next: 7,
     //         },
     //     },
@@ -176,15 +215,20 @@ const MY_PLANTS_DATA: Plant[] = [
     //     scientific_name: ["Sansevieria Trifasciata Laurentii"],
     //     care: {
     //         water: {
+    // info: ["limeSensitive"],
     //             freq: 5,
     //             next: 0,
     //         },
     //         fertilize: {
+    // info: [],
     //             freq: 30,
+    // last: 20,
     //             next: 17,
     //         },
     //         mist: {
+    // info: [],
     //             freq: -1,
+    // last: 8,
     //             next: -1,
     //         },
     //     },
@@ -200,15 +244,20 @@ const MY_PLANTS_DATA: Plant[] = [
     //     scientific_name: ["Tradescantia-nanouk"],
     //     care: {
     //         water: {
+    // info: ["limeSensitive"],
     //             freq: 10,
     //             next: 7,
     //         },
     //         fertilize: {
+    // info: [],
     //             freq: 10,
+    // last: 20,
     //             next: 7,
     //         },
     //         mist: {
+    // info: [],
     //             freq: 10,
+    // last: 8,
     //             next: 7,
     //         },
     //     },
@@ -224,15 +273,21 @@ const MY_PLANTS_DATA: Plant[] = [
     //     scientific_name: ["Sansevieria Trifasciata Laurentii"],
     //     care: {
     //         water: {
+    // info: ["limeSensitive"],
     //             freq: 5,
-    //             next: 1,
+    // last: 8,        
+    // next: 1,
     //         },
     //         fertilize: {
+    // info: [],
     //             freq: 30,
+    // last: 20,
     //             next: 17,
     //         },
     //         mist: {
+    // info: [],
     //             freq: -1,
+    // last: 8,
     //             next: -1,
     //         },
     //     },
@@ -248,15 +303,20 @@ const MY_PLANTS_DATA: Plant[] = [
     //     scientific_name: ["Tradescantia-nanouk"],
     //     care: {
     //         water: {
+    // info: ["limeSensitive"],
     //             freq: 10,
     //             next: 7,
     //         },
     //         fertilize: {
+    // info: [],
     //             freq: 10,
+    // last: 20,
     //             next: 7,
     //         },
     //         mist: {
+    // info: [],
     //             freq: 10,
+    // last: 8,
     //             next: 7,
     //         },
     //     },

@@ -16,20 +16,21 @@ const PlantCard: FC<PlantCardProps> = (props) => {
         primary_name,
         scientific_name,
         default_image,
+        care,
         ...cardContentProps
     } = props;
 
     const [open, setOpen] = useState<boolean>(false);
-    const [careRoutine, setCareRoutine] = useState<PlantCareRoutine | null>();
+    const [routineName, setRoutineName] = useState<PlantCareRoutine | null>();
 
-    const handleClickOpen = (careRoutine: PlantCareRoutine) => {
+    const handleClickOpen = (routineName: PlantCareRoutine) => {
         setOpen(true);
-        setCareRoutine(careRoutine);
+        setRoutineName(routineName);
     };
 
     const handleClose = () => {
         setOpen(false);
-        setCareRoutine(null);
+        setRoutineName(null);
     };
 
     return (
@@ -45,11 +46,14 @@ const PlantCard: FC<PlantCardProps> = (props) => {
                 title={primary_name}
                 subtitle={scientific_name[0]}
                 handleCareRoutineClick={handleClickOpen}
+                care={care}
                 {...cardContentProps}
             />
             <PlantCareRoutineDialog
                 open={open}
-                careRoutine={careRoutine}
+                plantName={primary_name}
+                routineName={routineName}
+                routineData={care[routineName as PlantCareRoutine]}
                 handleClose={handleClose}
             />
         </StyledPlantCard>

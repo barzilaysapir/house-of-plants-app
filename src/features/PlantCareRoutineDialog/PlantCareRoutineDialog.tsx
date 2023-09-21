@@ -1,20 +1,26 @@
-import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
-import { FC, useRef } from "react";
-import CloseIcon from "@mui/icons-material/Close";
-import LOCALE from "config/locale/Locale";
+import { Button } from "@mui/material";
+import { FC } from "react";
+import i18n from "config/i18n/i18n";
 import StyledPlantCareRoutineDialog from "./PlantCareRoutineDialog.style";
 import Transition from "components/Transition/Transition";
-import { PlantCareRoutine } from "shared/types/Plants";
+import { PlantCareRoutine, PlantCareRoutineData } from "shared/types/Plants";
+import RoutineData from "./RoutineData";
+import RoutineHeader from "./RoutineHeader";
+import { useTranslation } from "react-i18next";
 
 type PlantCareRoutineDialogProps = {
     open: boolean;
-    careRoutine?: PlantCareRoutine | null;
+    plantName: string;
+    routineName?: PlantCareRoutine | null;
+    routineData: PlantCareRoutineData;
     handleClose: () => void;
 };
 
 const PlantCareRoutineDialog: FC<PlantCareRoutineDialogProps> = (props) => {
-    const { open, careRoutine, handleClose } = props;
-    const searchInputRef = useRef<HTMLInputElement>(null);
+    const { open, plantName, routineName, routineData, handleClose } = props;
+
+    const { t } = useTranslation();
+    if (!routineName) return null;
 
     return (
         <StyledPlantCareRoutineDialog
@@ -23,26 +29,17 @@ const PlantCareRoutineDialog: FC<PlantCareRoutineDialogProps> = (props) => {
             onClose={handleClose}
             TransitionComponent={Transition}
         >
-            <AppBar sx={{ position: "relative" }}>
-                <Toolbar
-                    variant="dense"
-                    sx={{ justifyContent: "space-between" }}
-                >
-                    <Typography variant="h6" component="h3" sx={{ ml: 2 }}>
-                        {careRoutine && LOCALE[careRoutine]}
-                    </Typography>
+            <RoutineHeader
+                careRoutine={routineName}
+                plantName={plantName}
+                handleClose={handleClose}
+            />
 
-                    <IconButton
-                        edge="start"
-                        onClick={handleClose}
-                        aria-label="close"
-                    >
-                        <CloseIcon />
-                    </IconButton>
-                </Toolbar>
-            </AppBar>
+            <RoutineData routineData={routineData} />
 
-            {/* <AddPlantDialogContent searchInputRef={searchInputRef} /> */}
+            <Button color="primary" variant="outlined" fullWidth={false}>
+                {t("completed")}
+            </Button>
         </StyledPlantCareRoutineDialog>
     );
 };

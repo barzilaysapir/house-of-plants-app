@@ -1,29 +1,45 @@
 import { IconButton, Tooltip } from "@mui/material";
 import { FC } from "react";
 import { CardCareRoutine } from "../PlantCard.util";
-import { PlantCareRoutineInfo, PlantCareRoutine } from "shared/types/Plants";
+import { PlantCareRoutineData, PlantCareRoutine } from "shared/types/Plants";
 import PlantCareRoutineProgress from "./PlantCareRoutineProgress";
+import { useTranslation } from "react-i18next";
 
-type PlantCareRoutineButtonProps = CardCareRoutine &
-    PlantCareRoutineInfo & {
-        handleCareRoutineClick: (routine: PlantCareRoutine) => void;
-    };
+type PlantCareRoutineButtonProps = {
+    cardCareRoutine: CardCareRoutine;
+    routineData: PlantCareRoutineData;
+    handleCareRoutineClick: (
+        routineId: PlantCareRoutine,
+        routineData: PlantCareRoutineData
+    ) => void;
+};
 
 const PlantCareRoutineButton: FC<PlantCareRoutineButtonProps> = (props) => {
-    const { id, label, color, Icon, freq, next, handleCareRoutineClick } =
-        props;
+    const {
+        cardCareRoutine,
+        cardCareRoutine: { Icon },
+        routineData,
+        handleCareRoutineClick,
+    } = props;
 
-    if (freq === -1) return null;
+    const { t } = useTranslation();
+
+    if (routineData.freq === -1) return null;
 
     return (
-        <Tooltip title={label} enterTouchDelay={0}>
+        <Tooltip title={t("cardCareRoutine.label")}>
             <IconButton
-                aria-label={label}
-                color={next === 0 ? "error" : color}
-                onClick={() => handleCareRoutineClick(id)}
+                aria-label={t("cardCareRoutine.label")}
+                color={routineData.next === 0 ? "error" : cardCareRoutine.color}
+                onClick={() =>
+                    handleCareRoutineClick(cardCareRoutine.id, routineData)
+                }
             >
                 <Icon />
-                <PlantCareRoutineProgress freq={freq} next={next} />
+                <PlantCareRoutineProgress
+                    freq={routineData.freq}
+                    next={routineData.next}
+                />
             </IconButton>
         </Tooltip>
     );

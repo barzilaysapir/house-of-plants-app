@@ -7,10 +7,11 @@ import {
     TextField,
     Typography,
 } from "@mui/material";
-import LOCALE from "config/locale/Locale";
+import i18n from "config/i18n/i18n";
 import { FC, RefObject, useState } from "react";
 import VisuallyHiddenInput from "styles/VisuallyHiddenInput";
 import { StyledAddPlantDialogContent } from "./AddPlantDialog.style";
+import { useTranslation } from "react-i18next";
 
 type AddPlantDialogContentProps = {
     searchInputRef: RefObject<HTMLInputElement>;
@@ -18,6 +19,8 @@ type AddPlantDialogContentProps = {
 
 const AddPlantDialogContent: FC<AddPlantDialogContentProps> = (props) => {
     const { searchInputRef } = props;
+
+    const { t } = useTranslation();
 
     const handleSearchInputBlur = (
         event: React.FocusEvent<HTMLInputElement>
@@ -43,7 +46,7 @@ const AddPlantDialogContent: FC<AddPlantDialogContentProps> = (props) => {
     return (
         <StyledAddPlantDialogContent>
             <TextField
-                label={LOCALE.addPlants.searchByName}
+                label={t("addPlants.searchByName")}
                 // variant="filled"
                 size="small"
                 margin="normal"
@@ -68,7 +71,7 @@ const AddPlantDialogContent: FC<AddPlantDialogContentProps> = (props) => {
             </FormControl> */}
 
             <Divider>
-                <Chip label={LOCALE.or} />
+                <Chip label={t("or")} />
             </Divider>
 
             <label className="pictureButton">
@@ -86,7 +89,7 @@ const AddPlantDialogContent: FC<AddPlantDialogContentProps> = (props) => {
                     <PhotoCameraRounded fontSize="large" color="primary" />
                 </IconButton>
                 <Typography variant="caption" color="primary" display="block">
-                    {LOCALE.addPlants.scanImage}
+                    {t("addPlants.scanImage")}
                 </Typography>
             </label>
 
