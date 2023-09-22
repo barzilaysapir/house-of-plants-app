@@ -3,7 +3,7 @@ import { FC } from "react";
 import { Plant } from "shared/types/Plants";
 import PlantCard from "features/PlantCard/PlantCard";
 import useMyPlants from "./useMyPlants";
-import SearchMyPlant from "./SearchMyPlant";
+import MyPlantsSearch from "./MyPlantsSearch";
 
 type MyPlantsProps = {
     plants: Plant[];
@@ -15,7 +15,7 @@ const MyPlants: FC<MyPlantsProps> = (props) => {
 
     return (
         <Box>
-            <SearchMyPlant onSearchPlant={onSearchPlant} />
+            <MyPlantsSearch onSearchPlant={onSearchPlant} />
 
             <Grid
                 container

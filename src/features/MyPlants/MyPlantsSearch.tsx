@@ -3,11 +3,11 @@ import { ChangeEvent, FC } from "react";
 import { Search } from "@mui/icons-material";
 import i18n from "i18next";
 
-type SearchMyPlantProps = {
+type MyPlantsSearchProps = {
     onSearchPlant: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
-const SearchMyPlant: FC<SearchMyPlantProps> = (props) => {
+const MyPlantsSearch: FC<MyPlantsSearchProps> = (props) => {
     const { onSearchPlant } = props;
 
     return (
@@ -27,4 +27,4 @@ const SearchMyPlant: FC<SearchMyPlantProps> = (props) => {
     );
 };
 
-export default SearchMyPlant;
+export default MyPlantsSearch;
