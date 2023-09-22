@@ -1,8 +1,8 @@
-import i18n from "i18next";
 import HomeIcon from "@mui/icons-material/Home";
 import SvgIcon from "@mui/material/SvgIcon";
 import { ReactComponent as LeafIcon } from "assets/icons/leaf.svg";
 import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
+import i18n from "config/locales/i18n";
 
 export const BOTTOM_NAV_LINKS = [
     {
