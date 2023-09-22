@@ -28,14 +28,17 @@
     "pestControl": "Pest Control",
     "lastTime": "Last",
     "nextTime": "Next",
-    "completed": "done",
+    "complete_zero": "complete",
+    "complete_one": "complete early",
+    "complete_other": "complete early",
+    "snooze": "+2 days",
     "limeSensitive": {
         "title": "Lime Hater",
         "data": "This type of plant don't like to be watered with tap water, try to avoid it and use fertilize water."
     },
     "likeToDry": {
-        "title": "Like To Dry",
-        "data": "This plant like to completley dry between watering"
+        "title": "Likes to Dry-Out",
+        "data": "This plant likes to dry out completley between watering, if the soil is still most snooze this reminder"
     },
     "xDaysAgo_zero": "Today",
     "xDaysAgo_one": "Yesterday",

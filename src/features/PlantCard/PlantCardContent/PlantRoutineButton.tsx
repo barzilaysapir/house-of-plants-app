@@ -6,6 +6,7 @@ import PlantRoutineProgress from "./PlantRoutineProgress";
 import i18n from "i18next";
 import PlantRoutineDialog from "features/PlantRoutineDialog/PlantRoutineDialog";
 import useToggleDisplay from "shared/hooks/useToggleDisplay";
+import usePlantCardContent from "./usePlantCardContent";
 
 type PlantRoutineButtonProps = {
     name: string;
@@ -21,13 +22,9 @@ const PlantRoutineButton: FC<PlantRoutineButtonProps> = (props) => {
     } = props;
 
     const { isOpen, handleOpen, handleClose } = useToggleDisplay();
+    const { handleClick, loadingBtn } = usePlantCardContent({ handleClose });
 
-    const handleRoutineComplete = () => {
-        // fetch routine complete
-        handleClose();
-    };
-
-    if (care.freq === -1) return null;
+    if (care.freq === 0) return null;
 
     return (
         <Tooltip title={i18n.t(label)}>
@@ -42,12 +39,13 @@ const PlantRoutineButton: FC<PlantRoutineButtonProps> = (props) => {
                 </IconButton>
 
                 <PlantRoutineDialog
-                    open={isOpen}
+                    isOpen={isOpen}
                     plantName={name}
                     routineName={id}
                     routineData={care}
                     handleClose={handleClose}
-                    handleComplete={handleRoutineComplete}
+                    handleClick={handleClick}
+                    loadingBtnName={loadingBtn}
                 />
             </>
         </Tooltip>

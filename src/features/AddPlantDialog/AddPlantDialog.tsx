@@ -1,10 +1,11 @@
-import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
+import { Chip, Dialog, Divider } from "@mui/material";
 import { FC } from "react";
-import CloseIcon from "@mui/icons-material/Close";
-import StyledAddPlantDialog from "./AddPlantDialog.style";
-import AddPlantDialogContent from "./AddPlantDialogContent";
 import SlideUpTransition from "components/Transition/SlideUpTransition";
 import i18n from "i18next";
+import DialogHeader from "components/DialogHeader/DialogHeader";
+import { StyledAddPlantDialogContent } from "./AddPlantDialog.style";
+import IdentifyPlant from "./IdentifyPlant";
+import SearchPlant from "./SearchPlant";
 
 type AddPlantDialogProps = {
     open: boolean;
@@ -15,30 +16,25 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
     const { open, handleClose } = props;
 
     return (
-        <StyledAddPlantDialog
+        <Dialog
             fullScreen
             open={open}
             onClose={handleClose}
             TransitionComponent={SlideUpTransition}
         >
-            <AppBar>
-                <Toolbar variant="dense">
-                    <Typography variant="h6" component="h3" sx={{ ml: 2 }}>
-                        {i18n.t("addPlants.title")}
-                    </Typography>
+            <DialogHeader
+                title={i18n.t("addPlants.title")}
+                handleClose={handleClose}
+            />
 
-                    <IconButton
-                        edge="start"
-                        onClick={handleClose}
-                        aria-label="close"
-                    >
-                        <CloseIcon />
-                    </IconButton>
-                </Toolbar>
-            </AppBar>
-
-            <AddPlantDialogContent />
-        </StyledAddPlantDialog>
+            <StyledAddPlantDialogContent>
+                <SearchPlant />
+                <Divider>
+                    <Chip label={i18n.t("or")} />
+                </Divider>
+                <IdentifyPlant />
+            </StyledAddPlantDialogContent>
+        </Dialog>
     );
 };
 

@@ -1,19 +1,10 @@
-import { Dialog } from "@mui/material";
 import { Container, styled } from "@mui/material";
-
-type StyledAddPlantDialogProps = {
-    open: boolean;
-}
-
-const StyledAddPlantDialog = styled(Dialog) <StyledAddPlantDialogProps>`
-    top: calc(100% - 330px);
-`;
 
 export const StyledAddPlantDialogContent = styled(Container)`
     display: flex;
     row-gap: 20px;
     flex-direction: column;
-    margin-block: 20px;
+    margin-top: 10px;
 
     .pictureButton {
         text-align: center;
@@ -24,5 +15,3 @@ export const StyledAddPlantDialogContent = styled(Container)`
         }
     }
 `;
-
-export default StyledAddPlantDialog;

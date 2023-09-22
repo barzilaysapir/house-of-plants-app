@@ -1,34 +1,31 @@
-import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
+import { Divider, Stack, Typography } from "@mui/material";
 import { FC } from "react";
-import CloseIcon from "@mui/icons-material/Close";
 import { PlantCareRoutine } from "shared/types/Plants";
 import i18n from "i18next";
+import DialogHeader from "components/DialogHeader/DialogHeader";
 
 type RoutineHeaderProps = {
     plantName: string;
-    careRoutine: PlantCareRoutine;
+    routineName: PlantCareRoutine;
     handleClose: () => void;
 };
 
 const RoutineHeader: FC<RoutineHeaderProps> = (props) => {
-    const { plantName, careRoutine, handleClose } = props;
+    const { plantName, routineName, handleClose } = props;
 
     return (
-        <AppBar>
-            <Toolbar variant="dense">
-                <Typography variant="h6" component="h3" sx={{ ml: 2 }}>
-                    {i18n.t([careRoutine])} ({plantName})
-                </Typography>
-
-                <IconButton
-                    edge="start"
-                    onClick={handleClose}
-                    aria-label={i18n.t("close")}
-                >
-                    <CloseIcon />
-                </IconButton>
-            </Toolbar>
-        </AppBar>
+        <DialogHeader
+            title={
+                <Stack direction="row" spacing={1} alignItems="baseline">
+                    <b>{i18n.t(routineName)} </b>
+                    <Divider variant="middle" orientation="vertical" flexItem />
+                    <Typography variant="body2" display="inline-block">
+                        {plantName}
+                    </Typography>
+                </Stack>
+            }
+            handleClose={handleClose}
+        />
     );
 };
 

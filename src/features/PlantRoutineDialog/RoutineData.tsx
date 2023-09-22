@@ -15,15 +15,6 @@ const RoutineData: FC<RoutineDataProps> = (props) => {
         <List>
             <ListItem>
                 <ListItemText
-                    primary={i18n.t("lastTime")}
-                    secondary={i18n.t("xDaysAgo", {
-                        count: routineData.last,
-                    })}
-                />
-            </ListItem>
-
-            <ListItem>
-                <ListItemText
                     primary={i18n.t("nextTime")}
                     secondary={i18n.t("inXDays", {
                         count: routineData.next,
@@ -31,7 +22,21 @@ const RoutineData: FC<RoutineDataProps> = (props) => {
                 />
             </ListItem>
 
-            <ListItem sx={{ paddingBlock: 2 }}>
+            <ListItem>
+                <ListItemText
+                    primary={i18n.t("lastTime")}
+                    secondary={i18n.t("xDaysAgo", {
+                        count: routineData.last,
+                    })}
+                />
+            </ListItem>
+
+            <ListItem
+                sx={{
+                    paddingBlock: 2,
+                    display: routineData.info.length === 0 ? "none" : "",
+                }}
+            >
                 <Stack direction="row" spacing={2}>
                     {routineData.info.map((info, index) => (
                         <RoutineDataChip key={index} info={info} />

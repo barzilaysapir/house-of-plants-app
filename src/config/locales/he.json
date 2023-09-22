@@ -28,7 +28,10 @@
     "pestControl": "ניתור מזיקים",
     "lastTime": "אחרונה",
     "nextTime": "הבאה",
-    "completed": "הושלם",
+    "complete_zero": "הושלם",
+    "complete_one": "הושלם לפני המועד",
+    "complete_other": "הושלם לפני המועד",
+    "snooze": "+2 ימים",
     "limeSensitive": {
         "title": "שונא ליים",
         "data": "This type of plant don't like to be watered with tap water, try to avoid it and use fertilize water."

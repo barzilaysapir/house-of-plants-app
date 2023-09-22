@@ -11,18 +11,31 @@ const ComponentsTheme: Components = {
             position: "relative",
         },
     },
+    MuiDialog: {
+        styleOverrides: {
+            root: () => ({
+                "& .MuiDialog-container": {
+                    alignItems: "flex-end",
+                    "& .MuiDialog-paper": {
+                        height: "auto",
+                        paddingBottom: "20px",
+                    },
+                },
+            }),
+        },
+    },
     MuiToolbar: {
         styleOverrides: {
             root: () => ({
-                justifyContent: "space-between"
-            })
-        }
+                justifyContent: "space-between",
+            }),
+        },
     },
     MuiButton: {
         styleOverrides: {
             contained: {
-                color: "#fff"
-            }
+                color: "#fff",
+            },
         },
     },
 };
