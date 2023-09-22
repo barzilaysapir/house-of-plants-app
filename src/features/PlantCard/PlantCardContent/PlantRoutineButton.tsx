@@ -31,7 +31,7 @@ const PlantRoutineButton: FC<PlantRoutineButtonProps> = (props) => {
             <>
                 <IconButton
                     aria-label={i18n.t(label)}
-                    color={care.next === 0 ? "error" : color}
+                    color={care.next === 0 ? "secondary" : color}
                     onClick={handleOpen}
                 >
                     <RoutineIcon />
