@@ -40,7 +40,7 @@
     "xDaysAgo_zero": "היום",
     "xDaysAgo_one": "אתמול",
     "xDaysAgo_other": "לפני {{count}} ימים",
-    "inXDays_zero": "היום!",
+    "inXDays_zero": "היום",
     "inXDays_one": "מחר",
     "inXDays_other": "בעוד {{count}} ימים"
 }

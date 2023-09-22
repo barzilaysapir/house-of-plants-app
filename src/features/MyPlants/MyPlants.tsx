@@ -4,7 +4,7 @@ import { Plant } from "shared/types/Plants";
 import PlantCard from "components/PlantCard/PlantCard";
 import useMyPlants from "./useMyPlants";
 import { Search } from "@mui/icons-material";
-import { useTranslation } from "react-i18next";
+import i18n from "i18next";
 
 type MyPlantsProps = {
     plants: Plant[];
@@ -12,15 +12,13 @@ type MyPlantsProps = {
 
 const MyPlants: FC<MyPlantsProps> = (props) => {
     const { plants } = props;
-
-    const { t } = useTranslation();
     const { onSearchPlant, filteredPlants } = useMyPlants({ plants });
 
     return (
         <Box>
             <TextField
                 onChange={onSearchPlant}
-                placeholder={t("myPlants.searchPlaceholder")}
+                placeholder={i18n.t("myPlants.searchPlaceholder")}
                 fullWidth
                 variant="standard"
                 InputProps={{

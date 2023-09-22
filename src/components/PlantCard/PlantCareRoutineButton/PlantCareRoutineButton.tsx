@@ -3,7 +3,7 @@ import { FC } from "react";
 import { CardCareRoutine } from "../PlantCard.util";
 import { PlantCareRoutineData, PlantCareRoutine } from "shared/types/Plants";
 import PlantCareRoutineProgress from "./PlantCareRoutineProgress";
-import { useTranslation } from "react-i18next";
+import i18n from "i18next";
 
 type PlantCareRoutineButtonProps = {
     cardCareRoutine: CardCareRoutine;
@@ -22,14 +22,12 @@ const PlantCareRoutineButton: FC<PlantCareRoutineButtonProps> = (props) => {
         handleCareRoutineClick,
     } = props;
 
-    const { t } = useTranslation();
-
     if (routineData.freq === -1) return null;
 
     return (
-        <Tooltip title={t(cardCareRoutine.label)}>
+        <Tooltip title={i18n.t(cardCareRoutine.label)}>
             <IconButton
-                aria-label={t(cardCareRoutine.label)}
+                aria-label={i18n.t(cardCareRoutine.label)}
                 color={routineData.next === 0 ? "error" : cardCareRoutine.color}
                 onClick={() =>
                     handleCareRoutineClick(cardCareRoutine.id, routineData)

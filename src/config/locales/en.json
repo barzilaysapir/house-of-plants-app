@@ -28,7 +28,7 @@
     "pestControl": "Pest Control",
     "lastTime": "Last",
     "nextTime": "Next",
-    "completed": "completed",
+    "completed": "done",
     "limeSensitive": {
         "title": "Lime Hater",
         "data": "This type of plant don't like to be watered with tap water, try to avoid it and use fertilize water."
@@ -40,7 +40,7 @@
     "xDaysAgo_zero": "Today",
     "xDaysAgo_one": "Yesterday",
     "xDaysAgo_other": "{{count}} Days Ago",
-    "inXDays_zero": "Today!",
+    "inXDays_zero": "Today",
     "inXDays_one": "Tomorrow",
     "inXDays_other": "In {{count}} Days"
 }

@@ -11,7 +11,7 @@ import { green } from "@mui/material/colors";
 import { User } from "shared/types/Users";
 import { FC } from "react";
 import { StyledUserSettingsBadge } from "../TopNav.style";
-import { useTranslation } from "react-i18next";
+import i18n from "i18next";
 
 const SETTINGS = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -19,8 +19,6 @@ type UserSettingsProps = User;
 
 const UserSettings: FC<UserSettingsProps> = (props) => {
     const { initials, image } = props;
-
-    const { t } = useTranslation();
 
     const { anchorElUser, handleOpenUserMenu, handleCloseUserMenu } =
         useTopNav();
@@ -40,7 +38,7 @@ const UserSettings: FC<UserSettingsProps> = (props) => {
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                     <Avatar
                         sx={{ bgcolor: green[500] }}
-                        alt={t("userHeader.avatarAlt")}
+                        alt={i18n.t("userHeader.avatarAlt")}
                         src={image}
                     >
                         {initials}

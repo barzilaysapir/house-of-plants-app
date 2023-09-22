@@ -1,11 +1,11 @@
-import { Button } from "@mui/material";
+import { Button, Container } from "@mui/material";
 import { FC } from "react";
 import StyledPlantCareRoutineDialog from "./PlantCareRoutineDialog.style";
 import Transition from "components/Transition/Transition";
 import { PlantCareRoutine, PlantCareRoutineData } from "shared/types/Plants";
 import RoutineData from "./RoutineData";
 import RoutineHeader from "./RoutineHeader";
-import { useTranslation } from "react-i18next";
+import i18n from "i18next";
 
 type PlantCareRoutineDialogProps = {
     open: boolean;
@@ -18,7 +18,6 @@ type PlantCareRoutineDialogProps = {
 const PlantCareRoutineDialog: FC<PlantCareRoutineDialogProps> = (props) => {
     const { open, plantName, routineName, routineData, handleClose } = props;
 
-    const { t } = useTranslation();
     if (!routineName) return null;
 
     return (
@@ -34,15 +33,13 @@ const PlantCareRoutineDialog: FC<PlantCareRoutineDialogProps> = (props) => {
                 handleClose={handleClose}
             />
 
-            <RoutineData routineData={routineData} />
+            <Container>
+                <RoutineData routineData={routineData} />
 
-            <Button
-                color="primary"
-                variant="contained"
-                sx={{ alignSelf: "center" }}
-            >
-                {t("completed")}
-            </Button>
+                <Button variant="contained" fullWidth>
+                    {i18n.t("completed")}
+                </Button>
+            </Container>
         </StyledPlantCareRoutineDialog>
     );
 };

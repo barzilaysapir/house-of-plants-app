@@ -1,6 +1,6 @@
 import { createTheme, responsiveFontSizes } from "@mui/material";
 import { green } from "@mui/material/colors";
-import { heIL } from '@mui/material/locale';
+import { heIL } from "@mui/material/locale";
 
 let theme = createTheme(
     {
@@ -18,6 +18,15 @@ let theme = createTheme(
             MuiTooltip: {
                 defaultProps: {
                     enterTouchDelay: 0, //on mobile - show on click
+                },
+            },
+            MuiButton: {
+                styleOverrides: {
+                    root: ({ ownerState }) => ({
+                        ...(ownerState.variant === "contained" && {
+                            color: "#fff",
+                        }),
+                    }),
                 },
             },
         },
