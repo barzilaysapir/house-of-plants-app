@@ -1,6 +1,6 @@
 import { ReactComponent as LeafIcon } from "assets/icons/leaf.svg";
 import SvgIcon from "@mui/icons-material/QrCodeScanner";
-import { StyledLogoTypo } from "./Logo.style";
+import { StyledLogoTypography } from "./Logo.style";
 import { Box } from "@mui/material";
 
 const Logo = () => {
@@ -13,9 +13,9 @@ const Logo = () => {
                 columnGap: 1,
             }}
         >
-            <StyledLogoTypo noWrap component="a" href="/">
+            <StyledLogoTypography component="a" href="/" noWrap>
                 HousePlantCare
-            </StyledLogoTypo>
+            </StyledLogoTypography>
 
             <SvgIcon component={LeafIcon} viewBox="2000 500 1 5500" />
         </Box>

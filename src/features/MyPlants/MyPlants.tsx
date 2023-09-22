@@ -1,10 +1,9 @@
-import { Box, Grid, InputAdornment, TextField } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { FC } from "react";
 import { Plant } from "shared/types/Plants";
-import PlantCard from "components/PlantCard/PlantCard";
+import PlantCard from "features/PlantCard/PlantCard";
 import useMyPlants from "./useMyPlants";
-import { Search } from "@mui/icons-material";
-import i18n from "i18next";
+import SearchMyPlant from "./SearchMyPlant";
 
 type MyPlantsProps = {
     plants: Plant[];
@@ -16,19 +15,7 @@ const MyPlants: FC<MyPlantsProps> = (props) => {
 
     return (
         <Box>
-            <TextField
-                onChange={onSearchPlant}
-                placeholder={i18n.t("myPlants.searchPlaceholder")}
-                fullWidth
-                variant="standard"
-                InputProps={{
-                    endAdornment: (
-                        <InputAdornment position="end">
-                            <Search />
-                        </InputAdornment>
-                    ),
-                }}
-            />
+            <SearchMyPlant onSearchPlant={onSearchPlant} />
 
             <Grid
                 container
@@ -38,7 +25,7 @@ const MyPlants: FC<MyPlantsProps> = (props) => {
             >
                 {filteredPlants.map((plant) => (
                     <Grid item xs={1} key={plant.id}>
-                        <PlantCard key={plant.id} {...plant} horizontal />
+                        <PlantCard key={plant.id} plant={plant} horizontal />
                     </Grid>
                 ))}
             </Grid>

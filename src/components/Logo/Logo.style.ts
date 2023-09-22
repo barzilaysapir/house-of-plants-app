@@ -1,21 +1,12 @@
 import styled from "@emotion/styled";
-import { Box, Typography } from "@mui/material";
+import { Typography, TypographyProps } from "@mui/material";
 
-type StylesLogoTypoProps = {
-    component: string;
-    href: string;
-}
+type StylesLogoTypographyProps = TypographyProps & Pick<HTMLAnchorElement, "href">;
 
-export const StyledLogoTypo = styled(Typography) <StylesLogoTypoProps>`
+export const StyledLogoTypography = styled(Typography)<StylesLogoTypographyProps>`
     font-family: monospace;
     font-weight: 700;
-    letter-spacing: .3rem;
+    letter-spacing: 0.3rem;
     color: inherit;
     text-decoration: none;
 `;
-
-const StyledLogo = styled(Box)({
-
-});
-
-export default StyledLogo;

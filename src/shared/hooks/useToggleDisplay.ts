@@ -1,18 +1,21 @@
 import { useState } from "react";
 
-const useToggleDisplay = () => {
+type UseToggleDisplayProps = {};
+
+const useToggleDisplay = (props?: UseToggleDisplayProps) => {
+
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const toggle = () => {
         setIsOpen(!isOpen);
     };
 
-    const handleClose = () => {
-        setIsOpen(false);
-    };
-
     const handleOpen = () => {
         setIsOpen(true);
+    };
+
+    const handleClose = () => {
+        setIsOpen(false);
     };
 
     return {
@@ -20,7 +23,7 @@ const useToggleDisplay = () => {
         toggle,
         handleOpen,
         handleClose,
-    }
+    };
 };
 
 export default useToggleDisplay;

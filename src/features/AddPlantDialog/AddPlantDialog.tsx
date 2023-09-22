@@ -1,9 +1,9 @@
 import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
-import { FC, useRef } from "react";
+import { FC } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import StyledAddPlantDialog from "./AddPlantDialog.style";
 import AddPlantDialogContent from "./AddPlantDialogContent";
-import Transition from "components/Transition/Transition";
+import SlideUpTransition from "components/Transition/SlideUpTransition";
 import i18n from "i18next";
 
 type AddPlantDialogProps = {
@@ -13,21 +13,16 @@ type AddPlantDialogProps = {
 
 const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
     const { open, handleClose } = props;
-    const searchInputRef = useRef<HTMLInputElement>(null);
 
     return (
         <StyledAddPlantDialog
             fullScreen
             open={open}
             onClose={handleClose}
-            TransitionComponent={Transition}
-            // focused={document.activeElement === searchInputRef.current}
+            TransitionComponent={SlideUpTransition}
         >
-            <AppBar sx={{ position: "relative" }}>
-                <Toolbar
-                    variant="dense"
-                    sx={{ justifyContent: "space-between" }}
-                >
+            <AppBar>
+                <Toolbar variant="dense">
                     <Typography variant="h6" component="h3" sx={{ ml: 2 }}>
                         {i18n.t("addPlants.title")}
                     </Typography>
@@ -42,7 +37,7 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
                 </Toolbar>
             </AppBar>
 
-            <AddPlantDialogContent searchInputRef={searchInputRef} />
+            <AddPlantDialogContent />
         </StyledAddPlantDialog>
     );
 };

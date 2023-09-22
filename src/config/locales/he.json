@@ -42,5 +42,7 @@
     "xDaysAgo_other": "לפני {{count}} ימים",
     "inXDays_zero": "היום",
     "inXDays_one": "מחר",
-    "inXDays_other": "בעוד {{count}} ימים"
+    "inXDays_other": "בעוד {{count}} ימים",
+    "close": "סגירה",
+    "open": "פתיחה"
 }

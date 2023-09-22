@@ -42,5 +42,7 @@
     "xDaysAgo_other": "{{count}} Days Ago",
     "inXDays_zero": "Today",
     "inXDays_one": "Tomorrow",
-    "inXDays_other": "In {{count}} Days"
+    "inXDays_other": "In {{count}} Days",
+    "close": "close",
+    "open": "open"
 }
