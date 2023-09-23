@@ -1,17 +1,12 @@
 import express, { Express } from "express";
 import cors from "cors";
 import corsOptions from "middlewares/corsConfig";
-import plantsRouter from "routes/plants";
-import speciesRouter from "routes/species";
-import genusRouter from "routes/genus";
-import { PORT } from "shared/consts";
+import { PORT } from "utils/consts";
+import routes from "routes";
 
 const app: Express = express();
-
 app.use(cors(corsOptions));
-app.use("/plants", plantsRouter);
-app.use("/species", speciesRouter);
-app.use("/genus", genusRouter);
+app.use("/", routes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

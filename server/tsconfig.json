@@ -1,11 +1,7 @@
 {
     "compilerOptions": {
-        "rootDir": "../", // Root directory for source TypeScript files
-        "baseUrl": "./",
-        "paths": {
-            "*": ["src/*"],
-            "@shared/*": ["../shared/*"]
-        },
+        // "rootDir": "./src", // Root directory for source TypeScript files
+        "baseUrl": "./src",
         "target": "ES2020" /* Target latest features compatible with Node.js
 declarations. */,
         "module": "CommonJS", // Use CommonJS module system (used by Node.js)
@@ -16,6 +12,6 @@ declarations. */,
         "skipLibCheck": true // Skip type checking of declaration files
         /* Visit https://aka.ms/tsconfig to read more about this file */
     },
-    "include": ["src/**/*.ts", "../shared/*.ts"], // Files to be compiled
-    "exclude": ["node_modules", "dist"]
+    "include": ["src/**/*.ts"], // Files to be compiled (, "../shared/*.ts")
+    "exclude": ["node_modules"]
 }

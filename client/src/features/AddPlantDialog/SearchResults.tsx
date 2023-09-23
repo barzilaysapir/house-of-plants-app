@@ -1,7 +1,7 @@
 import { CircularProgress, List, ListItem, Stack } from "@mui/material";
 import { FC } from "react";
 import useFetchData from "shared/hooks/useFetchData";
-import { Specie, TrefleSpecies } from "../../../../shared/species";
+import { SpecieLight, SpeciesRes } from "../../../../shared/types/API/species";
 
 type SearchResultsProps = {
     searchInputVal: string;
@@ -14,7 +14,7 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
         data: { data } = {},
         isLoading,
         isError,
-    } = useFetchData<TrefleSpecies>(`/species/search/${searchInputVal}`);
+    } = useFetchData<SpeciesRes>(`/species/search/${searchInputVal}`);
 
     if (isLoading)
         return (
@@ -27,7 +27,7 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
 
     return (
         <List>
-            {data.map((item: Specie) => (
+            {data.map((item: SpecieLight) => (
                 <ListItem key={item.id}>
                     <List>
                         {/* {Object.entries(item).map(([key, value]) => {
@@ -46,7 +46,11 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
                             }
                         })} */}
                         <ListItem>
-                            <img src={item.image_url} alt="" width={300} />
+                            <img
+                                src={item.image_url || ""}
+                                alt=""
+                                width={300}
+                            />
                         </ListItem>
                     </List>
                 </ListItem>
