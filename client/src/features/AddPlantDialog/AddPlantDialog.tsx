@@ -1,5 +1,5 @@
-import { Chip, Dialog, Divider, css } from "@mui/material";
-import { FC, useRef, useState } from "react";
+import { Chip, Divider } from "@mui/material";
+import { FC, useState } from "react";
 import SlideUpTransition from "components/Transition/SlideUpTransition";
 import i18n from "i18next";
 import DialogHeader from "components/DialogHeader/DialogHeader";

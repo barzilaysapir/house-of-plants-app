@@ -5,14 +5,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
 const express_1 = require("express");
+const consts_1 = require("../shared/consts");
 const router = (0, express_1.Router)();
-const TREFLE_TOKEN = "0rb0D_osH3J27ZVWN8CWNrpv1o-2zKP_aPfXtnq0mgY";
-const BASE_URL = `https://trefle.io/api/v1/plants`;
+const plantsUrl = `${consts_1.BASE_URL}/plants`;
 router.get("/", async (req, res) => {
     try {
-        const response = await axios_1.default.get(BASE_URL, {
+        const response = await axios_1.default.get(plantsUrl, {
             params: {
-                token: TREFLE_TOKEN,
+                token: consts_1.TREFLE_TOKEN,
             },
         });
         res.json(response.data);
@@ -23,9 +23,9 @@ router.get("/", async (req, res) => {
 });
 router.get("/search/:q", async (req, res) => {
     try {
-        const response = await axios_1.default.get(BASE_URL + "/search", {
+        const response = await axios_1.default.get(plantsUrl + "/search", {
             params: {
-                token: TREFLE_TOKEN,
+                token: consts_1.TREFLE_TOKEN,
                 q: req.params.q,
             },
         });
