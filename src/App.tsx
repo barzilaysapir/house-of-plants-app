@@ -8,6 +8,7 @@ import cacheRtl from "config/CacheRtl";
 import { Outlet } from "react-router";
 import GlobalStyles from "styles/GlobalStyle";
 import { Global } from "@emotion/react";
+import { SWRConfig } from "swr";
 
 function App() {
     const [direction, setDirection] = useState<Direction>("ltr"); // change to context
@@ -21,10 +22,18 @@ function App() {
         <div dir={direction}>
             {/* <CacheProvider value={cacheRtl}> */}
             <ThemeProvider theme={theme}>
-                <Global styles={GlobalStyles} />
-                <Layout>
-                    <Outlet />
-                </Layout>
+                <SWRConfig
+                    value={{
+                        errorRetryCount: 3,
+                        focusThrottleInterval: 5000,
+                        // ... other configurations
+                    }}
+                >
+                    <Global styles={GlobalStyles} />
+                    <Layout>
+                        <Outlet />
+                    </Layout>
+                </SWRConfig>
             </ThemeProvider>
             {/* </CacheProvider> */}
         </div>
