@@ -1,13 +1,13 @@
 import axios, { AxiosResponse } from "axios";
 import { Router, Request, Response } from "express";
+import { BASE_URL, TREFLE_TOKEN } from "../shared/consts";
 
 const router: Router = Router();
-const TREFLE_TOKEN = "0rb0D_osH3J27ZVWN8CWNrpv1o-2zKP_aPfXtnq0mgY";
-const BASE_URL = `https://trefle.io/api/v1/genus`;
+const genusUrl = `${BASE_URL}/genus`;
 
 router.get("/", async (req: Request, res: Response) => {
     try {
-        const response: AxiosResponse = await axios.get(BASE_URL, {
+        const response: AxiosResponse = await axios.get(genusUrl, {
             params: {
                 token: TREFLE_TOKEN,
             },
@@ -20,7 +20,7 @@ router.get("/", async (req: Request, res: Response) => {
 
 router.get("/:id", async (req: Request, res: Response) => {
     try {
-        const response: AxiosResponse = await axios.get(BASE_URL, {
+        const response: AxiosResponse = await axios.get(genusUrl, {
             params: {
                 token: TREFLE_TOKEN,
                 id: req.params.id,
@@ -34,7 +34,7 @@ router.get("/:id", async (req: Request, res: Response) => {
 
 router.get("/search/:q", async (req: Request, res: Response) => {
     try {
-        const response: AxiosResponse = await axios.get(BASE_URL + "/search", {
+        const response: AxiosResponse = await axios.get(genusUrl + "/search", {
             params: {
                 token: TREFLE_TOKEN,
                 q: req.params.q,

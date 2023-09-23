@@ -1,10 +1,12 @@
+// quicktype your-sample.json --lang csharp -o output.cs
+
 export interface TrefleSpecies {
-    data: Datum[];
-    links: OutputLinks;
-    meta: Meta;
+    data: Specie[];
+    links: SpeciesLinks;
+    meta: SpecieMeta;
 }
 
-export interface Datum {
+export interface Specie {
     id: number;
     common_name: string;
     slug: string;
@@ -20,10 +22,10 @@ export interface Datum {
     synonyms: string[];
     genus: string;
     family: string;
-    links: DatumLinks;
+    links: SpecieLinks;
 }
 
-export interface DatumLinks {
+export interface SpecieLinks {
     self: string;
     plant: string;
     genus: string;
@@ -37,13 +39,13 @@ export enum Status {
     Accepted = "accepted",
 }
 
-export interface OutputLinks {
+export interface SpeciesLinks {
     self: string;
     first: string;
     next: string;
     last: string;
 }
 
-export interface Meta {
+export interface SpecieMeta {
     total: number;
 }
