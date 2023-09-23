@@ -6,6 +6,7 @@ import DialogHeader from "components/DialogHeader/DialogHeader";
 import { StyledAddPlantDialogContent } from "./AddPlantDialog.style";
 import IdentifyPlant from "./IdentifyPlant";
 import SearchPlant from "./SearchPlant";
+import SearchResults from "./SearchResults";
 
 type AddPlantDialogProps = {
     open: boolean;
@@ -29,6 +30,7 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
 
             <StyledAddPlantDialogContent>
                 <SearchPlant />
+                <SearchResults />
                 <Divider>
                     <Chip label={i18n.t("or")} />
                 </Divider>

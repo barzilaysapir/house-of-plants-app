@@ -1,17 +1,21 @@
 import useSWR from "swr";
 
-type Data = {
-    // Your data type here, for example:
-    id: number;
-    name: string;
-};
+type Data = any;
 
 const fetcher = (url: string): Promise<Data> => {
     return fetch(url).then((res) => res.json());
 }
 
-const useFetchData = (epParams: string) => {
-    const { data, error } = useSWR<Data>("https://trefle.io/api/v1" + epParams, fetcher);
+const useFetchData = (path: string) => {
+    const { data, error } = useSWR<Data>(
+        "http://localhost:4000" + path,
+        fetcher
+    );
+    // const { data, error } = useSWR<Data>("https://trefle.io/api/v1" + epParams, fetcher);
+    
+    if (error) {
+        console.error(error);
+    }
 
     return {
         data,
