@@ -7,33 +7,42 @@ const axios_1 = __importDefault(require("axios"));
 const express_1 = require("express");
 const router = (0, express_1.Router)();
 const TREFLE_TOKEN = "0rb0D_osH3J27ZVWN8CWNrpv1o-2zKP_aPfXtnq0mgY";
-const BASE_URL = `https://trefle.io/api/v1/genus?token=${TREFLE_TOKEN}`;
-const OPTIONS = {
-    params: {
-        token: TREFLE_TOKEN,
-    },
-};
+const BASE_URL = `https://trefle.io/api/v1/genus`;
 router.get("/", async (req, res) => {
     try {
-        const response = await axios_1.default.get(BASE_URL, OPTIONS);
+        const response = await axios_1.default.get(BASE_URL, {
+            params: {
+                token: TREFLE_TOKEN,
+            },
+        });
         res.json(response.data);
     }
     catch (error) {
         res.status(500).json({ error: "Failed to fetch genus" });
     }
 });
-router.get("/id", async ({ params }, res) => {
+router.get("/:id", async (req, res) => {
     try {
-        const response = await axios_1.default.get(`${BASE_URL}/${params.id}`, OPTIONS);
+        const response = await axios_1.default.get(BASE_URL, {
+            params: {
+                token: TREFLE_TOKEN,
+                id: req.params.id,
+            },
+        });
         res.json(response.data);
     }
     catch (error) {
-        res.status(500).json({ error: "Failed to fetch genus abies alba" });
+        res.status(500).json({ error: "Failed to fetch genus by ID" });
     }
 });
-router.get("/search/:q", async ({ params }, res) => {
+router.get("/search/:q", async (req, res) => {
     try {
-        const response = await axios_1.default.get(`${BASE_URL}/search?q=${params.q}`, OPTIONS);
+        const response = await axios_1.default.get(BASE_URL + "/search", {
+            params: {
+                token: TREFLE_TOKEN,
+                q: req.params.q,
+            },
+        });
         res.json(response.data);
     }
     catch (error) {

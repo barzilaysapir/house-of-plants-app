@@ -14,7 +14,7 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
         data: { data } = {},
         isLoading,
         isError,
-    } = useFetchData<TrefleSpecies>(`/plants`);
+    } = useFetchData<TrefleSpecies>(`/plants/search/${searchInputVal}`);
 
     if (isLoading)
         return (
