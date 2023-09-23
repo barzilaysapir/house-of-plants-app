@@ -1,7 +1,7 @@
-import { CircularProgress, Stack } from "@mui/material";
+import { CircularProgress, List, ListItem, Stack } from "@mui/material";
 import { FC } from "react";
 import useFetchData from "shared/hooks/useFetchData";
-import { Datum, TrefleSpecies } from "shared/types/Trefle";
+import { Specie, TrefleSpecies } from "@shared/species";
 
 type SearchResultsProps = {
     searchInputVal: string;
@@ -14,7 +14,7 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
         data: { data } = {},
         isLoading,
         isError,
-    } = useFetchData<TrefleSpecies>(`/plants/search/${searchInputVal}`);
+    } = useFetchData<TrefleSpecies>(`/species/search/${searchInputVal}`);
 
     if (isLoading)
         return (
@@ -26,25 +26,32 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
     if (!data) return <>No Data</>;
 
     return (
-        <pre style={{ whiteSpace: "break-spaces" }}>
-            {data.slice(0, 10).map((item: Datum) => (
-                <ul
-                    key={item.id}
-                    style={{ padding: "20px", border: "1px solid" }}
-                >
-                    {Object.entries(item).map(([key, value]) => {
-                        if (typeof value !== "object")
-                            return (
-                                <li key={item.id + "_" + key}>
-                                    {key}: {value}
-                                </li>
-                            );
-                    })}
-                    <img src={item.image_url} alt="" width={300} />
-                    {/* {JSON.stringify(item)} */}
-                </ul>
+        <List>
+            {data.map((item: Specie) => (
+                <ListItem key={item.id}>
+                    <List>
+                        {/* {Object.entries(item).map(([key, value]) => {
+                            if (value && typeof value === "object") {
+                                console.log(value);
+
+                                return Object.entries(value).map(
+                                    ([key, val]: any) => (
+                                        <ListItem key={item.id + "_" + key}>
+                                            <ListItemText>
+                                                {key}: <b>{val}</b>
+                                            </ListItemText>
+                                        </ListItem>
+                                    )
+                                );
+                            }
+                        })} */}
+                        <ListItem>
+                            <img src={item.image_url} alt="" width={300} />
+                        </ListItem>
+                    </List>
+                </ListItem>
             ))}
-        </pre>
+        </List>
     );
 };
 
