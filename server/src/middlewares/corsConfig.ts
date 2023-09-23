@@ -1,12 +1,14 @@
-const whitelist = [
+import { CorsOptions } from "cors";
+
+const whitelist: string[] = [
     "http://localhost:3000",
     "http://localhost:4000",
     "https://yourproductiondomain.com",
 ];
 
-const corsOptions = {
+const corsOptions: CorsOptions = {
     origin: function (origin, callback) {
-        if (whitelist.indexOf(origin) !== -1) {
+        if (origin && whitelist.indexOf(origin) !== -1) {
             callback(null, true);
         } else {
             callback(new Error("Not allowed by CORS"));
@@ -14,4 +16,4 @@ const corsOptions = {
     },
 };
 
-module.exports = corsOptions;
+export default corsOptions;

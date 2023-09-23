@@ -1,12 +1,12 @@
-const express = require("express");
-const axios = require("axios");
-const cors = require("cors");
-const corsOptions = require("./middlewares/corsConfig");
-const plantsRouter = require("./routes/plants");
-const speciesRouter = require("./routes/species");
-const genusRouter = require("./routes/genus");
+import express, { Express } from "express";
+import axios from "axios";
+import cors from "cors";
+import corsOptions from "./middlewares/corsConfig";
+import plantsRouter from "./routes/plants";
+import speciesRouter from "./routes/species";
+import genusRouter from "./routes/genus";
 
-const app = express();
+const app: Express = express();
 const PORT = 4000;
 // const TREFLE_API = "https://trefle.io/api/v1";
 // const TREFLE_TOKEN = "0rb0D_osH3J27ZVWN8CWNrpv1o-2zKP_aPfXtnq0mgY";
