@@ -1,0 +1,155 @@
+{
+    "data": {
+        "id": 1,
+        "common_name": null,
+        "slug": "chromolaena-larensis",
+        "scientific_name": "Chromolaena larensis",
+        "year": 1977,
+        "bibliography": "Phytologia 35: 498 (1977)",
+        "author": "(V.M.Badillo) R.M.King \u0026 H.Rob.",
+        "status": "accepted",
+        "rank": "species",
+        "family_common_name": "Aster family",
+        "genus_id": 1,
+        "observations": "Colombia (Norte de Santander) to Venezuela",
+        "vegetable": false,
+        "image_url": null,
+        "genus": "Chromolaena",
+        "family": "Asteraceae",
+        "duration": null,
+        "edible_part": null,
+        "edible": false,
+        "images": {},
+        "common_names": {},
+        "distribution": { "native": ["Colombia", "Venezuela"] },
+        "distributions": {
+            "native": [
+                {
+                    "id": 82,
+                    "name": "Colombia",
+                    "slug": "clm",
+                    "tdwg_code": "CLM",
+                    "tdwg_level": 3,
+                    "species_count": 25631,
+                    "links": {
+                        "self": "/api/v1/distributions/clm",
+                        "plants": "/api/v1/distributions/clm/plants",
+                        "species": "/api/v1/distributions/clm/species"
+                    }
+                },
+                {
+                    "id": 142,
+                    "name": "Venezuela",
+                    "slug": "ven",
+                    "tdwg_code": "VEN",
+                    "tdwg_level": 3,
+                    "species_count": 17916,
+                    "links": {
+                        "self": "/api/v1/distributions/ven",
+                        "plants": "/api/v1/distributions/ven/plants",
+                        "species": "/api/v1/distributions/ven/species"
+                    }
+                }
+            ]
+        },
+        "flower": { "color": null, "conspicuous": null },
+        "foliage": { "texture": null, "color": null, "leaf_retention": null },
+        "fruit_or_seed": {
+            "conspicuous": null,
+            "color": null,
+            "shape": null,
+            "seed_persistence": null
+        },
+        "sources": [
+            {
+                "last_update": "2022-12-04T16:56:20.382Z",
+                "id": "wfo-0000000003",
+                "name": "WFO",
+                "url": null,
+                "citation": null
+            },
+            {
+                "last_update": "2022-12-04T17:50:40.233Z",
+                "id": "57415-2",
+                "name": "IPNI",
+                "url": null,
+                "citation": null
+            },
+            {
+                "last_update": "2022-12-06T16:06:27.558Z",
+                "id": "3087685",
+                "name": "GBIF",
+                "url": "https://www.gbif.org/species/3087685",
+                "citation": null
+            },
+            {
+                "last_update": "2022-12-06T16:06:28.632Z",
+                "id": "urn:lsid:ipni.org:names:57415-2",
+                "name": "POWO",
+                "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:57415-2",
+                "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2022-12-06"
+            }
+        ],
+        "specifications": {
+            "ligneous_type": null,
+            "growth_form": null,
+            "growth_habit": null,
+            "growth_rate": null,
+            "average_height": { "cm": null },
+            "maximum_height": { "cm": null },
+            "nitrogen_fixation": null,
+            "shape_and_orientation": null,
+            "toxicity": null
+        },
+        "synonyms": [
+            {
+                "id": 1,
+                "name": "Eupatorium larense",
+                "author": "V.M.Badillo",
+                "sources": [
+                    {
+                        "last_update": "2022-12-06T16:06:28.725Z",
+                        "id": "urn:lsid:ipni.org:names:100274-2",
+                        "name": "POWO",
+                        "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:100274-2",
+                        "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2022-12-06"
+                    }
+                ]
+            }
+        ],
+        "growth": {
+            "description": null,
+            "sowing": null,
+            "days_to_harvest": null,
+            "row_spacing": { "cm": null },
+            "spread": { "cm": null },
+            "ph_maximum": null,
+            "ph_minimum": null,
+            "light": null,
+            "atmospheric_humidity": null,
+            "growth_months": null,
+            "bloom_months": null,
+            "fruit_months": null,
+            "minimum_precipitation": { "mm": null },
+            "maximum_precipitation": { "mm": null },
+            "minimum_root_depth": { "cm": null },
+            "minimum_temperature": { "deg_f": null, "deg_c": null },
+            "maximum_temperature": { "deg_f": null, "deg_c": null },
+            "soil_nutriments": null,
+            "soil_salinity": null,
+            "soil_texture": null,
+            "soil_humidity": null
+        },
+        "links": {
+            "self": "/api/v1/species/chromolaena-larensis",
+            "plant": "/api/v1/plants/chromolaena-larensis",
+            "genus": "/api/v1/genus/chromolaena"
+        }
+    },
+    "meta": {
+        "images_count": 0,
+        "sources_count": 4,
+        "synonyms_count": 0,
+        "last_modified": "2022-12-12T13:06:36.454Z"
+    }
+}
