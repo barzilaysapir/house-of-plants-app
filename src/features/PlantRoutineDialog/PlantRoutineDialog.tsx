@@ -49,6 +49,7 @@ const PlantRoutineDialog: FC<PlantRoutineDialogProps> = (props) => {
                 <Stack spacing={1}>
                     {ROUTINE_ACTION_BUTTONS.map((buttonProps) => (
                         <RoutineActionButton
+                            key={buttonProps.label}
                             handleClick={handleClick}
                             loadingBtnName={loadingBtnName}
                             count={routineData.next}
