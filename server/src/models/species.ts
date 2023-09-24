@@ -17,7 +17,7 @@ export const getAllSpecies = async (): Promise<any | null> => {
 };
 
 export const getSpeciesById = async (id: number): Promise<any | null> => {
-    const response = await axios.get(`${BASE_URL}}/species/${id}`, {
+    const response = await axios.get(`${speciesAPI}/${id}`, {
         params: {
             token: TREFLE_TOKEN,
         },

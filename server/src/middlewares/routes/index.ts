@@ -1,7 +1,7 @@
 import express from "express";
-import genusRouter from "./routes/genus";
-import plantsRouter from "./routes/plants";
-import speciesRouter from "./routes/species";
+import genusRouter from "./genus";
+import plantsRouter from "./plants";
+import speciesRouter from "./species";
 
 const router = express.Router();
 
