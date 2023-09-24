@@ -3,30 +3,34 @@ import { Plant } from "shared/types/Plants";
 import PlantCardContent from "./PlantCardContent/PlantCardContent";
 import PlantCardImage from "./PlantCardImage";
 import StyledPlantCard from "./PlantCard.style";
+import { CardImageSize } from "./PlantCard.util";
 
 type PlantCardProps = {
     plant: Plant;
-    horizontal?: boolean;
+    size?: CardImageSize;
+    vertical?: boolean;
+    withRoutines?: boolean;
 };
 
 const PlantCard: FC<PlantCardProps> = (props) => {
     const {
         plant,
-        plant: { default_image },
-        horizontal = false,
+        size = "medium",
+        vertical = false,
+        withRoutines = false,
     } = props;
 
     return (
         <StyledPlantCard
-            // elevation={1}
+            elevation={1}
             sx={{
                 padding: 1,
                 borderRadius: 3,
             }}
-            horizontal={Number(horizontal)}
+            vertical={Number(vertical)}
         >
-            <PlantCardImage image={default_image.thumbnail} />
-            <PlantCardContent plant={plant} />
+            <PlantCardImage image={plant.image} size={size} />
+            <PlantCardContent plant={plant} withRoutines={withRoutines} />
         </StyledPlantCard>
     );
 };

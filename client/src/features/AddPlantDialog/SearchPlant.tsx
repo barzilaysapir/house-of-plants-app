@@ -1,16 +1,18 @@
 import { Search } from "@mui/icons-material";
-import { InputAdornment, TextField, TextFieldProps } from "@mui/material";
-import { FC } from "react";
+import { InputAdornment, TextField, debounce } from "@mui/material";
+import { ChangeEvent, FC } from "react";
 import i18n from "i18next";
 
-type SearchPlantProps = Pick<TextFieldProps, "onChange">;
+type SearchPlantProps = {
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+};
 
 const SearchPlant: FC<SearchPlantProps> = (props) => {
     const { onChange } = props;
 
     return (
         <TextField
-            onChange={onChange}
+            onChange={debounce(onChange, 300)}
             label={i18n.t("addPlants.searchByName")}
             InputProps={{
                 endAdornment: (
@@ -22,7 +24,6 @@ const SearchPlant: FC<SearchPlantProps> = (props) => {
             size="small"
             margin="normal"
             fullWidth
-            focused
         />
     );
 };

@@ -11,6 +11,8 @@ export type PlantRoutine = Pick<IconButtonProps, "color"> & {
     };
 };
 
+export type CardImageSize = "small" | "medium" | "large";
+
 export const PLANT_ROUTINES: PlantRoutine[] = [
     {
         id: PlantCareRoutine.WATER,

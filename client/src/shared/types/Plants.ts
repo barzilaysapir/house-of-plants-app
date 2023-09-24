@@ -19,12 +19,10 @@ export type PlantCare = {
 
 export type Plant = {
     id: number;
-    primary_name: string;
-    common_name: string;
-    scientific_name: string[];
-    default_image: {
-        thumbnail: string;
-    };
+    primaryName: string;
+    commonName: string;
+    scientificName: string;
+    image: string;
     care: PlantCare;
 };
 

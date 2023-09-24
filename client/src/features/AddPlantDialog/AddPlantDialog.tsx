@@ -1,4 +1,4 @@
-import { Chip, Divider } from "@mui/material";
+import { CardMedia, Chip, Divider } from "@mui/material";
 import { FC, useState } from "react";
 import SlideUpTransition from "components/Transition/SlideUpTransition";
 import i18n from "i18next";

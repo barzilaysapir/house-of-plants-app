@@ -1,19 +1,37 @@
 import styled from "@emotion/styled";
-import { Box, Card, CardContent, CardMedia, Paper } from "@mui/material";
+import { Box, CardContent, CardMedia, Paper } from "@mui/material";
+import { CardImageSize } from "./PlantCard.util";
 
-type StyledCardMediaProps = {
+type StyledCardImageProps = {
+    size: CardImageSize;
+};
+
+type StyledCardMediaProps = React.ImgHTMLAttributes<HTMLButtonElement> & {
     component: string;
     image: string;
-}
+};
 
 type StyledCardProps = {
-    horizontal: number
+    vertical: number
 }
 
 
-export const StyledPlantCardImage = styled(Box)`
+export const StyledPlantCardImage =
+    styled(Box)<StyledCardImageProps>`
     border-radius: inherit;
-    flex: 0 1 140px;
+    flex: 0 1;
+    flex-basis: ${({ size }) => {
+        switch (size) {
+            case "small":
+                return "80px;";
+            case "medium":
+                return "140px;";
+            case "large":
+                return "200px;";
+            default:
+                break;
+        }
+    }};
 `;
 
 export const StyledCardMedia = styled(CardMedia) <StyledCardMediaProps>`
@@ -34,7 +52,7 @@ export const StyledPlantCard = styled(Paper) <StyledCardProps>`
     align-items: flex-start;
     justify-content: flex-start;
     box-shadow: 0px 0px 10px rgb(173 173 173 / 0.2);
-    flex-direction: ${({ horizontal }) => horizontal ? "row" : "column"};
+    flex-direction: ${({ vertical }) => vertical ? "column" : "row"};
 `;
 
 export default StyledPlantCard;

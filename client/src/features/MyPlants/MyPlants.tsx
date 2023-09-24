@@ -25,7 +25,7 @@ const MyPlants: FC<MyPlantsProps> = (props) => {
             >
                 {filteredPlants.map((plant) => (
                     <Grid item xs={1} key={plant.id}>
-                        <PlantCard key={plant.id} plant={plant} horizontal />
+                        <PlantCard key={plant.id} plant={plant} withRoutines />
                     </Grid>
                 ))}
             </Grid>
