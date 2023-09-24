@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Router, Request, Response } from "express";
 import { BASE_URL, TREFLE_TOKEN } from "../shared/consts";
-import { TrefleSpecies } from "@shared/species";
+import { TrefleSpecies } from "../../../shared/species";
 
 const router: Router = Router();
 const speciesUrl = `${BASE_URL}/species`;

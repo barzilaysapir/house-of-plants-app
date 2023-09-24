@@ -15,8 +15,8 @@ const useFetchData = <Data>(path: string) => {
 
     return {
         data,
-        isLoading: !error && !data,
-        isError: error,
+        loading: !error && !data,
+        error,
     };
 }
 
