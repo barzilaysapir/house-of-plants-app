@@ -1,7 +1,13 @@
-import { CircularProgress, List, ListItem, Stack } from "@mui/material";
+import {
+    CircularProgress,
+    List,
+    ListItem,
+    ListItemText,
+    Stack,
+} from "@mui/material";
 import { FC } from "react";
 import useFetchData from "shared/hooks/useFetchData";
-import { SpecieLight, SpeciesRes } from "../../../../shared/types/API/species";
+import { SpecieLight } from "../../../../shared/types/API/species";
 
 type SearchResultsProps = {
     searchInputVal: string;
@@ -10,49 +16,25 @@ type SearchResultsProps = {
 const SearchResults: FC<SearchResultsProps> = (props) => {
     const { searchInputVal } = props;
 
-    const {
-        data: { data } = {},
-        isLoading,
-        isError,
-    } = useFetchData<SpeciesRes>(`/species/search/${searchInputVal}`);
+    const { data, loading, error } = useFetchData<SpecieLight[]>(
+        `/species/search?q=${searchInputVal}`
+    );
 
-    if (isLoading)
+    if (loading)
         return (
             <Stack flex={1}>
                 <CircularProgress sx={{ margin: "auto" }} />
             </Stack>
         );
-    if (isError) return <div>Error</div>;
+    if (error) return <div>Error</div>;
     if (!data) return <>No Data</>;
 
     return (
         <List>
             {data.map((item: SpecieLight) => (
-                <ListItem key={item.id}>
-                    <List>
-                        {/* {Object.entries(item).map(([key, value]) => {
-                            if (value && typeof value === "object") {
-                                console.log(value);
-
-                                return Object.entries(value).map(
-                                    ([key, val]: any) => (
-                                        <ListItem key={item.id + "_" + key}>
-                                            <ListItemText>
-                                                {key}: <b>{val}</b>
-                                            </ListItemText>
-                                        </ListItem>
-                                    )
-                                );
-                            }
-                        })} */}
-                        <ListItem>
-                            <img
-                                src={item.image_url || ""}
-                                alt=""
-                                width={300}
-                            />
-                        </ListItem>
-                    </List>
+                <ListItem key={item.id} sx={{ flexDirection: "column" }}>
+                    <ListItemText>{item.scientific_name}</ListItemText>
+                    <img src={item.image_url || ""} alt="" height={300} />
                 </ListItem>
             ))}
         </List>

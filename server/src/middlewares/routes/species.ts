@@ -7,8 +7,8 @@ import {
 
 const router = express.Router();
 
-router.get("/species", getAllSpecies);
-router.get("/species/:id", getSpeciesById);
-router.get("/species/search/:q", searchSpecies);
+router.get("/search", searchSpecies);
+router.get("/:id", getSpeciesById);
+router.get("/", getAllSpecies);
 
 export default router;

@@ -3,8 +3,8 @@ import { getAllGenuses, getGenusById, searchGenuses } from "controllers/genus";
 
 const router = express.Router();
 
-router.get("/genus", getAllGenuses);
-router.get("/genus/:id", getGenusById);
-router.get("/genus/search/:q", searchGenuses);
+router.get("/search/:q", searchGenuses);
+router.get("/:id", getGenusById);
+router.get("/", getAllGenuses);
 
 export default router;

@@ -3,7 +3,7 @@ import { getAllPlants, searchPlants } from "controllers/plants";
 
 const router = express.Router();
 
-router.get("/plants", getAllPlants);
-router.get("/plants/search/:q", searchPlants);
+router.get("/search/:q", searchPlants);
+router.get("/", getAllPlants);
 
 export default router;

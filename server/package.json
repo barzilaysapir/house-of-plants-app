@@ -5,9 +5,9 @@
     "main": "src/index.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node dist/index.js",
-        "build": "tsc && tsc-alias",
-        "dev": "tsc-watch --onSuccess \"node dist/index.js\""
+        "start": "env NODE_PATH=./dist node ./dist/index.js",
+        "build": "tsc",
+        "dev": "env NODE_PATH=./dist tsc-watch --onSuccess \"node ./dist/index.js\""
     },
     "keywords": [],
     "author": "",
@@ -22,7 +22,6 @@
         "@types/cors": "^2.8.14",
         "@types/express": "^4.17.17",
         "@types/node": "^20.6.3",
-        "tsc-alias": "^1.8.8",
         "tsc-watch": "^6.0.4",
         "typescript": "^5.2.2"
     }

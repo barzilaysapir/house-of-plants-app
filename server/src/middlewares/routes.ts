@@ -5,8 +5,8 @@ import speciesRouter from "./routes/species";
 
 const router = express.Router();
 
-router.get("/genus", genusRouter);
-router.get("/plants", plantsRouter);
-router.get("/species", speciesRouter);
+router.use("/genus", genusRouter);
+router.use("/plants", plantsRouter);
+router.use("/species", speciesRouter);
 
 export default router;

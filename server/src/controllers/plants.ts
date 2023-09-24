@@ -12,7 +12,8 @@ export const getAllPlants = async (req: Request, res: Response) => {
 
 export const searchPlants = async (req: Request, res: Response) => {
     try {
-        const plants = await fetchPlantsSearch(req.params.q);
+        const q = req.query.q as string;
+        const plants = await fetchPlantsSearch(q);
         res.json(plants);
     } catch (error) {
         res.status(500).json({ error: "Failed to fetch plants search" });

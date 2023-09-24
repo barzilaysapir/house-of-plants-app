@@ -25,7 +25,8 @@ export const getGenusById = async (req: Request, res: Response) => {
 
 export const searchGenuses = async (req: Request, res: Response) => {
     try {
-        const genuses = await fetchGenusesSearch(req.params.q);
+        const q = req.query.q as string;
+        const genuses = await fetchGenusesSearch(q);
         res.json(genuses);
     } catch (error) {
         res.status(500).json({ error: "Failed to fetch genuses search" });
