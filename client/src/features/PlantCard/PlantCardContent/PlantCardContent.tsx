@@ -1,9 +1,9 @@
-import { Divider, Skeleton, Stack } from "@mui/material";
+import { Divider, Stack } from "@mui/material";
 import { FC } from "react";
 import { StyledPlantCardContent } from "../PlantCard.style";
 import { Plant } from "shared/types/Plants";
 import PlantNames from "./PlantNames";
-import PlantRoutines from "./PlantRoutines";
+import PlantRoutines from "./PlantRoutines/PlantRoutines";
 
 type PlantCardContentProps = {
     plant: Plant;

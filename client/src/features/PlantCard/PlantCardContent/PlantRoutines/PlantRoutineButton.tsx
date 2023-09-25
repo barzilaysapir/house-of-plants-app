@@ -1,12 +1,12 @@
 import { IconButton, Tooltip } from "@mui/material";
 import { FC } from "react";
-import { PlantRoutine } from "../PlantCard.util";
+import { PlantRoutine } from "../../PlantCard.util";
 import { PlantCareRoutineData } from "shared/types/Plants";
 import PlantRoutineProgress from "./PlantRoutineProgress";
 import i18n from "i18next";
 import PlantRoutineDialog from "features/PlantRoutineDialog/PlantRoutineDialog";
 import useToggleDisplay from "shared/hooks/useToggleDisplay";
-import usePlantCardContent from "./usePlantCardContent";
+import usePlantCardContent from "../usePlantCardContent";
 
 type PlantRoutineButtonProps = {
     name: string;
