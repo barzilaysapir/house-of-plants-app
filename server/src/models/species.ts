@@ -1,15 +1,13 @@
 import axios from "axios";
-import { BASE_URL, TREFLE_TOKEN } from "utils/consts";
-// import { SpeciesRes } from "../../../shared/types/API/species";
-// import { SpecieRes } from "../../../shared/types/API/specie";
 import { Plant, PlantCare, SpecieLight } from "utils/types";
 
-const speciesAPI = `${BASE_URL}/species`;
+const speciesAPI = `${Bun.env.BASE_URL}/species`;
+const token = Bun.env.TREFLE_TOKEN;
 
 export const getAllSpecies = async (): Promise<any | null> => {
     const response = await axios.get(speciesAPI, {
         params: {
-            token: TREFLE_TOKEN,
+            token,
         },
     });
     return response.data.data;
@@ -18,7 +16,7 @@ export const getAllSpecies = async (): Promise<any | null> => {
 export const getSpeciesById = async (id: number): Promise<any | null> => {
     const response = await axios.get(`${speciesAPI}/${id}`, {
         params: {
-            token: TREFLE_TOKEN,
+            token,
         },
     });
     return response.data.data;
@@ -27,7 +25,7 @@ export const getSpeciesById = async (id: number): Promise<any | null> => {
 export const getSpeciesSearch = async (q: string): Promise<Plant[] | null> => {
     const response = await axios.get(`${speciesAPI}/search`, {
         params: {
-            token: TREFLE_TOKEN,
+            token,
             q,
         },
     });

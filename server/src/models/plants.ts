@@ -1,14 +1,12 @@
 import axios from "axios";
-import { BASE_URL, TREFLE_TOKEN } from "utils/consts";
-// import { PlantsRes } from "../../../../shared/plants";
-// import { PlantRes } from "../../../../shared/plant";
 
-const plantsAPI = `${BASE_URL}/plants`;
+const plantsAPI = `${Bun.env.BASE_URL}/plants`;
+const token = Bun.env.TREFLE_TOKEN;
 
 export const getAllPlants = async (): Promise<any | null> => {
     const response = await axios.get(plantsAPI, {
         params: {
-            token: TREFLE_TOKEN,
+            token,
         },
     });
     return response.data.data;
@@ -17,7 +15,7 @@ export const getAllPlants = async (): Promise<any | null> => {
 export const getPlantsSearch = async (q: string): Promise<any | null> => {
     const response = await axios.get(`${plantsAPI}/search`, {
         params: {
-            token: TREFLE_TOKEN,
+            token,
             q,
         },
     });
