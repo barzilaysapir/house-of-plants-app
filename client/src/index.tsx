@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider } from "react-router-dom";
 import LoaderBackdrop from "components/LoaderBackdrop/LoaderBackdrop";
-import { ROUTER } from "config/Router";
+import { router } from "config/router";
 import "config/locales/i18n";
 
 const root = ReactDOM.createRoot(
@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
     <React.StrictMode>
-        <RouterProvider router={ROUTER} fallbackElement={<LoaderBackdrop />} />
+        <RouterProvider router={router} fallbackElement={<LoaderBackdrop />} />
     </React.StrictMode>
 );
 

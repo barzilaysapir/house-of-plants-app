@@ -13,8 +13,8 @@
     "identify": {
         "title": "זיהוי"
     },
-    "home": {
-        "title": "בית"
+    "reminders": {
+        "title": "תזכורות"
     },
     "addPlants": {
         "title": "הוספת צמח חדש",
@@ -36,7 +36,7 @@
         "title": "שונא ליים",
         "data": "This type of plant don't like to be watered with tap water, try to avoid it and use fertilize water."
     },
-        "likeToDry": {
+    "likeToDry": {
         "title": "Like To Dry",
         "data": "This plant like to completley dry between watering"
     },

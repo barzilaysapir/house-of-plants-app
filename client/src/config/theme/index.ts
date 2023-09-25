@@ -1,7 +1,7 @@
 import { Theme, createTheme, responsiveFontSizes } from "@mui/material";
 import { green, grey } from "@mui/material/colors";
 import { heIL } from "@mui/material/locale";
-import components from "./ComponentsTheme";
+import components from "./components";
 
 let theme: Theme = createTheme(
     {
