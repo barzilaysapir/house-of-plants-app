@@ -19,7 +19,7 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
     if (loading)
         return (
             <>
-                {new Array(5).fill(0).map((_, index) => (
+                {new Array(6).fill(0).map((_, index) => (
                     <PlantCardSkeleton key={index} size="small" />
                 ))}
             </>

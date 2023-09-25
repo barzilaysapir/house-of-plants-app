@@ -23,17 +23,22 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
         setSearchInputVal(event.target.value);
     };
 
+    const onClose = () => {
+        setSearchInputVal("");
+        handleClose();
+    };
+
     return (
         <StyledAddPlantDialog
             fullScreen
             open={open}
-            onClose={handleClose}
+            onClose={onClose}
             TransitionComponent={SlideUpTransition}
             $searching={Boolean(searchInputVal)}
         >
             <DialogHeader
                 title={i18n.t("addPlants.title")}
-                handleClose={handleClose}
+                handleClose={onClose}
             />
 
             <StyledAddPlantDialogContent>
