@@ -4,6 +4,7 @@ import { Plant } from "shared/types/Plants";
 import PlantCard from "features/PlantCard/PlantCard";
 import useMyPlants from "./useMyPlants";
 import MyPlantsSearch from "./MyPlantsSearch";
+import PlantRoutines from "features/PlantRoutines/PlantRoutines";
 
 type MyPlantsProps = {
     plants: Plant[];
@@ -25,7 +26,12 @@ const MyPlants: FC<MyPlantsProps> = (props) => {
             >
                 {filteredPlants.map((plant) => (
                     <Grid item xs={1} key={plant.id}>
-                        <PlantCard key={plant.id} plant={plant} withRoutines />
+                        <PlantCard key={plant.id} plant={plant}>
+                            <PlantRoutines
+                                name={plant.primaryName}
+                                care={plant.care}
+                            />
+                        </PlantCard>
                     </Grid>
                 ))}
             </Grid>

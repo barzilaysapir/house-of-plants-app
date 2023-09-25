@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 import { Plant } from "shared/types/Plants";
 import PlantCardContent from "./PlantCardContent/PlantCardContent";
 import PlantCardImage from "./PlantCardImage";
@@ -9,16 +9,11 @@ type PlantCardProps = {
     plant: Plant;
     size?: CardImageSize;
     vertical?: boolean;
-    withRoutines?: boolean;
+    children?: ReactNode;
 };
 
 const PlantCard: FC<PlantCardProps> = (props) => {
-    const {
-        plant,
-        size = "medium",
-        vertical = false,
-        withRoutines = false,
-    } = props;
+    const { plant, size = "medium", vertical = false, children } = props;
 
     return (
         <StyledPlantCard
@@ -30,7 +25,7 @@ const PlantCard: FC<PlantCardProps> = (props) => {
             vertical={Number(vertical)}
         >
             <PlantCardImage image={plant.image} size={size} />
-            <PlantCardContent plant={plant} withRoutines={withRoutines} />
+            <PlantCardContent plant={plant}>{children}</PlantCardContent>
         </StyledPlantCard>
     );
 };
