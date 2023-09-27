@@ -1,9 +1,9 @@
-import express from "express";
+import express, { Router } from "express";
 import { getAllPlants, searchPlants } from "controllers/plants";
 
-const router = express.Router();
+const router: Router = express.Router();
 
-router.get("/search/:q", searchPlants);
-router.get("/", getAllPlants);
+router.use("/search/:q", searchPlants);
+router.use("/", getAllPlants);
 
 export default router;

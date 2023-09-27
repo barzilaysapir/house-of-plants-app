@@ -1,9 +1,9 @@
-import express from "express";
+import express, { Application } from "express";
 import cors from "cors";
 import router from "middlewares/routes";
 import { connectToDB } from "utils/db";
 
-const app = express();
+const app: Application = express();
 
 app.use(cors());
 app.use("/", router);
