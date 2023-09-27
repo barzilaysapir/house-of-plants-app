@@ -1,11 +1,13 @@
-import { USER } from "mocks/User";
-
 const getUserInfo = async () => {
-    // const response = await fetch('/api/user');
-    // const data = await response.json();
-    const data = USER;
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    return data;
+    const userId = "6511949f623d2d4732a58991";
+    // const userId = "65118d05623d2d4732a5898f";
+    try {
+        const res = await fetch(`/users/${userId}`);
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 export const appLoader = async () => {

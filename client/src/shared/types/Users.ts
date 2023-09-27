@@ -12,7 +12,6 @@ export type User = {
     email: string,
     image: string,
     title: string, // save on DB or get by condition?
-    amountOfPlants: number,
 }
 
 // enum Title {
