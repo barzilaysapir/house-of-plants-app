@@ -3,7 +3,6 @@
     "version": "0.1.0",
     "private": true,
     "homepage": ".",
-    "proxy": "http://192.168.68.55:4000",
     "dependencies": {
         "@emotion/react": "^11.11.1",
         "@emotion/styled": "^11.11.0",
@@ -14,6 +13,7 @@
         "@testing-library/jest-dom": "^5.17.0",
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
+        "env-cmd": "^10.1.0",
         "i18next": "^23.5.1",
         "i18next-browser-languagedetector": "^7.1.0",
         "i18next-http-backend": "^2.2.2",
@@ -30,9 +30,8 @@
         "web-vitals": "^2.1.4"
     },
     "scripts": {
-        "start": "react-scripts start",
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d build",
+        "start": "env-cmd -f .env.dev react-scripts start",
+        "start-prod": "env-cmd -f .env react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
@@ -57,10 +56,10 @@
     },
     "devDependencies": {
         "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-        "@types/stylis": "^4.2.0",
         "@types/jest": "^27.5.2",
         "@types/node": "^16.18.52",
         "@types/react": "^18.2.22",
-        "@types/react-dom": "^18.2.7"
+        "@types/react-dom": "^18.2.7",
+        "@types/stylis": "^4.2.0"
     }
 }
