@@ -8,8 +8,8 @@ const getUserInfo = async () => {
     } catch (error) {
         console.error(error);
     }
-}
+};
 
 export const appLoader = async () => {
     return await getUserInfo();
-}
+};
