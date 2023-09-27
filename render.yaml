@@ -5,6 +5,8 @@ services:
     repo: https://github.com/barzilaysapir/house-of-plants-app
     plan: starter
     autoDeploy: false
+    rootDir: "server"
+    
 
 # Bun provides a Docker image that supports both Linux x64 and arm64.
 # docker pull oven/bun
