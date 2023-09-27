@@ -3,7 +3,7 @@
     "module": "index.ts",
     "type": "module",
     "engines": {
-        "node": "14.17.0"
+        "node": ">=14.20.1"
     },
     "scripts": {
         "start": "bun run index.ts",
