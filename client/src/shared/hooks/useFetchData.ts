@@ -6,7 +6,10 @@ const fetcher = async <Data>(url: string): Promise<Data> => {
 };
 
 const useFetchData = <Data>(path: string) => {
-    const { data, error } = useSWR<Data>(path, fetcher<Data>);
+    const { data, error } = useSWR<Data>(
+        process.env.REACT_APP_API + path,
+        fetcher<Data>
+    );
 
     if (error) console.error(error);
 
