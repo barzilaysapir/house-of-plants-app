@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: bun
+    env: docker
+    repo: https://github.com/barzilaysapir/house-of-plants-app
+    plan: starter
+    autoDeploy: false
+
+# FROM oven/bun
+# WORKDIR /app
+# COPY . .
+# RUN bun install
+ 
+# ARG PORT
+# EXPOSE ${PORT:-3000}
+ 
+# CMD ["bun", "server.ts"]
+
+
+# Bun provides a Docker image that supports both Linux x64 and arm64.
+# docker pull oven/bun
+# docker run --rm --init --ulimit memlock=-1:-1 oven/bun
+
+# There are also image variants for different operating systems.
+# docker pull oven/bun:debian
+# docker pull oven/bun:slim
+# docker pull oven/bun:alpine
+# docker pull oven/bun:distroless
