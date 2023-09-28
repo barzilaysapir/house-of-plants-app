@@ -8,9 +8,7 @@ const Logout = () => {
     return (
         <div id="signOutButton">
             <GoogleLogout
-                clientId={
-                    "191768196113-s7275bjfqb7o2fgj2egatjnpdm7llmeb.apps.googleusercontent.com"
-                }
+                clientId={process.env.GOOGLE_CLIENT_ID!}
                 buttonText="Logout"
                 onLogoutSuccess={onSuccess}
             />

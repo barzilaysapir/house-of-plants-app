@@ -5,7 +5,7 @@ import i18n from "i18next";
 
 type DialogHeaderProps = {
     title: string | JSX.Element;
-    handleClose: () => void;
+    handleClose?: () => void;
 };
 
 const DialogHeader: FC<DialogHeaderProps> = (props) => {
@@ -18,13 +18,15 @@ const DialogHeader: FC<DialogHeaderProps> = (props) => {
                     {title}
                 </Typography>
 
-                <IconButton
-                    edge="start"
-                    onClick={handleClose}
-                    aria-label={i18n.t("close")}
-                >
-                    <CloseIcon />
-                </IconButton>
+                {handleClose && (
+                    <IconButton
+                        edge="start"
+                        onClick={handleClose}
+                        aria-label={i18n.t("close")}
+                    >
+                        <CloseIcon />
+                    </IconButton>
+                )}
             </Toolbar>
         </AppBar>
     );

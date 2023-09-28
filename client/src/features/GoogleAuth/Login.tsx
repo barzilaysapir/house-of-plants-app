@@ -21,9 +21,7 @@ const Login = () => {
     return (
         <div id="signInButton">
             <GoogleLogin
-                clientId={
-                    "191768196113-s7275bjfqb7o2fgj2egatjnpdm7llmeb.apps.googleusercontent.com"
-                }
+                clientId={process.env.GOOGLE_CLIENT_ID!}
                 buttonText="Login"
                 onSuccess={onSuccess}
                 onFailure={onFailure}

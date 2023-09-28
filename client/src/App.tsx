@@ -10,11 +10,6 @@ import GlobalStyles from "styles/GlobalStyle";
 import { Global } from "@emotion/react";
 import { SWRConfig } from "swr";
 import { gapi } from "gapi-script";
-import Login from "features/GoogleAuth/Login";
-import Logout from "features/GoogleAuth/Logout";
-
-const client_id =
-    "191768196113-s7275bjfqb7o2fgj2egatjnpdm7llmeb.apps.googleusercontent.com";
 
 function App() {
     const [direction, setDirection] = useState<Direction>("ltr"); // change to context
@@ -27,7 +22,7 @@ function App() {
     useEffect(() => {
         function start() {
             gapi.client.init({
-                client_id,
+                client_id: process.env.GOOGLE_CLIENT_ID,
                 scope: "",
             });
         }
@@ -44,8 +39,6 @@ function App() {
                     }}
                 >
                     <Global styles={GlobalStyles} />
-                    <Login />
-                    <Logout />
                     <Layout>
                         <Outlet />
                     </Layout>
