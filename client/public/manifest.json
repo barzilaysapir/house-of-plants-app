@@ -3,10 +3,9 @@
   "name": "House of Plants",
   "icons": [
     {
-      "src": "leaf.svg",
-      "sizes": "48x48 72x72 96x96 128x128 150x150 256x256 512x512 1024x1024",
-      "type": "image/svg+xml",
-      "purpose": "any"
+      "src": "tempLogo.jpg",
+      "sizes": "64x64 32x32 24x24 16x16 192x192 512x512",
+      "type": "image/jpg"
     }
   ],
   "start_url": ".",
