@@ -3,6 +3,7 @@ import {
     GoogleLoginResponse,
     GoogleLoginResponseOffline,
 } from "react-google-login";
+import { GOOGLE_CLIENT_ID } from "temp";
 
 const Login = () => {
     const onSuccess = (
@@ -21,7 +22,7 @@ const Login = () => {
     return (
         <div id="signInButton">
             <GoogleLogin
-                clientId={process.env.GOOGLE_CLIENT_ID!}
+                clientId={GOOGLE_CLIENT_ID}
                 buttonText="Login"
                 onSuccess={onSuccess}
                 onFailure={onFailure}

@@ -10,6 +10,7 @@ import { Global } from "@emotion/react";
 import { SWRConfig } from "swr";
 import { gapi } from "gapi-script";
 import GoogleAuth from "features/GoogleAuth/GoogleAuth";
+import { GOOGLE_CLIENT_ID } from "temp";
 
 function App() {
     const [direction, setDirection] = useState<Direction>("ltr"); // change to context
@@ -22,7 +23,7 @@ function App() {
     useEffect(() => {
         function start() {
             gapi.client.init({
-                client_id: process.env.GOOGLE_CLIENT_ID,
+                client_id: GOOGLE_CLIENT_ID,
                 scope: "",
             });
         }
