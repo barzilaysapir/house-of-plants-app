@@ -6,7 +6,7 @@ import Logout from "features/GoogleAuth/Logout";
 const GoogleAuth = () => {
     return (
         <Dialog open={true}>
-            <DialogHeader title="google Auth" />
+            <DialogHeader title="Google Auth" />
             <Login />
             <Logout />
         </Dialog>
