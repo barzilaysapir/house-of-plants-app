@@ -23,6 +23,7 @@ const SettingsMenu: FC<SettingsMenuProps> = (props) => {
         anchorElSettings,
         handleOpenSettingsMenu,
         handleCloseSettingsMenu,
+        handleSettingsMenuItemClick,
     } = useTopNav();
 
     return (
@@ -65,7 +66,10 @@ const SettingsMenu: FC<SettingsMenuProps> = (props) => {
                 onClose={handleCloseSettingsMenu}
             >
                 {SETTINGS.map((setting) => (
-                    <MenuItem key={setting} onClick={handleCloseSettingsMenu}>
+                    <MenuItem
+                        key={setting}
+                        onClick={() => handleSettingsMenuItemClick(setting)}
+                    >
                         <Typography textAlign="center">{setting}</Typography>
                     </MenuItem>
                 ))}

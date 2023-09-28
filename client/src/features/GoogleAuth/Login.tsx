@@ -3,16 +3,20 @@ import {
     GoogleLoginResponse,
     GoogleLoginResponseOffline,
 } from "react-google-login";
+import { mutate } from "swr";
 import { GOOGLE_CLIENT_ID } from "temp";
 
 const Login = () => {
     const onSuccess = (
         res: GoogleLoginResponse | GoogleLoginResponseOffline
     ) => {
-        console.log(
-            "LOGIN SUCCESS! Current user: ",
-            (res as GoogleLoginResponse).profileObj
-        );
+        const googleUserProfile = (res as GoogleLoginResponse).profileObj;
+        console.log("LOGIN SUCCESS! Current user: ", googleUserProfile);
+        mutate(`/users/${googleUserProfile.googleId}`, {
+            body: {
+                ...googleUserProfile,
+            },
+        });
     };
 
     const onFailure = (error: any) => {
@@ -23,10 +27,10 @@ const Login = () => {
         <div id="signInButton">
             <GoogleLogin
                 clientId={GOOGLE_CLIENT_ID}
-                buttonText="Login"
+                buttonText="LOGIN"
                 onSuccess={onSuccess}
                 onFailure={onFailure}
-                cookiePolicy={"single_host_origin"}
+                cookiePolicy="single_host_origin"
                 isSignedIn={true}
             />
         </div>

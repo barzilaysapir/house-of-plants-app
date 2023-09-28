@@ -14,7 +14,7 @@ const Logo = () => {
             }}
         >
             <StyledLogoTypography component="a" href="/" noWrap>
-                HousePlantCare
+                House of Plants
             </StyledLogoTypography>
 
             <SvgIcon component={LeafIcon} viewBox="2000 500 1 5500" />

@@ -5,9 +5,18 @@ const fetcher = async <Data>(url: string): Promise<Data> => {
     return await res.json();
 };
 
-const useFetchData = <Data>(path: string) => {
+type UserFetchDataProps = {
+    path: string;
+    body?: any;
+    shouldFetch?: any;
+};
+
+const useFetchData = <Data>({
+    path,
+    shouldFetch = true,
+}: UserFetchDataProps) => {
     const { data, error } = useSWR<Data>(
-        process.env.REACT_APP_API + path,
+        Boolean(shouldFetch) ? process.env.REACT_APP_API + path : null,
         fetcher<Data>
     );
 
@@ -15,7 +24,7 @@ const useFetchData = <Data>(path: string) => {
 
     return {
         data,
-        loading: !error && !data,
+        loading: shouldFetch && !error && !data,
         error,
     };
 };

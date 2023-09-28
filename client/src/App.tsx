@@ -8,9 +8,6 @@ import { Outlet } from "react-router";
 import GlobalStyles from "styles/GlobalStyle";
 import { Global } from "@emotion/react";
 import { SWRConfig } from "swr";
-import { gapi } from "gapi-script";
-import GoogleAuth from "features/GoogleAuth/GoogleAuth";
-import { GOOGLE_CLIENT_ID } from "temp";
 
 function App() {
     const [direction, setDirection] = useState<Direction>("ltr"); // change to context
@@ -19,16 +16,6 @@ function App() {
         // LOCALE.setLanguage('he');
         // setDirection(LOCALE.direction as Direction);
     }, []);
-
-    useEffect(() => {
-        function start() {
-            gapi.client.init({
-                client_id: GOOGLE_CLIENT_ID,
-                scope: "",
-            });
-        }
-        gapi.load("client:auth2", start);
-    });
 
     return (
         <div dir={direction}>
@@ -40,7 +27,6 @@ function App() {
                     }}
                 >
                     <Global styles={GlobalStyles} />
-                    <GoogleAuth />;
                     <Layout>
                         <Outlet />
                     </Layout>

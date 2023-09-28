@@ -12,7 +12,7 @@ export const getAllUsers = async (req: Request, res: Response) => {
 
 export const getUsersById = async (req: Request<any>, res: Response) => {
     try {
-        const user = await fetchUserById(req.params.id);
+        const user = await fetchUserById(req.params.id, req.body);
         res.json(user);
     } catch (error) {
         res.status(500).json({ error: "Failed to fetch user by id" });

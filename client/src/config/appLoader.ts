@@ -1,6 +1,5 @@
 const getUserInfo = async () => {
-    const userId = "6511949f623d2d4732a58991";
-    // const userId = "65118d05623d2d4732a5898f";
+    const userId = "65154888467c696f09521dd4";
     try {
         const res = await fetch(`${process.env.REACT_APP_API}/users/${userId}`);
         const data = await res.json();

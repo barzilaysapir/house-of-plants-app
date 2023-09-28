@@ -4,8 +4,8 @@ export const fetchAllUsers = async () => {
     return await getAllUsers();
 };
 
-export const fetchUserById = async (id: string) => {
-    return await getUserById(id);
+export const fetchUserById = async (id: string, user: any) => {
+    return await getUserById(id, user);
 };
 
 export const fetchAddUser = async (user: any) => {

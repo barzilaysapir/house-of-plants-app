@@ -44,10 +44,36 @@ export const getAllUsers = async () => {
     return await getUsersCollection().find().toArray();
 };
 
-export const getUserById = async (id: string) => {
-    return await getUsersCollection().findOne({
-        _id: new ObjectId(id),
-    });
+export const getUserById = async (id: string, user: any) => {
+    const usersCollection = getUsersCollection();
+
+    const isGoogleId = true;
+    const query = {
+        ...(isGoogleId
+            ? {
+                  googleId: id,
+              }
+            : {
+                  _id: new ObjectId(id),
+              }),
+    };
+    console.log(user);
+
+    const update = {
+        $setOnInsert: {
+            ...user,
+        },
+    };
+    const options = { upsert: true, returnOriginal: false };
+
+    // const response = await usersCollection.findOne(query);
+    const response = await usersCollection.findOneAndUpdate(
+        query,
+        update,
+        options
+    );
+    // console.log(response);
+    return response;
 };
 
 export const addUser = async (user: any) => {

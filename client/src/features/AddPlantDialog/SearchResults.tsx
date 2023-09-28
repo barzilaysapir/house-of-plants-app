@@ -12,9 +12,9 @@ type SearchResultsProps = {
 const SearchResults: FC<SearchResultsProps> = (props) => {
     const { searchInputVal } = props;
 
-    const { data, loading, error } = useFetchData<Plant[]>(
-        `/species/search?q=${searchInputVal}`
-    );
+    const { data, loading, error } = useFetchData<Plant[]>({
+        path: `/species/search?q=${searchInputVal}`,
+    });
 
     if (loading)
         return (
