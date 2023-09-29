@@ -5,7 +5,6 @@ import MyPlants from "pages/MyPlants/MyPlants";
 import { myPlantsLoader } from "pages/MyPlants/MyPlants.util";
 import { createBrowserRouter } from "react-router-dom";
 import { appLoader } from "./appLoader";
-import GoogleAuth from "features/GoogleAuth/GoogleAuth";
 
 export const router = createBrowserRouter([
     {
@@ -17,10 +16,6 @@ export const router = createBrowserRouter([
                 path: "/",
                 element: <MyPlants />,
                 loader: myPlantsLoader,
-            },
-            {
-                path: "/signin",
-                element: <GoogleAuth />,
             },
             {
                 path: "/reminders",
