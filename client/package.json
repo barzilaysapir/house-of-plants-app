@@ -10,6 +10,7 @@
         "@mui/lab": "^5.0.0-alpha.145",
         "@mui/material": "^5.14.10",
         "@mui/types": "^7.2.4",
+        "@react-oauth/google": "^0.11.1",
         "@testing-library/jest-dom": "^5.17.0",
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
@@ -20,7 +21,6 @@
         "i18next-http-backend": "^2.2.2",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "react-google-login": "^5.2.2",
         "react-i18next": "^13.2.2",
         "react-router": "^6.16.0",
         "react-router-dom": "^6.16.0",
@@ -40,7 +40,7 @@
         "service-worker"
     ],
     "scripts": {
-        "start": "env-cmd -f .env.dev react-scripts start",
+        "start": "env-cmd -f .env.local react-scripts start",
         "start-p": "env-cmd -f .env react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",

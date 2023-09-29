@@ -1,5 +1,4 @@
-import { GoogleLogout } from "react-google-login";
-import { GOOGLE_CLIENT_ID } from "temp";
+// import { GoogleLogout } from "react-google-login";
 
 const Logout = () => {
     const onSuccess = () => {
@@ -8,11 +7,11 @@ const Logout = () => {
 
     return (
         <div id="signOutButton">
-            <GoogleLogout
+            {/* <GoogleLogout
                 clientId={GOOGLE_CLIENT_ID}
                 buttonText="Logout"
                 onLogoutSuccess={onSuccess}
-            />
+            /> */}
         </div>
     );
 };
