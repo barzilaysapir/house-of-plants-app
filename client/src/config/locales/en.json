@@ -4,6 +4,10 @@
         "greeting": "Hi {{title }}!",
         "avatarAlt": "Profile Picture"
     },
+    "signIn": {
+        "title": "Welcome to",
+        "subtitle": "The House of our Plants"
+    },
     "myPlants": {
         "title": "My Plants",
         "subtitle": "{{total}} plants in my collection",
