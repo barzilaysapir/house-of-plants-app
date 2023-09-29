@@ -1,4 +1,8 @@
 import { Plant } from "shared/types/Plants";
+import ImagePolkaDot from "./images/PXL_20230920_102537694.jpg";
+import ImageBirkin from "./images/PXL_20230924_095148382.jpg";
+import ImageZZ from "./images/PXL_20230925_043336803.jpg";
+import ImagePothos from "./images/PXL_20230927_094915861.jpg";
 
 const MY_PLANTS_DATA: Plant[] = [
     {
@@ -26,8 +30,7 @@ const MY_PLANTS_DATA: Plant[] = [
                 next: -1,
             },
         },
-        image: 
-                "https://mybageecha.com/cdn/shop/products/Laurentii_2_1024x.jpg?v=1657969100",
+        image: ImageBirkin,
     },
     {
         id: 2,
@@ -54,8 +57,7 @@ const MY_PLANTS_DATA: Plant[] = [
                 next: 7,
             },
         },
-        image: 
-                "https://www.mydomaine.com/thmb/a-yj-6mfrISRxpWEpiyq2ro6DhM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tradescantia-nanouk-plant-care-7ccdc22c1e714cf78f5cd0472d4211ae.jpeg",
+        image: ImagePolkaDot,
     },
     {
         id: 3,
@@ -82,8 +84,7 @@ const MY_PLANTS_DATA: Plant[] = [
                 next: 1,
             },
         },
-        image: 
-                "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTxTh3nXLhaZ_HZFLOmkqj9tXb-WTcVjX_8NqKQ0pKWNs50nFF8I_uwye6NaqeWZyXWwpiUqzEVqI-xdEc",
+        image: ImagePothos,
     },
     {
         id: 5,
@@ -110,8 +111,7 @@ const MY_PLANTS_DATA: Plant[] = [
                 next: -1,
             },
         },
-        image: 
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL4WH0OVgYwZGEIuMH1EmW-k-5AnACmi_kFw&usqp=CAU",
+        image: ImageZZ,
     },
     // {
     //     id: 6,
@@ -137,7 +137,7 @@ const MY_PLANTS_DATA: Plant[] = [
     //             next: 7,
     //         },
     //     },
-    //     image: 
+    //     image:
     //             "https://www.mydomaine.com/thmb/a-yj-6mfrISRxpWEpiyq2ro6DhM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tradescantia-nanouk-plant-care-7ccdc22c1e714cf78f5cd0472d4211ae.jpeg",
     //     },
     // },
@@ -165,7 +165,7 @@ const MY_PLANTS_DATA: Plant[] = [
     //             next: -1,
     //         },
     //     },
-    //     image: 
+    //     image:
     //             "https://mybageecha.com/cdn/shop/products/Laurentii_2_1024x.jpg?v=1657969100",
     //     },
     // },
@@ -193,7 +193,7 @@ const MY_PLANTS_DATA: Plant[] = [
     //             next: 7,
     //         },
     //     },
-    //     image: 
+    //     image:
     //             "https://www.mydomaine.com/thmb/a-yj-6mfrISRxpWEpiyq2ro6DhM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tradescantia-nanouk-plant-care-7ccdc22c1e714cf78f5cd0472d4211ae.jpeg",
     //     },
     // },
@@ -221,7 +221,7 @@ const MY_PLANTS_DATA: Plant[] = [
     //             next: -1,
     //         },
     //     },
-    //     image: 
+    //     image:
     //             "https://mybageecha.com/cdn/shop/products/Laurentii_2_1024x.jpg?v=1657969100",
     //     },
     // },
@@ -249,7 +249,7 @@ const MY_PLANTS_DATA: Plant[] = [
     //             next: 7,
     //         },
     //     },
-    //     image: 
+    //     image:
     //             "https://www.mydomaine.com/thmb/a-yj-6mfrISRxpWEpiyq2ro6DhM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tradescantia-nanouk-plant-care-7ccdc22c1e714cf78f5cd0472d4211ae.jpeg",
     //     },
     // },
@@ -262,7 +262,7 @@ const MY_PLANTS_DATA: Plant[] = [
     //         water: {
     // info: ["limeSensitive"],
     //             freq: 5,
-    // last: 8,        
+    // last: 8,
     // next: 1,
     //         },
     //         fertilize: {
@@ -278,7 +278,7 @@ const MY_PLANTS_DATA: Plant[] = [
     //             next: -1,
     //         },
     //     },
-    //     image: 
+    //     image:
     //             "https://mybageecha.com/cdn/shop/products/Laurentii_2_1024x.jpg?v=1657969100",
     //     },
     // },
@@ -306,7 +306,7 @@ const MY_PLANTS_DATA: Plant[] = [
     //             next: 7,
     //         },
     //     },
-    //     image: 
+    //     image:
     //             "https://www.mydomaine.com/thmb/a-yj-6mfrISRxpWEpiyq2ro6DhM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tradescantia-nanouk-plant-care-7ccdc22c1e714cf78f5cd0472d4211ae.jpeg",
     //     },
     // },
