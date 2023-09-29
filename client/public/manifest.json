@@ -1,15 +1,15 @@
 {
-  "short_name": "HOP",
-  "name": "House of Plants",
-  "icons": [
-    {
-      "src": "tempLogo.jpg",
-      "sizes": "64x64 32x32 24x24 16x16 192x192 512x512",
-      "type": "image/jpg"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+    "short_name": "HOP",
+    "name": "House of Plants",
+    "icons": [
+        {
+            "src": "HoP.png",
+            "sizes": "64x64 32x32 24x24 16x16 192x192 512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
 }
