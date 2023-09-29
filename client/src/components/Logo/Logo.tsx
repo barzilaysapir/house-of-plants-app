@@ -1,7 +1,6 @@
-import { ReactComponent as LeafIcon } from "assets/icons/leaf.svg";
-import SvgIcon from "@mui/icons-material/QrCodeScanner";
 import { StyledLogoTypography } from "./Logo.style";
 import { Box } from "@mui/material";
+import logo from "assets/icons/logo_leaf.png";
 
 const Logo = () => {
     return (
@@ -17,7 +16,9 @@ const Logo = () => {
                 House of Plants
             </StyledLogoTypography>
 
-            <SvgIcon component={LeafIcon} viewBox="2000 500 1 5500" />
+            {/* <img src={logo} width={20} style={{ filter: "brightness(0.2)" }} /> */}
+
+            {/* <SvgIcon component={LeafIcon} viewBox="2000 500 1 5500" /> */}
         </Box>
     );
 };
