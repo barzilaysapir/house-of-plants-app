@@ -64,6 +64,10 @@ const SignInContent: FC<SignInContentProps> = (props) => {
 
             <GoogleLogin
                 theme={isMobile ? "outline" : "filled_blue"}
+                shape="pill"
+                logo_alignment="center"
+                // locale=""
+                width={isMobile ? 250 : ""}
                 onSuccess={onSuccess}
                 onError={onFailure}
                 useOneTap

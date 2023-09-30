@@ -1,47 +1,44 @@
 import { getDb } from "utils/db";
-import mongoose from "mongoose";
 import { ObjectId } from "mongodb";
-
-const Schema = mongoose.Schema;
-
-const userSchema = new Schema(
-    {
-        id: {
-            type: String,
-            required: true,
-        },
-        name: {
-            type: String,
-            required: true,
-        },
-        initials: {
-            type: String,
-            required: true,
-        },
-        image: {
-            type: String || null,
-            required: false,
-        },
-        email: {
-            type: String,
-            required: true,
-        },
-        amountOfPlants: {
-            type: Number,
-            required: true,
-        },
-    },
-    {
-        timestamps: true,
-    }
-);
-
-const User = mongoose.model("User", userSchema);
+import { OAuth2Client } from "google-auth-library";
 
 const getUsersCollection = () => getDb().collection("users");
 
+const client = new OAuth2Client(
+    process.env.GOOGLE_CLIENT_ID,
+    "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",
+    "http://localhost:3000/"
+);
+
 export const getAllUsers = async () => {
     return await getUsersCollection().find().toArray();
+};
+
+export const googleUserAuth = async (token: string, session: any) => {
+    let ticket: any;
+    try {
+        ticket = await client.verifyIdToken({
+            idToken: token.split(" ")[1].trim(),
+            audience: process.env.GOOGLE_CLIENT_ID,
+            // maxExpiry: "?"
+        });
+        console.log("ticket", JSON.stringify(ticket));
+    } catch (err) {
+        console.log(err);
+    }
+
+    const userData = ticket.getPayload();
+    console.log("userData", userData);
+    if (!userData) throw new Error("No user data");
+
+    const user = await getUsersCollection().updateOne(
+        { email: userData.email },
+        { $set: userData },
+        { upsert: true }
+    );
+
+    session.userId = user.upsertedId.toString();
+    return user;
 };
 
 export const getUserById = async (id: string, user: any) => {

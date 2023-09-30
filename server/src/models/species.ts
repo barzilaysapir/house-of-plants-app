@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Plant, PlantCare, SpecieLight } from "utils/types";
+import { Plant, PlantCare, SpecieLight } from "utils/types/types";
 
 const speciesAPI = `${Bun.env.BASE_URL}/species`;
 const token = Bun.env.TREFLE_TOKEN;

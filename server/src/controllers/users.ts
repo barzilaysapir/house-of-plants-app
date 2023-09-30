@@ -1,18 +1,30 @@
 import { Request, Response } from "express";
-import { fetchAddUser, fetchAllUsers, fetchUserById } from "logic/users";
+import * as Logic from "logic/users";
 
 export const getAllUsers = async (req: Request, res: Response) => {
     try {
-        const users = await fetchAllUsers();
+        const users = await Logic.fetchAllUsers();
         res.json(users);
     } catch (error) {
         res.status(500).json({ error: "Failed to fetch users" });
     }
 };
 
+export const googleUserAuth = async (req: any, res: Response) => {
+    try {
+        const user = await Logic.googleUserAuth(
+            req.headers.authorization,
+            req.session
+        );
+        res.json(user);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to fetch google auth" });
+    }
+};
+
 export const getUsersById = async (req: Request<any>, res: Response) => {
     try {
-        const user = await fetchUserById(req.params.id, req.body);
+        const user = await Logic.fetchUserById(req.params.id, req.body);
         res.json(user);
     } catch (error) {
         res.status(500).json({ error: "Failed to fetch user by id" });
@@ -21,7 +33,7 @@ export const getUsersById = async (req: Request<any>, res: Response) => {
 
 export const addUser = async (req: Request, res: Response) => {
     try {
-        const users = await fetchAddUser(req.body);
+        const users = await Logic.fetchAddUser(req.body);
         res.json(users);
     } catch (error) {
         res.status(500).json({ error: "Failed to add user" });

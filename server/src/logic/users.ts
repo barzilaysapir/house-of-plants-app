@@ -1,13 +1,17 @@
-import { getAllUsers, addUser, getUserById } from "models/users";
+import * as Models from "models/users";
 
 export const fetchAllUsers = async () => {
-    return await getAllUsers();
+    return await Models.getAllUsers();
+};
+
+export const googleUserAuth = async (token: string, session: any) => {
+    return await Models.googleUserAuth(token, session);
 };
 
 export const fetchUserById = async (id: string, user: any) => {
-    return await getUserById(id, user);
+    return await Models.getUserById(id, user);
 };
 
 export const fetchAddUser = async (user: any) => {
-    return await addUser(user);
+    return await Models.addUser(user);
 };
