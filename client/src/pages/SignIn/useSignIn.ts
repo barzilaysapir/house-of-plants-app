@@ -1,37 +1,28 @@
-import { mutate } from "swr";
+import { useSWRConfig } from "swr";
 import { CredentialResponse } from "./SignIn.types";
+import { useNavigate } from "react-router-dom";
 // googleLogout();
-// import { useGoogleLogin } from "@react-oauth/google";
 
 const useSignIn = () => {
-    // const login = useGoogleLogin({
-    //     ux_mode: "redirect",
-    //     flow: "auth-code",
-    //     redirect_uri: "http://localhost:3000",
-    // });
+    const { mutate } = useSWRConfig();
+    const navigate = useNavigate();
 
     const onSuccess = async (credentialResponse: CredentialResponse) => {
-        console.log("credentialResponse", credentialResponse);
-
-        const res = await fetch(`${process.env.REACT_APP_API}/users/auth`, {
+        await fetch(`${process.env.REACT_APP_API}/users/auth`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                // Authorization: `${credentialResponse.credential}`,
                 Authorization: `Bearer ${credentialResponse.credential}`,
             },
         });
-
-        // const res = await mutate(`/auth/google`, {
+        // await mutate(`${process.env.REACT_APP_API}/users/auth`, {
         //     headers: {
         //         "Content-Type": "application/json",
         //         Authorization: `${credentialResponse.credential}`,
         //     },
         // });
-        const data = await res.json();
-
-        console.log("data", data);
-        // store returned user somehow
+        localStorage.setItem("token", credentialResponse.credential!);
+        navigate("/myPlants");
     };
 
     const onFailure = () => {

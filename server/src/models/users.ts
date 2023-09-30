@@ -1,44 +1,45 @@
 import { getDb } from "utils/db";
 import { ObjectId } from "mongodb";
-import { OAuth2Client } from "google-auth-library";
+import { GoogleUserData } from "utils/types/googleUser";
+import axios from "axios";
 
 const getUsersCollection = () => getDb().collection("users");
-
-const client = new OAuth2Client(
-    process.env.GOOGLE_CLIENT_ID,
-    "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",
-    "http://localhost:3000/"
-);
 
 export const getAllUsers = async () => {
     return await getUsersCollection().find().toArray();
 };
 
-export const googleUserAuth = async (token: string, session: any) => {
-    let ticket: any;
+export const googleUserAuth = async (token: string) => {
+    let fetchToken;
     try {
-        ticket = await client.verifyIdToken({
-            idToken: token.split(" ")[1].trim(),
-            audience: process.env.GOOGLE_CLIENT_ID,
-            // maxExpiry: "?"
-        });
-        console.log("ticket", JSON.stringify(ticket));
+        fetchToken = await axios.get(
+            "https://www.googleapis.com/oauth2/v3/tokeninfo",
+            {
+                params: {
+                    id_token: token.split(" ")[1],
+                },
+            }
+        );
     } catch (err) {
-        console.log(err);
+        throw err;
     }
-
-    const userData = ticket.getPayload();
-    console.log("userData", userData);
-    if (!userData) throw new Error("No user data");
-
-    const user = await getUsersCollection().updateOne(
-        { email: userData.email },
-        { $set: userData },
+    const { email, name, picture, given_name, family_name }: GoogleUserData =
+        fetchToken.data;
+    const res = await getUsersCollection().updateOne(
+        { email: email },
+        {
+            $set: {
+                name,
+                email,
+                image: picture,
+                initials: given_name[0] + family_name[0],
+            },
+        },
         { upsert: true }
     );
+    console.log(res);
 
-    session.userId = user.upsertedId.toString();
-    return user;
+    return res;
 };
 
 export const getUserById = async (id: string, user: any) => {

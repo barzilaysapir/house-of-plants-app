@@ -4,8 +4,8 @@ export const fetchAllUsers = async () => {
     return await Models.getAllUsers();
 };
 
-export const googleUserAuth = async (token: string, session: any) => {
-    return await Models.googleUserAuth(token, session);
+export const googleUserAuth = async (token: string) => {
+    return await Models.googleUserAuth(token);
 };
 
 export const fetchUserById = async (id: string, user: any) => {
