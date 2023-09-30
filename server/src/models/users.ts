@@ -25,7 +25,7 @@ export const googleUserAuth = async (token: string) => {
     }
     const { email, name, picture, given_name, family_name }: GoogleUserData =
         fetchToken.data;
-    const res = await getUsersCollection().updateOne(
+    const user = await getUsersCollection().findOneAndUpdate(
         { email: email },
         {
             $set: {
@@ -37,9 +37,7 @@ export const googleUserAuth = async (token: string) => {
         },
         { upsert: true }
     );
-    console.log(res);
-
-    return res;
+    return user.value;
 };
 
 export const getUserById = async (id: string, user: any) => {
@@ -55,7 +53,6 @@ export const getUserById = async (id: string, user: any) => {
                   _id: new ObjectId(id),
               }),
     };
-    console.log(user);
 
     const update = {
         $setOnInsert: {
