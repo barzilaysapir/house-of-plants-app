@@ -8,9 +8,9 @@ import express, { Router } from "express";
 
 const router: Router = express.Router();
 
-router.use("/add", addUser);
-router.use("/auth", googleUserAuth);
-router.use("/:id", getUsersById);
-router.use("/", getAllUsers);
+router.post("/add", addUser);
+router.post("/auth", googleUserAuth);
+router.get("/:id", getUsersById);
+router.get("/", getAllUsers);
 
 export default router;

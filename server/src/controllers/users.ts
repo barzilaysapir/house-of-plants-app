@@ -12,8 +12,8 @@ export const getAllUsers = async (req: Request, res: Response) => {
 
 export const googleUserAuth = async (req: Request<any>, res: Response) => {
     try {
-        const response = await Logic.googleUserAuth(req.headers.authorization!);
-        res.json(response);
+        const authRes = await Logic.googleUserAuth(req.headers.authorization!);
+        res.json(authRes);
     } catch (error) {
         res.status(500).json({ error: "Failed to fetch google auth" });
     }

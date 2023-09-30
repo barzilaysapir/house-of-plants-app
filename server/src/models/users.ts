@@ -23,8 +23,7 @@ export const googleUserAuth = async (token: string) => {
     } catch (err) {
         throw err;
     }
-    const { email, name, picture, given_name, family_name }: GoogleUserData =
-        fetchToken.data;
+    const { email, name, picture }: GoogleUserData = fetchToken.data;
     const user = await getUsersCollection().findOneAndUpdate(
         { email: email },
         {
@@ -32,7 +31,6 @@ export const googleUserAuth = async (token: string) => {
                 name,
                 email,
                 image: picture,
-                initials: given_name[0] + family_name[0],
             },
         },
         { upsert: true }

@@ -60,8 +60,8 @@ export const StyledSignInContent = styled(Paper, {
               backgroundPosition: "center",
           }
         : {
-              backgroundColor: "#0c0c0ce3",
-              borderRadius: "50%",
+              backgroundColor: "#282d27fb",
+              borderRadius: "50px",
               boxShadow: "0 0 10px #0000006e",
           }),
 }));
