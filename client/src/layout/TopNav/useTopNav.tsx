@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { gapi } from "gapi-script";
-import { useNavigate } from "react-router-dom";
+import { googleLogout } from "@react-oauth/google";
 
 export const PAGES = ["Products", "Pricing", "Blog"];
 export const SETTINGS = ["Profile", "Account", "Dashboard", "Logout"];
@@ -11,8 +10,6 @@ const useTopNav = () => {
     );
     const [anchorElSettings, setAnchorElSettings] =
         useState<HTMLElement | null>(null);
-
-    const navigate = useNavigate();
 
     const handleOpenPagesMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElPages(event.currentTarget);
@@ -38,13 +35,8 @@ const useTopNav = () => {
     const handleSettingsMenuItemClick = (menuItem: string) => {
         switch (menuItem) {
             case "Logout":
-                gapi.auth2
-                    .getAuthInstance()
-                    .signOut()
-                    .then(() => {
-                        navigate("/signin");
-                        console.log("User signed out.");
-                    });
+                localStorage.removeItem("user");
+                googleLogout();
                 break;
             default:
                 break;

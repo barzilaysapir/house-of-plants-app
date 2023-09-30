@@ -7,6 +7,7 @@ import LogoGreen from "assets/icons/logo_green.png";
 import LogoCircle from "assets/icons/logo_circle.png";
 import LogoLeaf from "assets/icons/logo_leaf.png";
 import LogoLeafCircle from "assets/icons/logo_leaf_circle.png";
+import LogoCircle2 from "assets/icons/logo_option2.png";
 import { StyledSignInContent } from "./SignIn.styles";
 import useSignIn from "./useSignIn";
 
@@ -26,8 +27,8 @@ const SignInContent: FC<SignInContentProps> = (props) => {
                 alt="logo"
                 style={{
                     display: isMobile ? "none" : "block",
-                    opacity: 0.85,
-                    filter: "drop-shadow(0 0 3px #88f184)",
+                    opacity: 0.9,
+                    filter: "drop-shadow(0 0 3px #548d52)",
                 }}
             />
 
@@ -51,12 +52,12 @@ const SignInContent: FC<SignInContentProps> = (props) => {
             </Typography>
 
             <img
-                src={LogoCircle}
-                width="150px"
+                src={LogoCircle2}
+                width="130px"
                 alt="logo"
                 style={{
                     display: isMobile ? "block" : "none",
-                    opacity: 0.9,
+                    opacity: 0.95,
                     filter: "drop-shadow(0 0 2px #346433)",
                     marginBlock: "2rem",
                 }}

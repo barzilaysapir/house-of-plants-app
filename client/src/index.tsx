@@ -6,26 +6,14 @@ import LoaderBackdrop from "components/LoaderBackdrop/LoaderBackdrop";
 import { router } from "config/router";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import "config/locales/i18n";
-import { GoogleOAuthProvider } from "@react-oauth/google";
 
-const handleCallbackRes = () => {
-    console.log("res: ");
-};
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
 );
 
 root.render(
     <React.StrictMode>
-        <GoogleOAuthProvider
-            clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID!}
-            onScriptLoadSuccess={handleCallbackRes}
-        >
-            <RouterProvider
-                router={router}
-                fallbackElement={<LoaderBackdrop />}
-            />
-        </GoogleOAuthProvider>
+        <RouterProvider router={router} fallbackElement={<LoaderBackdrop />} />
     </React.StrictMode>
 );
 

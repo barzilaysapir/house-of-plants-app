@@ -8,6 +8,7 @@ import { Outlet } from "react-router";
 import GlobalStyles from "styles/GlobalStyle";
 import { Global } from "@emotion/react";
 import { SWRConfig } from "swr";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 function App() {
     const [direction, setDirection] = useState<Direction>("ltr"); // change to context
@@ -20,17 +21,21 @@ function App() {
     return (
         <div dir={direction}>
             <ThemeProvider theme={theme}>
-                <SWRConfig
-                    value={{
-                        errorRetryCount: 3,
-                        focusThrottleInterval: 5000,
-                    }}
+                <GoogleOAuthProvider
+                    clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID!}
                 >
-                    <Global styles={GlobalStyles} />
-                    <Layout>
-                        <Outlet />
-                    </Layout>
-                </SWRConfig>
+                    <SWRConfig
+                        value={{
+                            errorRetryCount: 3,
+                            focusThrottleInterval: 5000,
+                        }}
+                    >
+                        <Global styles={GlobalStyles} />
+                        <Layout>
+                            <Outlet />
+                        </Layout>
+                    </SWRConfig>
+                </GoogleOAuthProvider>
             </ThemeProvider>
         </div>
     );

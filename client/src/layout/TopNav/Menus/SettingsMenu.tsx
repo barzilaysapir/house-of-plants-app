@@ -9,16 +9,16 @@ import {
 } from "@mui/material";
 import useTopNav, { SETTINGS } from "../useTopNav";
 import { green } from "@mui/material/colors";
-import { User } from "shared/types/Users";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import i18n from "i18next";
-import { useLoaderData, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 
 type SettingsMenuProps = {};
 
 const SettingsMenu: FC<SettingsMenuProps> = (props) => {
     const navigate = useNavigate();
-    // const { initials, image } = useLoaderData() as User;
+    const user = localStorage.getItem("user");
+    const { initials, image } = JSON.parse(user as string) || {};
 
     const {
         anchorElSettings,
@@ -27,12 +27,9 @@ const SettingsMenu: FC<SettingsMenuProps> = (props) => {
         handleSettingsMenuItemClick,
     } = useTopNav();
 
-    const user = localStorage.getItem("user");
-    if (!user) {
-        navigate("/login", { replace: true });
-        return null;
-    }
-    const { initials, image } = JSON.parse(user);
+    useEffect(() => {
+        if (!user) navigate("/");
+    }, [user]);
 
     return (
         <Badge
