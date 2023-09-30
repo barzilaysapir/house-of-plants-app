@@ -12,11 +12,10 @@ type LayoutProps = {
 
 const Layout: FC<LayoutProps> = (props) => {
     const { children } = props;
-    const userInfo = useLoaderData() as User;
 
     return (
         <Box>
-            {userInfo && <TopNav />}
+            <TopNav />
 
             <Container maxWidth="xl">
                 <StyledPageWrapper>{children}</StyledPageWrapper>
