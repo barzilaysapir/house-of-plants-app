@@ -5,6 +5,7 @@ import MyPlants from "pages/MyPlants/MyPlants";
 import { myPlantsLoader } from "pages/MyPlants/MyPlants.util";
 import { createBrowserRouter } from "react-router-dom";
 import { appLoader } from "./appLoader";
+import SignIn from "pages/SignIn/SignIn";
 
 export const router = createBrowserRouter([
     {
@@ -13,18 +14,23 @@ export const router = createBrowserRouter([
         loader: appLoader,
         children: [
             {
-                path: "/",
-                element: <MyPlants />,
-                loader: myPlantsLoader,
+                path: "/SignIn",
+                element: <SignIn />,
             },
             {
                 path: "/reminders",
                 element: <Reminders />,
             },
             {
+                path: "/myPlants",
+                element: <MyPlants />,
+                loader: myPlantsLoader,
+            },
+            {
                 path: "/identify",
                 element: <Identify />,
             },
         ],
+        errorElement: <div>Page not found</div>,
     },
 ]);

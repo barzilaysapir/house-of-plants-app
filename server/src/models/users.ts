@@ -1,47 +1,43 @@
 import { getDb } from "utils/db";
-import mongoose from "mongoose";
 import { ObjectId } from "mongodb";
-
-const Schema = mongoose.Schema;
-
-const userSchema = new Schema(
-    {
-        id: {
-            type: String,
-            required: true,
-        },
-        name: {
-            type: String,
-            required: true,
-        },
-        initials: {
-            type: String,
-            required: true,
-        },
-        image: {
-            type: String || null,
-            required: false,
-        },
-        email: {
-            type: String,
-            required: true,
-        },
-        amountOfPlants: {
-            type: Number,
-            required: true,
-        },
-    },
-    {
-        timestamps: true,
-    }
-);
-
-const User = mongoose.model("User", userSchema);
+import { GoogleUserData } from "utils/types/googleUser";
+import axios from "axios";
 
 const getUsersCollection = () => getDb().collection("users");
 
 export const getAllUsers = async () => {
     return await getUsersCollection().find().toArray();
+};
+
+export const googleUserAuth = async (token: string) => {
+    let fetchToken;
+    try {
+        fetchToken = await axios.get(
+            "https://www.googleapis.com/oauth2/v3/tokeninfo",
+            {
+                params: {
+                    id_token: token.split(" ")[1],
+                },
+            }
+        );
+    } catch (err) {
+        throw err;
+    }
+    const { email, name, picture, given_name, family_name }: GoogleUserData =
+        fetchToken.data;
+    const user = await getUsersCollection().findOneAndUpdate(
+        { email: email },
+        {
+            $set: {
+                name,
+                email,
+                image: picture,
+                initials: given_name[0] + family_name[0],
+            },
+        },
+        { upsert: true }
+    );
+    return user.value;
 };
 
 export const getUserById = async (id: string, user: any) => {
@@ -57,7 +53,6 @@ export const getUserById = async (id: string, user: any) => {
                   _id: new ObjectId(id),
               }),
     };
-    console.log(user);
 
     const update = {
         $setOnInsert: {

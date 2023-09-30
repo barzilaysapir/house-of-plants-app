@@ -5,14 +5,14 @@ export enum Gender {
 }
 
 export type User = {
-    id: number,
-    name: string,
-    initials: string,
-    gender: Gender,
-    email: string,
-    image: string,
-    title: string, // save on DB or get by condition?
-}
+    id: number;
+    name: string;
+    initials: string;
+    gender: Gender;
+    email: string;
+    image: string;
+    title: string; // save on DB or get by condition?
+};
 
 // enum Title {
 //     NEW = "New Plant Parent",

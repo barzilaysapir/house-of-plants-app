@@ -12,12 +12,13 @@ import { green } from "@mui/material/colors";
 import { User } from "shared/types/Users";
 import { FC } from "react";
 import i18n from "i18next";
-import { useLoaderData } from "react-router";
+import { useLoaderData, useNavigate } from "react-router";
 
 type SettingsMenuProps = {};
 
 const SettingsMenu: FC<SettingsMenuProps> = (props) => {
-    const { initials, image } = useLoaderData() as User;
+    const navigate = useNavigate();
+    // const { initials, image } = useLoaderData() as User;
 
     const {
         anchorElSettings,
@@ -25,6 +26,13 @@ const SettingsMenu: FC<SettingsMenuProps> = (props) => {
         handleCloseSettingsMenu,
         handleSettingsMenuItemClick,
     } = useTopNav();
+
+    const user = localStorage.getItem("user");
+    if (!user) {
+        navigate("/login", { replace: true });
+        return null;
+    }
+    const { initials, image } = JSON.parse(user);
 
     return (
         <Badge

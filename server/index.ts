@@ -11,7 +11,7 @@ app.use("/", router);
 
 connectToDB((err) => {
     if (err) {
-        console.log("Dailed to connect to DB");
+        console.log("Failed to connect to DB");
         throw err;
     } else {
         app.listen(Bun.env.PORT, () => {
