@@ -7,17 +7,17 @@ type MyPlantsProps = {};
 
 const SignIn: FC<MyPlantsProps> = (props) => {
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
+    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
     return (
         <Modal open={true} disableAutoFocus>
-            <StyledSignInModal isMobile={isMobile} direction="row">
+            <StyledSignInModal $isMobile={isMobile} direction="row">
                 {isMobile ? (
-                    <SignInContent />
+                    <SignInContent isMobile={true} />
                 ) : (
                     <>
                         <Box className="desktop-wrapper">
-                            <SignInContent />
+                            <SignInContent isMobile={false} />
                         </Box>
                         <Box className="desktop-image" />
                     </>

@@ -1,48 +1,72 @@
 import { FC } from "react";
 import i18n from "i18next";
-import { Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Typography } from "@mui/material";
 import { GoogleLogin } from "@react-oauth/google";
 import LogoWhite from "assets/icons/logo_white.png";
 import LogoGreen from "assets/icons/logo_green.png";
+import LogoCircle from "assets/icons/logo_circle.png";
+import LogoLeaf from "assets/icons/logo_leaf.png";
+import LogoLeafCircle from "assets/icons/logo_leaf_circle.png";
 import { StyledSignInContent } from "./SignIn.styles";
 import useSignIn from "./useSignIn";
 
-const SignInContent: FC = () => {
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
+type SignInContentProps = {
+    isMobile: boolean;
+};
+
+const SignInContent: FC<SignInContentProps> = (props) => {
+    const { isMobile } = props;
     const { onSuccess, onFailure } = useSignIn();
 
     return (
-        <StyledSignInContent square={isMobile} isMobile={isMobile}>
-            <Typography
-                variant="h1"
-                color={isMobile ? "white" : ""}
-                fontFamily="'Fuggles', cursive"
-            >
-                {i18n.t("signIn.title")}
-            </Typography>
-
+        <StyledSignInContent square={true} $isMobile={isMobile}>
             <img
-                src={isMobile ? LogoWhite : LogoGreen}
-                width="200px"
+                src={LogoLeaf}
+                width="150px"
                 alt="logo"
+                style={{
+                    display: isMobile ? "none" : "block",
+                    opacity: 0.85,
+                    filter: "drop-shadow(0 0 3px #88f184)",
+                }}
             />
 
             <Typography
-                variant="h4"
-                component="p"
-                color={isMobile ? "white" : ""}
-                marginY={2}
-                fontFamily="'Fuggles', cursive"
-                fontWeight={700}
+                variant={isMobile ? "h1" : "h2"}
+                component="h1"
+                color="#dce7d8"
+                fontFamily="'Dancing Script', cursive"
+            >
+                {i18n.t("signIn.title", {
+                    count: Number(isMobile),
+                })}
+            </Typography>
+
+            <Typography
+                variant={isMobile ? "subtitle1" : "subtitle2"}
+                color="#dce7d8"
+                marginBottom={{ md: 3 }}
             >
                 {i18n.t("signIn.subtitle")}
             </Typography>
 
+            <img
+                src={LogoCircle}
+                width="150px"
+                alt="logo"
+                style={{
+                    display: isMobile ? "block" : "none",
+                    opacity: 0.9,
+                    filter: "drop-shadow(0 0 2px #346433)",
+                    marginBlock: "2rem",
+                }}
+            />
+
             <GoogleLogin
-                theme={isMobile ? "outline" : "filled_black"}
+                theme={isMobile ? "outline" : "filled_blue"}
                 onSuccess={onSuccess}
                 onError={onFailure}
+                useOneTap
             />
         </StyledSignInContent>
     );

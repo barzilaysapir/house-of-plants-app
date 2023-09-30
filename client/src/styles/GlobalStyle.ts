@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 
 const GlobalStyles = css`
     @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
-    @import url("https://fonts.googleapis.com/css2?family=Fuggles&family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
 
     html {
         font-size: 16px;

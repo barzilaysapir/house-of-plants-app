@@ -1,5 +1,6 @@
 // import { GoogleLogout } from "react-google-login";
 
+// TODO: [HOP-45] clean this component
 const Logout = () => {
     const onSuccess = () => {
         console.log("Log out successfull!");

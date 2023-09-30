@@ -5,8 +5,9 @@
         "avatarAlt": "Profile Picture"
     },
     "signIn": {
-        "title": "Welcome to",
-        "subtitle": "The House of our Plants"
+        "title_zero": "Welcome to HoP",
+        "title_one": "Welcome to",
+        "subtitle": "The House of Plants"
     },
     "myPlants": {
         "title": "My Plants",
