@@ -9,9 +9,9 @@ type ProtectedRouteProps = {
 const ProtectedRoute: FC<ProtectedRouteProps> = (props) => {
     const { children } = props;
 
-    if (!localStorage.getItem("user")) {
-        return <Navigate to={Route.SIGN_IN} replace />;
-    }
+    // if (!localStorage.getItem("user")) {
+    //     return <Navigate to={Route.SIGN_IN} replace />;
+    // }
 
     return children;
 };
