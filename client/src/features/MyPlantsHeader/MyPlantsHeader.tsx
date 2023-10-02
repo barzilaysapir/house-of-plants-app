@@ -20,6 +20,7 @@ const MyPlantsHeader: FC<MyPlantsHeaderProps> = (props) => {
                     <Typography
                         display="inline-block"
                         variant="subtitle1"
+                        component="span"
                         color="textSecondary"
                         marginX={1}
                     >
