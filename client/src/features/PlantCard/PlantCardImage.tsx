@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { StyledCardMedia, StyledPlantCardImage } from "./PlantCard.style";
-import { CardImageSize } from "./PlantCard.util";
+import { PlantImageSize } from "shared/types/plantCard";
 
 type PlantCardImageProps = {
     image: string;
-    size: CardImageSize;
+    size: PlantImageSize;
 };
 
 const PlantCardImage: FC<PlantCardImageProps> = (props) => {

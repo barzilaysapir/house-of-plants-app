@@ -5,12 +5,12 @@ import {
     StyledPlantCardContent,
     StyledPlantCardImage,
 } from "./PlantCard.style";
-import { CardImageSize } from "./PlantCard.util";
+import { PlantImageSize } from "shared/types/plantCard";
 import { Skeleton } from "@mui/material";
 
 type PlantCardSkeletonProps = {
     vertical?: boolean;
-    size: CardImageSize;
+    size: PlantImageSize;
 };
 
 const PlantCardSkeleton: FC<PlantCardSkeletonProps> = (props) => {

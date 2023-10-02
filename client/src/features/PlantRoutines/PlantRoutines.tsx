@@ -13,8 +13,7 @@ const PlantRoutines: FC<PlantRoutinesProps> = (props) => {
     const { name, care } = props;
 
     return (
-        //  replace marginTop with "auto"
-        <Stack direction="row" justifyContent="center" gap={2} marginTop={1.5}>
+        <Stack direction="row" justifyContent="center" gap={2}>
             {PLANT_ROUTINES.map((routine, index) => (
                 <PlantRoutineButton
                     key={index}

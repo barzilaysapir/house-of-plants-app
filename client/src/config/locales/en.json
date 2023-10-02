@@ -36,6 +36,13 @@
         "scanImage": "Identify by image"
     },
 
+    "view": {
+        "toggle": "toggle view",
+        "grid": "grid view",
+        "cards": "cards view",
+        "rows": "rows view"
+    },
+
     "or": "or",
     "water": "Water",
     "fertilize": "Fertilize",
