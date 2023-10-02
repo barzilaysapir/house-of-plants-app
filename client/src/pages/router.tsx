@@ -5,30 +5,44 @@ import MyPlants from "./MyPlants/MyPlants";
 import { myPlantsLoader } from "./MyPlants/MyPlants.util";
 import { createBrowserRouter } from "react-router-dom";
 import SignIn from "./SignIn/SignIn";
+import ProtectedRoute from "components/ProtectedRoute";
+import { Route } from "shared/types/route";
 
 export const router = createBrowserRouter([
     {
-        path: "/",
+        path: "",
         element: <App />,
         children: [
             {
-                path: "/",
+                path: Route.SIGN_IN,
                 element: <SignIn />,
             },
             {
-                path: "/reminders",
-                element: <Reminders />,
-            },
-            {
-                path: "/myPlants",
-                element: <MyPlants />,
+                path: Route.HOME,
+                element: (
+                    <ProtectedRoute>
+                        <MyPlants />
+                    </ProtectedRoute>
+                ),
                 loader: myPlantsLoader,
             },
             {
-                path: "/identify",
-                element: <Identify />,
+                path: Route.REMINDERS,
+                element: (
+                    <ProtectedRoute>
+                        <Reminders />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: Route.IDENTIFY,
+                element: (
+                    <ProtectedRoute>
+                        <Identify />
+                    </ProtectedRoute>
+                ),
             },
         ],
-        errorElement: <div>Page not found</div>,
+        errorElement: <div>Error</div>,
     },
 ]);

@@ -1,6 +1,7 @@
 import { useSWRConfig } from "swr";
 import { CredentialResponse } from "./SignIn.types";
 import { useNavigate } from "react-router-dom";
+import { Route } from "shared/types/route";
 // googleLogout();
 
 const useSignIn = () => {
@@ -22,9 +23,8 @@ const useSignIn = () => {
         //         Authorization: `${credentialResponse.credential}`,
         //     },
         // });
-        console.log(data);
         localStorage.setItem("user", JSON.stringify(data)!);
-        navigate("/myPlants");
+        navigate(Route.HOME);
     };
 
     const onFailure = () => {
@@ -34,7 +34,6 @@ const useSignIn = () => {
     return {
         onSuccess,
         onFailure,
-        // login,
     };
 };
 
