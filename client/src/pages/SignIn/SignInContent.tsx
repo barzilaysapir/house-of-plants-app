@@ -38,9 +38,7 @@ const SignInContent: FC<SignInContentProps> = (props) => {
                 color="#dce7d8"
                 fontFamily="'Dancing Script', cursive"
             >
-                {i18n.t("signIn.title", {
-                    count: Number(isMobile),
-                })}
+                {i18n.t(`signIn.title.${isMobile ? "mobile" : "desktop"}`)}
             </Typography>
 
             <Typography
