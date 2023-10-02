@@ -17,11 +17,11 @@ const PlantCardContent: FC<PlantCardContentProps> = (props) => {
 
     return (
         <StyledPlantCardContent>
-            <Stack direction="column" rowGap={1} justifyContent="space-between">
+            <Stack direction="column" rowGap={1} height="100%">
                 <PlantNames name={primaryName} anotherName={scientificName} />
                 {children && (
                     <>
-                        <Divider />
+                        <Divider sx={{ width: "100%", marginBlock: 1 }} />
                         {children}
                     </>
                 )}

@@ -11,10 +11,10 @@ const PlantNames: FC<PlantNamesProps> = (props) => {
 
     return (
         <Box>
-            <Typography variant="body1" component="h2" fontWeight={600}>
+            <Typography variant="body1" component="h2" fontWeight={600} noWrap>
                 {name}
             </Typography>
-            <Typography variant="body2" color="textSecondary">
+            <Typography variant="body2" color="textSecondary" noWrap>
                 {anotherName}
             </Typography>
         </Box>

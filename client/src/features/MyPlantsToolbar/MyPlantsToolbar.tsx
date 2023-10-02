@@ -1,18 +1,26 @@
-import { Box } from "@mui/material";
+import { Stack } from "@mui/material";
 import { ChangeEvent, FC } from "react";
-import MyPlantsSearch from "./MyPlantsSearch";
+import SearchInput from "./SearchInput";
+import ViewPicker from "./ViewPicker";
+import { PlantView } from "shared/types/plantCard";
 
 type MyPlantsProps = {
     onSearchPlant: (event: ChangeEvent<HTMLInputElement>) => void;
+    view: PlantView;
+    onChangeView: (
+        event: React.MouseEvent<HTMLElement>,
+        newView: PlantView
+    ) => void;
 };
 
 const MyPlantsToolbar: FC<MyPlantsProps> = (props) => {
-    const { onSearchPlant } = props;
+    const { onSearchPlant, view, onChangeView } = props;
 
     return (
-        <Box>
-            <MyPlantsSearch onSearchPlant={onSearchPlant} />
-        </Box>
+        <Stack direction="row" alignItems="center" spacing={2}>
+            <SearchInput onSearchPlant={onSearchPlant} />
+            <ViewPicker view={view} onChangeView={onChangeView} />
+        </Stack>
     );
 };
 

@@ -3,17 +3,22 @@ import { Plant } from "shared/types/plants";
 import PlantCardContent from "./PlantCardContent/PlantCardContent";
 import PlantCardImage from "./PlantCardImage";
 import StyledPlantCard from "./PlantCard.style";
-import { CardImageSize } from "./PlantCard.util";
+import { PlantImageSize } from "shared/types/plantCard";
 
 type PlantCardProps = {
     plant: Plant;
-    size?: CardImageSize;
+    size?: PlantImageSize;
     vertical?: boolean;
     children?: ReactNode;
 };
 
 const PlantCard: FC<PlantCardProps> = (props) => {
-    const { plant, size = "medium", vertical = false, children } = props;
+    const {
+        plant,
+        size = PlantImageSize.MEDIUM,
+        vertical = false,
+        children,
+    } = props;
 
     return (
         <StyledPlantCard

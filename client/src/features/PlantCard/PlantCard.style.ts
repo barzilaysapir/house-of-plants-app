@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 import { Box, CardContent, CardMedia, Paper } from "@mui/material";
-import { CardImageSize } from "./PlantCard.util";
+import { PlantImageSize } from "shared/types/plantCard";
 
 type StyledCardImageProps = {
-    size: CardImageSize;
+    size: PlantImageSize;
 };
 
 type StyledCardMediaProps = React.ImgHTMLAttributes<HTMLButtonElement> & {
@@ -12,21 +12,19 @@ type StyledCardMediaProps = React.ImgHTMLAttributes<HTMLButtonElement> & {
 };
 
 type StyledCardProps = {
-    vertical: number
-}
+    vertical: number;
+};
 
-
-export const StyledPlantCardImage =
-    styled(Box)<StyledCardImageProps>`
+export const StyledPlantCardImage = styled(Box)<StyledCardImageProps>`
     border-radius: inherit;
     flex: 0 1;
     flex-basis: ${({ size }) => {
         switch (size) {
-            case "small":
+            case PlantImageSize.SMALL:
                 return "80px;";
-            case "medium":
+            case PlantImageSize.MEDIUM:
                 return "140px;";
-            case "large":
+            case PlantImageSize.LARGE:
                 return "200px;";
             default:
                 break;
@@ -34,7 +32,7 @@ export const StyledPlantCardImage =
     }};
 `;
 
-export const StyledCardMedia = styled(CardMedia) <StyledCardMediaProps>`
+export const StyledCardMedia = styled(CardMedia)<StyledCardMediaProps>`
     border-radius: inherit;
     aspect-ratio: 1 / 1;
 `;
@@ -47,12 +45,13 @@ export const StyledPlantCardContent = styled(CardContent)`
     }
 `;
 
-export const StyledPlantCard = styled(Paper) <StyledCardProps>`
+export const StyledPlantCard = styled(Paper)<StyledCardProps>`
     display: flex;
-    align-items: flex-start;
+    height: 100%;
+    box-sizing: border-box;
     justify-content: flex-start;
     box-shadow: 0px 0px 10px rgb(173 173 173 / 0.2);
-    flex-direction: ${({ vertical }) => vertical ? "column" : "row"};
+    flex-direction: ${({ vertical }) => (vertical ? "column" : "row")};
 `;
 
 export default StyledPlantCard;

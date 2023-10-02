@@ -4,6 +4,7 @@ import useFetchData from "shared/hooks/useFetchData";
 import PlantCard from "features/PlantCard/PlantCard";
 import { Plant } from "shared/types/plants";
 import PlantCardSkeleton from "features/PlantCard/PlantCardSkeleton";
+import { PlantImageSize } from "shared/types/plantCard";
 
 type SearchResultsProps = {
     searchInputVal: string;
@@ -20,7 +21,10 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
         return (
             <>
                 {new Array(6).fill(0).map((_, index) => (
-                    <PlantCardSkeleton key={index} size="small" />
+                    <PlantCardSkeleton
+                        key={index}
+                        size={PlantImageSize.SMALL}
+                    />
                 ))}
             </>
         );
@@ -30,7 +34,11 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
     return (
         <Stack spacing={1}>
             {data.map((item) => (
-                <PlantCard key={item.id} plant={item} size="small" />
+                <PlantCard
+                    key={item.id}
+                    plant={item}
+                    size={PlantImageSize.SMALL}
+                />
             ))}
         </Stack>
     );
