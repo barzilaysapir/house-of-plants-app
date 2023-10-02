@@ -1,8 +1,8 @@
 import { Chip, Divider } from "@mui/material";
 import { FC, useState } from "react";
-import SlideUpTransition from "components/Transition/SlideUpTransition";
+import SlideUpTransition from "components/SlideUpTransition";
 import i18n from "i18next";
-import DialogHeader from "components/DialogHeader/DialogHeader";
+import DialogHeader from "components/DialogHeader";
 import StyledAddPlantDialog, {
     StyledAddPlantDialogContent,
 } from "./AddPlantDialog.style";

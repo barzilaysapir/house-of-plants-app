@@ -1,7 +1,7 @@
 import { Toolbar, Container } from "@mui/material";
 import SettingsMenu from "./Menus/SettingsMenu";
 import PagesMenu from "./Menus/PagesMenu";
-import Logo from "components/Logo/Logo";
+import Logo from "components/Logo";
 import { FC } from "react";
 import StyledTopNav from "./TopNav.style";
 
@@ -12,8 +12,8 @@ const TopNav: FC<TopNavProps> = (props) => {
         <StyledTopNav>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <PagesMenu />
                     <Logo />
+                    <PagesMenu />
                     <SettingsMenu />
                 </Toolbar>
             </Container>

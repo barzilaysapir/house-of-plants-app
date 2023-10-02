@@ -1,6 +1,6 @@
 import { List, ListItem, ListItemText, Stack } from "@mui/material";
 import { FC } from "react";
-import { PlantCareRoutineData } from "shared/types/Plants";
+import { PlantCareRoutineData } from "shared/types/plants";
 import RoutineDataChip from "./RoutineDataChip";
 import i18n from "i18next";
 

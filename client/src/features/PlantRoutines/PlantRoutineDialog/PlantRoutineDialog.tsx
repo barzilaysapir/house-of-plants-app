@@ -1,7 +1,7 @@
 import { Container, Dialog, Stack } from "@mui/material";
 import { FC } from "react";
-import SlideUpTransition from "components/Transition/SlideUpTransition";
-import { PlantCareRoutine, PlantCareRoutineData } from "shared/types/Plants";
+import SlideUpTransition from "components/SlideUpTransition";
+import { PlantCareRoutine, PlantCareRoutineData } from "shared/types/plants";
 import RoutineData from "./RoutineData";
 import RoutineActionButton from "./RoutineActionButton";
 import {

@@ -1,5 +1,5 @@
-import { AppBar } from '@mui/material';
-import styled from '@emotion/styled';
+import { AppBar } from "@mui/material";
+import styled from "@emotion/styled";
 
 const StyledTopNav = styled(AppBar)`
     position: sticky;

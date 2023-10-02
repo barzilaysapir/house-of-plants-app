@@ -1,36 +1,23 @@
-import { CacheProvider, ThemeProvider } from "@emotion/react";
-import { Direction } from "@mui/material";
+import { ThemeProvider } from "@emotion/react";
 import Layout from "layout/Layout";
-import { useEffect, useState } from "react";
 import theme from "config/theme";
-import cacheRtl from "config/cacheRtl";
 import { Outlet } from "react-router";
-import GlobalStyles from "styles/GlobalStyle";
-import { Global } from "@emotion/react";
+import GLOBAL_STYLES from "styles/GlobalStyles";
 import { SWRConfig } from "swr";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import SWR_CONFIG from "config/SWR";
+import { GlobalStyles } from "@mui/material";
 
 function App() {
-    const [direction, setDirection] = useState<Direction>("ltr"); // change to context
-
-    useEffect(() => {
-        // LOCALE.setLanguage('he');
-        // setDirection(LOCALE.direction as Direction);
-    }, []);
-
     return (
-        <div dir={direction}>
+        <div>
             <ThemeProvider theme={theme}>
                 <GoogleOAuthProvider
                     clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID!}
                 >
-                    <SWRConfig
-                        value={{
-                            errorRetryCount: 3,
-                            focusThrottleInterval: 5000,
-                        }}
-                    >
-                        <Global styles={GlobalStyles} />
+                    <SWRConfig value={SWR_CONFIG}>
+                        <GlobalStyles styles={GLOBAL_STYLES} />
+
                         <Layout>
                             <Outlet />
                         </Layout>

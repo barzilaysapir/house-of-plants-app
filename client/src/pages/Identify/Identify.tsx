@@ -1,5 +1,5 @@
 import { FC } from "react";
-import PageHeader from "components/PageHeader/PageHeader";
+import PageHeader from "components/PageHeader";
 import { Box } from "@mui/material";
 import i18n from "i18next";
 

@@ -1,8 +1,8 @@
 import { Divider, Stack, Typography } from "@mui/material";
 import { FC } from "react";
-import { PlantCareRoutine } from "shared/types/Plants";
+import { PlantCareRoutine } from "shared/types/plants";
 import i18n from "i18next";
-import DialogHeader from "components/DialogHeader/DialogHeader";
+import DialogHeader from "components/DialogHeader";
 
 type RoutineHeaderProps = {
     plantName: string;

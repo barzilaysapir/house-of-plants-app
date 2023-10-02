@@ -1,10 +1,10 @@
 import App from "App";
-import Reminders from "pages/Reminders/Reminders";
-import Identify from "pages/Identify/Identify";
-import MyPlants from "pages/MyPlants/MyPlants";
-import { myPlantsLoader } from "pages/MyPlants/MyPlants.util";
+import Reminders from "./Reminders/Reminders";
+import Identify from "./Identify/Identify";
+import MyPlants from "./MyPlants/MyPlants";
+import { myPlantsLoader } from "./MyPlants/MyPlants.util";
 import { createBrowserRouter } from "react-router-dom";
-import SignIn from "pages/SignIn/SignIn";
+import SignIn from "./SignIn/SignIn";
 
 export const router = createBrowserRouter([
     {
@@ -12,7 +12,7 @@ export const router = createBrowserRouter([
         element: <App />,
         children: [
             {
-                path: "",
+                path: "/",
                 element: <SignIn />,
             },
             {

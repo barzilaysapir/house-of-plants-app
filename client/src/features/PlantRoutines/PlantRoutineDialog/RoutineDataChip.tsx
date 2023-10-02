@@ -1,6 +1,6 @@
 import { Chip, ClickAwayListener, Stack, Tooltip } from "@mui/material";
 import { FC } from "react";
-import { PlantCareInfo } from "shared/types/Plants";
+import { PlantCareInfo } from "shared/types/plants";
 import useToggleDisplay from "shared/hooks/useToggleDisplay";
 import { InfoOutlined } from "@mui/icons-material";
 import { useTranslation } from "react-i18next";

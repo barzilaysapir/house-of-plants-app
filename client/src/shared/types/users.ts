@@ -11,7 +11,6 @@ export type User = {
     gender: Gender;
     email: string;
     image: string;
-    title: string; // save on DB or get by condition?
 };
 
 // enum Title {

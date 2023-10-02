@@ -28,7 +28,7 @@ const SettingsMenu: FC<SettingsMenuProps> = (props) => {
     } = useTopNav();
 
     useEffect(() => {
-        if (!user) navigate("/");
+        // if (!user) navigate("/");
     }, [user]);
 
     return (

@@ -1,7 +1,7 @@
 import { Divider, Stack } from "@mui/material";
 import React, { FC, ReactNode } from "react";
 import { StyledPlantCardContent } from "../PlantCard.style";
-import { Plant } from "shared/types/Plants";
+import { Plant } from "shared/types/plants";
 import PlantNames from "./PlantNames";
 
 type PlantCardContentProps = {

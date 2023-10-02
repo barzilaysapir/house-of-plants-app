@@ -1,7 +1,7 @@
 import { IconButton, Tooltip } from "@mui/material";
 import { FC } from "react";
 import { PlantRoutine } from "../PlantCard/PlantCard.util";
-import { PlantCareRoutineData } from "shared/types/Plants";
+import { PlantCareRoutineData } from "shared/types/plants";
 import PlantRoutineProgress from "./PlantRoutineProgress";
 import i18n from "i18next";
 import PlantRoutineDialog from "features/PlantRoutines/PlantRoutineDialog/PlantRoutineDialog";

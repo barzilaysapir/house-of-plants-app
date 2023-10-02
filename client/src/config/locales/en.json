@@ -1,31 +1,41 @@
 {
     "direction": "ltr",
+
     "userHeader": {
-        "greeting": "Hi {{title }}!",
+        "greeting": "Hi {{title}}!",
         "avatarAlt": "Profile Picture"
     },
+
     "signIn": {
-        "title_zero": "Welcome to HoP",
-        "title_one": "Welcome to",
+        "title": {
+            "mobile": "Welcome to",
+            "desktop": "Welcome to HoP"
+        },
         "subtitle": "The House of Plants"
     },
+
     "myPlants": {
         "title": "My Plants",
         "subtitle": "{{total}} plants in my collection",
         "addButton": "Add",
+        "addButtonAlt": "Add Plant",
         "searchPlaceholder": "Search in your plants"
     },
+
     "identify": {
         "title": "Identify"
     },
+
     "reminders": {
         "title": "Reminders"
     },
+
     "addPlants": {
         "title": "Add New Plant",
         "searchByName": "Search by name",
         "scanImage": "Identify by image"
     },
+
     "or": "or",
     "water": "Water",
     "fertilize": "Fertilize",
@@ -37,14 +47,17 @@
     "complete_one": "complete early",
     "complete_other": "complete early",
     "snooze": "+2 days",
+
     "limeSensitive": {
         "title": "Lime Hater",
         "data": "This type of plant don't like to be watered with tap water, try to avoid it and use fertilize water."
     },
+
     "likeToDry": {
         "title": "Likes to Dry-Out",
         "data": "This plant likes to dry out completley between watering, if the soil is still most snooze this reminder"
     },
+
     "xDaysAgo_zero": "Today",
     "xDaysAgo_one": "Yesterday",
     "xDaysAgo_other": "{{count}} Days Ago",

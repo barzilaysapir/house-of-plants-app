@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider } from "react-router-dom";
-import LoaderBackdrop from "components/LoaderBackdrop/LoaderBackdrop";
-import { router } from "config/router";
+import LoaderBackdrop from "components/LoaderBackdrop";
+import { router } from "pages/router";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
-import "config/locales/i18n";
+import "config/locales";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement

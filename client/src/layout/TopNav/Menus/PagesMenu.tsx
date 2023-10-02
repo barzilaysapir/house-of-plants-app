@@ -13,7 +13,12 @@ const PagesMenu = () => {
     return (
         <>
             {/* Mobile */}
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            {/* <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}> */}
+            <Box
+                sx={{
+                    marginInlineEnd: "auto",
+                }}
+            >
                 <IconButton
                     size="large"
                     aria-label="account of current user"
@@ -38,9 +43,9 @@ const PagesMenu = () => {
                     }}
                     open={Boolean(anchorElPages)}
                     onClose={handleClosePagesMenu}
-                    sx={{
-                        display: { xs: "block", md: "none" },
-                    }}
+                    // sx={{
+                    //     display: { xs: "block", md: "none" },
+                    // }}
                 >
                     {PAGES.map((page) => (
                         <MenuItem key={page} onClick={handleClosePagesMenu}>
@@ -51,7 +56,7 @@ const PagesMenu = () => {
             </Box>
 
             {/* Desktop */}
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            {/* <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
                 {PAGES.map((page) => (
                     <Button
                         key={page}
@@ -61,7 +66,7 @@ const PagesMenu = () => {
                         {page}
                     </Button>
                 ))}
-            </Box>
+            </Box> */}
         </>
     );
 };

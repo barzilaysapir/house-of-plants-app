@@ -6,11 +6,6 @@ const ComponentsTheme: Components = {
             enterTouchDelay: 0, //on mobile - show on click
         },
     },
-    // MuiAppBar: {
-    //     defaultProps: {
-    //         position: "relative",
-    //     },
-    // },
 };
 
 export default ComponentsTheme;

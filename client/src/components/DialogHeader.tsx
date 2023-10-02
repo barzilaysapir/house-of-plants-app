@@ -20,7 +20,6 @@ const DialogHeader: FC<DialogHeaderProps> = (props) => {
 
                 {handleClose && (
                     <IconButton
-                        edge="start"
                         onClick={handleClose}
                         aria-label={i18n.t("close")}
                     >

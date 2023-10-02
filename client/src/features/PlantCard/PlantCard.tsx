@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import { Plant } from "shared/types/Plants";
+import { Plant } from "shared/types/plants";
 import PlantCardContent from "./PlantCardContent/PlantCardContent";
 import PlantCardImage from "./PlantCardImage";
 import StyledPlantCard from "./PlantCard.style";

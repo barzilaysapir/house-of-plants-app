@@ -1,9 +1,6 @@
 import { useState } from "react";
 
-type UseToggleDisplayProps = {};
-
-const useToggleDisplay = (props?: UseToggleDisplayProps) => {
-
+const useToggleDisplay = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const toggle = () => {

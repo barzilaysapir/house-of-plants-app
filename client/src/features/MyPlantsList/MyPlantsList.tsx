@@ -1,23 +1,18 @@
 import { Box, Grid } from "@mui/material";
 import { FC } from "react";
-import { Plant } from "shared/types/Plants";
+import { Plant } from "shared/types/plants";
 import PlantCard from "features/PlantCard/PlantCard";
-import useMyPlants from "./useMyPlants";
-import MyPlantsSearch from "./MyPlantsSearch";
 import PlantRoutines from "features/PlantRoutines/PlantRoutines";
 
 type MyPlantsProps = {
-    plants: Plant[];
+    filteredPlants: Plant[];
 };
 
 const MyPlants: FC<MyPlantsProps> = (props) => {
-    const { plants } = props;
-    const { onSearchPlant, filteredPlants } = useMyPlants({ plants });
+    const { filteredPlants } = props;
 
     return (
         <Box>
-            <MyPlantsSearch onSearchPlant={onSearchPlant} />
-
             <Grid
                 container
                 marginTop={1}

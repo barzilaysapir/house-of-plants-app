@@ -1,7 +1,7 @@
 import { PhotoCameraRounded } from "@mui/icons-material";
 import { IconButton, Typography } from "@mui/material";
 import { FC, useState } from "react";
-import VisuallyHiddenInput from "styles/VisuallyHiddenInput";
+import VisuallyHiddenInput from "styles/components/VisuallyHiddenInput";
 import i18n from "i18next";
 
 type IdentifyPlantProps = {};

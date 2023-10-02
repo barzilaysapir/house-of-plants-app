@@ -1,6 +1,6 @@
 import SvgIcon from "@mui/material/SvgIcon";
 import { ReactComponent as LeafIcon } from "assets/icons/leaf.svg";
-import i18n from "config/locales/i18n";
+import i18n from "config/locales";
 import { Alarm, QrCodeScanner } from "@mui/icons-material";
 
 export const BOTTOM_NAV_LINKS = [

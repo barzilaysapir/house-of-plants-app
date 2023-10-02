@@ -2,7 +2,7 @@ import { Stack } from "@mui/material";
 import { FC } from "react";
 import useFetchData from "shared/hooks/useFetchData";
 import PlantCard from "features/PlantCard/PlantCard";
-import { Plant } from "shared/types/Plants";
+import { Plant } from "shared/types/plants";
 import PlantCardSkeleton from "features/PlantCard/PlantCardSkeleton";
 
 type SearchResultsProps = {
