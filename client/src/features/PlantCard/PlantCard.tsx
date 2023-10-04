@@ -4,6 +4,8 @@ import PlantCardContent from "./PlantCardContent/PlantCardContent";
 import PlantCardImage from "./PlantCardImage";
 import StyledPlantCard from "./PlantCard.style";
 import { PlantImageSize } from "shared/types/plantCard";
+import { useMediaQuery } from "@mui/material";
+import theme from "config/theme";
 
 type PlantCardProps = {
     plant: Plant;
@@ -20,6 +22,9 @@ const PlantCard: FC<PlantCardProps> = (props) => {
         children,
     } = props;
 
+    const isGalleryView = // mobile grid view
+        useMediaQuery(theme.breakpoints.down("sm")) && vertical;
+
     return (
         <StyledPlantCard
             elevation={1}
@@ -30,7 +35,9 @@ const PlantCard: FC<PlantCardProps> = (props) => {
             vertical={Number(vertical)}
         >
             <PlantCardImage image={plant.image} size={size} />
-            <PlantCardContent plant={plant}>{children}</PlantCardContent>
+            {!isGalleryView && (
+                <PlantCardContent plant={plant}>{children}</PlantCardContent>
+            )}
         </StyledPlantCard>
     );
 };
