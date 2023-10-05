@@ -1,3 +1,4 @@
+import { useMutation } from "react-query";
 import { CredentialResponse } from "./SignIn.types";
 import { useNavigate } from "react-router-dom";
 import useLocalStorage from "shared/hooks/useLocalStorage";
@@ -7,17 +8,24 @@ const useSignIn = () => {
     const navigate = useNavigate();
     const { setToLocalStorage } = useLocalStorage();
 
-    const onSuccess = async (credentialResponse: CredentialResponse) => {
-        const res = await fetch(`${process.env.REACT_APP_API}/users/auth`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${credentialResponse.credential}`,
-            },
-        });
-        const data = await res.json();
-        setToLocalStorage("user", data);
-        navigate(Route.HOME);
+    const { mutate } = useMutation({
+        mutationFn: async (credential: string) =>
+            fetch(`${process.env.REACT_APP_API}/users/auth`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${credential}`,
+                },
+            }).then((res) => res.json()),
+        onSuccess: (response) => {
+            setToLocalStorage("user", response);
+            navigate(Route.HOME);
+        },
+    });
+
+    const onSuccess = async ({ credential }: CredentialResponse) => {
+        if (credential) mutate(credential);
+        else console.error("No credential returned");
     };
 
     const onFailure = () => {

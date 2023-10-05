@@ -8,16 +8,17 @@ import { PlantImageSize } from "shared/types/plantCard";
 
 type SearchResultsProps = {
     searchInputVal: string;
-    fetchAddPlant: (plant: Plant) => Promise<void>;
+    fetchAddPlant: (plant: Plant) => void;
 };
 
 const SearchResults: FC<SearchResultsProps> = (props) => {
     const { searchInputVal, fetchAddPlant } = props;
 
-    const { data, loading, error } = useFetchData(
-        "plantsSearch",
-        `/species/search?q=${searchInputVal}`
-    );
+    const { data, loading, error } = useFetchData({
+        key: "plantsSearch",
+        url: `/species/search?q=${searchInputVal}`,
+        trigger: searchInputVal,
+    });
 
     if (loading)
         return (

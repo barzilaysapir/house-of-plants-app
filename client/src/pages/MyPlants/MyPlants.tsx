@@ -16,11 +16,10 @@ const MyPlants: FC = () => {
     // const myPlants = useLoaderData() as PlantsData;
     const { user } = useLocalStorage();
 
-    const {
-        data = [],
-        loading,
-        error,
-    } = useFetchData("usersPlants", `/users/${JSON.parse(user!)._id}/plants`);
+    const { data = [] } = useFetchData({
+        key: "usersPlants",
+        url: `/users/${JSON.parse(user!)._id}/plants`,
+    });
 
     const { isOpen, handleOpen, handleClose } = useToggleDisplay();
     const { view, onChangeView } = usePlantsView();

@@ -1,5 +1,5 @@
 import { Chip, Divider } from "@mui/material";
-import { FC, useState } from "react";
+import { FC } from "react";
 import SlideUpTransition from "components/SlideUpTransition";
 import i18n from "i18next";
 import DialogHeader from "components/DialogHeader";
@@ -9,8 +9,8 @@ import StyledAddPlantDialog, {
 import IdentifyPlant from "./IdentifyPlant";
 import SearchPlant from "./SearchPlant";
 import SearchResults from "./SearchResults";
-import useLocalStorage from "shared/hooks/useLocalStorage";
-import useAddUsersPlant from "shared/hooks/useAddUsersPlant";
+import { CARE } from "mocks/MyPlants";
+import useAddPlantDialog from "./useAddPlantDialog";
 
 type AddPlantDialogProps = {
     open: boolean;
@@ -19,23 +19,10 @@ type AddPlantDialogProps = {
 
 const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
     const { open, handleClose } = props;
-    const [searchInputVal, setSearchInputVal] = useState<string>("");
 
-    const { user } = useLocalStorage();
-
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchInputVal(event.target.value);
-    };
-
-    const onClose = () => {
-        setSearchInputVal("");
-        handleClose();
-    };
-
-    const { fetchAddPlant } = useAddUsersPlant({
-        userId: JSON.parse(user!)._id,
-        onAddComplete: onClose,
-    });
+    const { onClose, searchInputVal, handleChange, mutate } = useAddPlantDialog(
+        { handleClose }
+    );
 
     return (
         <StyledAddPlantDialog
@@ -55,7 +42,12 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
                 {searchInputVal ? (
                     <SearchResults
                         searchInputVal={searchInputVal}
-                        fetchAddPlant={fetchAddPlant}
+                        fetchAddPlant={(plant) =>
+                            mutate({
+                                // TODO: remove care mock
+                                plant: { ...plant, care: CARE },
+                            })
+                        }
                     />
                 ) : (
                     <>
