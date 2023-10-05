@@ -1,12 +1,11 @@
-import { useSWRConfig } from "swr";
 import { CredentialResponse } from "./SignIn.types";
 import { useNavigate } from "react-router-dom";
+import useLocalStorage from "shared/hooks/useLocalStorage";
 import { Route } from "shared/types/route";
-// googleLogout();
 
 const useSignIn = () => {
-    const { mutate } = useSWRConfig();
     const navigate = useNavigate();
+    const { setToLocalStorage } = useLocalStorage();
 
     const onSuccess = async (credentialResponse: CredentialResponse) => {
         const res = await fetch(`${process.env.REACT_APP_API}/users/auth`, {
@@ -17,13 +16,7 @@ const useSignIn = () => {
             },
         });
         const data = await res.json();
-        // await mutate(`${process.env.REACT_APP_API}/users/auth`, {
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //         Authorization: `${credentialResponse.credential}`,
-        //     },
-        // });
-        localStorage.setItem("user", JSON.stringify(data)!);
+        setToLocalStorage("user", data);
         navigate(Route.HOME);
     };
 
