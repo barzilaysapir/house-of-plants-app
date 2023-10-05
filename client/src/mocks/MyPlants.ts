@@ -1,14 +1,35 @@
-import { Plant } from "shared/types/plants";
+import { Plant, PlantCare } from "shared/types/plants";
 import ImagePolkaDot from "./images/PXL_20230920_102537694.jpg";
 import ImageBirkin from "./images/PXL_20230924_095148382.jpg";
 import ImageZZ from "./images/PXL_20230925_043336803.jpg";
 import ImagePothos from "./images/PXL_20230927_094915861.jpg";
 
+export const CARE: PlantCare = {
+    fertilize: {
+        freq: 5,
+        next: 3,
+        last: 2,
+        info: [],
+    },
+    water: {
+        freq: 5,
+        next: 3,
+        last: 2,
+        info: [],
+    },
+    mist: {
+        freq: 5,
+        next: 3,
+        last: 2,
+        info: [],
+    },
+};
+
 const MY_PLANTS_DATA: Plant[] = [
     {
         id: 1,
         primaryName: "Snake Plant",
-        commonName: "Snake Plant 1",
+        secondaryName: "Snake Plant 1",
         scientificName: "Sansevieria Trifasciata Laurentii",
         care: {
             water: {
@@ -35,7 +56,7 @@ const MY_PLANTS_DATA: Plant[] = [
     {
         id: 2,
         primaryName: "Nanuk",
-        commonName: "Wandering Jew 2",
+        secondaryName: "Wandering Jew 2",
         scientificName: "Tradescantia-nanouk",
         care: {
             water: {
@@ -62,7 +83,7 @@ const MY_PLANTS_DATA: Plant[] = [
     {
         id: 3,
         primaryName: "Monsty",
-        commonName: "Swiss Cheese Plant",
+        secondaryName: "Swiss Cheese Plant",
         scientificName: "Monstera Minima",
         care: {
             water: {
@@ -89,7 +110,7 @@ const MY_PLANTS_DATA: Plant[] = [
     {
         id: 5,
         primaryName: "Custom name 5",
-        commonName: "Snake Plant 5",
+        secondaryName: "Snake Plant 5",
         scientificName: "Sansevieria Trifasciata Laurentii",
         care: {
             water: {

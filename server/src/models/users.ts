@@ -61,28 +61,21 @@ export const getUsersPlants = async (id: string) => {
     return user?.plants;
 };
 
-export const addUsersPlant = async (
-    userId: string,
-    plantId: string,
-    plant: any
-) => {
+export const addUsersPlant = async (userId: string, plant: any) => {
     type UserDocument = {
         _id: string;
-        plants?: { id: string }[];
+        plants?: any[];
     };
 
-    delete plant.id;
-
+    const { id, ...plantAttrs } = plant;
     const result = await getUsersCollection().findOneAndUpdate(
         { _id: new ObjectId(userId) },
         {
             $push: {
                 plants: {
                     id: new ObjectId(),
-                    plantId,
-                    image: plant.image,
-                    name: plant.primaryName,
-                    another_name: plant.scientificName,
+                    plantId: id,
+                    ...plantAttrs,
                 },
             } as UpdateFilter<UserDocument>,
         },

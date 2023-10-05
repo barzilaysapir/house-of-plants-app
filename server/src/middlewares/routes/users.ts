@@ -12,7 +12,7 @@ const router: Router = express.Router();
 
 router.post("/add", addUser);
 router.post("/auth", googleUserAuth);
-router.post("/:userId/addPlant/:plantId", addUsersPlant);
+router.post("/:userId/addPlant", addUsersPlant);
 router.get("/:id/plants", getUsersPlants);
 router.get("/:id", getUsersById);
 router.get("/", getAllUsers);

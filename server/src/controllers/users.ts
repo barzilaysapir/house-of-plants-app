@@ -41,7 +41,6 @@ export const addUsersPlant = async (req: Request<any>, res: Response) => {
     try {
         const addRes = await Logic.addUsersPlant(
             req.params.userId,
-            req.params.plantId,
             req.body.plant
         );
         res.json(addRes);

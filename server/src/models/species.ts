@@ -33,7 +33,7 @@ export const getSpeciesSearch = async (q: string): Promise<Plant[] | null> => {
         return {
             id: specie.id,
             primaryName: specie.common_name || specie.scientific_name,
-            commonName: specie.common_name || "",
+            secondaryName: specie.common_name || "",
             scientificName: specie.scientific_name || "",
             image: specie.image_url || "",
             care: {} as PlantCare,

@@ -2,20 +2,20 @@ import { Box, Typography } from "@mui/material";
 import { FC } from "react";
 
 type PlantNamesProps = {
-    name: string;
-    anotherName: string;
+    primaryName: string;
+    secondaryName: string;
 };
 
 const PlantNames: FC<PlantNamesProps> = (props) => {
-    const { name, anotherName } = props;
+    const { primaryName, secondaryName } = props;
 
     return (
         <Box>
             <Typography variant="body1" component="h2" fontWeight={600} noWrap>
-                {name}
+                {primaryName}
             </Typography>
             <Typography variant="body2" color="textSecondary" noWrap>
-                {anotherName}
+                {secondaryName}
             </Typography>
         </Box>
     );

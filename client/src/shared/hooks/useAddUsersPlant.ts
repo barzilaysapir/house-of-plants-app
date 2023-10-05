@@ -1,3 +1,4 @@
+import { CARE } from "mocks/MyPlants";
 import { Plant } from "shared/types/plants";
 
 type UseAddUsersPlantProps = {
@@ -23,11 +24,11 @@ const useAddUsersPlant = ({ userId, onAddComplete }: UseAddUsersPlantProps) => {
             // );
 
             const res = await fetch(
-                `${process.env.REACT_APP_API}/users/${userId}/addPlant/${plant.id}`,
+                `${process.env.REACT_APP_API}/users/${userId}/addPlant`,
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ plant }),
+                    body: JSON.stringify({ plant: { ...plant, care: CARE } }),
                 }
             ).then((res) => res.json());
             console.log(res);

@@ -16,12 +16,8 @@ export const getUsersPlants = async (id: string) => {
     return await Models.getUsersPlants(id);
 };
 
-export const addUsersPlant = async (
-    userId: string,
-    plantId: string,
-    plant: object
-) => {
-    return await Models.addUsersPlant(userId, plantId, plant);
+export const addUsersPlant = async (userId: string, plant: any) => {
+    return await Models.addUsersPlant(userId, plant);
 };
 
 export const fetchAddUser = async (user: any) => {

@@ -11,14 +11,17 @@ type PlantCardContentProps = {
 
 const PlantCardContent: FC<PlantCardContentProps> = (props) => {
     const {
-        plant: { primaryName, scientificName },
+        plant: { primaryName, secondaryName },
         children,
     } = props;
 
     return (
         <StyledPlantCardContent>
             <Stack direction="column" rowGap={1} height="100%">
-                <PlantNames name={primaryName} anotherName={scientificName} />
+                <PlantNames
+                    primaryName={primaryName}
+                    secondaryName={secondaryName}
+                />
                 {children && (
                     <>
                         <Divider sx={{ width: "100%", marginBlock: 1 }} />

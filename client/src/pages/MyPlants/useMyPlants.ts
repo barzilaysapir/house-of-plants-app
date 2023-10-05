@@ -2,22 +2,8 @@ import { useState, ChangeEvent, useEffect } from "react";
 import { Plant } from "shared/types/plants";
 
 type UseMyPlantsListProps = {
-    plants: any[];
+    plants: Plant[];
 };
-
-const mappedPlants = (plants: any[]) =>
-    plants.map((plant) => ({
-        id: plant.id,
-        // plantId: plant.plantId,
-        primaryName: plant.name,
-        care: {
-            fertilize: plant.fertilize || "",
-            water: plant.water || "",
-            mist: plant.mist || "",
-        },
-        image: plant.image,
-        scientificName: plant.another_name,
-    }));
 
 const useMyPlants = (props: UseMyPlantsListProps) => {
     const { plants } = props;
@@ -25,14 +11,14 @@ const useMyPlants = (props: UseMyPlantsListProps) => {
     const [filteredPlants, setFilteredPlants] = useState<Plant[]>([]);
 
     useEffect(() => {
-        setFilteredPlants(mappedPlants(plants));
+        setFilteredPlants(plants);
     }, [plants]);
 
     const onSearchPlant = (event: ChangeEvent<HTMLInputElement>) => {
         const searchTerm = event.target.value;
         const filteredPlants = plants.filter(
-            ({ primaryName, commonName, scientificName }) => {
-                const names = [primaryName, commonName, scientificName].map(
+            ({ primaryName, secondaryName, scientificName }) => {
+                const names = [primaryName, secondaryName, scientificName].map(
                     (name) => name.toLowerCase()
                 );
                 return names.some((name) =>
