@@ -1,12 +1,11 @@
 import { FC } from "react";
 import StyledPlantCard, {
     StyledCardMedia,
-    StyledPlantCardButton,
     StyledPlantCardContent,
     StyledPlantCardImage,
 } from "./PlantCard.style";
 import { PlantImageSize } from "shared/types/plantCard";
-import { Skeleton } from "@mui/material";
+import { CardActionArea, Skeleton } from "@mui/material";
 
 type PlantCardSkeletonProps = {
     vertical?: boolean;
@@ -17,8 +16,8 @@ const PlantCardSkeleton: FC<PlantCardSkeletonProps> = (props) => {
     const { vertical = false, size } = props;
 
     return (
-        <StyledPlantCard>
-            <StyledPlantCardButton vertical={Number(vertical)}>
+        <StyledPlantCard vertical={Number(vertical)}>
+            <CardActionArea>
                 <StyledPlantCardImage size={size}>
                     <StyledCardMedia component="" image="">
                         <Skeleton
@@ -26,12 +25,12 @@ const PlantCardSkeleton: FC<PlantCardSkeletonProps> = (props) => {
                         />
                     </StyledCardMedia>
                 </StyledPlantCardImage>
+            </CardActionArea>
 
-                <StyledPlantCardContent>
-                    <Skeleton sx={{ transform: "scale(1)" }} />
-                    <Skeleton sx={{ transform: "scale(1)", marginTop: 1 }} />
-                </StyledPlantCardContent>
-            </StyledPlantCardButton>
+            <StyledPlantCardContent>
+                <Skeleton sx={{ transform: "scale(1)" }} />
+                <Skeleton sx={{ transform: "scale(1)", marginTop: 1 }} />
+            </StyledPlantCardContent>
         </StyledPlantCard>
     );
 };
