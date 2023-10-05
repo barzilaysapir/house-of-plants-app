@@ -1,22 +1,27 @@
-import useSWR from "swr";
+import { useQuery } from "react-query";
 
-const fetcher = async <Data>(url: string): Promise<Data> => {
-    const res = await fetch(url);
-    return await res.json();
-};
+const fetcher = (url: string) =>
+    fetch(process.env.REACT_APP_API + url).then((res) => res.json());
 
-const useFetchData = <Data>(url: string) => {
-    const { data, error } = useSWR<Data>(
-        process.env.REACT_APP_API + url,
-        fetcher<Data>
+const useFetchData = (key: string, url: string) => {
+    const { isLoading, isError, error, data } = useQuery(
+        key,
+        async () => fetcher(url),
+        {
+            refetchOnWindowFocus: false,
+            refetchOnReconnect: false,
+            refetchOnMount: false,
+            refetchInterval: false,
+            refetchIntervalInBackground: false,
+        }
     );
 
-    if (error) console.error(error);
+    if (isError) console.error(error);
 
     return {
-        data,
-        loading: !error && !data,
+        loading: isLoading,
         error,
+        data,
     };
 };
 

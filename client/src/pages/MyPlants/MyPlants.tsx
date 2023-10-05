@@ -20,7 +20,7 @@ const MyPlants: FC = () => {
         data = [],
         loading,
         error,
-    } = useFetchData<Plant[]>(`/users/${JSON.parse(user!)._id}/plants`);
+    } = useFetchData("usersPlants", `/users/${JSON.parse(user!)._id}/plants`);
 
     const { isOpen, handleOpen, handleClose } = useToggleDisplay();
     const { view, onChangeView } = usePlantsView();

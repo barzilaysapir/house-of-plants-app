@@ -14,7 +14,8 @@ type SearchResultsProps = {
 const SearchResults: FC<SearchResultsProps> = (props) => {
     const { searchInputVal, fetchAddPlant } = props;
 
-    const { data, loading, error } = useFetchData<Plant[]>(
+    const { data, loading, error } = useFetchData(
+        "plantsSearch",
         `/species/search?q=${searchInputVal}`
     );
 
@@ -34,7 +35,7 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
 
     return (
         <Stack spacing={1}>
-            {data.map((item) => (
+            {data.map((item: Plant) => (
                 <PlantCard
                     key={item.id}
                     plant={item}

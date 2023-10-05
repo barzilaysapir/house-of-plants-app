@@ -7,6 +7,8 @@ import { SWRConfig } from "swr";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import SWR_CONFIG from "config/SWR";
 import { GlobalStyles } from "@mui/material";
+import { QueryClientProvider } from "react-query";
+import { QUERY_CLIENT } from "config/reactQuery";
 
 function App() {
     return (
@@ -16,11 +18,13 @@ function App() {
                     clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID!}
                 >
                     <SWRConfig value={SWR_CONFIG}>
-                        <GlobalStyles styles={GLOBAL_STYLES} />
+                        <QueryClientProvider client={QUERY_CLIENT}>
+                            <GlobalStyles styles={GLOBAL_STYLES} />
 
-                        <Layout>
-                            <Outlet />
-                        </Layout>
+                            <Layout>
+                                <Outlet />
+                            </Layout>
+                        </QueryClientProvider>
                     </SWRConfig>
                 </GoogleOAuthProvider>
             </ThemeProvider>
