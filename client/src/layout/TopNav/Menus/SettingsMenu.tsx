@@ -11,12 +11,14 @@ import useTopNav, { SETTINGS } from "../useTopNav";
 import { green } from "@mui/material/colors";
 import { FC } from "react";
 import i18n from "i18next";
+import useLocalStorage from "shared/hooks/useLocalStorage";
 
 type SettingsMenuProps = {};
 
 const SettingsMenu: FC<SettingsMenuProps> = (props) => {
-    const { initials, image } =
-        JSON.parse(localStorage.getItem("user") as string) || {};
+    const { user } = useLocalStorage();
+
+    const { initials, image } = JSON.parse(user as string);
 
     const {
         anchorElSettings,

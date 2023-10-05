@@ -1,5 +1,5 @@
 import { Divider, Stack } from "@mui/material";
-import React, { FC, ReactNode } from "react";
+import { FC, ReactNode } from "react";
 import { StyledPlantCardContent } from "../PlantCard.style";
 import { Plant } from "shared/types/plants";
 import PlantNames from "./PlantNames";

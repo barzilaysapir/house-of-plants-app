@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Navigate } from "react-router-dom";
+import useLocalStorage from "shared/hooks/useLocalStorage";
 import { Route } from "shared/types/route";
 
 type ProtectedRouteProps = {
@@ -9,7 +10,9 @@ type ProtectedRouteProps = {
 const ProtectedRoute: FC<ProtectedRouteProps> = (props) => {
     const { children } = props;
 
-    if (!localStorage.getItem("user")) {
+    const { user } = useLocalStorage();
+
+    if (!user) {
         return <Navigate to={Route.SIGN_IN} replace />;
     }
 

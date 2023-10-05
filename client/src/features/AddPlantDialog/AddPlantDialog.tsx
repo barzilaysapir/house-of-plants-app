@@ -9,6 +9,8 @@ import StyledAddPlantDialog, {
 import IdentifyPlant from "./IdentifyPlant";
 import SearchPlant from "./SearchPlant";
 import SearchResults from "./SearchResults";
+import useLocalStorage from "shared/hooks/useLocalStorage";
+import useAddUsersPlant from "shared/hooks/useAddUsersPlant";
 
 type AddPlantDialogProps = {
     open: boolean;
@@ -19,6 +21,8 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
     const { open, handleClose } = props;
     const [searchInputVal, setSearchInputVal] = useState<string>("");
 
+    const { user } = useLocalStorage();
+
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchInputVal(event.target.value);
     };
@@ -27,6 +31,11 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
         setSearchInputVal("");
         handleClose();
     };
+
+    const { fetchAddPlant } = useAddUsersPlant({
+        userId: JSON.parse(user!)._id,
+        onAddComplete: onClose,
+    });
 
     return (
         <StyledAddPlantDialog
@@ -44,7 +53,10 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
             <StyledAddPlantDialogContent>
                 <SearchPlant onChange={handleChange} />
                 {searchInputVal ? (
-                    <SearchResults searchInputVal={searchInputVal} />
+                    <SearchResults
+                        searchInputVal={searchInputVal}
+                        fetchAddPlant={fetchAddPlant}
+                    />
                 ) : (
                     <>
                         <Divider>

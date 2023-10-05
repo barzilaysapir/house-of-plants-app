@@ -21,10 +21,32 @@ export const googleUserAuth = async (req: Request<any>, res: Response) => {
 
 export const getUsersById = async (req: Request<any>, res: Response) => {
     try {
-        const user = await Logic.fetchUserById(req.params.id, req.body);
+        const user = await Logic.fetchUserById(req.params.id);
         res.json(user);
     } catch (error) {
         res.status(500).json({ error: "Failed to fetch user by id" });
+    }
+};
+
+export const getUsersPlants = async (req: Request<any>, res: Response) => {
+    try {
+        const usersPlants = await Logic.getUsersPlants(req.params.id);
+        res.json(usersPlants);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to fetch user's plants" });
+    }
+};
+
+export const addUsersPlant = async (req: Request<any>, res: Response) => {
+    try {
+        const addRes = await Logic.addUsersPlant(
+            req.params.userId,
+            req.params.plantId,
+            req.body.plant
+        );
+        res.json(addRes);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to add user's plant" });
     }
 };
 

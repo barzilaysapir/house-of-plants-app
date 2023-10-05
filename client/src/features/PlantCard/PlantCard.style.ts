@@ -1,5 +1,12 @@
 import styled from "@emotion/styled";
-import { Box, CardContent, CardMedia, Paper } from "@mui/material";
+import {
+    Box,
+    CardActionArea,
+    CardContent,
+    CardMedia,
+    Paper,
+} from "@mui/material";
+import theme from "config/theme";
 import { PlantImageSize } from "shared/types/plantCard";
 
 type StyledCardImageProps = {
@@ -45,13 +52,18 @@ export const StyledPlantCardContent = styled(CardContent)`
     }
 `;
 
-export const StyledPlantCard = styled(Paper)<StyledCardProps>`
+export const StyledPlantCardButton = styled(CardActionArea)<StyledCardProps>`
     display: flex;
     height: 100%;
     box-sizing: border-box;
     justify-content: flex-start;
-    box-shadow: 0px 0px 10px rgb(173 173 173 / 0.2);
     flex-direction: ${({ vertical }) => (vertical ? "column" : "row")};
+`;
+
+const StyledPlantCard = styled(Paper)`
+    padding: ${theme.spacing(1)};
+    border-radius: ${theme.spacing(2)};
+    box-shadow: 0px 0px 10px rgb(173 173 173 / 0.2);
 `;
 
 export default StyledPlantCard;

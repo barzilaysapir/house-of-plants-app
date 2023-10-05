@@ -1,5 +1,5 @@
 import { getDb } from "utils/db";
-import { ObjectId } from "mongodb";
+import { ObjectId, UpdateFilter } from "mongodb";
 import { GoogleUserData } from "utils/types/googleUser";
 import axios from "axios";
 
@@ -38,10 +38,10 @@ export const googleUserAuth = async (token: string) => {
     return user.value;
 };
 
-export const getUserById = async (id: string, user: any) => {
+export const getUserById = async (id: string) => {
     const usersCollection = getUsersCollection();
 
-    const isGoogleId = true;
+    const isGoogleId = false;
     const query = {
         ...(isGoogleId
             ? {
@@ -52,21 +52,43 @@ export const getUserById = async (id: string, user: any) => {
               }),
     };
 
-    const update = {
-        $setOnInsert: {
-            ...user,
-        },
-    };
-    const options = { upsert: true, returnOriginal: false };
-
-    // const response = await usersCollection.findOne(query);
-    const response = await usersCollection.findOneAndUpdate(
-        query,
-        update,
-        options
-    );
-    // console.log(response);
+    const response = await usersCollection.findOne(query);
     return response;
+};
+
+export const getUsersPlants = async (id: string) => {
+    const user = await getUserById(id);
+    return user?.plants;
+};
+
+export const addUsersPlant = async (
+    userId: string,
+    plantId: string,
+    plant: any
+) => {
+    type UserDocument = {
+        _id: string;
+        plants?: { id: string }[];
+    };
+
+    delete plant.id;
+
+    const result = await getUsersCollection().findOneAndUpdate(
+        { _id: new ObjectId(userId) },
+        {
+            $push: {
+                plants: {
+                    id: new ObjectId(),
+                    plantId,
+                    image: plant.image,
+                    name: plant.primaryName,
+                    another_name: plant.scientificName,
+                },
+            } as UpdateFilter<UserDocument>,
+        },
+        { upsert: true }
+    );
+    return result.value?.plants;
 };
 
 export const addUser = async (user: any) => {
