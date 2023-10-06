@@ -12,14 +12,12 @@ const Layout: FC<LayoutProps> = (props) => {
     const { children } = props;
 
     return (
-        <StyledLayout>
-            <BottomNav />
-            <Container maxWidth="xl" sx={{ paddingX: { xs: 0 } }}>
-                <TopNav />
-                <Container sx={{ pb: 10 }} maxWidth={false}>
-                    {children}
-                </Container>
+        <StyledLayout maxWidth="xl" sx={{ paddingX: { xs: 0 } }}>
+            <TopNav />
+            <Container sx={{ pb: 10 }} maxWidth={false}>
+                {children}
             </Container>
+            <BottomNav />
         </StyledLayout>
     );
 };

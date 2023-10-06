@@ -22,4 +22,6 @@ let theme: Theme = createTheme(
 );
 theme = responsiveFontSizes(theme);
 
+export const BOTTOM_NAV_WIDTH = "90px";
+
 export default theme;
