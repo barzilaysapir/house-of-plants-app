@@ -3,8 +3,8 @@ import { FC } from "react";
 import useFetchData from "shared/hooks/useFetchData";
 import PlantCard from "features/PlantCard/PlantCard";
 import { Plant } from "shared/types/plants";
-import PlantCardSkeleton from "features/PlantCard/PlantCardSkeleton";
 import { PlantImageSize } from "shared/types/plantCard";
+import SearchResultsSkeleton from "./SearchResultsSkeleton";
 
 type SearchResultsProps = {
     searchInputVal: string;
@@ -20,17 +20,7 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
         trigger: searchInputVal,
     });
 
-    if (loading)
-        return (
-            <>
-                {new Array(5).fill(0).map((_, index) => (
-                    <PlantCardSkeleton
-                        key={index}
-                        size={PlantImageSize.SMALL}
-                    />
-                ))}
-            </>
-        );
+    if (loading) return <SearchResultsSkeleton />;
     if (error) return <div>Error</div>;
     if (!data?.length) return <>No Data</>;
 

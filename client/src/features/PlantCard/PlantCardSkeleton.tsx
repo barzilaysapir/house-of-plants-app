@@ -5,7 +5,7 @@ import StyledPlantCard, {
     StyledPlantCardImage,
 } from "./PlantCard.style";
 import { PlantImageSize } from "shared/types/plantCard";
-import { CardActionArea, Skeleton } from "@mui/material";
+import { Skeleton } from "@mui/material";
 
 type PlantCardSkeletonProps = {
     vertical?: boolean;

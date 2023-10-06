@@ -8,7 +8,7 @@ import StyledAddPlantDialog, {
 } from "./AddPlantDialog.style";
 import IdentifyPlant from "./IdentifyPlant";
 import SearchPlant from "./SearchPlant";
-import SearchResults from "./SearchResults";
+import SearchResults from "./SearchResults/SearchResults";
 import useAddPlantDialog from "./useAddPlantDialog";
 
 type AddPlantDialogProps = {

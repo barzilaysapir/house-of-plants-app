@@ -48,7 +48,7 @@ export const StyledPlantCardContent = styled(CardContent)`
 
 const StyledPlantCard = styled(Paper)<StyledCardProps>`
     display: flex;
-    height: 100%;
+    /* height: 100%; */
     box-sizing: border-box;
     justify-content: flex-start;
     flex-direction: ${({ vertical }) => (vertical ? "column" : "row")};
