@@ -17,15 +17,11 @@ const PlantCardSkeleton: FC<PlantCardSkeletonProps> = (props) => {
 
     return (
         <StyledPlantCard vertical={Number(vertical)}>
-            <CardActionArea>
-                <StyledPlantCardImage size={size}>
-                    <StyledCardMedia component="" image="">
-                        <Skeleton
-                            sx={{ height: "100%", transform: "scale(1)" }}
-                        />
-                    </StyledCardMedia>
-                </StyledPlantCardImage>
-            </CardActionArea>
+            <StyledPlantCardImage size={size}>
+                <StyledCardMedia component="" image="">
+                    <Skeleton sx={{ height: "100%", transform: "scale(1)" }} />
+                </StyledCardMedia>
+            </StyledPlantCardImage>
 
             <StyledPlantCardContent>
                 <Skeleton sx={{ transform: "scale(1)" }} />
