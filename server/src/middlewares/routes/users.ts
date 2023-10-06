@@ -1,20 +1,12 @@
-import {
-    addUser,
-    googleUserAuth,
-    getAllUsers,
-    getUsersById,
-    addUsersPlant,
-    getUsersPlants,
-} from "controllers/users";
+import * as Controller from "controllers/users";
 import express, { Router } from "express";
 
 const router: Router = express.Router();
 
-router.post("/add", addUser);
-router.post("/auth", googleUserAuth);
-router.post("/:userId/addPlant", addUsersPlant);
-router.get("/:id/plants", getUsersPlants);
-router.get("/:id", getUsersById);
-router.get("/", getAllUsers);
+router.post("/auth", Controller.googleUserAuth);
+router.post("/:id/addPlant", Controller.addUsersPlant);
+
+router.get("/:id/plants", Controller.getUsersPlants);
+router.get("/:id", Controller.getUserById);
 
 export default router;

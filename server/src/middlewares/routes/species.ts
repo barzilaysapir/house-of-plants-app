@@ -1,14 +1,9 @@
 import express, { Router } from "express";
-import {
-    getAllSpecies,
-    getSpeciesById,
-    searchSpecies,
-} from "controllers/species";
+import * as Controller from "controllers/species";
 
 const router: Router = express.Router();
 
-router.get("/search", searchSpecies);
-router.get("/:id", getSpeciesById);
-router.get("/", getAllSpecies);
+router.get("/search", Controller.searchSpecies);
+router.get("/:id", Controller.getSpeciesById);
 
 export default router;

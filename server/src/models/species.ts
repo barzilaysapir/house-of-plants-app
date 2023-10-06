@@ -2,30 +2,21 @@ import axios from "axios";
 import { Plant, PlantCare, SpecieLight } from "utils/types/types";
 
 const speciesAPI = `${Bun.env.BASE_URL}/species`;
-const token = Bun.env.TREFLE_TOKEN;
-
-export const getAllSpecies = async (): Promise<any | null> => {
-    const response = await axios.get(speciesAPI, {
-        params: {
-            token,
-        },
-    });
-    return response.data.data;
-};
+const key = Bun.env.API_TOKEN;
 
 export const getSpeciesById = async (id: number): Promise<any | null> => {
     const response = await axios.get(`${speciesAPI}/${id}`, {
         params: {
-            token,
+            key,
         },
     });
     return response.data.data;
 };
 
-export const getSpeciesSearch = async (q: string): Promise<Plant[] | null> => {
+export const searchSpecies = async (q: string): Promise<Plant[] | null> => {
     const response = await axios.get(`${speciesAPI}/search`, {
         params: {
-            token,
+            key,
             q,
         },
     });

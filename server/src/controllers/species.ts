@@ -1,22 +1,9 @@
 import { Request, Response } from "express";
-import {
-    fetchAllSpecies,
-    fetchSpeciesById,
-    fetchSpeciesSearch,
-} from "logic/species";
-
-export const getAllSpecies = async (req: Request, res: Response) => {
-    try {
-        const species = await fetchAllSpecies();
-        res.json(species);
-    } catch (error) {
-        res.status(500).json({ error: "Failed to fetch species" });
-    }
-};
+import * as Logic from "logic/species";
 
 export const getSpeciesById = async (req: Request, res: Response) => {
     try {
-        const species = await fetchSpeciesById(+req.params.id);
+        const species = await Logic.getSpeciesById(+req.params.id);
         res.json(species);
     } catch (error) {
         res.status(500).json({ error: "Failed to fetch species by id" });
@@ -26,7 +13,7 @@ export const getSpeciesById = async (req: Request, res: Response) => {
 export const searchSpecies = async (req: Request, res: Response) => {
     try {
         const q = req.query.q as string;
-        const species = await fetchSpeciesSearch(q);
+        const species = await Logic.searchSpecies(q);
         res.json(species);
     } catch (error) {
         res.status(500).json({ error: "Failed to fetch species search" });

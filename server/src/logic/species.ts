@@ -1,17 +1,9 @@
-import {
-    getAllSpecies,
-    getSpeciesById,
-    getSpeciesSearch,
-} from "models/species";
+import * as Model from "models/species";
 
-export const fetchAllSpecies = async () => {
-    return await getAllSpecies();
+export const getSpeciesById = async (id: number) => {
+    return await Model.getSpeciesById(id);
 };
 
-export const fetchSpeciesById = async (id: number) => {
-    return await getSpeciesById(id);
-};
-
-export const fetchSpeciesSearch = async (query: string) => {
-    return await getSpeciesSearch(query);
+export const searchSpecies = async (query: string) => {
+    return await Model.searchSpecies(query);
 };

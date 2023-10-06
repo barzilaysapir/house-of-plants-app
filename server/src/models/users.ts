@@ -5,8 +5,25 @@ import axios from "axios";
 
 const getUsersCollection = () => getDb().collection("users");
 
-export const getAllUsers = async () => {
-    return await getUsersCollection().find().toArray();
+export const getUserById = async (id: string) => {
+    const isGoogleId = false;
+    const query = {
+        ...(isGoogleId
+            ? {
+                  googleId: id,
+              }
+            : {
+                  _id: new ObjectId(id),
+              }),
+    };
+
+    const response = await getUsersCollection().findOne(query);
+    return response;
+};
+
+export const getUsersPlants = async (id: string) => {
+    const user = await getUserById(id);
+    return user?.plants;
 };
 
 export const googleUserAuth = async (token: string) => {
@@ -38,29 +55,6 @@ export const googleUserAuth = async (token: string) => {
     return user.value;
 };
 
-export const getUserById = async (id: string) => {
-    const usersCollection = getUsersCollection();
-
-    const isGoogleId = false;
-    const query = {
-        ...(isGoogleId
-            ? {
-                  googleId: id,
-              }
-            : {
-                  _id: new ObjectId(id),
-              }),
-    };
-
-    const response = await usersCollection.findOne(query);
-    return response;
-};
-
-export const getUsersPlants = async (id: string) => {
-    const user = await getUserById(id);
-    return user?.plants;
-};
-
 export const addUsersPlant = async (userId: string, plant: any) => {
     type UserDocument = {
         _id: string;
@@ -82,9 +76,4 @@ export const addUsersPlant = async (userId: string, plant: any) => {
         { upsert: true }
     );
     return result.value?.plants;
-};
-
-export const addUser = async (user: any) => {
-    const response = await getUsersCollection().insertOne(user);
-    return response;
 };
