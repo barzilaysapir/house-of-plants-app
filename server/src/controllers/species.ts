@@ -3,8 +3,8 @@ import * as Logic from "logic/species";
 
 export const getSpeciesById = async (req: Request, res: Response) => {
     try {
-        const species = await Logic.getSpeciesById(+req.params.id);
-        res.json(species);
+        const specie = await Logic.getSpeciesById(+req.params.id);
+        res.json(specie);
     } catch (error) {
         res.status(500).json({ error: "Failed to fetch species by id" });
     }

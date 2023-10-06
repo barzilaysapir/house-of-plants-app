@@ -38,7 +38,7 @@ const MyPlantsList: FC<MyPlantsListProps> = (props) => {
                         {showPlantRoutines && (
                             <PlantRoutines
                                 name={plant.primaryName}
-                                care={plant.care}
+                                care={plant.care!}
                             />
                         )}
                     </PlantCard>

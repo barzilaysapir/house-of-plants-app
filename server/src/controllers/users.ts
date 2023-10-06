@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { getSpeciesById } from "logic/species";
 import * as Logic from "logic/users";
 
 export const getUserById = async (req: Request<any>, res: Response) => {
@@ -30,10 +31,8 @@ export const googleUserAuth = async (req: Request<any>, res: Response) => {
 
 export const addUsersPlant = async (req: Request<any>, res: Response) => {
     try {
-        const addRes = await Logic.addUsersPlant(
-            req.params.userId,
-            req.body.plant
-        );
+        const plant = await getSpeciesById(req.body.plant.id);
+        const addRes = await Logic.addUsersPlant(req.params.id, plant);
         res.json(addRes);
     } catch (error) {
         res.status(500).json({ error: "Failed to add user's plant" });

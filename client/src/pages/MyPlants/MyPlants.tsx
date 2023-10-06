@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Plant, PlantsData } from "shared/types/plants";
+import { PlantsData } from "shared/types/plants";
 import { Box } from "@mui/material";
 import MyPlantsList from "features/MyPlantsList/MyPlantsList";
 import AddPlantDialog from "features/AddPlantDialog/AddPlantDialog";
@@ -17,7 +17,7 @@ const MyPlants: FC = () => {
     const { user } = useLocalStorage();
 
     const { data = [] } = useFetchData({
-        key: "usersPlants",
+        keys: ["usersPlants"],
         url: `/users/${JSON.parse(user!)._id}/plants`,
     });
 

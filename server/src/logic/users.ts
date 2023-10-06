@@ -1,4 +1,5 @@
 import * as Models from "models/users";
+import { Plant } from "utils/types/plants";
 
 export const getUserById = async (id: string) => {
     return await Models.getUserById(id);
@@ -12,6 +13,6 @@ export const googleUserAuth = async (token: string) => {
     return await Models.googleUserAuth(token);
 };
 
-export const addUsersPlant = async (userId: string, plant: any) => {
+export const addUsersPlant = async (userId: string, plant: Plant) => {
     return await Models.addUsersPlant(userId, plant);
 };

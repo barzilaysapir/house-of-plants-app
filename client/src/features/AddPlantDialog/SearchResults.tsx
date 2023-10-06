@@ -8,14 +8,14 @@ import { PlantImageSize } from "shared/types/plantCard";
 
 type SearchResultsProps = {
     searchInputVal: string;
-    fetchAddPlant: (plant: Plant) => void;
+    selectPlant: (plant: Plant) => void;
 };
 
 const SearchResults: FC<SearchResultsProps> = (props) => {
-    const { searchInputVal, fetchAddPlant } = props;
+    const { searchInputVal, selectPlant } = props;
 
     const { data, loading, error } = useFetchData({
-        key: "plantsSearch",
+        keys: ["plantsSearch"],
         url: `/species/search?q=${searchInputVal}`,
         trigger: searchInputVal,
     });
@@ -23,7 +23,7 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
     if (loading)
         return (
             <>
-                {new Array(6).fill(0).map((_, index) => (
+                {new Array(5).fill(0).map((_, index) => (
                     <PlantCardSkeleton
                         key={index}
                         size={PlantImageSize.SMALL}
@@ -41,7 +41,7 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
                     key={item.id}
                     plant={item}
                     size={PlantImageSize.SMALL}
-                    onClick={fetchAddPlant}
+                    onClick={selectPlant}
                 />
             ))}
         </Stack>

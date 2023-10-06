@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useLocalStorage from "shared/hooks/useLocalStorage";
 import useMutateData from "shared/hooks/useMutateData";
+import { Plant } from "shared/types/plants";
 
 type UseAddPlantDialogProps = {
     handleClose: () => void;
@@ -28,11 +29,15 @@ const useAddPlantDialog = (props: UseAddPlantDialogProps) => {
         refetchOnSuccessKey: "usersPlants",
     });
 
+    const selectPlant = (plant: Plant) => {
+        mutate({ plant });
+    };
+
     return {
         onClose,
         searchInputVal,
         handleChange,
-        mutate,
+        selectPlant,
     };
 };
 

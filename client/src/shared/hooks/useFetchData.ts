@@ -4,16 +4,23 @@ const fetcher = (url: string) =>
     fetch(process.env.REACT_APP_API + url).then((res) => res.json());
 
 type UseFetchDataProps = {
-    key: string;
+    keys: string[];
     url: string;
     trigger?: any;
+    onSuccess?: any;
 };
 
-const useFetchData = ({ key, url, trigger = true }: UseFetchDataProps) => {
+const useFetchData = ({
+    keys,
+    url,
+    trigger = true,
+    onSuccess = () => null,
+}: UseFetchDataProps) => {
     const { isLoading, isError, error, data } = useQuery({
-        queryKey: [key, trigger],
+        queryKey: [...keys, trigger],
         queryFn: async () => fetcher(url),
         enabled: Boolean(trigger),
+        onSuccess,
     });
 
     if (isError) console.error(error);

@@ -20,13 +20,8 @@ export type PlantCare = {
 export type Plant = {
     id: number;
     primaryName: string;
-    secondaryName: string;
+    commonName: string;
     scientificName: string;
     image: string;
     care?: PlantCare;
-};
-
-export type PlantsData = {
-    total: number;
-    data: Plant[];
 };

@@ -9,7 +9,6 @@ import StyledAddPlantDialog, {
 import IdentifyPlant from "./IdentifyPlant";
 import SearchPlant from "./SearchPlant";
 import SearchResults from "./SearchResults";
-import { CARE } from "mocks/MyPlants";
 import useAddPlantDialog from "./useAddPlantDialog";
 
 type AddPlantDialogProps = {
@@ -20,9 +19,8 @@ type AddPlantDialogProps = {
 const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
     const { open, handleClose } = props;
 
-    const { onClose, searchInputVal, handleChange, mutate } = useAddPlantDialog(
-        { handleClose }
-    );
+    const { onClose, searchInputVal, handleChange, selectPlant } =
+        useAddPlantDialog({ handleClose });
 
     return (
         <StyledAddPlantDialog
@@ -42,12 +40,7 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
                 {searchInputVal ? (
                     <SearchResults
                         searchInputVal={searchInputVal}
-                        fetchAddPlant={(plant) =>
-                            mutate({
-                                // TODO: remove care mock
-                                plant: { ...plant, care: CARE },
-                            })
-                        }
+                        selectPlant={selectPlant}
                     />
                 ) : (
                     <>
