@@ -10,21 +10,19 @@ import { QUERY_CLIENT } from "config/reactQuery";
 
 function App() {
     return (
-        <div>
-            <ThemeProvider theme={theme}>
-                <GoogleOAuthProvider
-                    clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID!}
-                >
-                    <QueryClientProvider client={QUERY_CLIENT}>
-                        <GlobalStyles styles={GLOBAL_STYLES} />
+        <ThemeProvider theme={theme}>
+            <GoogleOAuthProvider
+                clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID!}
+            >
+                <QueryClientProvider client={QUERY_CLIENT}>
+                    <GlobalStyles styles={GLOBAL_STYLES} />
 
-                        <Layout>
-                            <Outlet />
-                        </Layout>
-                    </QueryClientProvider>
-                </GoogleOAuthProvider>
-            </ThemeProvider>
-        </div>
+                    <Layout>
+                        <Outlet />
+                    </Layout>
+                </QueryClientProvider>
+            </GoogleOAuthProvider>
+        </ThemeProvider>
     );
 }
 
