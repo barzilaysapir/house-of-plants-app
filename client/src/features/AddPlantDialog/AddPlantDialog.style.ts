@@ -1,16 +1,13 @@
-import { Container, Dialog } from "@mui/material";
+import { Dialog, DialogContent } from "@mui/material";
 import { styled } from "@mui/system";
 
-export const StyledAddPlantDialogContent = styled(Container)`
+export const StyledAddPlantDialogContent = styled(DialogContent)`
     display: flex;
-    row-gap: 20px;
     flex-direction: column;
-    margin-top: 10px;
-    height: 100%;
+    row-gap: 20px;
 
     .pictureButton {
         text-align: center;
-        align-self: center;
         .MuiSvgIcon-root {
             height: 1.5em;
             width: 1.5em;
@@ -18,18 +15,10 @@ export const StyledAddPlantDialogContent = styled(Container)`
     }
 `;
 
-type StyledAddPlantDialogProps = {
-    $searching: boolean;
-};
-
-const StyledAddPlantDialog =
-    styled(Dialog, {
-        shouldForwardProp: (prop) => prop !== "$searching",
-    }) <
-    StyledAddPlantDialogProps>(({ $searching }) => ({
-        "& .MuiDialog-container .MuiDialog-paper": {
-            height: $searching && "calc(100% - 100px)",
-        },
-    }));
+const StyledAddPlantDialog = styled(Dialog)`
+    & .MuiDialog-container .MuiDialog-paper {
+        height: 90%;
+    }
+`;
 
 export default StyledAddPlantDialog;

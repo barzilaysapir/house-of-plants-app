@@ -5,10 +5,10 @@ export const StyledBottomNavWrapper = styled(Paper)`
     position: fixed;
     z-index: ${({ theme }) => theme.zIndex.appBar + 1};
     bottom: 0;
-    left: 0;
+    inset-inline-start: 0;
 
     ${({ theme }) => theme.breakpoints.down("sm")} {
-        right: 0;
+        inset-inline-end: 0;
     }
 
     ${({ theme }) => theme.breakpoints.up("sm")} {

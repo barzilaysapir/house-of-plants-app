@@ -2,7 +2,7 @@ import { useState } from "react";
 import { PlantView } from "shared/types/plantCard";
 
 const usePlantsView = () => {
-    const [view, setView] = useState(PlantView.CARDS);
+    const [view, setView] = useState<PlantView>(PlantView.CARDS);
 
     const onChangeView = (
         event: React.MouseEvent<HTMLElement>,

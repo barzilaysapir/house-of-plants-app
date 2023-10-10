@@ -1,4 +1,4 @@
-import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
+import { AppBar, DialogTitle, IconButton } from "@mui/material";
 import { FC } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import i18n from "i18next";
@@ -13,20 +13,19 @@ const DialogHeader: FC<DialogHeaderProps> = (props) => {
 
     return (
         <AppBar>
-            <Toolbar>
-                <Typography variant="h6" component="h3" sx={{ ml: 2 }}>
-                    {title}
-                </Typography>
+            <DialogTitle variant="h6" component="h3" sx={{ ml: 2 }}>
+                {title}
+            </DialogTitle>
 
-                {handleClose && (
-                    <IconButton
-                        onClick={handleClose}
-                        aria-label={i18n.t("close")}
-                    >
-                        <CloseIcon />
-                    </IconButton>
-                )}
-            </Toolbar>
+            {handleClose && (
+                <IconButton
+                    onClick={handleClose}
+                    aria-label={i18n.t("close")}
+                    sx={{ marginInlineEnd: 2 }}
+                >
+                    <CloseIcon />
+                </IconButton>
+            )}
         </AppBar>
     );
 };

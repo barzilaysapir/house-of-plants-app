@@ -16,9 +16,9 @@ const MuiBaseline = css`
                 padding-bottom: 20px;
                 .MuiAppBar-root {
                     position: relative;
-                    .MuiToolbar-root {
-                        justify-content: space-between;
-                    }
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
                 }
             }
         }

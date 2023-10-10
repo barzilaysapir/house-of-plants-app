@@ -12,6 +12,7 @@ const GLOBAL_STYLES = css`
     html {
         height: 100%;
         font-size: 16px;
+        max-height: 100vh;
     }
 
     body {
