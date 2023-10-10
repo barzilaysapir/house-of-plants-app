@@ -2,13 +2,16 @@ import { Search } from "@mui/icons-material";
 import { InputAdornment, TextField, debounce } from "@mui/material";
 import { ChangeEvent, FC } from "react";
 import i18n from "i18next";
+import useActiveDevice from "shared/hooks/useActiveDevice";
 
-type SearchPlantProps = {
+type AddPlantDialogSearchProps = {
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
-const SearchPlant: FC<SearchPlantProps> = (props) => {
+const AddPlantDialogSearch: FC<AddPlantDialogSearchProps> = (props) => {
     const { onChange } = props;
+
+    const { isMobile } = useActiveDevice();
 
     return (
         <TextField
@@ -21,11 +24,13 @@ const SearchPlant: FC<SearchPlantProps> = (props) => {
                     </InputAdornment>
                 ),
             }}
+            type="search"
             size="small"
             margin="normal"
-            fullWidth
+            autoFocus={!isMobile}
+            sx={{ mx: 3 }}
         />
     );
 };
 
-export default SearchPlant;
+export default AddPlantDialogSearch;

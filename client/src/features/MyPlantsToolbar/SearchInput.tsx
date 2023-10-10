@@ -16,6 +16,7 @@ const SearchInput: FC<SearchInputProps> = (props) => {
             placeholder={i18n.t("myPlants.searchPlaceholder")}
             fullWidth
             variant="standard"
+            type="search"
             InputProps={{
                 endAdornment: (
                     <InputAdornment position="end">

@@ -7,7 +7,7 @@ import StyledAddPlantDialog, {
     StyledAddPlantDialogContent,
 } from "./AddPlantDialog.style";
 import IdentifyPlant from "./IdentifyPlant";
-import SearchPlant from "./SearchPlant";
+import AddPlantDialogSearch from "./AddPlantDialogSearch";
 import SearchResults from "./SearchResults/SearchResults";
 import useAddPlantDialog from "./useAddPlantDialog";
 import useActiveDevice from "shared/hooks/useActiveDevice";
@@ -39,7 +39,8 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
                 handleClose={onClose}
             />
 
-            <SearchPlant onChange={handleChange} />
+            <AddPlantDialogSearch onChange={handleChange} />
+
             <StyledAddPlantDialogContent>
                 {searchInputVal ? (
                     <SearchResults
