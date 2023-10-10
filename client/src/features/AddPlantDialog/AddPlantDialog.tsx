@@ -10,6 +10,7 @@ import IdentifyPlant from "./IdentifyPlant";
 import SearchPlant from "./SearchPlant";
 import SearchResults from "./SearchResults/SearchResults";
 import useAddPlantDialog from "./useAddPlantDialog";
+import useActiveDevice from "shared/hooks/useActiveDevice";
 
 type AddPlantDialogProps = {
     open: boolean;
@@ -22,21 +23,24 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
     const { onClose, searchInputVal, handleChange, selectPlant } =
         useAddPlantDialog({ handleClose });
 
+    const { isMobile } = useActiveDevice();
+
     return (
         <StyledAddPlantDialog
-            fullScreen
+            fullScreen={isMobile}
             open={open}
             onClose={onClose}
             TransitionComponent={SlideUpTransition}
-            $searching={Boolean(searchInputVal)}
+            disableRestoreFocus
+            fullWidth
         >
             <DialogHeader
                 title={i18n.t("addPlants.title")}
                 handleClose={onClose}
             />
 
+            <SearchPlant onChange={handleChange} />
             <StyledAddPlantDialogContent>
-                <SearchPlant onChange={handleChange} />
                 {searchInputVal ? (
                     <SearchResults
                         searchInputVal={searchInputVal}

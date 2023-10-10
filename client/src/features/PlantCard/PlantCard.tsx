@@ -4,8 +4,7 @@ import PlantCardContent from "./PlantCardContent/PlantCardContent";
 import PlantCardImage from "./PlantCardImage";
 import StyledPlantCard from "./PlantCard.style";
 import { PlantImageSize } from "shared/types/plantCard";
-import { useMediaQuery } from "@mui/material";
-import theme from "config/theme";
+import useActiveDevice from "shared/hooks/useActiveDevice";
 
 type PlantCardProps = {
     plant: Plant;
@@ -24,8 +23,8 @@ const PlantCard: FC<PlantCardProps> = (props) => {
         onClick = () => null,
     } = props;
 
-    const isGalleryView = // mobile grid view
-        useMediaQuery(theme.breakpoints.down("sm")) && vertical;
+    const { isMobile } = useActiveDevice();
+    const isGalleryView = isMobile && vertical; // mobile grid view
 
     return (
         <StyledPlantCard vertical={Number(vertical)}>

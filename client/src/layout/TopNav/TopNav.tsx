@@ -1,19 +1,19 @@
-import { Toolbar, Container, useTheme, useMediaQuery } from "@mui/material";
+import { Toolbar, Container } from "@mui/material";
 import SettingsMenu from "./Menus/SettingsMenu";
 import PagesMenu from "./Menus/PagesMenu";
 import Logo from "components/Logo";
 import { FC } from "react";
 import StyledTopNav from "./TopNav.style";
+import useActiveDevice from "shared/hooks/useActiveDevice";
 
 const TopNav: FC = () => {
-    const theme = useTheme();
-    const showLogo = useMediaQuery(theme.breakpoints.down("sm"));
+    const { isMobile } = useActiveDevice();
 
     return (
         <StyledTopNav>
             <Container maxWidth={false}>
                 <Toolbar disableGutters>
-                    {showLogo && <Logo />}
+                    {isMobile && <Logo />}
                     <PagesMenu />
                     <SettingsMenu />
                 </Toolbar>

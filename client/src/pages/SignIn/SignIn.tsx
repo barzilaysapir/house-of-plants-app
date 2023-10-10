@@ -1,13 +1,13 @@
 import { FC } from "react";
-import { Box, Modal, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Modal } from "@mui/material";
 import SignInContent from "./SignInContent";
 import { StyledSignInModal } from "./SignIn.styles";
+import useActiveDevice from "shared/hooks/useActiveDevice";
 
 type MyPlantsProps = {};
 
 const SignIn: FC<MyPlantsProps> = (props) => {
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+    const { isMobile } = useActiveDevice();
 
     return (
         <Modal open={true} disableAutoFocus>

@@ -5,13 +5,13 @@ import { useNavigate } from "react-router-dom";
 import { StyledBottomNavWrapper } from "./BottomNav.style";
 import { BOTTOM_NAV_LINKS, getActiveNavlink } from "./BottomNav.util";
 import Logo from "components/Logo";
-import { useMediaQuery, useTheme } from "@mui/material";
+import useActiveDevice from "shared/hooks/useActiveDevice";
 
 const BottomNav = () => {
     const [activeNavlink, setActiveNavlink] = useState(getActiveNavlink);
 
-    const theme = useTheme();
-    const showLogo = useMediaQuery(theme.breakpoints.up("sm"));
+    const { isMobile } = useActiveDevice();
+
     const navigate = useNavigate();
 
     const onLinkClicked = (link: string) => {
@@ -27,7 +27,7 @@ const BottomNav = () => {
                     setActiveNavlink(currentPage);
                 }}
             >
-                {showLogo && <Logo />}
+                {!isMobile && <Logo />}
                 {BOTTOM_NAV_LINKS.map((navLink, index) => (
                     <BottomNavigationAction
                         key={index}
