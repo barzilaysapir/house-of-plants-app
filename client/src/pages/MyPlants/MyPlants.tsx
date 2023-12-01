@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { PlantsData } from "shared/types/plants";
 import { Box } from "@mui/material";
 import MyPlantsList from "features/MyPlantsList/MyPlantsList";
 import AddPlantDialog from "features/AddPlantDialog/AddPlantDialog";
@@ -11,12 +10,13 @@ import MyPlantsHeader from "features/MyPlantsHeader/MyPlantsHeader";
 import usePlantsView from "shared/hooks/usePlantsView";
 import useFetchData from "shared/hooks/useFetchData";
 import useLocalStorage from "shared/hooks/useLocalStorage";
+import LoaderBackdrop from "components/LoaderBackdrop";
 
 const MyPlants: FC = () => {
     // const myPlants = useLoaderData() as PlantsData;
     const { user } = useLocalStorage();
 
-    const { data = [] } = useFetchData({
+    const { loading, data } = useFetchData({
         keys: ["usersPlants"],
         url: `/users/${JSON.parse(user!)._id}/plants`,
     });
@@ -28,11 +28,12 @@ const MyPlants: FC = () => {
         plants: data,
     });
 
+    if (loading) return <LoaderBackdrop />;
+
     return (
         <>
             <MyPlantsHeader
                 myPlantsAmount={data.length}
-                // myPlantsAmount={myPlants.total}
                 handleOpen={handleOpen}
             />
 

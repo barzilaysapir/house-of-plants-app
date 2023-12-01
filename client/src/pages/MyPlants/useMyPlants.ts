@@ -11,7 +11,7 @@ const useMyPlants = (props: UseMyPlantsListProps) => {
     const [filteredPlants, setFilteredPlants] = useState<Plant[]>([]);
 
     useEffect(() => {
-        setFilteredPlants(plants);
+        if (plants) setFilteredPlants(plants);
     }, [plants]);
 
     const onSearchPlant = (event: ChangeEvent<HTMLInputElement>) => {
