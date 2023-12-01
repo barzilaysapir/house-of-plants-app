@@ -4,11 +4,11 @@ import { ChangeEvent, FC } from "react";
 import i18n from "i18next";
 import useActiveDevice from "shared/hooks/useActiveDevice";
 
-type AddPlantDialogSearchProps = {
+type SpecieStepSearchProps = {
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
-const AddPlantDialogSearch: FC<AddPlantDialogSearchProps> = (props) => {
+const SpecieStepSearch: FC<SpecieStepSearchProps> = (props) => {
     const { onChange } = props;
 
     const { isMobile } = useActiveDevice();
@@ -33,4 +33,4 @@ const AddPlantDialogSearch: FC<AddPlantDialogSearchProps> = (props) => {
     );
 };
 
-export default AddPlantDialogSearch;
+export default SpecieStepSearch;

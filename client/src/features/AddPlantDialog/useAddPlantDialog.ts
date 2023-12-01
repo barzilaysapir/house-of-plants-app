@@ -2,6 +2,7 @@ import { useState } from "react";
 import useLocalStorage from "shared/hooks/useLocalStorage";
 import useMutateData from "shared/hooks/useMutateData";
 import { Plant } from "shared/types/plants";
+import { STEPS } from "./AddPlantDialog";
 
 type UseAddPlantDialogProps = {
     handleClose: () => void;
@@ -10,34 +11,29 @@ type UseAddPlantDialogProps = {
 const useAddPlantDialog = (props: UseAddPlantDialogProps) => {
     const { handleClose } = props;
 
-    const [searchInputVal, setSearchInputVal] = useState<string>("");
-
+    const [activeStep, setActiveStep] = useState<number>(0);
     const { user } = useLocalStorage();
-
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchInputVal(event.target.value);
-    };
-
-    const onClose = () => {
-        setSearchInputVal("");
-        handleClose();
-    };
 
     const { mutate } = useMutateData({
         url: `/users/${JSON.parse(user!)._id}/addPlant`,
-        onComplete: onClose,
+        onComplete: handleClose,
         refetchOnSuccessKey: "usersPlants",
     });
 
-    const selectPlant = (plant: Plant) => {
-        mutate({ plant });
+    const handleNextStep = () => {
+        if (activeStep < STEPS.length - 1)
+            setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        else mutate({ plant: {} as Plant });
+    };
+
+    const handlePrevStep = () => {
+        setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
 
     return {
-        onClose,
-        searchInputVal,
-        handleChange,
-        selectPlant,
+        activeStep,
+        handleNextStep,
+        handlePrevStep,
     };
 };
 

@@ -72,5 +72,7 @@
     "inXDays_one": "Tomorrow",
     "inXDays_other": "In {{count}} Days",
     "close": "close",
-    "open": "open"
+    "open": "open",
+    "next": "Next",
+    "prev": "Prev"
 }
