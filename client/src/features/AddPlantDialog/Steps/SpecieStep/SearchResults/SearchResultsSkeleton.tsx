@@ -5,7 +5,7 @@ import { PlantImageSize } from "shared/types/plantCard";
 
 const SearchResultsSkeleton: FC = () => {
     return (
-        <Stack spacing={1}>
+        <Stack spacing={1} sx={{ overflow: "auto" }}>
             {new Array(5).fill(0).map((_, index) => (
                 <PlantCardSkeleton key={index} size={PlantImageSize.SMALL} />
             ))}

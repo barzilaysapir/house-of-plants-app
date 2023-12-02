@@ -1,15 +1,20 @@
+import { AddPlantData } from "features/AddPlantDialog/AddPlantDialog.types";
 import { useState } from "react";
 import { Plant } from "shared/types/plants";
 
-const useSpecieStep = () => {
+type UseSpecieStepProps = {
+    handleNextStep: (stepData: Partial<AddPlantData>) => void;
+};
+
+const useSpecieStep = ({ handleNextStep }: UseSpecieStepProps) => {
     const [searchInputVal, setSearchInputVal] = useState<string>("");
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchInputVal(event.target.value);
     };
 
-    const selectPlant = (plant: Plant) => {
-        // saveForm({ plant });
+    const selectPlant = (specie: Plant) => {
+        handleNextStep({ specie });
     };
 
     return {

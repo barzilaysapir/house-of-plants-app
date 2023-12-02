@@ -5,11 +5,13 @@ import { FC } from "react";
 
 type StepperButtonNextProps = {
     direction: Direction;
-    handleNextStep: any;
+    handleNextStep: (stepData: any) => void;
+    amountOfSteps: number;
+    activeStep: number;
 };
 
 const StepperButtonNext: FC<StepperButtonNextProps> = (props) => {
-    const { direction, handleNextStep } = props;
+    const { direction, handleNextStep, amountOfSteps, activeStep } = props;
 
     return (
         <Button size="small" onClick={handleNextStep}>

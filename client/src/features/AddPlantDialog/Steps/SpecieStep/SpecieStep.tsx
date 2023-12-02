@@ -6,9 +6,18 @@ import { FC } from "react";
 import useSpecieStep from "./useSpecieStep";
 import StyledSpecieStep from "./SpecieStep.style";
 import SpecieStepSearch from "./SpecieStepSearch";
+import { AddPlantData } from "features/AddPlantDialog/AddPlantDialog.types";
 
-const SpecieStep: FC = () => {
-    const { searchInputVal, handleChange, selectPlant } = useSpecieStep();
+type SpecieStepProps = {
+    handleNextStep: (stepData: Partial<AddPlantData>) => void;
+};
+
+const SpecieStep: FC<SpecieStepProps> = (props) => {
+    const { handleNextStep } = props;
+
+    const { searchInputVal, handleChange, selectPlant } = useSpecieStep({
+        handleNextStep,
+    });
 
     return (
         <StyledSpecieStep>

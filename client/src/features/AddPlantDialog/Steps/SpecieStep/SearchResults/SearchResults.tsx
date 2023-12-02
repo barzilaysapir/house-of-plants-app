@@ -25,7 +25,7 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
     if (!data?.length) return <>No Data</>;
 
     return (
-        <Stack spacing={1}>
+        <Stack spacing={1} sx={{ overflow: "auto" }}>
             {data.map((item: Plant) => (
                 <PlantCard
                     key={item.id}
