@@ -74,5 +74,20 @@
     "close": "close",
     "open": "open",
     "next": "Next",
-    "prev": "Prev"
+    "prev": "Prev",
+
+    "substrate": {
+        "light": "Light Substrate",
+        "medium": "Medium Substrate",
+        "heavy": "Heavy Substrate",
+        "semiHydro": "Semi-Hydro",
+        "hydro": "Hydrophonic",
+        "description": {
+            "light": "Fast-draining, sandy substrate",
+            "medium": "Medium draining, includes Coco Coir, Perlite, etc.",
+            "heavy": "Slow-draining substrate",
+            "semiHydro": "LECA, Pon, Perlite, etc.",
+            "hydro": "Grow in water"
+        }
+    }
 }

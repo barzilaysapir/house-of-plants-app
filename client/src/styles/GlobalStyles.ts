@@ -25,6 +25,16 @@ const GLOBAL_STYLES = css`
         height: inherit;
     }
 
+    *::-webkit-scrollbar {
+        width: 0.4em;
+    }
+    *::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+    }
+    *::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
     ${MuiBaseline}
 `;
 

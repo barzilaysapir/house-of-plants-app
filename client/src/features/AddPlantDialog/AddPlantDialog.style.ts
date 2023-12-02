@@ -6,6 +6,7 @@ const StyledAddPlantDialog = styled(Dialog)`
         height: 90%;
         .MuiDialogContent-root > .MuiBox-root {
             height: calc(100% - 48px);
+            overflow: auto;
         }
     }
 `;

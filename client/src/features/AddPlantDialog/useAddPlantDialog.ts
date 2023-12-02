@@ -22,9 +22,8 @@ const useAddPlantDialog = (props: UseAddPlantDialogProps) => {
     });
 
     const handleNextStep = (stepData: Partial<AddPlantData>) => {
-        console.log({ stepData });
-
-        const updatedNewPlantData = { ...newPlantData, stepData };
+        const updatedNewPlantData = { ...newPlantData, ...stepData };
+        console.log({ updatedNewPlantData });
         setNewPlantData(updatedNewPlantData);
         if (activeStep < steps.length - 1)
             setActiveStep((prevActiveStep) => prevActiveStep + 1);
