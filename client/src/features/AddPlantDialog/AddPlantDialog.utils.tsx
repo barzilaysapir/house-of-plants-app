@@ -5,7 +5,7 @@ import { ReactNode } from "react";
 
 type Step = (
     activeStep: number,
-    handleNextStep: (stepData: Partial<AddPlantData>) => void
+    handleNextStep: (stepData?: Partial<AddPlantData>) => void
 ) => ReactNode;
 
 const STEPS = [SpecieStep, SoilStep];
@@ -14,7 +14,7 @@ export const steps: { length: number; current: Step } = {
     length: STEPS.length,
     current: (
         activeStep: number,
-        handleNextStep: (stepData: Partial<AddPlantData>) => void
+        handleNextStep: (stepData?: Partial<AddPlantData>) => void
     ) => {
         switch (activeStep) {
             case 0:

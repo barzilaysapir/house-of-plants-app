@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Plant } from "shared/types/plants";
 
 type UseSpecieStepProps = {
-    handleNextStep: (stepData: Partial<AddPlantData>) => void;
+    handleNextStep: (stepData?: Partial<AddPlantData>) => void;
 };
 
 const useSpecieStep = ({ handleNextStep }: UseSpecieStepProps) => {

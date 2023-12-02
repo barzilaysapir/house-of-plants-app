@@ -6,7 +6,7 @@ import { FC } from "react";
 type StepperButtonPrevProps = {
     direction: Direction;
     activeStep: number;
-    handlePrevStep: any;
+    handlePrevStep: () => void;
 };
 
 const StepperButtonPrev: FC<StepperButtonPrevProps> = (props) => {
@@ -15,7 +15,7 @@ const StepperButtonPrev: FC<StepperButtonPrevProps> = (props) => {
     return (
         <Button
             size="small"
-            onClick={handlePrevStep}
+            onClick={() => handlePrevStep()}
             disabled={activeStep === 0}
         >
             {direction === "rtl" ? (

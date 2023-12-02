@@ -5,7 +5,7 @@ import { SOIL_TYPES } from "./SoilStep.utils";
 import Card from "components/Card/Card";
 
 type SoilStepProps = {
-    handleNextStep: (stepData: Partial<AddPlantData>) => void;
+    handleNextStep: (stepData?: Partial<AddPlantData>) => void;
 };
 
 const SoilStep: FC<SoilStepProps> = (props) => {

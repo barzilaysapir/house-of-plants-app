@@ -8,6 +8,7 @@ import useActiveDevice from "shared/hooks/useActiveDevice";
 import { Box, DialogContent } from "@mui/material";
 import Stepper from "components/Stepper";
 import { steps } from "./AddPlantDialog.utils";
+import { AddPlantField } from "./AddPlantDialog.types";
 
 type AddPlantDialogProps = {
     open: boolean;
@@ -17,10 +18,15 @@ type AddPlantDialogProps = {
 const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
     const { open, handleClose } = props;
 
-    const { activeStep, handleNextStep, handlePrevStep, onClose } =
-        useAddPlantDialog({
-            handleClose,
-        });
+    const {
+        plantFormData,
+        activeStep,
+        handleNextStep,
+        handlePrevStep,
+        onClose,
+    } = useAddPlantDialog({
+        handleClose,
+    });
     const { isMobile } = useActiveDevice();
 
     return (
@@ -40,9 +46,10 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
                 <Box>{steps.current(activeStep, handleNextStep)}</Box>
                 <Stepper
                     activeStep={activeStep}
-                    handleNextStep={handleNextStep}
-                    handlePrevStep={handlePrevStep}
+                    handleNext={handleNextStep}
+                    handlePrev={handlePrevStep}
                     amountOfSteps={steps.length}
+                    disableNext={!plantFormData[AddPlantField.SPECIE]}
                 />
             </DialogContent>
         </StyledAddPlantDialog>

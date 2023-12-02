@@ -9,7 +9,7 @@ import SpecieStepSearch from "./SpecieStepSearch";
 import { AddPlantData } from "features/AddPlantDialog/AddPlantDialog.types";
 
 type SpecieStepProps = {
-    handleNextStep: (stepData: Partial<AddPlantData>) => void;
+    handleNextStep: (stepData?: Partial<AddPlantData>) => void;
 };
 
 const SpecieStep: FC<SpecieStepProps> = (props) => {

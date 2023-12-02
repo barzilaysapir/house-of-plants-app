@@ -6,12 +6,14 @@ import StepperButtonPrev from "./StepperButtonPrev";
 type StepperProps = {
     amountOfSteps: number;
     activeStep: number;
-    handleNextStep: (stepData: any) => void;
-    handlePrevStep: any;
+    handleNext: (stepData?: any) => void;
+    handlePrev: () => void;
+    disableNext: boolean;
 };
 
 const Stepper: FC<StepperProps> = (props) => {
-    const { amountOfSteps, activeStep, handleNextStep, handlePrevStep } = props;
+    const { amountOfSteps, activeStep, handleNext, handlePrev, disableNext } =
+        props;
     const { direction } = useTheme();
 
     return (
@@ -23,16 +25,17 @@ const Stepper: FC<StepperProps> = (props) => {
             nextButton={
                 <StepperButtonNext
                     direction={direction}
-                    handleNextStep={handleNextStep}
+                    handleNextStep={handleNext}
                     activeStep={activeStep}
                     amountOfSteps={amountOfSteps}
+                    disabled={disableNext}
                 />
             }
             backButton={
                 <StepperButtonPrev
                     direction={direction}
                     activeStep={activeStep}
-                    handlePrevStep={handlePrevStep}
+                    handlePrevStep={handlePrev}
                 />
             }
         />

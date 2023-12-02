@@ -12,12 +12,14 @@ const useAddPlantDialog = (props: UseAddPlantDialogProps) => {
     const { handleClose } = props;
 
     const [activeStep, setActiveStep] = useState<number>(0);
-    const [newPlantData, setNewPlantData] = useState<any>({});
+    const [plantFormData, setPlantFormData] = useState<AddPlantData>(
+        {} as AddPlantData
+    );
     const { user } = useLocalStorage();
 
     const onClose = () => {
         setActiveStep(0);
-        setNewPlantData({});
+        setPlantFormData({} as AddPlantData);
         handleClose();
     };
 
@@ -27,15 +29,17 @@ const useAddPlantDialog = (props: UseAddPlantDialogProps) => {
         refetchOnSuccessKey: "usersPlants",
     });
 
-    const handleNextStep = (stepData: Partial<AddPlantData>) => {
-        console.log({ stepData });
-        console.log({ newPlantData });
-        const updatedNewPlantData = { ...newPlantData, ...stepData };
-        setNewPlantData(updatedNewPlantData);
+    const handleNextStep = (newData?: Partial<AddPlantData>) => {
+        // console.log({ data });
+        const updatedPlantData = plantFormData;
+        if (newData) {
+            Object.assign(updatedPlantData, newData);
+            setPlantFormData(updatedPlantData);
+        }
         if (activeStep < steps.length - 1) {
             setActiveStep((prevActiveStep) => prevActiveStep + 1);
         } else {
-            mutate({ plant: updatedNewPlantData });
+            mutate({ plant: updatedPlantData });
         }
     };
 
@@ -44,10 +48,11 @@ const useAddPlantDialog = (props: UseAddPlantDialogProps) => {
     };
 
     return {
-        onClose,
+        plantFormData,
         activeStep,
         handleNextStep,
         handlePrevStep,
+        onClose,
     };
 };
 
