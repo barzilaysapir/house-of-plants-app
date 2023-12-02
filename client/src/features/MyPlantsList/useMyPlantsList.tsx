@@ -1,19 +1,19 @@
-import { PlantView } from "shared/types/plantCard";
-import { PlantImageSize } from "shared/types/plantCard";
+import { CardView } from "shared/types/card";
+import { CardImageSize } from "shared/types/card";
 
 type UseMyPlantsListProps = {
-    view: PlantView;
+    view: CardView;
 };
 
 const useMyPlantsList = (props: UseMyPlantsListProps) => {
     const { view } = props;
 
-    const showPlantRoutines = view !== PlantView.ROWS;
-    const isCardVertical = view === PlantView.GRID;
+    const showPlantRoutines = view !== CardView.ROWS;
+    const isCardVertical = view === CardView.GRID;
 
     const getGridColumns = () => {
         switch (view) {
-            case PlantView.GRID:
+            case CardView.GRID:
                 return { xs: 2, sm: 3, md: 4, lg: 5 };
             default:
                 return { xs: 1, sm: 1, md: 2, lg: 3 };
@@ -22,10 +22,10 @@ const useMyPlantsList = (props: UseMyPlantsListProps) => {
 
     const getImageSize = () => {
         switch (view) {
-            case PlantView.ROWS:
-                return PlantImageSize.SMALL;
+            case CardView.ROWS:
+                return CardImageSize.SMALL;
             default:
-                return PlantImageSize.MEDIUM;
+                return CardImageSize.MEDIUM;
         }
     };
 

@@ -3,7 +3,7 @@ import { FC } from "react";
 import useFetchData from "shared/hooks/useFetchData";
 import PlantCard from "features/PlantCard/PlantCard";
 import { Plant } from "shared/types/plants";
-import { PlantImageSize } from "shared/types/plantCard";
+import { CardImageSize } from "shared/types/card";
 import SearchResultsSkeleton from "./SearchResultsSkeleton";
 
 type SearchResultsProps = {
@@ -30,7 +30,7 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
                 <PlantCard
                     key={item.id}
                     plant={item}
-                    size={PlantImageSize.SMALL}
+                    size={CardImageSize.SMALL}
                     onClick={selectPlant}
                 />
             ))}

@@ -6,7 +6,7 @@ import PlantRoutineProgress from "./PlantRoutineProgress";
 import i18n from "i18next";
 import PlantRoutineDialog from "features/PlantRoutines/PlantRoutineDialog/PlantRoutineDialog";
 import useToggleDisplay from "shared/hooks/useToggleDisplay";
-import usePlantCardContent from "../PlantCard/PlantCardContent/usePlantCardContent";
+import usePlantRoutineButton from "./usePlantRoutineButton";
 
 type PlantRoutineButtonProps = {
     name: string;
@@ -22,7 +22,7 @@ const PlantRoutineButton: FC<PlantRoutineButtonProps> = (props) => {
     } = props;
 
     const { isOpen, handleOpen, handleClose } = useToggleDisplay();
-    const { handleClick, loadingBtn } = usePlantCardContent({ handleClose });
+    const { handleClick, loadingBtn } = usePlantRoutineButton({ handleClose });
 
     if (care.freq === 0) return null;
 

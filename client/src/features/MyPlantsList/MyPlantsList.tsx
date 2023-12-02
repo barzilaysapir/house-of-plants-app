@@ -3,12 +3,12 @@ import { FC } from "react";
 import { Plant } from "shared/types/plants";
 import PlantCard from "features/PlantCard/PlantCard";
 import PlantRoutines from "features/PlantRoutines/PlantRoutines";
-import { PlantView } from "shared/types/plantCard";
+import { CardView } from "shared/types/card";
 import useMyPlantsList from "./useMyPlantsList";
 
 type MyPlantsListProps = {
     filteredPlants: Plant[];
-    view: PlantView;
+    view: CardView;
 };
 
 const MyPlantsList: FC<MyPlantsListProps> = (props) => {

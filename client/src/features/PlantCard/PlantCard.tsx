@@ -1,42 +1,34 @@
 import { FC, ReactNode } from "react";
 import { Plant } from "shared/types/plants";
-import PlantCardContent from "./PlantCardContent/PlantCardContent";
-import PlantCardImage from "./PlantCardImage";
-import StyledPlantCard, { StyledCardActionArea } from "./PlantCard.style";
-import { PlantImageSize } from "shared/types/plantCard";
-import useActiveDevice from "shared/hooks/useActiveDevice";
+import { CardData, CardImageSize } from "shared/types/card";
+import Card from "components/Card/Card";
 
 type PlantCardProps = {
     plant: Plant;
-    size?: PlantImageSize;
+    size?: CardImageSize;
     vertical?: boolean;
     children?: ReactNode;
-    onClick?: (plant: Plant) => void;
+    onClick?: (data: CardData & any) => void;
 };
 
 const PlantCard: FC<PlantCardProps> = (props) => {
     const {
-        plant,
-        size = PlantImageSize.MEDIUM,
+        plant: { primaryName, secondaryName, image },
+        size = CardImageSize.MEDIUM,
         vertical = false,
         children,
         onClick = () => null,
     } = props;
 
-    const { isMobile } = useActiveDevice();
-    const isGalleryView = isMobile && vertical; // mobile grid view
-
     return (
-        <StyledCardActionArea onClick={() => onClick(plant)}>
-            <StyledPlantCard vertical={Number(vertical)}>
-                <PlantCardImage image={plant.image} size={size} />
-                {!isGalleryView && (
-                    <PlantCardContent plant={plant}>
-                        {children}
-                    </PlantCardContent>
-                )}
-            </StyledPlantCard>
-        </StyledCardActionArea>
+        <Card
+            data={{ name: primaryName, description: secondaryName, image }}
+            size={size}
+            onClick={onClick}
+            vertical={vertical}
+        >
+            {children}
+        </Card>
     );
 };
 

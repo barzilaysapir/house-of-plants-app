@@ -1,11 +1,11 @@
 import { RoutineAction } from "features/PlantRoutines/PlantRoutineDialog/PlantRoutineDialog.util";
 import { useState } from "react";
 
-type UsePlantCardContentProps = {
+type UsePlantRoutineButtonProps = {
     handleClose: () => void;
 };
 
-const usePlantCardContent = ({ handleClose }: UsePlantCardContentProps) => {
+const usePlantRoutineButton = ({ handleClose }: UsePlantRoutineButtonProps) => {
     const [loadingBtn, setLoadingBtn] = useState<RoutineAction | null>(null);
 
     const completeRoutine = async () => {
@@ -54,4 +54,4 @@ const usePlantCardContent = ({ handleClose }: UsePlantCardContentProps) => {
     };
 };
 
-export default usePlantCardContent;
+export default usePlantRoutineButton;

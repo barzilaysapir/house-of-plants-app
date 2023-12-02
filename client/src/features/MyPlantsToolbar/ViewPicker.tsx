@@ -7,13 +7,13 @@ import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import i18n from "config/locales/i18n";
 import { FC } from "react";
-import { PlantView } from "shared/types/plantCard";
+import { CardView } from "shared/types/card";
 
 type ViewPickerProps = {
-    view: PlantView;
+    view: CardView;
     onChangeView: (
         event: React.MouseEvent<HTMLElement>,
-        newView: PlantView
+        newView: CardView
     ) => void;
 };
 
@@ -30,19 +30,19 @@ const ViewPicker: FC<ViewPickerProps> = (props) => {
             exclusive
         >
             <ToggleButton
-                value={PlantView.GRID}
+                value={CardView.GRID}
                 aria-label={i18n.t("view.grid")}
             >
                 <GridView />
             </ToggleButton>
             <ToggleButton
-                value={PlantView.CARDS}
+                value={CardView.CARDS}
                 aria-label={i18n.t("view.cards")}
             >
                 <ViewAgendaOutlined />
             </ToggleButton>
             <ToggleButton
-                value={PlantView.ROWS}
+                value={CardView.ROWS}
                 aria-label={i18n.t("view.rows")}
             >
                 <FormatAlignJustify />

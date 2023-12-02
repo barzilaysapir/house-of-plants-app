@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { PlantView } from "shared/types/plantCard";
+import { CardView } from "shared/types/card";
 
 const usePlantsView = () => {
-    const [view, setView] = useState<PlantView>(PlantView.CARDS);
+    const [view, setView] = useState<CardView>(CardView.CARDS);
 
     const onChangeView = (
         event: React.MouseEvent<HTMLElement>,
-        newView: PlantView
+        newView: CardView
     ) => {
         if (newView) setView(newView);
     };

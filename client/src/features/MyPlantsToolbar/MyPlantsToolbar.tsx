@@ -2,14 +2,14 @@ import { Stack } from "@mui/material";
 import { ChangeEvent, FC } from "react";
 import SearchInput from "./SearchInput";
 import ViewPicker from "./ViewPicker";
-import { PlantView } from "shared/types/plantCard";
+import { CardView } from "shared/types/card";
 
 type MyPlantsProps = {
     onSearchPlant: (event: ChangeEvent<HTMLInputElement>) => void;
-    view: PlantView;
+    view: CardView;
     onChangeView: (
         event: React.MouseEvent<HTMLElement>,
-        newView: PlantView
+        newView: CardView
     ) => void;
 };
 

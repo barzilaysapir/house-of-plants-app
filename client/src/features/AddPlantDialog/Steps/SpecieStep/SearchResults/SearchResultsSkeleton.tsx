@@ -1,13 +1,13 @@
 import { Stack } from "@mui/material";
+import CardSkeleton from "components/Card/CardSkeleton";
 import { FC } from "react";
-import PlantCardSkeleton from "features/PlantCard/PlantCardSkeleton";
-import { PlantImageSize } from "shared/types/plantCard";
+import { CardImageSize } from "shared/types/card";
 
 const SearchResultsSkeleton: FC = () => {
     return (
         <Stack spacing={1} sx={{ overflow: "auto" }}>
             {new Array(5).fill(0).map((_, index) => (
-                <PlantCardSkeleton key={index} size={PlantImageSize.SMALL} />
+                <CardSkeleton key={index} size={CardImageSize.SMALL} />
             ))}
         </Stack>
     );

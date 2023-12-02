@@ -7,10 +7,10 @@ import {
     Paper,
 } from "@mui/material";
 import theme from "config/theme";
-import { PlantImageSize } from "shared/types/plantCard";
+import { CardImageSize } from "shared/types/card";
 
 type StyledCardImageProps = {
-    size: PlantImageSize;
+    size: CardImageSize;
 };
 
 type StyledCardMediaProps = React.ImgHTMLAttributes<HTMLButtonElement> & {
@@ -22,15 +22,15 @@ type StyledCardProps = {
     vertical: number;
 };
 
-export const StyledPlantCardImage = styled(Box)<StyledCardImageProps>`
+export const StyledCardImage = styled(Box)<StyledCardImageProps>`
     border-radius: inherit;
     flex-basis: ${({ size }) => {
         switch (size) {
-            case PlantImageSize.SMALL:
+            case CardImageSize.SMALL:
                 return "80px;";
-            case PlantImageSize.MEDIUM:
+            case CardImageSize.MEDIUM:
                 return "140px;";
-            case PlantImageSize.LARGE:
+            case CardImageSize.LARGE:
                 return "200px;";
             default:
                 break;
@@ -43,7 +43,7 @@ export const StyledCardMedia = styled(CardMedia)<StyledCardMediaProps>`
     aspect-ratio: 1 / 1;
 `;
 
-export const StyledPlantCardContent = styled(CardContent)`
+export const StyledCardContent = styled(CardContent)`
     padding: 5px 10px;
     flex: 1;
     min-width: 0;
@@ -52,7 +52,7 @@ export const StyledPlantCardContent = styled(CardContent)`
     }
 `;
 
-const StyledPlantCard = styled(Paper)<StyledCardProps>`
+const StyledCard = styled(Paper)<StyledCardProps>`
     display: flex;
     box-sizing: border-box;
     justify-content: flex-start;
@@ -66,4 +66,4 @@ export const StyledCardActionArea = styled(CardActionArea)`
     border-radius: ${theme.spacing(2)};
 `;
 
-export default StyledPlantCard;
+export default StyledCard;
