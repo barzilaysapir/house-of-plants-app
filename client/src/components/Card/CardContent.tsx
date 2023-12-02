@@ -5,12 +5,14 @@ import { StyledCardContent } from "./Card.style";
 type CardContentProps = {
     data: { name: string; description: string; image: string };
     children?: ReactNode;
+    noWrap?: boolean;
 };
 
 const CardContent: FC<CardContentProps> = (props) => {
     const {
         data: { name, description },
         children,
+        noWrap,
     } = props;
 
     return (
@@ -21,11 +23,15 @@ const CardContent: FC<CardContentProps> = (props) => {
                         variant="body1"
                         component="h2"
                         fontWeight={600}
-                        noWrap
+                        noWrap={noWrap}
                     >
                         {name}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" noWrap>
+                    <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        noWrap={noWrap}
+                    >
                         {description}
                     </Typography>
                 </Box>

@@ -26,6 +26,7 @@ const PlantCard: FC<PlantCardProps> = (props) => {
             size={size}
             onClick={onClick}
             vertical={vertical}
+            noWrap
         >
             {children}
         </Card>

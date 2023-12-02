@@ -14,6 +14,7 @@ type CardProps = {
     vertical?: boolean;
     children?: ReactNode;
     onClick?: (data: CardData) => void;
+    noWrap?: boolean;
 };
 
 const Card: FC<CardProps> = (props) => {
@@ -23,6 +24,7 @@ const Card: FC<CardProps> = (props) => {
         vertical = false,
         children,
         onClick = () => null,
+        noWrap,
     } = props;
 
     const { isMobile } = useActiveDevice();
@@ -36,7 +38,9 @@ const Card: FC<CardProps> = (props) => {
                 </StyledCardImage>
 
                 {!isGalleryView && (
-                    <CardContent data={data}>{children}</CardContent>
+                    <CardContent data={data} noWrap={noWrap}>
+                        {children}
+                    </CardContent>
                 )}
             </StyledCard>
         </StyledCardActionArea>

@@ -15,19 +15,28 @@ const useAddPlantDialog = (props: UseAddPlantDialogProps) => {
     const [newPlantData, setNewPlantData] = useState<any>({});
     const { user } = useLocalStorage();
 
+    const onClose = () => {
+        setActiveStep(0);
+        setNewPlantData({});
+        handleClose();
+    };
+
     const { mutate } = useMutateData({
         url: `/users/${JSON.parse(user!)._id}/addPlant`,
-        onComplete: handleClose,
+        onComplete: onClose,
         refetchOnSuccessKey: "usersPlants",
     });
 
     const handleNextStep = (stepData: Partial<AddPlantData>) => {
+        console.log({ stepData });
+        console.log({ newPlantData });
         const updatedNewPlantData = { ...newPlantData, ...stepData };
-        console.log({ updatedNewPlantData });
         setNewPlantData(updatedNewPlantData);
-        if (activeStep < steps.length - 1)
+        if (activeStep < steps.length - 1) {
             setActiveStep((prevActiveStep) => prevActiveStep + 1);
-        else mutate({ plant: updatedNewPlantData });
+        } else {
+            mutate({ plant: updatedNewPlantData });
+        }
     };
 
     const handlePrevStep = () => {
@@ -35,6 +44,7 @@ const useAddPlantDialog = (props: UseAddPlantDialogProps) => {
     };
 
     return {
+        onClose,
         activeStep,
         handleNextStep,
         handlePrevStep,

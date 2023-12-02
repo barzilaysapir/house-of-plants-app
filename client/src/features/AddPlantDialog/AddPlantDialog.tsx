@@ -17,23 +17,24 @@ type AddPlantDialogProps = {
 const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
     const { open, handleClose } = props;
 
-    const { activeStep, handleNextStep, handlePrevStep } = useAddPlantDialog({
-        handleClose,
-    });
+    const { activeStep, handleNextStep, handlePrevStep, onClose } =
+        useAddPlantDialog({
+            handleClose,
+        });
     const { isMobile } = useActiveDevice();
 
     return (
         <StyledAddPlantDialog
             fullScreen={isMobile}
             open={open}
-            onClose={handleClose}
+            onClose={onClose}
             TransitionComponent={SlideUpTransition}
             disableRestoreFocus
             fullWidth
         >
             <DialogHeader
                 title={i18n.t("addPlants.title")}
-                handleClose={handleClose}
+                handleClose={onClose}
             />
             <DialogContent>
                 <Box>{steps.current(activeStep, handleNextStep)}</Box>
