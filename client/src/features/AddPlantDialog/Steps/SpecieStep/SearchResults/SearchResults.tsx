@@ -26,12 +26,12 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
 
     return (
         <Stack spacing={1} sx={{ overflow: "auto" }}>
-            {data.map((item: Plant) => (
+            {data.map((specie: Plant) => (
                 <PlantCard
-                    key={item.id}
-                    plant={item}
+                    key={specie.id}
+                    plant={specie}
                     size={CardImageSize.SMALL}
-                    onClick={selectPlant}
+                    onClick={() => selectPlant(specie)}
                 />
             ))}
         </Stack>

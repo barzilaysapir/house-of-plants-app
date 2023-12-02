@@ -43,7 +43,9 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
                 handleClose={onClose}
             />
             <DialogContent>
-                <Box>{steps.current(activeStep, handleNextStep)}</Box>
+                <Box>
+                    {steps.current(activeStep, handleNextStep, plantFormData)}
+                </Box>
                 <Stepper
                     activeStep={activeStep}
                     handleNext={handleNextStep}

@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC, MouseEventHandler, ReactNode } from "react";
 import CardContent from "./CardContent";
 import StyledCard, {
     StyledCardActionArea,
@@ -13,7 +13,7 @@ type CardProps = {
     size?: CardImageSize;
     vertical?: boolean;
     children?: ReactNode;
-    onClick?: (data: CardData) => void;
+    onClick?: MouseEventHandler<HTMLButtonElement>;
     noWrap?: boolean;
 };
 
@@ -31,7 +31,7 @@ const Card: FC<CardProps> = (props) => {
     const isGalleryView = isMobile && vertical; // mobile grid view
 
     return (
-        <StyledCardActionArea onClick={() => onClick(data)}>
+        <StyledCardActionArea onClick={onClick}>
             <StyledCard vertical={Number(vertical)}>
                 <StyledCardImage size={size}>
                     <StyledCardMedia component="img" image={data.image} />

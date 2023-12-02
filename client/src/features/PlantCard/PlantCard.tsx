@@ -1,6 +1,6 @@
-import { FC, ReactNode } from "react";
+import { FC, MouseEventHandler, ReactNode } from "react";
 import { Plant } from "shared/types/plants";
-import { CardData, CardImageSize } from "shared/types/card";
+import { CardImageSize } from "shared/types/card";
 import Card from "components/Card/Card";
 
 type PlantCardProps = {
@@ -8,7 +8,7 @@ type PlantCardProps = {
     size?: CardImageSize;
     vertical?: boolean;
     children?: ReactNode;
-    onClick?: (data: CardData & any) => void;
+    onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
 const PlantCard: FC<PlantCardProps> = (props) => {
@@ -17,7 +17,7 @@ const PlantCard: FC<PlantCardProps> = (props) => {
         size = CardImageSize.MEDIUM,
         vertical = false,
         children,
-        onClick = () => null,
+        onClick,
     } = props;
 
     return (
