@@ -31,15 +31,14 @@ const useAddPlantDialog = (props: UseAddPlantDialogProps) => {
 
     const handleNextStep = (newData?: Partial<AddPlantData>) => {
         // console.log({ data });
-        const updatedPlantData = plantFormData;
-        if (newData) {
-            Object.assign(updatedPlantData, newData);
-            setPlantFormData(updatedPlantData);
-        }
+        const plantData = plantFormData;
+        if (newData) Object.assign(plantData, newData);
+
         if (activeStep < steps.length - 1) {
+            setPlantFormData(plantData);
             setActiveStep((prevActiveStep) => prevActiveStep + 1);
         } else {
-            mutate({ plant: updatedPlantData });
+            mutate(plantData);
         }
     };
 
