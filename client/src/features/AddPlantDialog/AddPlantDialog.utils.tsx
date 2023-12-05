@@ -1,5 +1,5 @@
 import { AddPlantData } from "./AddPlantDialog.types";
-import AdditionalInfoStep from "./Steps/AdditionalInfoStep/AdditionalInfoStep";
+import DetailsStep from "./Steps/DetailsStep/DetailsStep";
 import SoilStep from "./Steps/SoilStep/SoilStep";
 import SpecieStep from "./Steps/SpecieStep/SpecieStep";
 import { ReactNode } from "react";
@@ -10,7 +10,7 @@ type Step = (
     formData: AddPlantData
 ) => ReactNode;
 
-const STEPS = [SpecieStep, SoilStep, AdditionalInfoStep];
+const STEPS = [SpecieStep, SoilStep, DetailsStep];
 
 export const steps: { length: number; current: Step } = {
     length: STEPS.length,
@@ -26,7 +26,7 @@ export const steps: { length: number; current: Step } = {
                 return <SoilStep handleNextStep={handleNextStep} />;
             case 2:
                 return (
-                    <AdditionalInfoStep
+                    <DetailsStep
                         formData={formData}
                         handleNextStep={handleNextStep}
                     />

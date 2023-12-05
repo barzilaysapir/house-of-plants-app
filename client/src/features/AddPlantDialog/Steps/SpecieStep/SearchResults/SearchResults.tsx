@@ -1,10 +1,10 @@
-import { Stack } from "@mui/material";
 import { FC } from "react";
 import useFetchData from "shared/hooks/useFetchData";
 import PlantCard from "features/PlantCard/PlantCard";
 import { Plant } from "shared/types/plants";
 import { CardImageSize } from "shared/types/card";
 import SearchResultsSkeleton from "./SearchResultsSkeleton";
+import StyledStep from "../../Step.style";
 
 type SearchResultsProps = {
     searchInputVal: string;
@@ -25,7 +25,7 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
     if (!data?.length) return <>No Data</>;
 
     return (
-        <Stack spacing={1} sx={{ overflow: "auto" }}>
+        <StyledStep>
             {data.map((specie: Plant) => (
                 <PlantCard
                     key={specie.id}
@@ -34,7 +34,7 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
                     onClick={() => selectPlant(specie)}
                 />
             ))}
-        </Stack>
+        </StyledStep>
     );
 };
 

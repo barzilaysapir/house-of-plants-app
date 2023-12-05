@@ -89,5 +89,7 @@
             "semiHydro": "LECA, Pon, Perlite, etc.",
             "hydro": "Grow in water"
         }
-    }
+    },
+
+    "uploadPicture": "Upload Picture"
 }

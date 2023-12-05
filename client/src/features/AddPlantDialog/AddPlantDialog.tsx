@@ -46,13 +46,15 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
                 <Box>
                     {steps.current(activeStep, handleNextStep, plantFormData)}
                 </Box>
-                <Stepper
-                    activeStep={activeStep}
-                    handleNext={handleNextStep}
-                    handlePrev={handlePrevStep}
-                    amountOfSteps={steps.length}
-                    disableNext={!plantFormData[AddPlantField.SPECIE]}
-                />
+                {activeStep !== 0 && (
+                    <Stepper
+                        activeStep={activeStep}
+                        handleNext={handleNextStep}
+                        handlePrev={handlePrevStep}
+                        amountOfSteps={steps.length}
+                        disableNext={!plantFormData[AddPlantField.SPECIE]}
+                    />
+                )}
             </DialogContent>
         </StyledAddPlantDialog>
     );

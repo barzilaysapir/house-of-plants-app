@@ -6,13 +6,15 @@ import {
 import { Box, Button, Stack, TextField } from "@mui/material";
 import { PhotoCameraRounded } from "@mui/icons-material";
 import VisuallyHiddenInput from "styles/components/VisuallyHiddenInput";
+import i18n from "i18next";
+import StyledStep from "../Step.style";
 
-type AdditionalInfoStepProps = {
+type DetailsStepProps = {
     handleNextStep: (stepData?: Partial<AddPlantData>) => void;
     formData: AddPlantData;
 };
 
-const AdditionalInfoStep: FC<AdditionalInfoStepProps> = (props) => {
+const DetailsStep: FC<DetailsStepProps> = (props) => {
     const { formData, handleNextStep } = props;
 
     const [image, setImage] = useState<string>("");
@@ -24,7 +26,7 @@ const AdditionalInfoStep: FC<AdditionalInfoStepProps> = (props) => {
     };
 
     return (
-        <Stack spacing={1} sx={{ overflow: "auto" }}>
+        <StyledStep>
             <Stack direction="row" spacing={1}>
                 <img
                     height={150}
@@ -56,7 +58,7 @@ const AdditionalInfoStep: FC<AdditionalInfoStepProps> = (props) => {
                             />
                         }
                     >
-                        Upload Custom Image
+                        {i18n.t("uploadPicture")}
                         <VisuallyHiddenInput
                             type="file"
                             accept="image/*"
@@ -66,14 +68,8 @@ const AdditionalInfoStep: FC<AdditionalInfoStepProps> = (props) => {
                     </Button>
                 </Box>
             </Stack>
-            {/* 
-            <TextField
-                label="Custom Name"
-                variant="standard"
-                value={formData[AddPlantField.SPECIE].primaryName}
-            /> */}
-        </Stack>
+        </StyledStep>
     );
 };
 
-export default AdditionalInfoStep;
+export default DetailsStep;

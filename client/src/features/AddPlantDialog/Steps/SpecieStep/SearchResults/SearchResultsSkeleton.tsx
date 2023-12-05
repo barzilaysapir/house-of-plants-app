@@ -1,15 +1,15 @@
-import { Stack } from "@mui/material";
 import CardSkeleton from "components/Card/CardSkeleton";
 import { FC } from "react";
 import { CardImageSize } from "shared/types/card";
+import StyledStep from "../../Step.style";
 
 const SearchResultsSkeleton: FC = () => {
     return (
-        <Stack spacing={1} sx={{ overflow: "auto" }}>
+        <StyledStep>
             {new Array(5).fill(0).map((_, index) => (
                 <CardSkeleton key={index} size={CardImageSize.SMALL} />
             ))}
-        </Stack>
+        </StyledStep>
     );
 };
 
