@@ -11,6 +11,7 @@ import usePlantsView from "shared/hooks/usePlantsView";
 import useFetchData from "shared/hooks/useFetchData";
 import useLocalStorage from "shared/hooks/useLocalStorage";
 import LoaderBackdrop from "components/LoaderBackdrop";
+import EmptyState from "./EmptyState";
 
 const MyPlants: FC = () => {
     // const myPlants = useLoaderData() as PlantsData;
@@ -37,15 +38,21 @@ const MyPlants: FC = () => {
                 handleOpen={handleOpen}
             />
 
-            <Box component="main">
-                <MyPlantsToolbar
-                    onSearchPlant={onSearchPlant}
-                    view={view}
-                    onChangeView={onChangeView}
-                />
-                <MyPlantsList filteredPlants={filteredPlants} view={view} />
-                <AddPlantDialog open={isOpen} handleClose={handleClose} />
+            <MyPlantsToolbar
+                onSearchPlant={onSearchPlant}
+                view={view}
+                onChangeView={onChangeView}
+            />
+
+            <Box sx={{ height: "100%" }} component="main">
+                {filteredPlants.length ? (
+                    <MyPlantsList filteredPlants={filteredPlants} view={view} />
+                ) : (
+                    <EmptyState handleOpen={handleOpen} />
+                )}
             </Box>
+
+            <AddPlantDialog open={isOpen} handleClose={handleClose} />
         </>
     );
 };

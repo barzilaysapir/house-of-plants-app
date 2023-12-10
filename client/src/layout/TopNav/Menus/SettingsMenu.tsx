@@ -18,7 +18,7 @@ type SettingsMenuProps = {};
 const SettingsMenu: FC<SettingsMenuProps> = (props) => {
     const { user } = useLocalStorage();
 
-    const { image } = JSON.parse(user as string) || {};
+    const { picture } = JSON.parse(user as string) || {};
 
     const {
         anchorElSettings,
@@ -43,7 +43,7 @@ const SettingsMenu: FC<SettingsMenuProps> = (props) => {
                     <Avatar
                         sx={{ bgcolor: green[500] }}
                         alt={i18n.t("userHeader.avatarAlt")}
-                        src={image}
+                        src={picture}
                         imgProps={{
                             referrerPolicy: "no-referrer",
                         }}

@@ -19,7 +19,8 @@
         "subtitle": "{{total}} plants in my collection",
         "addButton": "Add",
         "addButtonAlt": "Add Plant",
-        "searchPlaceholder": "Search in your plants"
+        "searchPlaceholder": "Search in your plants",
+        "emptyState": "Add your first plant now"
     },
 
     "identify": {
