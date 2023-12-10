@@ -3,14 +3,14 @@ import { FC, ReactNode } from "react";
 import { StyledCardContent } from "./Card.style";
 
 type CardContentProps = {
-    data: { name: string; description: string; image: string };
+    data: { name: string; description?: string; image: string };
     children?: ReactNode;
     noWrap?: boolean;
 };
 
 const CardContent: FC<CardContentProps> = (props) => {
     const {
-        data: { name, description },
+        data: { name, description = "" },
         children,
         noWrap,
     } = props;

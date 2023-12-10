@@ -1,11 +1,9 @@
 {
     "direction": "ltr",
-
     "userHeader": {
         "greeting": "Hi {{title}}!",
         "avatarAlt": "Profile Picture"
     },
-
     "signIn": {
         "title": {
             "mobile": "Welcome to",
@@ -13,37 +11,34 @@
         },
         "subtitle": "The House of Plants"
     },
-
     "myPlants": {
         "title": "My Plants",
         "subtitle": "{{total}} plants in my collection",
         "addButton": "Add",
         "addButtonAlt": "Add Plant",
         "searchPlaceholder": "Search in your plants",
-        "emptyState": "Add your first plant now"
+        "emptyState": "Add your first plant",
+        "sites": {
+            "emptyState": "Add your first site"
+        }
     },
-
     "identify": {
         "title": "Identify"
     },
-
     "reminders": {
         "title": "Reminders"
     },
-
     "addPlants": {
         "title": "Add New Plant",
         "searchByName": "Search by name",
         "scanImage": "Identify by image"
     },
-
     "view": {
         "toggle": "toggle view",
         "grid": "grid view",
         "cards": "cards view",
         "rows": "rows view"
     },
-
     "or": "or",
     "water": "Water",
     "fertilize": "Fertilize",
@@ -55,17 +50,14 @@
     "complete_one": "complete early",
     "complete_other": "complete early",
     "snooze": "+2 days",
-
     "limeSensitive": {
         "title": "Lime Hater",
         "data": "This type of plant don't like to be watered with tap water, try to avoid it and use fertilize water."
     },
-
     "likeToDry": {
         "title": "Likes to Dry-Out",
         "data": "This plant likes to dry out completley between watering, if the soil is still most snooze this reminder"
     },
-
     "xDaysAgo_zero": "Today",
     "xDaysAgo_one": "Yesterday",
     "xDaysAgo_other": "{{count}} Days Ago",
@@ -76,7 +68,6 @@
     "open": "open",
     "next": "Next",
     "prev": "Prev",
-
     "substrate": {
         "light": "Light Substrate",
         "medium": "Medium Substrate",
@@ -91,6 +82,6 @@
             "hydro": "Grow in water"
         }
     },
-
-    "uploadPicture": "Upload Picture"
+    "uploadPicture": "Upload Picture",
+    "unassigned": "unassigned"
 }

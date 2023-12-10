@@ -1,8 +1,6 @@
 import { FC } from "react";
 import { Box } from "@mui/material";
-import MyPlantsList from "features/MyPlantsList/MyPlantsList";
 import AddPlantDialog from "features/AddPlantDialog/AddPlantDialog";
-import { useLoaderData } from "react-router";
 import useToggleDisplay from "shared/hooks/useToggleDisplay";
 import MyPlantsToolbar from "features/MyPlantsToolbar/MyPlantsToolbar";
 import useMyPlants from "./useMyPlants";
@@ -11,30 +9,36 @@ import usePlantsView from "shared/hooks/usePlantsView";
 import useFetchData from "shared/hooks/useFetchData";
 import useLocalStorage from "shared/hooks/useLocalStorage";
 import LoaderBackdrop from "components/LoaderBackdrop";
-import EmptyState from "./EmptyState";
+import MyPlantsContent from "features/MyPlantsContent/MyPlantsContent";
 
 const MyPlants: FC = () => {
     // const myPlants = useLoaderData() as PlantsData;
-    const { user } = useLocalStorage();
+    const user = JSON.parse(useLocalStorage().user);
 
-    const { loading, data } = useFetchData({
-        keys: ["usersPlants"],
-        url: `/users/${JSON.parse(user!)._id}/plants`,
+    const { loading: loadingPlants, data: plants } = useFetchData({
+        keys: ["userPlants"],
+        url: `/users/${user._id}/plants`,
+    });
+
+    const { loading: loadingSites, data: sites } = useFetchData({
+        keys: ["userSites"],
+        url: `/users/${user!._id}/sites`,
     });
 
     const { isOpen, handleOpen, handleClose } = useToggleDisplay();
     const { view, onChangeView } = usePlantsView();
 
-    const { onSearchPlant, filteredPlants } = useMyPlants({
-        plants: data,
-    });
+    const { onSearchPlant, filteredPlants, currentTab, handleTabChange } =
+        useMyPlants({
+            plants,
+        });
 
-    if (loading) return <LoaderBackdrop />;
+    if (loadingPlants || loadingSites) return <LoaderBackdrop />;
 
     return (
         <>
             <MyPlantsHeader
-                myPlantsAmount={data.length}
+                myPlantsAmount={plants.length}
                 handleOpen={handleOpen}
             />
 
@@ -42,14 +46,18 @@ const MyPlants: FC = () => {
                 onSearchPlant={onSearchPlant}
                 view={view}
                 onChangeView={onChangeView}
+                currentTab={currentTab}
+                handleTabChange={handleTabChange}
             />
 
             <Box sx={{ height: "100%" }} component="main">
-                {filteredPlants.length ? (
-                    <MyPlantsList filteredPlants={filteredPlants} view={view} />
-                ) : (
-                    <EmptyState handleOpen={handleOpen} />
-                )}
+                <MyPlantsContent
+                    tab={currentTab}
+                    plants={filteredPlants}
+                    sites={sites}
+                    handleOpen={handleOpen}
+                    view={view}
+                />
             </Box>
 
             <AddPlantDialog open={isOpen} handleClose={handleClose} />

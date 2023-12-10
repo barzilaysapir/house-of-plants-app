@@ -1,14 +1,14 @@
 import { Button, Stack } from "@mui/material";
 import schefflera from "assets/images/schefflera_paint.png";
-import i18n from "i18next";
 import { FC } from "react";
 
 type EmptyStateProps = {
     handleOpen: () => void;
+    callToAction?: string;
 };
 
 const EmptyState: FC<EmptyStateProps> = (props) => {
-    const { handleOpen } = props;
+    const { handleOpen, callToAction } = props;
 
     return (
         <Stack
@@ -21,9 +21,15 @@ const EmptyState: FC<EmptyStateProps> = (props) => {
                 backgroundColor: "ThreeDFace",
             }}
         >
-            <Button variant="contained" color="primary" onClick={handleOpen}>
-                {i18n.t("myPlants.emptyState")}
-            </Button>
+            {callToAction && (
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleOpen}
+                >
+                    {callToAction}
+                </Button>
+            )}
 
             <img
                 width="100%"

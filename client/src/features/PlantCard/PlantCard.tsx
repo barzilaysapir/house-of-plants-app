@@ -2,6 +2,7 @@ import { FC, MouseEventHandler, ReactNode } from "react";
 import { Plant } from "shared/types/plants";
 import { CardImageSize } from "shared/types/card";
 import Card from "components/Card/Card";
+import i18n from "i18next";
 
 type PlantCardProps = {
     plant: Plant;
@@ -13,7 +14,7 @@ type PlantCardProps = {
 
 const PlantCard: FC<PlantCardProps> = (props) => {
     const {
-        plant: { primaryName, secondaryName, image },
+        plant: { id, primaryName, site, image },
         size = CardImageSize.MEDIUM,
         vertical = false,
         children,
@@ -22,7 +23,12 @@ const PlantCard: FC<PlantCardProps> = (props) => {
 
     return (
         <Card
-            data={{ name: primaryName, description: secondaryName, image }}
+            data={{
+                id: id.toString(), // not unique. change to _id
+                name: primaryName,
+                description: site || i18n.t("unassigned"),
+                image,
+            }}
             size={size}
             onClick={onClick}
             vertical={vertical}

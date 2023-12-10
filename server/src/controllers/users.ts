@@ -20,6 +20,15 @@ export const getUsersPlants = async (req: Request<any>, res: Response) => {
     }
 };
 
+export const getUserSites = async (req: Request<any>, res: Response) => {
+    try {
+        const userSites = await Logic.getUserSites(req.params.id);
+        res.json(userSites);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to fetch user's plants" });
+    }
+};
+
 export const googleUserAuth = async (req: Request<any>, res: Response) => {
     try {
         const authRes = await Logic.googleUserAuth(req.headers.authorization!);

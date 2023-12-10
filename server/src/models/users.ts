@@ -23,6 +23,15 @@ export const getUsersPlants = async (id: string) => {
     }
 };
 
+export const getUserSites = async (id: string) => {
+    try {
+        const user = await getUserById(id);
+        return user?.sites || [];
+    } catch (error) {
+        throw error;
+    }
+};
+
 export const googleUserAuth = async (token: string) => {
     try {
         const fetchToken = await axios.get(Bun.env.GOOGLE_AUTH_API!, {
@@ -37,7 +46,11 @@ export const googleUserAuth = async (token: string) => {
                 $set: {
                     name,
                     email,
-                    image: picture,
+                    picture,
+                    // this removes all plants when login:
+                    plants: [],
+                    sites: [],
+                    settings: {},
                 },
             },
             { upsert: true }

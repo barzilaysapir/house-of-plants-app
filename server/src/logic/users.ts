@@ -9,6 +9,10 @@ export const getUsersPlants = async (id: string) => {
     return await Models.getUsersPlants(id);
 };
 
+export const getUserSites = async (id: string) => {
+    return await Models.getUserSites(id);
+};
+
 export const googleUserAuth = async (token: string) => {
     return await Models.googleUserAuth(token);
 };

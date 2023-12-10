@@ -11,7 +11,8 @@ export enum CardImageSize {
 }
 
 export type CardData = {
+    id: string;
     name: string;
-    description: string;
+    description?: string;
     image: string;
 };

@@ -7,7 +7,9 @@ const useLocalStorage = () => {
 
     return {
         setToLocalStorage: setItem,
-        user: user || JSON.stringify({ _id: "65180e81467c696f0911b0ed" }),
+        user:
+            user ||
+            JSON.stringify({ _id: "65180e81467c696f0911b0ed", sites: [] }),
     };
 };
 

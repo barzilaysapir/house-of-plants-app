@@ -23,6 +23,7 @@ export type Plant = {
     secondaryName: string;
     scientificName: string;
     image: string;
+    site?: string;
     care?: PlantCare;
 };
 
@@ -30,3 +31,8 @@ export type PlantsData = {
     total: number;
     data: Plant[];
 };
+
+export enum MyPlantsToolbarTab {
+    PLANTS = "Plants",
+    SITES = "Sites",
+}

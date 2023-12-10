@@ -7,4 +7,5 @@ export const USER: User = {
     email: "XXXXXXXXXXXX",
     image: ProfileImage,
     gender: Gender.FEMALE,
+    plants: [],
 };

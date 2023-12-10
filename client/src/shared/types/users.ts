@@ -1,3 +1,5 @@
+import { Plant } from "./plants";
+
 export enum Gender {
     MALE = "Male",
     FEMALE = "Female",
@@ -10,6 +12,7 @@ export type User = {
     gender: Gender;
     email: string;
     image: string;
+    plants: Plant[];
 };
 
 // enum Title {
