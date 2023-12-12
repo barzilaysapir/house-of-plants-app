@@ -25,6 +25,7 @@ const RoutineHeader: FC<RoutineHeaderProps> = (props) => {
                 </Stack>
             }
             handleClose={handleClose}
+            closable
         />
     );
 };

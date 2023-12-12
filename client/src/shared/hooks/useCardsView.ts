@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CardView } from "shared/types/card";
 
-const usePlantsView = () => {
+const useCardsView = () => {
     const [view, setView] = useState<CardView>(CardView.CARDS);
 
     const onChangeView = (
@@ -17,4 +17,4 @@ const usePlantsView = () => {
     };
 };
 
-export default usePlantsView;
+export default useCardsView;

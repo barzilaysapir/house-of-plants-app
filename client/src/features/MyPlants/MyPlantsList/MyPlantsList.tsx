@@ -2,7 +2,7 @@ import { Grid } from "@mui/material";
 import { FC } from "react";
 import { Plant } from "shared/types/plants";
 import PlantCard from "features/PlantCard/PlantCard";
-import PlantRoutines from "features/PlantRoutines/PlantRoutines";
+import PlantRoutines from "features/MyPlants/MyPlantsList/PlantRoutines/PlantRoutines";
 import { CardView } from "shared/types/card";
 import useMyPlantsList from "./useMyPlantsList";
 

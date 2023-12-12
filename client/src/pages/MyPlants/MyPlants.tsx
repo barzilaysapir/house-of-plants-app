@@ -2,14 +2,14 @@ import { FC } from "react";
 import { Box } from "@mui/material";
 import AddPlantDialog from "features/AddPlantDialog/AddPlantDialog";
 import useToggleDisplay from "shared/hooks/useToggleDisplay";
-import MyPlantsToolbar from "features/MyPlantsToolbar/MyPlantsToolbar";
+import MyPlantsToolbar from "features/MyPlants/MyPlantsToolbar/MyPlantsToolbar";
 import useMyPlants from "./useMyPlants";
-import MyPlantsHeader from "features/MyPlantsHeader/MyPlantsHeader";
-import usePlantsView from "shared/hooks/usePlantsView";
+import MyPlantsHeader from "features/MyPlants/MyPlantsHeader";
+import useCardsView from "shared/hooks/useCardsView";
 import useFetchData from "shared/hooks/useFetchData";
 import useLocalStorage from "shared/hooks/useLocalStorage";
 import LoaderBackdrop from "components/LoaderBackdrop";
-import MyPlantsContent from "features/MyPlantsContent/MyPlantsContent";
+import MyPlantsContent from "features/MyPlants/MyPlantsContent";
 
 const MyPlants: FC = () => {
     // const myPlants = useLoaderData() as PlantsData;
@@ -26,7 +26,7 @@ const MyPlants: FC = () => {
     });
 
     const { isOpen, handleOpen, handleClose } = useToggleDisplay();
-    const { view, onChangeView } = usePlantsView();
+    const { view, onChangeView } = useCardsView();
 
     const { onSearchPlant, filteredPlants, currentTab, handleTabChange } =
         useMyPlants({

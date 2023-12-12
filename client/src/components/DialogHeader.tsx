@@ -1,15 +1,23 @@
 import { AppBar, DialogTitle, IconButton } from "@mui/material";
 import { FC } from "react";
 import CloseIcon from "@mui/icons-material/Close";
-import i18n from "i18next";
+import i18n from "config/locales/i18n";
 
 type DialogHeaderProps = {
     title: string | JSX.Element;
-    handleClose?: () => void;
-};
+} & (
+    | {
+          closable: true;
+          handleClose: () => void;
+      }
+    | {
+          closable?: never;
+          handleClose?: never;
+      }
+);
 
 const DialogHeader: FC<DialogHeaderProps> = (props) => {
-    const { title, handleClose } = props;
+    const { title, closable, handleClose } = props;
 
     return (
         <AppBar>
@@ -17,7 +25,7 @@ const DialogHeader: FC<DialogHeaderProps> = (props) => {
                 {title}
             </DialogTitle>
 
-            {handleClose && (
+            {closable && (
                 <IconButton
                     onClick={handleClose}
                     aria-label={i18n.t("close")}

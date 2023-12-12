@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useLocalStorage from "shared/hooks/useLocalStorage";
 import useMutateData from "shared/hooks/useMutateData";
-import { steps } from "./AddPlantDialog.utils";
+import { steps } from "./AddPlantDialog.util";
 import { AddPlantData } from "./AddPlantDialog.types";
 
 type UseAddPlantDialogProps = {

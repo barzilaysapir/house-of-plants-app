@@ -1,10 +1,10 @@
 import { Slide } from "@mui/material";
 import { TransitionProps } from "@mui/material/transitions";
-import { ReactElement, Ref, forwardRef } from "react";
+import { Ref, forwardRef } from "react";
 
 const SlideUpTransition = forwardRef(function Transition(
     props: TransitionProps & {
-        children: ReactElement;
+        children: JSX.Element;
     },
     ref: Ref<unknown>
 ) {

@@ -1,6 +1,9 @@
 {
     "compilerOptions": {
         "baseUrl": "src",
+        "paths": {
+            "i18n": ["i18next"]
+        },
         "target": "es5",
         "lib": ["dom", "dom.iterable", "esnext"],
         "allowJs": true,

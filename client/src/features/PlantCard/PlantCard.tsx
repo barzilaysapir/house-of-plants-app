@@ -1,14 +1,13 @@
-import { FC, MouseEventHandler, ReactNode } from "react";
+import { FC, MouseEventHandler, PropsWithChildren } from "react";
 import { Plant } from "shared/types/plants";
 import { CardImageSize } from "shared/types/card";
-import Card from "components/Card/Card";
+import Card from "components/Card";
 import i18n from "i18next";
 
-type PlantCardProps = {
+type PlantCardProps = PropsWithChildren & {
     plant: Plant;
     size?: CardImageSize;
     vertical?: boolean;
-    children?: ReactNode;
     onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 

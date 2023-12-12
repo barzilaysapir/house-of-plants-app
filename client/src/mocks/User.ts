@@ -5,7 +5,8 @@ export const USER: User = {
     id: 1,
     name: "John Doe",
     email: "XXXXXXXXXXXX",
-    image: ProfileImage,
+    picture: ProfileImage,
     gender: Gender.FEMALE,
     plants: [],
+    sites: [],
 };

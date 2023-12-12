@@ -1,4 +1,4 @@
-import { FC, MouseEventHandler, ReactNode } from "react";
+import { FC, MouseEventHandler, PropsWithChildren } from "react";
 import CardContent from "./CardContent";
 import StyledCard, {
     StyledCardActionArea,
@@ -8,11 +8,10 @@ import StyledCard, {
 import { CardData, CardImageSize } from "shared/types/card";
 import useActiveDevice from "shared/hooks/useActiveDevice";
 
-type CardProps = {
+type CardProps = PropsWithChildren & {
     data: CardData;
     size?: CardImageSize;
     vertical?: boolean;
-    children?: ReactNode;
     onClick?: MouseEventHandler<HTMLButtonElement>;
     noWrap?: boolean;
 };

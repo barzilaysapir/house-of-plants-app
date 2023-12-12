@@ -7,7 +7,7 @@ import useAddPlantDialog from "./useAddPlantDialog";
 import useActiveDevice from "shared/hooks/useActiveDevice";
 import { Box, DialogContent } from "@mui/material";
 import Stepper from "components/Stepper";
-import { steps } from "./AddPlantDialog.utils";
+import { steps } from "./AddPlantDialog.util";
 import { AddPlantField } from "./AddPlantDialog.types";
 
 type AddPlantDialogProps = {
@@ -41,11 +41,14 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
             <DialogHeader
                 title={i18n.t("addPlants.title")}
                 handleClose={onClose}
+                closable
             />
+
             <DialogContent>
                 <Box>
                     {steps.current(activeStep, handleNextStep, plantFormData)}
                 </Box>
+
                 {activeStep !== 0 && (
                     <Stepper
                         activeStep={activeStep}

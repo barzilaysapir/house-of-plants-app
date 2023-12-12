@@ -3,7 +3,7 @@ import { ChangeEvent, FC, MouseEvent, SyntheticEvent } from "react";
 import SearchInput from "./SearchInput";
 import ViewPicker from "./ViewPicker";
 import { CardView } from "shared/types/card";
-import { MyPlantsToolbarTab } from "shared/types/plants";
+import { MyPlantsToolbarTab } from "shared/types/UI";
 
 const TABS = [MyPlantsToolbarTab.PLANTS, MyPlantsToolbarTab.SITES];
 

@@ -1,11 +1,12 @@
-import MyPlantsList from "features/MyPlantsList/MyPlantsList";
-import MySitesList from "features/MySitesList/MySitesList";
-import { MyPlantsToolbarTab, Plant } from "shared/types/plants";
+import MyPlantsList from "features/MyPlants/MyPlantsList/MyPlantsList";
+import MySitesList from "features/MyPlants/MySitesList/MySitesList";
+import { Plant } from "shared/types/plants";
 import { CardView } from "shared/types/card";
 import EmptyState from "components/EmptyState";
 import i18n from "i18next";
 import { FC } from "react";
 import { Site } from "shared/types/sites";
+import { MyPlantsToolbarTab } from "shared/types/UI";
 
 type MyPlantsContentProps = {
     view: CardView;
@@ -25,7 +26,7 @@ const MyPlantsContent: FC<MyPlantsContentProps> = (props) => {
             ) : (
                 <EmptyState
                     handleOpen={handleOpen}
-                    callToAction={i18n.t("myPlants.emptyState")}
+                    callToAction={{ label: i18n.t("myPlants.emptyState") }}
                 />
             );
         case MyPlantsToolbarTab.SITES:
@@ -34,7 +35,9 @@ const MyPlantsContent: FC<MyPlantsContentProps> = (props) => {
             ) : (
                 <EmptyState
                     handleOpen={handleOpen}
-                    callToAction={i18n.t("myPlants.sites.emptyState")}
+                    callToAction={{
+                        label: i18n.t("myPlants.sites.emptyState"),
+                    }}
                 />
             );
         default:

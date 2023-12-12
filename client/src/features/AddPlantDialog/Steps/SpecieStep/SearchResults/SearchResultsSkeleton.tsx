@@ -1,4 +1,4 @@
-import CardSkeleton from "components/Card/CardSkeleton";
+import { CardSkeleton } from "components/Card";
 import { FC } from "react";
 import { CardImageSize } from "shared/types/card";
 import StyledStep from "../../Step.style";

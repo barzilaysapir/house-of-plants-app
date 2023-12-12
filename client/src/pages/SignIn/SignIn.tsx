@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box, Modal } from "@mui/material";
 import SignInContent from "./SignInContent";
-import { StyledSignInModal } from "./SignIn.styles";
+import { StyledSignInModal } from "./SignIn.style";
 import useActiveDevice from "shared/hooks/useActiveDevice";
 
 type MyPlantsProps = {};

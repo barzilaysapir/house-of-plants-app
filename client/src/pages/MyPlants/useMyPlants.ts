@@ -1,5 +1,6 @@
 import { useState, ChangeEvent, useEffect, SyntheticEvent } from "react";
-import { MyPlantsToolbarTab, Plant } from "shared/types/plants";
+import { Plant } from "shared/types/plants";
+import { MyPlantsToolbarTab } from "shared/types/UI";
 
 type UseMyPlantsListProps = {
     plants: Plant[];

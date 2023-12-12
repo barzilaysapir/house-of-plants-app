@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { AddPlantData } from "features/AddPlantDialog/AddPlantDialog.types";
-import { SOIL_TYPES } from "./SoilStep.utils";
-import Card from "components/Card/Card";
+import { SOIL_TYPES } from "./SoilStep.util";
+import Card from "components/Card";
 import { CardImageSize } from "shared/types/card";
 import StyledStep from "../Step.style";
 

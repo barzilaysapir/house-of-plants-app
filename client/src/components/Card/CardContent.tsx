@@ -1,10 +1,9 @@
 import { Box, Divider, Stack, Typography } from "@mui/material";
-import { FC, ReactNode } from "react";
+import { FC, PropsWithChildren } from "react";
 import { StyledCardContent } from "./Card.style";
 
-type CardContentProps = {
+type CardContentProps = PropsWithChildren & {
     data: { name: string; description?: string; image: string };
-    children?: ReactNode;
     noWrap?: boolean;
 };
 

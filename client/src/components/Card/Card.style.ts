@@ -7,22 +7,12 @@ import {
     Paper,
 } from "@mui/material";
 import theme from "config/theme";
+import { ImgHTMLAttributes } from "react";
 import { CardImageSize } from "shared/types/card";
 
-type StyledCardImageProps = {
+export const StyledCardImage = styled(Box)<{
     size: CardImageSize;
-};
-
-type StyledCardMediaProps = React.ImgHTMLAttributes<HTMLButtonElement> & {
-    component: string;
-    image: string;
-};
-
-type StyledCardProps = {
-    vertical: number;
-};
-
-export const StyledCardImage = styled(Box)<StyledCardImageProps>`
+}>`
     border-radius: inherit;
     flex-basis: ${({ size }) => {
         switch (size) {
@@ -38,7 +28,12 @@ export const StyledCardImage = styled(Box)<StyledCardImageProps>`
     }};
 `;
 
-export const StyledCardMedia = styled(CardMedia)<StyledCardMediaProps>`
+export const StyledCardMedia = styled(CardMedia)<
+    ImgHTMLAttributes<HTMLButtonElement> & {
+        component: string;
+        image: string;
+    }
+>`
     border-radius: inherit;
     aspect-ratio: 1 / 1;
 `;
@@ -52,7 +47,9 @@ export const StyledCardContent = styled(CardContent)`
     }
 `;
 
-const StyledCard = styled(Paper)<StyledCardProps>`
+const StyledCard = styled(Paper)<{
+    vertical: number;
+}>`
     display: flex;
     box-sizing: border-box;
     justify-content: flex-start;

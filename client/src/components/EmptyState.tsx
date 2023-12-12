@@ -1,10 +1,11 @@
 import { Button, Stack } from "@mui/material";
-import schefflera from "assets/images/schefflera_paint.png";
+import ScheffleraImg from "assets/images/schefflera_paint.png";
 import { FC } from "react";
+import { CallToAction } from "shared/types/UI";
 
 type EmptyStateProps = {
     handleOpen: () => void;
-    callToAction?: string;
+    callToAction?: CallToAction;
 };
 
 const EmptyState: FC<EmptyStateProps> = (props) => {
@@ -27,14 +28,14 @@ const EmptyState: FC<EmptyStateProps> = (props) => {
                     color="primary"
                     onClick={handleOpen}
                 >
-                    {callToAction}
+                    {callToAction.label}
                 </Button>
             )}
 
             <img
                 width="100%"
                 alt="Schefflera plant"
-                src={schefflera}
+                src={ScheffleraImg}
                 style={{ maxWidth: 300, opacity: 0.9 }}
             />
         </Stack>

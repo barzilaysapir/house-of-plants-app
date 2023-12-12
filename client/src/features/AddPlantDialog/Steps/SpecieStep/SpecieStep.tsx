@@ -1,6 +1,6 @@
 import { Divider, Chip } from "@mui/material";
 import i18n from "i18next";
-import IdentifyPlant from "features/AddPlantDialog/IdentifyPlant";
+import IdentifyPlant from "./IdentifyPlant";
 import SearchResults from "./SearchResults/SearchResults";
 import { FC } from "react";
 import useSpecieStep from "./useSpecieStep";

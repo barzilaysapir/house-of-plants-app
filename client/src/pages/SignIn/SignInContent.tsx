@@ -8,7 +8,7 @@ import LogoCircle from "assets/icons/logo_circle.png";
 import LogoLeaf from "assets/icons/logo_leaf.png";
 import LogoLeafCircle from "assets/icons/logo_leaf_circle.png";
 import LogoCircle2 from "assets/icons/logo_option2.png";
-import { StyledSignInContent } from "./SignIn.styles";
+import { StyledSignInContent } from "./SignIn.style";
 import useSignIn from "./useSignIn";
 
 type SignInContentProps = {

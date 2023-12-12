@@ -1,13 +1,21 @@
-import { Backdrop, CircularProgress } from "@mui/material";
+import { Backdrop, BackdropProps, CircularProgress } from "@mui/material";
+import { FC } from "react";
 
-const LoaderBackdrop = () => {
+type LoaderBackdropProps = Omit<BackdropProps, "open"> & {
+    open?: boolean;
+};
+
+const LoaderBackdrop: FC<LoaderBackdropProps> = (props) => {
+    const { open = true, ...backdropProps } = props;
+
     return (
         <Backdrop
             sx={{
                 zIndex: ({ zIndex }) => zIndex.drawer + 1,
                 color: "#fff",
             }}
-            open
+            open={open}
+            {...backdropProps}
         >
             <CircularProgress color="inherit" />
         </Backdrop>

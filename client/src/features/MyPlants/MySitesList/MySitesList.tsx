@@ -2,7 +2,7 @@ import { Grid } from "@mui/material";
 import { FC } from "react";
 import { CardView } from "shared/types/card";
 import useMySitesList from "./useMySitesList";
-import Card from "components/Card/Card";
+import Card from "components/Card";
 import { Site } from "shared/types/sites";
 
 type MySitesListProps = {

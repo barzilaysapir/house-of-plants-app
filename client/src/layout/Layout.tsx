@@ -1,12 +1,10 @@
 import { Container } from "@mui/material";
-import { FC, ReactNode } from "react";
+import { FC, PropsWithChildren } from "react";
 import TopNav from "./TopNav/TopNav";
 import BottomNav from "./BottomNav/BottomNav";
-import StyledLayout from "./Layout.styles";
+import StyledLayout from "./Layout.style";
 
-type LayoutProps = {
-    children: ReactNode;
-};
+type LayoutProps = PropsWithChildren;
 
 const Layout: FC<LayoutProps> = (props) => {
     const { children } = props;
