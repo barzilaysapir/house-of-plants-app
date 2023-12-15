@@ -26,19 +26,14 @@ const Card: FC<CardProps> = (props) => {
 
     const { isMobile } = useActiveDevice();
     const isGalleryView = isMobile && vertical; // mobile grid view
-    const { isOpen, handleOpen, handleClose } = useToggleDisplay();
+    const { isOpen, toggle } = useToggleDisplay();
 
     return (
         <StyledCard vertical={Number(vertical)}>
-            <StyledCardImage size={size} onClick={handleOpen}>
+            <StyledCardImage size={size} onClick={toggle}>
                 <StyledCardMedia component="img" image={data.image} />
+                <ImageBackdrop open={isOpen} image={data.image} />
             </StyledCardImage>
-
-            <ImageBackdrop
-                open={isOpen}
-                onClick={handleClose}
-                image={data.image}
-            />
 
             {!isGalleryView && (
                 <CardContent onClick={onClick} data={data} noWrap={noWrap}>

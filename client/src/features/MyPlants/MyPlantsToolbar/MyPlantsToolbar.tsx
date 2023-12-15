@@ -4,6 +4,7 @@ import SearchInput from "./SearchInput";
 import ViewPicker from "./ViewPicker";
 import { CardView } from "shared/types/card";
 import { MyPlantsToolbarTab } from "shared/types/UI";
+import useActiveDevice from "shared/hooks/useActiveDevice";
 
 const TABS = [MyPlantsToolbarTab.PLANTS, MyPlantsToolbarTab.SITES];
 
@@ -22,6 +23,8 @@ const MyPlantsToolbar: FC<MyPlantsProps> = (props) => {
     const { onSearchPlant, view, onChangeView, currentTab, handleTabChange } =
         props;
 
+    const { isMobile } = useActiveDevice();
+
     return (
         <Stack direction="column" spacing={1}>
             <Stack direction="row" alignItems="center" spacing={2}>
@@ -32,7 +35,7 @@ const MyPlantsToolbar: FC<MyPlantsProps> = (props) => {
             <Tabs
                 value={currentTab}
                 onChange={handleTabChange}
-                variant="fullWidth"
+                variant={isMobile ? "fullWidth" : "standard"}
                 centered
             >
                 {TABS.map((tab) => (
