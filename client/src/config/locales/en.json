@@ -83,5 +83,6 @@
         }
     },
     "uploadPicture": "Upload Picture",
-    "unassigned": "unassigned"
+    "unassigned": "unassigned",
+    "settings": "settings"
 }

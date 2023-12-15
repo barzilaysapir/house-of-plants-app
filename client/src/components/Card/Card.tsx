@@ -5,6 +5,9 @@ import { CardData, CardImageSize } from "shared/types/card";
 import useActiveDevice from "shared/hooks/useActiveDevice";
 import useToggleDisplay from "shared/hooks/useToggleDisplay";
 import ImageBackdrop from "components/ImageBackdrop";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { IconButton } from "@mui/material";
+import i18n from "config/locales/i18n";
 
 type CardProps = PropsWithChildren & {
     data: CardData;
@@ -40,6 +43,17 @@ const Card: FC<CardProps> = (props) => {
                     {children}
                 </CardContent>
             )}
+
+            <IconButton
+                aria-label={i18n.t("settings")}
+                sx={{
+                    alignSelf: "flex-start",
+                    padding: "2px",
+                    display: isGalleryView ? "none" : "inline-flex",
+                }}
+            >
+                <MoreVertIcon />
+            </IconButton>
         </StyledCard>
     );
 };

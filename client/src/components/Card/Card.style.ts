@@ -49,6 +49,7 @@ export const StyledCardContent = styled(CardContent)`
 const StyledCard = styled(Paper)<{
     vertical: number;
 }>`
+    position: relative;
     display: flex;
     box-sizing: border-box;
     justify-content: flex-start;
