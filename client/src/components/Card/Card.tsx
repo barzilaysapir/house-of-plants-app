@@ -7,6 +7,8 @@ import useToggleDisplay from "shared/hooks/useToggleDisplay";
 import ImageBackdrop from "components/ImageBackdrop";
 import CardMenu from "./CardMenu/CardMenu";
 import { MenuOption } from "shared/types/UI";
+import { OverridableComponent } from "@mui/types";
+import { SvgIconTypeMap } from "@mui/material";
 
 type CardProps = PropsWithChildren & {
     data: CardData;
@@ -14,7 +16,10 @@ type CardProps = PropsWithChildren & {
     vertical?: boolean;
     onClick?: MouseEventHandler<HTMLButtonElement>;
     noWrap?: boolean;
-    menuOptions?: MenuOption[];
+    menu?: {
+        options: MenuOption[];
+        Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>;
+    };
 };
 
 const Card: FC<CardProps> = (props) => {
@@ -25,7 +30,7 @@ const Card: FC<CardProps> = (props) => {
         children,
         onClick,
         noWrap,
-        menuOptions,
+        menu,
     } = props;
 
     const { isMobile } = useActiveDevice();
@@ -45,11 +50,11 @@ const Card: FC<CardProps> = (props) => {
                 </CardContent>
             )}
 
-            {menuOptions && (
+            {menu && (
                 <CardMenu
                     isGalleryView={isGalleryView}
-                    options={menuOptions}
-                    title={data.name}
+                    options={menu.options}
+                    header={{ title: data.name, Icon: menu.Icon }}
                 />
             )}
         </StyledCard>

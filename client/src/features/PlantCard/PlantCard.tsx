@@ -4,6 +4,7 @@ import { CardImageSize } from "shared/types/card";
 import Card from "components/Card";
 import i18n from "i18next";
 import { MenuOption } from "shared/types/UI";
+import YardOutlinedIcon from "@mui/icons-material/YardOutlined";
 
 type PlantCardProps = PropsWithChildren & {
     plant: Plant;
@@ -23,6 +24,13 @@ const PlantCard: FC<PlantCardProps> = (props) => {
         menuOptions,
     } = props;
 
+    const menuProps = menuOptions
+        ? {
+              options: menuOptions,
+              Icon: YardOutlinedIcon,
+          }
+        : undefined;
+
     return (
         <Card
             data={{
@@ -34,7 +42,7 @@ const PlantCard: FC<PlantCardProps> = (props) => {
             size={size}
             onClick={onClick}
             vertical={vertical}
-            menuOptions={menuOptions}
+            menu={menuProps}
             noWrap
         >
             {children}

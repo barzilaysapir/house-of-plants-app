@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Box } from "@mui/material";
+import { Box, SvgIconTypeMap } from "@mui/material";
 import i18n from "config/locales/i18n";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { MenuOption } from "shared/types/UI";
@@ -8,15 +8,19 @@ import MobileMenu from "./MobileMenu";
 import { StyledMenuIconBtn } from "./CardMenu.style";
 import CardMenuList from "./CardMenuList";
 import useCardMenu from "./useCardMenu";
+import { OverridableComponent } from "@mui/types";
 
 type CardMenuProps = {
-    title: string;
+    header: {
+        Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>;
+        title: string;
+    };
     isGalleryView: boolean;
     options: MenuOption[];
 };
 
 const CardMenu: FC<CardMenuProps> = (props) => {
-    const { title, isGalleryView, options } = props;
+    const { header, isGalleryView, options } = props;
 
     const {
         onOpenClick,
@@ -46,7 +50,7 @@ const CardMenu: FC<CardMenuProps> = (props) => {
             <MobileMenu
                 isOpen={isOpenMobile}
                 handleClose={handleCloseMobile}
-                title={title}
+                header={header}
             >
                 <CardMenuList options={options} />
             </MobileMenu>

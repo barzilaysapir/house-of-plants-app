@@ -12,7 +12,6 @@ import LoaderBackdrop from "components/LoaderBackdrop";
 import MyPlantsContent from "features/MyPlants/MyPlantsContent";
 
 const MyPlants: FC = () => {
-    // const myPlants = useLoaderData() as PlantsData;
     const user = JSON.parse(useLocalStorage().user);
 
     const { loading: loadingPlants, data: plants } = useFetchData({

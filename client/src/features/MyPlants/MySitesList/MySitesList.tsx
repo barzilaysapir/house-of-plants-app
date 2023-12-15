@@ -5,6 +5,7 @@ import Card from "components/Card";
 import { Site } from "shared/types/sites";
 import { MENU_OPTIONS } from "./MySitesList.util";
 import useCardsList from "shared/hooks/useCardsList";
+import LocationCityOutlinedIcon from "@mui/icons-material/LocationCityOutlined";
 
 type MySitesListProps = {
     sites: Site[];
@@ -33,7 +34,10 @@ const MySitesList: FC<MySitesListProps> = (props) => {
                         data={site}
                         size={getImageSize()}
                         vertical={isCardVertical}
-                        menuOptions={MENU_OPTIONS}
+                        menu={{
+                            options: MENU_OPTIONS,
+                            Icon: LocationCityOutlinedIcon,
+                        }}
                     />
                 </Grid>
             ))}
