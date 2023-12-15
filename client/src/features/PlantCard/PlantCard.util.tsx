@@ -41,31 +41,3 @@ export const PLANT_ROUTINES: PlantRoutine[] = [
         Icon: Science,
     },
 ];
-
-export const MENU_OPTIONS: MenuOption[] = [
-    {
-        name: "Preview",
-        link: "/preview",
-        icon: <Preview />,
-    },
-    {
-        name: "Edit Plant",
-        link: "/edit",
-        icon: <Edit />,
-    },
-    {
-        name: "Change Site",
-        link: "/edit/site",
-        icon: <LocationCity />,
-    },
-    {
-        name: "Reminders",
-        link: "/edit/reminders",
-        icon: <Notifications />,
-    },
-    {
-        name: "Specie Info",
-        link: "/specie",
-        icon: <Info />,
-    },
-];

@@ -4,7 +4,7 @@ import { Plant } from "shared/types/plants";
 import PlantCard from "features/PlantCard/PlantCard";
 import PlantRoutines from "features/MyPlants/MyPlantsList/PlantRoutines/PlantRoutines";
 import { CardView } from "shared/types/card";
-import useMyPlantsList from "./useMyPlantsList";
+import useMyPlantsList, { MENU_OPTIONS } from "./useMyPlantsList";
 
 type MyPlantsListProps = {
     filteredPlants: Plant[];
@@ -34,6 +34,7 @@ const MyPlantsList: FC<MyPlantsListProps> = (props) => {
                         plant={plant}
                         size={getImageSize()}
                         vertical={isCardVertical}
+                        menuOptions={MENU_OPTIONS}
                     >
                         {showPlantRoutines && (
                             <PlantRoutines
