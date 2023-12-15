@@ -1,10 +1,11 @@
-import { Box, Divider, Stack, Typography } from "@mui/material";
-import { FC, PropsWithChildren } from "react";
+import { CardActionArea, Divider, Stack, Typography } from "@mui/material";
+import { FC, MouseEventHandler, PropsWithChildren } from "react";
 import { StyledCardContent } from "./Card.style";
 
 type CardContentProps = PropsWithChildren & {
     data: { name: string; description?: string; image: string };
     noWrap?: boolean;
+    onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
 const CardContent: FC<CardContentProps> = (props) => {
@@ -12,12 +13,13 @@ const CardContent: FC<CardContentProps> = (props) => {
         data: { name, description = "" },
         children,
         noWrap,
+        onClick,
     } = props;
 
     return (
         <StyledCardContent>
             <Stack direction="column" rowGap={1} height="100%">
-                <Box>
+                <CardActionArea onClick={onClick}>
                     <Typography
                         variant="body1"
                         component="h2"
@@ -33,7 +35,7 @@ const CardContent: FC<CardContentProps> = (props) => {
                     >
                         {description}
                     </Typography>
-                </Box>
+                </CardActionArea>
 
                 {children && (
                     <>

@@ -55,12 +55,8 @@ const StyledCard = styled(Paper)<{
     justify-content: flex-start;
     flex-direction: ${({ vertical }) => (vertical ? "column" : "row")};
     padding: ${theme.spacing(1)};
-    border-radius: inherit;
-    box-shadow: 0px 0px 10px rgb(173 173 173 / 0.2);
-`;
-
-export const StyledCardActionArea = styled(CardActionArea)`
     border-radius: ${theme.spacing(2)};
+    box-shadow: 0px 0px 10px rgb(173 173 173 / 0.2);
 `;
 
 export default StyledCard;

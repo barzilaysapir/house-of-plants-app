@@ -1,10 +1,6 @@
 import { FC, MouseEventHandler, PropsWithChildren } from "react";
 import CardContent from "./CardContent";
-import StyledCard, {
-    StyledCardActionArea,
-    StyledCardImage,
-    StyledCardMedia,
-} from "./Card.style";
+import StyledCard, { StyledCardImage, StyledCardMedia } from "./Card.style";
 import { CardData, CardImageSize } from "shared/types/card";
 import useActiveDevice from "shared/hooks/useActiveDevice";
 
@@ -22,7 +18,7 @@ const Card: FC<CardProps> = (props) => {
         size = CardImageSize.MEDIUM,
         vertical = false,
         children,
-        onClick = () => null,
+        onClick,
         noWrap,
     } = props;
 
@@ -30,19 +26,17 @@ const Card: FC<CardProps> = (props) => {
     const isGalleryView = isMobile && vertical; // mobile grid view
 
     return (
-        <StyledCardActionArea onClick={onClick}>
-            <StyledCard vertical={Number(vertical)}>
-                <StyledCardImage size={size}>
-                    <StyledCardMedia component="img" image={data.image} />
-                </StyledCardImage>
+        <StyledCard vertical={Number(vertical)}>
+            <StyledCardImage size={size}>
+                <StyledCardMedia component="img" image={data.image} />
+            </StyledCardImage>
 
-                {!isGalleryView && (
-                    <CardContent data={data} noWrap={noWrap}>
-                        {children}
-                    </CardContent>
-                )}
-            </StyledCard>
-        </StyledCardActionArea>
+            {!isGalleryView && (
+                <CardContent onClick={onClick} data={data} noWrap={noWrap}>
+                    {children}
+                </CardContent>
+            )}
+        </StyledCard>
     );
 };
 
