@@ -84,5 +84,27 @@
     },
     "uploadPicture": "Upload Picture",
     "unassigned": "unassigned",
-    "settings": "settings"
+    "settings": "settings",
+
+    "settingsMenu": {
+        "myAccount": "My Account",
+        "settings": "Settings",
+        "logout": "Logout"
+    },
+
+    "plantMenu": {
+        "preview": "Preview",
+        "editPlant": "Edit Plant",
+        "uploadPhoto": "Upload Photo",
+        "changeSite": "Change Site",
+        "reminders": "Reminders",
+        "specieInfo": "Specie Info"
+    },
+
+    "siteMenu": {
+        "preview": "Preview",
+        "editSite": "Edit Site",
+        "uploadPhoto": "Upload Photo",
+        "reminders": "Reminders"
+    }
 }

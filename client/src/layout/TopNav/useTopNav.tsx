@@ -4,20 +4,22 @@ import { useNavigate } from "react-router";
 import { Route } from "shared/types/route";
 import { Logout, Settings } from "@mui/icons-material";
 import { MenuOption } from "shared/types/UI";
+import i18n from "config/locales/i18n";
 
-export const PAGES = ["Products", "Pricing", "Blog"];
+export const PAGES = ["About", "Recommendation", "Products"];
+
 export const SETTINGS: MenuOption[] = [
     {
-        name: "My Account",
+        name: i18n.t("settingsMenu.myAccount"),
         link: "/account",
     },
     {
-        name: "Settings",
+        name: i18n.t("settingsMenu.settings"),
         link: "/settings",
         icon: <Settings fontSize="small" />,
     },
     {
-        name: "Logout",
+        name: i18n.t("settingsMenu.logout"),
         link: "/",
         icon: <Logout fontSize="small" />,
     },

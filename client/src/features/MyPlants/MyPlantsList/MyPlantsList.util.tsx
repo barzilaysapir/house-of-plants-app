@@ -6,36 +6,37 @@ import {
     Info,
     AddAPhoto,
 } from "@mui/icons-material";
+import i18n from "config/locales/i18n";
 import { MenuOption } from "shared/types/UI";
 
 export const MENU_OPTIONS: MenuOption[] = [
     {
-        name: "Preview",
+        name: i18n.t("plantMenu.preview"),
         link: "/preview",
         icon: <Preview />,
     },
     {
-        name: "Edit Plant",
+        name: i18n.t("plantMenu.editPlant"),
         link: "/edit",
         icon: <Edit />,
     },
     {
-        name: "Upload Photo",
-        link: "/upload",
+        name: i18n.t("plantMenu.uploadPhoto"),
+        link: "/photo",
         icon: <AddAPhoto />,
     },
     {
-        name: "Change Site",
+        name: i18n.t("plantMenu.changeSite"),
         link: "/edit/site",
         icon: <LocationCity />,
     },
     {
-        name: "Reminders",
+        name: i18n.t("plantMenu.reminders"),
         link: "/edit/reminders",
         icon: <Notifications />,
     },
     {
-        name: "Specie Info",
+        name: i18n.t("plantMenu.specieInfo"),
         link: "/specie",
         icon: <Info />,
     },
