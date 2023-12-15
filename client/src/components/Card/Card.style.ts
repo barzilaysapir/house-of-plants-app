@@ -1,11 +1,5 @@
 import styled from "@emotion/styled";
-import {
-    Box,
-    CardActionArea,
-    CardContent,
-    CardMedia,
-    Paper,
-} from "@mui/material";
+import { Box, CardContent, CardMedia, Paper } from "@mui/material";
 import theme from "config/theme";
 import { ImgHTMLAttributes } from "react";
 import { CardImageSize } from "shared/types/card";
@@ -36,6 +30,11 @@ export const StyledCardMedia = styled(CardMedia)<
 >`
     border-radius: inherit;
     aspect-ratio: 1 / 1;
+    cursor: pointer;
+    transition: filter 0.3s;
+    &:hover {
+        filter: brightness(1.1);
+    }
 `;
 
 export const StyledCardContent = styled(CardContent)`

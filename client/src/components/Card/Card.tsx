@@ -3,6 +3,8 @@ import CardContent from "./CardContent";
 import StyledCard, { StyledCardImage, StyledCardMedia } from "./Card.style";
 import { CardData, CardImageSize } from "shared/types/card";
 import useActiveDevice from "shared/hooks/useActiveDevice";
+import useToggleDisplay from "shared/hooks/useToggleDisplay";
+import ImageBackdrop from "components/ImageBackdrop";
 
 type CardProps = PropsWithChildren & {
     data: CardData;
@@ -24,12 +26,19 @@ const Card: FC<CardProps> = (props) => {
 
     const { isMobile } = useActiveDevice();
     const isGalleryView = isMobile && vertical; // mobile grid view
+    const { isOpen, handleOpen, handleClose } = useToggleDisplay();
 
     return (
         <StyledCard vertical={Number(vertical)}>
-            <StyledCardImage size={size}>
+            <StyledCardImage size={size} onClick={handleOpen}>
                 <StyledCardMedia component="img" image={data.image} />
             </StyledCardImage>
+
+            <ImageBackdrop
+                open={isOpen}
+                onClick={handleClose}
+                image={data.image}
+            />
 
             {!isGalleryView && (
                 <CardContent onClick={onClick} data={data} noWrap={noWrap}>
