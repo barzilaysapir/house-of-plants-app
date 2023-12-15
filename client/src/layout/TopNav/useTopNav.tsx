@@ -2,9 +2,25 @@ import { useState } from "react";
 import { googleLogout } from "@react-oauth/google";
 import { useNavigate } from "react-router";
 import { Route } from "shared/types/route";
+import { Logout, Settings } from "@mui/icons-material";
 
 export const PAGES = ["Products", "Pricing", "Blog"];
-export const SETTINGS = ["Profile", "Account", "Dashboard", "Logout"];
+export const SETTINGS = [
+    {
+        name: "My Account",
+        link: "/account",
+    },
+    {
+        name: "Settings",
+        link: "/settings",
+        icon: <Settings fontSize="small" />,
+    },
+    {
+        name: "Logout",
+        link: "/",
+        icon: <Logout fontSize="small" />,
+    },
+];
 
 const useTopNav = () => {
     const navigate = useNavigate();

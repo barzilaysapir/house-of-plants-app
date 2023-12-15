@@ -49,7 +49,7 @@ const PagesMenu = () => {
                 >
                     {PAGES.map((page) => (
                         <MenuItem key={page} onClick={handleClosePagesMenu}>
-                            <Typography textAlign="center">{page}</Typography>
+                            {page}
                         </MenuItem>
                     ))}
                 </Menu>

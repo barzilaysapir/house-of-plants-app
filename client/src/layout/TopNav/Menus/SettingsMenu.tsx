@@ -1,17 +1,16 @@
 import {
-    Avatar,
     Badge,
+    Divider,
     IconButton,
+    ListItemIcon,
     Menu,
     MenuItem,
     Tooltip,
-    Typography,
 } from "@mui/material";
 import useTopNav, { SETTINGS } from "../useTopNav";
-import { green } from "@mui/material/colors";
 import { FC } from "react";
-import i18n from "i18next";
 import useLocalStorage from "shared/hooks/useLocalStorage";
+import UserAvatar from "components/UserAvatar";
 
 type SettingsMenuProps = {};
 
@@ -40,14 +39,7 @@ const SettingsMenu: FC<SettingsMenuProps> = (props) => {
         >
             <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenSettingsMenu} sx={{ p: 0 }}>
-                    <Avatar
-                        sx={{ bgcolor: green[500] }}
-                        alt={i18n.t("userHeader.avatarAlt")}
-                        src={picture}
-                        imgProps={{
-                            referrerPolicy: "no-referrer",
-                        }}
-                    />
+                    <UserAvatar picture={picture} />
                 </IconButton>
             </Tooltip>
 
@@ -67,12 +59,28 @@ const SettingsMenu: FC<SettingsMenuProps> = (props) => {
                 open={Boolean(anchorElSettings)}
                 onClose={handleCloseSettingsMenu}
             >
-                {SETTINGS.map((setting) => (
+                <MenuItem
+                    onClick={() =>
+                        handleSettingsMenuItemClick(SETTINGS[0].name)
+                    }
+                >
+                    <ListItemIcon>
+                        <UserAvatar picture={picture} small />
+                    </ListItemIcon>
+                    {SETTINGS[0].name}
+                </MenuItem>
+
+                <Divider sx={{ margin: 0 }} />
+
+                {SETTINGS.slice(1).map((setting) => (
                     <MenuItem
-                        key={setting}
-                        onClick={() => handleSettingsMenuItemClick(setting)}
+                        key={setting.name}
+                        onClick={() =>
+                            handleSettingsMenuItemClick(setting.name)
+                        }
                     >
-                        <Typography textAlign="center">{setting}</Typography>
+                        <ListItemIcon>{setting.icon}</ListItemIcon>
+                        {setting.name}
                     </MenuItem>
                 ))}
             </Menu>
