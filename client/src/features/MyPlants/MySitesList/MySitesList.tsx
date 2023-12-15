@@ -4,6 +4,7 @@ import { CardView } from "shared/types/card";
 import useMySitesList from "./useMySitesList";
 import Card from "components/Card";
 import { Site } from "shared/types/sites";
+import { MENU_OPTIONS } from "./MySitesList.util";
 
 type MySitesListProps = {
     sites: Site[];
@@ -32,6 +33,7 @@ const MySitesList: FC<MySitesListProps> = (props) => {
                         data={site}
                         size={getImageSize()}
                         vertical={isCardVertical}
+                        menuOptions={MENU_OPTIONS}
                     />
                 </Grid>
             ))}
