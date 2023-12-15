@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from "react";
-import { Box, Drawer, IconButton, Typography } from "@mui/material";
+import { Box, Divider, Drawer, IconButton, Typography } from "@mui/material";
 import theme from "config/theme";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -45,6 +45,8 @@ const MobileMenu: FC<MobileMenuProps> = (props) => {
                     )}
                 </IconButton>
             </StyledDrawerHeader>
+
+            <Divider />
 
             {children}
         </Drawer>

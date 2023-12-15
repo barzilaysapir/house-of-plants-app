@@ -1,18 +1,13 @@
-import { FC, useState } from "react";
-import {
-    Box,
-    ListItemIcon,
-    ListItemText,
-    MenuItem,
-    MenuList,
-} from "@mui/material";
+import { FC } from "react";
+import { Box } from "@mui/material";
 import i18n from "config/locales/i18n";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { MenuOption } from "shared/types/UI";
-import useToggleDisplay from "shared/hooks/useToggleDisplay";
 import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
 import { StyledMenuIconBtn } from "./CardMenu.style";
+import CardMenuList from "./CardMenuList";
+import useCardMenu from "./useCardMenu";
 
 type CardMenuProps = {
     title: string;
@@ -23,53 +18,37 @@ type CardMenuProps = {
 const CardMenu: FC<CardMenuProps> = (props) => {
     const { title, isGalleryView, options } = props;
 
-    const { isOpen, handleOpen, handleClose } = useToggleDisplay();
-
-    const [anchorElSettings, setAnchorElSettings] =
-        useState<HTMLElement | null>(null);
-
-    const handleClosePagesMenu = () => {
-        setAnchorElSettings(null);
-        handleClose();
-    };
-
-    const menuList = (
-        <MenuList dense>
-            {options.map(({ name, icon }) => (
-                <MenuItem key={name} onClick={handleClosePagesMenu}>
-                    <ListItemIcon>{icon}</ListItemIcon>
-                    <ListItemText primary={name} />
-                </MenuItem>
-            ))}
-        </MenuList>
-    );
+    const {
+        onOpenClick,
+        handleCloseDesktop,
+        handleCloseMobile,
+        isOpenMobile,
+        desktopAnchor,
+    } = useCardMenu();
 
     return (
         <Box>
             <StyledMenuIconBtn
                 aria-label={i18n.t("settings")}
-                onClick={(e) => {
-                    setAnchorElSettings(e.currentTarget);
-                    handleOpen();
-                }}
+                onClick={onOpenClick}
                 isGalleryView={isGalleryView}
             >
                 <MoreVertIcon />
             </StyledMenuIconBtn>
 
             <DesktopMenu
-                anchorElSettings={anchorElSettings}
-                handleClosePagesMenu={handleClosePagesMenu}
+                anchorElSettings={desktopAnchor}
+                handleClosePagesMenu={handleCloseDesktop}
             >
-                {menuList}
+                <CardMenuList options={options} />
             </DesktopMenu>
 
             <MobileMenu
-                isOpen={isOpen}
-                handleClose={handleClosePagesMenu}
+                isOpen={isOpenMobile}
+                handleClose={handleCloseMobile}
                 title={title}
             >
-                {menuList}
+                <CardMenuList options={options} />
             </MobileMenu>
         </Box>
     );
