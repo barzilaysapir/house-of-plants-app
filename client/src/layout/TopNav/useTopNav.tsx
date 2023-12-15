@@ -3,9 +3,10 @@ import { googleLogout } from "@react-oauth/google";
 import { useNavigate } from "react-router";
 import { Route } from "shared/types/route";
 import { Logout, Settings } from "@mui/icons-material";
+import { MenuOption } from "shared/types/UI";
 
 export const PAGES = ["Products", "Pricing", "Blog"];
-export const SETTINGS = [
+export const SETTINGS: MenuOption[] = [
     {
         name: "My Account",
         link: "/account",

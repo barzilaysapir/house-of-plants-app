@@ -3,6 +3,7 @@ import { Plant } from "shared/types/plants";
 import { CardImageSize } from "shared/types/card";
 import Card from "components/Card";
 import i18n from "i18next";
+import { MENU_OPTIONS } from "./PlantCard.util";
 
 type PlantCardProps = PropsWithChildren & {
     plant: Plant;
@@ -31,6 +32,7 @@ const PlantCard: FC<PlantCardProps> = (props) => {
             size={size}
             onClick={onClick}
             vertical={vertical}
+            menuOptions={MENU_OPTIONS}
             noWrap
         >
             {children}

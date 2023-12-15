@@ -2,6 +2,7 @@ import {
     Badge,
     Divider,
     IconButton,
+    ListItemAvatar,
     ListItemIcon,
     Menu,
     MenuItem,
@@ -64,9 +65,9 @@ const SettingsMenu: FC<SettingsMenuProps> = (props) => {
                         handleSettingsMenuItemClick(SETTINGS[0].name)
                     }
                 >
-                    <ListItemIcon>
-                        <UserAvatar picture={picture} small />
-                    </ListItemIcon>
+                    <ListItemAvatar>
+                        <UserAvatar picture={picture} />
+                    </ListItemAvatar>
                     {SETTINGS[0].name}
                 </MenuItem>
 

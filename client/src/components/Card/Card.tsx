@@ -5,9 +5,8 @@ import { CardData, CardImageSize } from "shared/types/card";
 import useActiveDevice from "shared/hooks/useActiveDevice";
 import useToggleDisplay from "shared/hooks/useToggleDisplay";
 import ImageBackdrop from "components/ImageBackdrop";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { IconButton } from "@mui/material";
-import i18n from "config/locales/i18n";
+import CardMenu from "./CardMenu/CardMenu";
+import { MenuOption } from "shared/types/UI";
 
 type CardProps = PropsWithChildren & {
     data: CardData;
@@ -15,6 +14,7 @@ type CardProps = PropsWithChildren & {
     vertical?: boolean;
     onClick?: MouseEventHandler<HTMLButtonElement>;
     noWrap?: boolean;
+    menuOptions?: MenuOption[];
 };
 
 const Card: FC<CardProps> = (props) => {
@@ -25,6 +25,7 @@ const Card: FC<CardProps> = (props) => {
         children,
         onClick,
         noWrap,
+        menuOptions,
     } = props;
 
     const { isMobile } = useActiveDevice();
@@ -44,16 +45,13 @@ const Card: FC<CardProps> = (props) => {
                 </CardContent>
             )}
 
-            <IconButton
-                aria-label={i18n.t("settings")}
-                sx={{
-                    alignSelf: "flex-start",
-                    padding: "2px",
-                    display: isGalleryView ? "none" : "inline-flex",
-                }}
-            >
-                <MoreVertIcon />
-            </IconButton>
+            {menuOptions && (
+                <CardMenu
+                    isGalleryView={isGalleryView}
+                    options={menuOptions}
+                    title={data.name}
+                />
+            )}
         </StyledCard>
     );
 };

@@ -8,7 +8,9 @@ type UserAvatarProps = AvatarProps & {
     small?: boolean;
 };
 
-const StyledAvatar = styled(Avatar)<{ small?: boolean }>(({ small }) =>
+const StyledAvatar = styled(Avatar, {
+    shouldForwardProp: (prop) => prop !== "small",
+})<{ small?: boolean }>(({ small }) =>
     small ? "width: 24px; height: 24px;" : ""
 );
 
