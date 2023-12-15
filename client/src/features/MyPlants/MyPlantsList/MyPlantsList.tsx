@@ -4,7 +4,8 @@ import { Plant } from "shared/types/plants";
 import PlantCard from "features/PlantCard/PlantCard";
 import PlantRoutines from "features/MyPlants/MyPlantsList/PlantRoutines/PlantRoutines";
 import { CardView } from "shared/types/card";
-import useMyPlantsList, { MENU_OPTIONS } from "./useMyPlantsList";
+import { MENU_OPTIONS } from "./MyPlantsList.util";
+import useCardsList from "shared/hooks/useCardsList";
 
 type MyPlantsListProps = {
     filteredPlants: Plant[];
@@ -14,10 +15,10 @@ type MyPlantsListProps = {
 const MyPlantsList: FC<MyPlantsListProps> = (props) => {
     const { filteredPlants, view } = props;
 
-    const { showPlantRoutines, isCardVertical, getGridColumns, getImageSize } =
-        useMyPlantsList({
-            view,
-        });
+    const showPlantRoutines = view !== CardView.ROWS;
+    const isCardVertical = view === CardView.GRID;
+
+    const { getGridColumns, getImageSize } = useCardsList({ view });
 
     return (
         <Grid

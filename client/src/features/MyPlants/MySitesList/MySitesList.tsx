@@ -1,10 +1,10 @@
 import { Grid } from "@mui/material";
 import { FC } from "react";
 import { CardView } from "shared/types/card";
-import useMySitesList from "./useMySitesList";
 import Card from "components/Card";
 import { Site } from "shared/types/sites";
 import { MENU_OPTIONS } from "./MySitesList.util";
+import useCardsList from "shared/hooks/useCardsList";
 
 type MySitesListProps = {
     sites: Site[];
@@ -14,7 +14,7 @@ type MySitesListProps = {
 const MySitesList: FC<MySitesListProps> = (props) => {
     const { sites, view } = props;
 
-    const { isCardVertical, getGridColumns, getImageSize } = useMySitesList({
+    const { isCardVertical, getGridColumns, getImageSize } = useCardsList({
         view,
     });
 

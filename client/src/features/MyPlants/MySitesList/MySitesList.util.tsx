@@ -12,19 +12,9 @@ export const MENU_OPTIONS: MenuOption[] = [
         link: "/edit",
         icon: <Edit />,
     },
-    // {
-    //     name: "Change Site",
-    //     link: "/edit/site",
-    //     icon: <LocationCity />,
-    // },
     {
         name: "Reminders",
         link: "/edit/reminders",
         icon: <Notifications />,
     },
-    // {
-    //     name: "Specie Info",
-    //     link: "/specie",
-    //     icon: <Info />,
-    // },
 ];

@@ -1,11 +1,11 @@
 import { CardView } from "shared/types/card";
 import { CardImageSize } from "shared/types/card";
 
-type UseMyPlantsListProps = {
+type UseCardsListProps = {
     view: CardView;
 };
 
-const useMyPlantsList = (props: UseMyPlantsListProps) => {
+const useCardsList = (props: UseCardsListProps) => {
     const { view } = props;
 
     const isCardVertical = view === CardView.GRID;
@@ -35,4 +35,4 @@ const useMyPlantsList = (props: UseMyPlantsListProps) => {
     };
 };
 
-export default useMyPlantsList;
+export default useCardsList;
