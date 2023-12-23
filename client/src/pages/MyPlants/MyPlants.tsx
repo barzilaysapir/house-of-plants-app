@@ -9,7 +9,8 @@ import useCardsView from "shared/hooks/useCardsView";
 import useFetchData from "shared/hooks/useFetchData";
 import useLocalStorage from "shared/hooks/useLocalStorage";
 import LoaderBackdrop from "components/LoaderBackdrop";
-import MyPlantsContent from "features/MyPlants/MyPlantsContent";
+import { Outlet } from "react-router";
+import { MyPlantsOutletContext } from "shared/types/UI";
 
 const MyPlants: FC = () => {
     const user = JSON.parse(useLocalStorage().user);
@@ -19,20 +20,16 @@ const MyPlants: FC = () => {
         url: `/users/${user._id}/plants`,
     });
 
-    const { loading: loadingSites, data: sites } = useFetchData({
-        keys: ["userSites"],
-        url: `/users/${user!._id}/sites`,
-    });
-
     const { isOpen, handleOpen, handleClose } = useToggleDisplay();
     const { view, onChangeView } = useCardsView();
 
-    const { onSearchPlant, filteredPlants, currentTab, handleTabChange } =
-        useMyPlants({
-            plants,
-        });
+    const { onSearchPlant, filteredPlants } = useMyPlants({
+        plants,
+    });
 
-    if (loadingPlants || loadingSites) return <LoaderBackdrop />;
+    const context: MyPlantsOutletContext = { view, filteredPlants, handleOpen };
+
+    if (loadingPlants) return <LoaderBackdrop />;
 
     return (
         <>
@@ -45,18 +42,10 @@ const MyPlants: FC = () => {
                 onSearchPlant={onSearchPlant}
                 view={view}
                 onChangeView={onChangeView}
-                currentTab={currentTab}
-                handleTabChange={handleTabChange}
             />
 
             <Box sx={{ height: "100%" }} component="main">
-                <MyPlantsContent
-                    tab={currentTab}
-                    plants={filteredPlants}
-                    sites={sites}
-                    handleOpen={handleOpen}
-                    view={view}
-                />
+                <Outlet context={context} />
             </Box>
 
             <AddPlantDialog open={isOpen} handleClose={handleClose} />

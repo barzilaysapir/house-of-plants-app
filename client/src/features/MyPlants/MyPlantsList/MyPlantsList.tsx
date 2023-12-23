@@ -1,24 +1,31 @@
 import { Grid } from "@mui/material";
 import { FC } from "react";
-import { Plant } from "shared/types/plants";
 import PlantCard from "features/PlantCard/PlantCard";
 import PlantRoutines from "features/MyPlants/MyPlantsList/PlantRoutines/PlantRoutines";
 import { CardView } from "shared/types/card";
 import { MENU_OPTIONS } from "./MyPlantsList.util";
 import useCardsList from "shared/hooks/useCardsList";
+import EmptyState from "components/EmptyState";
+import i18n from "config/locales/i18n";
+import { useOutletContext } from "react-router";
+import { MyPlantsOutletContext } from "shared/types/UI";
 
-type MyPlantsListProps = {
-    filteredPlants: Plant[];
-    view: CardView;
-};
-
-const MyPlantsList: FC<MyPlantsListProps> = (props) => {
-    const { filteredPlants, view } = props;
+const MyPlantsList: FC = () => {
+    const { view, filteredPlants, handleOpen } =
+        useOutletContext<MyPlantsOutletContext>();
 
     const showPlantRoutines = view !== CardView.ROWS;
     const isCardVertical = view === CardView.GRID;
 
     const { getGridColumns, getImageSize } = useCardsList({ view });
+
+    if (filteredPlants.length === 0)
+        return (
+            <EmptyState
+                handleOpen={handleOpen}
+                callToAction={{ label: i18n.t("myPlants.emptyState") }}
+            />
+        );
 
     return (
         <Grid

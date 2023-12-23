@@ -4,6 +4,7 @@
         "greeting": "Hi {{title}}!",
         "avatarAlt": "Profile Picture"
     },
+
     "signIn": {
         "title": {
             "mobile": "Welcome to",
@@ -11,6 +12,7 @@
         },
         "subtitle": "The House of Plants"
     },
+
     "myPlants": {
         "title": "My Plants",
         "subtitle": "{{total}} plants in my collection",
@@ -20,8 +22,14 @@
         "emptyState": "Add your first plant",
         "sites": {
             "emptyState": "Add your first site"
+        },
+        "tabs": {
+            "aria": "My plants tabs nav",
+            "plants": "Plants",
+            "sites": "Sites"
         }
     },
+
     "identify": {
         "title": "Identify"
     },

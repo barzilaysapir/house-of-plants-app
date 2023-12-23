@@ -1,38 +1,27 @@
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { StyledBottomNavWrapper } from "./BottomNav.style";
-import { BOTTOM_NAV_LINKS, getActiveNavlink } from "./BottomNav.util";
+import { BOTTOM_NAV_LINKS } from "./BottomNav.util";
 import Logo from "components/Logo";
 import useActiveDevice from "shared/hooks/useActiveDevice";
 
 const BottomNav = () => {
-    const [activeNavlink, setActiveNavlink] = useState(getActiveNavlink);
-
     const { isMobile } = useActiveDevice();
+    const { pathname } = useLocation();
 
-    const navigate = useNavigate();
-
-    const onLinkClicked = (link: string) => {
-        navigate(link);
-    };
+    const currentPath = "/" + pathname.split("/")[1];
 
     return (
         <StyledBottomNavWrapper elevation={3}>
-            <BottomNavigation
-                showLabels
-                value={activeNavlink}
-                onChange={(event, currentPage) => {
-                    setActiveNavlink(currentPage);
-                }}
-            >
+            <BottomNavigation value={currentPath} showLabels>
                 {!isMobile && <Logo />}
                 {BOTTOM_NAV_LINKS.map((navLink, index) => (
                     <BottomNavigationAction
                         key={index}
+                        value={navLink.to}
+                        component={Link}
                         {...navLink}
-                        onClick={() => onLinkClicked(navLink.to)}
                     />
                 ))}
             </BottomNavigation>

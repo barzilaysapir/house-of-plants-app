@@ -1,6 +1,5 @@
-import { useState, ChangeEvent, useEffect, SyntheticEvent } from "react";
+import { useState, ChangeEvent, useEffect } from "react";
 import { Plant } from "shared/types/plants";
-import { MyPlantsToolbarTab } from "shared/types/UI";
 
 type UseMyPlantsListProps = {
     plants: Plant[];
@@ -10,9 +9,6 @@ const useMyPlants = (props: UseMyPlantsListProps) => {
     const { plants } = props;
 
     const [filteredPlants, setFilteredPlants] = useState<Plant[]>([]);
-    const [currentTab, setCurrentTab] = useState<MyPlantsToolbarTab>(
-        MyPlantsToolbarTab.PLANTS
-    );
 
     useEffect(() => {
         if (plants) setFilteredPlants(plants);
@@ -33,18 +29,9 @@ const useMyPlants = (props: UseMyPlantsListProps) => {
         setFilteredPlants(filteredPlants);
     };
 
-    const handleTabChange = (
-        event: SyntheticEvent,
-        selectedTab: MyPlantsToolbarTab
-    ) => {
-        setCurrentTab(selectedTab);
-    };
-
     return {
         onSearchPlant,
         filteredPlants,
-        currentTab,
-        handleTabChange,
     };
 };
 
