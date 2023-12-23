@@ -22,22 +22,22 @@ export const MENU_OPTIONS: MenuOption[] = [
     },
     {
         name: i18n.t("plantMenu.uploadPhoto"),
-        link: "/photo",
+        link: "/addPhoto",
         icon: <AddAPhoto />,
     },
     {
         name: i18n.t("plantMenu.changeSite"),
-        link: "/edit/site",
+        link: "/editSite",
         icon: <LocationCity />,
     },
     {
         name: i18n.t("plantMenu.reminders"),
-        link: "/edit/reminders",
+        link: "/editReminders",
         icon: <Notifications />,
     },
     {
-        name: i18n.t("plantMenu.specieInfo"),
-        link: "/specie",
+        name: i18n.t("plantMenu.speciesInfo"),
+        link: "/species",
         icon: <Info />,
     },
 ];

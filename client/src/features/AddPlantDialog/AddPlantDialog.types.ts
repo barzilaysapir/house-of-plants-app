@@ -1,7 +1,7 @@
 import { Plant } from "shared/types/plants";
 
 export enum AddPlantField {
-    SPECIE = "specie",
+    SPECIES = "species",
     SOIL = "soil",
 }
 
@@ -14,6 +14,6 @@ export enum SoilType {
 }
 
 export type AddPlantData = {
-    [AddPlantField.SPECIE]: Plant;
+    [AddPlantField.SPECIES]: Plant;
     [AddPlantField.SOIL]: SoilType;
 };
