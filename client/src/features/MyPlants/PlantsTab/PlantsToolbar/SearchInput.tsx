@@ -1,7 +1,13 @@
-import { InputAdornment, TextField } from "@mui/material";
+import { InputAdornment, TextField, styled } from "@mui/material";
 import { ChangeEvent, FC } from "react";
 import { Search } from "@mui/icons-material";
 import i18n from "i18next";
+
+const StyledTextField = styled(TextField)`
+    .MuiInputBase-input {
+        padding-block: 8px;
+    }
+`;
 
 type SearchInputProps = {
     onSearchPlant: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -11,11 +17,11 @@ const SearchInput: FC<SearchInputProps> = (props) => {
     const { onSearchPlant } = props;
 
     return (
-        <TextField
+        <StyledTextField
             onChange={onSearchPlant}
             placeholder={i18n.t("myPlants.searchPlaceholder")}
             fullWidth
-            variant="standard"
+            variant="outlined"
             type="search"
             InputProps={{
                 endAdornment: (

@@ -1,4 +1,4 @@
-import { Tab, Tabs } from "@mui/material";
+import { Box, Tab, Tabs } from "@mui/material";
 import { FC } from "react";
 import useActiveDevice from "shared/hooks/useActiveDevice";
 import { Link, useLocation } from "react-router-dom";
@@ -17,22 +17,24 @@ const MyPlantsTabs: FC = () => {
     const currentTab = path ? `/${path}` : MyPlantsRoute.PLANTS;
 
     return (
-        <Tabs
-            value={currentTab}
-            variant={isMobile ? "fullWidth" : "standard"}
-            aria-label={i18n.t("myPlants.tabs.aria")}
-            centered
-        >
-            {TABS.map(({ name, path }) => (
-                <Tab
-                    key={name}
-                    to={"." + path}
-                    label={name}
-                    component={Link}
-                    value={path}
-                />
-            ))}
-        </Tabs>
+        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+            <Tabs
+                value={currentTab}
+                variant={isMobile ? "fullWidth" : "standard"}
+                aria-label={i18n.t("myPlants.tabs.aria")}
+                centered
+            >
+                {TABS.map(({ name, path }) => (
+                    <Tab
+                        key={name}
+                        to={"." + path}
+                        label={name}
+                        component={Link}
+                        value={path}
+                    />
+                ))}
+            </Tabs>
+        </Box>
     );
 };
 

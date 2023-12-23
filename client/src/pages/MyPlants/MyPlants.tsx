@@ -31,7 +31,7 @@ const MyPlants: FC = () => {
                 handleOpen={handleOpen}
             />
 
-            <Stack direction="column" spacing={1}>
+            <Stack sx={{ height: "100%" }} direction="column" spacing={1}>
                 <MyPlantsTabs />
 
                 <Box sx={{ height: "100%" }} component="main">
