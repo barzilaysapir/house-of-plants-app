@@ -7,9 +7,15 @@ export const StyledMenuIconBtn = styled(IconButton, {
 })<{
     isGalleryView: boolean;
 }>`
-    align-self: flex-start;
     padding: 2px;
+    margin: -5px;
+    height: calc(100% + 10px);
+    background-color: rgba(0, 0, 0, 0.04);
+    border-radius: inherit;
     display: ${({ isGalleryView }) => (isGalleryView ? "none" : "inline-flex")};
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.06);
+    }
 `;
 
 export const StyledDrawerHeader = styled(Box)`

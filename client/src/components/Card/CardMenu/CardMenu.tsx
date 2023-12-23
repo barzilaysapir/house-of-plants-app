@@ -9,6 +9,7 @@ import { StyledMenuIconBtn } from "./CardMenu.style";
 import CardMenuList from "./CardMenuList";
 import useCardMenu from "./useCardMenu";
 import { OverridableComponent } from "@mui/types";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 type CardMenuProps = {
     header: {
@@ -31,13 +32,22 @@ const CardMenu: FC<CardMenuProps> = (props) => {
     } = useCardMenu();
 
     return (
-        <Box>
+        <Box borderRadius="inherit">
             <StyledMenuIconBtn
                 aria-label={i18n.t("settings")}
                 onClick={onOpenClick}
                 isGalleryView={isGalleryView}
             >
-                <MoreVertIcon />
+                <ChevronLeftIcon
+                    sx={{
+                        display: { xs: "block", md: "none" },
+                    }}
+                />
+                <MoreVertIcon
+                    sx={{
+                        display: { xs: "none", md: "block" },
+                    }}
+                />
             </StyledMenuIconBtn>
 
             <DesktopMenu
