@@ -2,7 +2,7 @@ import App from "App";
 import Reminders from "./Reminders/Reminders";
 import Identify from "./Identify/Identify";
 import MyPlants from "./MyPlants/MyPlants";
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import SignIn from "./SignIn/SignIn";
 import ProtectedRoute from "components/ProtectedRoute";
 import { Route } from "shared/types/route";
@@ -13,11 +13,15 @@ export const router = createBrowserRouter([
         element: <App />,
         children: [
             {
+                path: "/",
+                element: <Navigate to={Route.MY_PLANTS} replace />,
+            },
+            {
                 path: Route.SIGN_IN,
                 element: <SignIn />,
             },
             {
-                path: Route.HOME,
+                path: Route.MY_PLANTS,
                 element: (
                     <ProtectedRoute>
                         <MyPlants />

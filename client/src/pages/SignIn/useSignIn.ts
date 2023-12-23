@@ -19,7 +19,7 @@ const useSignIn = () => {
             }).then((res) => res.json()),
         onSuccess: (response) => {
             setToLocalStorage("user", response);
-            navigate(Route.HOME);
+            navigate(Route.MY_PLANTS);
         },
     });
 

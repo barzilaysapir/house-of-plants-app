@@ -1,6 +1,6 @@
 export enum Route {
     SIGN_IN = "/signin",
-    HOME = "/",
+    MY_PLANTS = "/myPlants",
     REMINDERS = "/reminders",
     IDENTIFY = "/identify",
 }

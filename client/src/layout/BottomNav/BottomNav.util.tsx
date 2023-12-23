@@ -13,7 +13,7 @@ export const BOTTOM_NAV_LINKS = [
     {
         label: i18n.t("myPlants.title"),
         icon: <SvgIcon component={LeafIcon} viewBox="2000 500 1 5500" />,
-        to: Route.HOME,
+        to: Route.MY_PLANTS,
     },
     {
         label: i18n.t("identify.title"),
