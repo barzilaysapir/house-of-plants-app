@@ -1,52 +1,43 @@
 import { FC } from "react";
-import { Box } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import AddPlantDialog from "features/AddPlantDialog/AddPlantDialog";
 import useToggleDisplay from "shared/hooks/useToggleDisplay";
-import MyPlantsToolbar from "features/MyPlants/MyPlantsToolbar/MyPlantsToolbar";
-import useMyPlants from "./useMyPlants";
 import MyPlantsHeader from "features/MyPlants/MyPlantsHeader";
-import useCardsView from "shared/hooks/useCardsView";
 import useFetchData from "shared/hooks/useFetchData";
 import useLocalStorage from "shared/hooks/useLocalStorage";
 import LoaderBackdrop from "components/LoaderBackdrop";
 import { Outlet } from "react-router";
 import { MyPlantsOutletContext } from "shared/types/UI";
+import MyPlantsTabs from "features/MyPlants/MyPlantsTabs";
 
 const MyPlants: FC = () => {
     const user = JSON.parse(useLocalStorage().user);
 
-    const { loading: loadingPlants, data: plants } = useFetchData({
+    const { loading, data } = useFetchData({
         keys: ["userPlants"],
         url: `/users/${user._id}/plants`,
     });
 
-    const { isOpen, handleOpen, handleClose } = useToggleDisplay();
-    const { view, onChangeView } = useCardsView();
+    const { isOpen, handleOpen, handleClose } = useToggleDisplay(); // toggleAddPlantDialogDisplay
 
-    const { onSearchPlant, filteredPlants } = useMyPlants({
-        plants,
-    });
+    const context: MyPlantsOutletContext = { plants: data, handleOpen };
 
-    const context: MyPlantsOutletContext = { view, filteredPlants, handleOpen };
-
-    if (loadingPlants) return <LoaderBackdrop />;
+    if (loading) return <LoaderBackdrop />;
 
     return (
         <>
             <MyPlantsHeader
-                myPlantsAmount={plants.length}
+                myPlantsAmount={data.length}
                 handleOpen={handleOpen}
             />
 
-            <MyPlantsToolbar
-                onSearchPlant={onSearchPlant}
-                view={view}
-                onChangeView={onChangeView}
-            />
+            <Stack direction="column" spacing={1}>
+                <MyPlantsTabs />
 
-            <Box sx={{ height: "100%" }} component="main">
-                <Outlet context={context} />
-            </Box>
+                <Box sx={{ height: "100%" }} component="main">
+                    <Outlet context={context} />
+                </Box>
+            </Stack>
 
             <AddPlantDialog open={isOpen} handleClose={handleClose} />
         </>

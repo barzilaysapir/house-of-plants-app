@@ -2,22 +2,22 @@ import App from "App";
 import Reminders from "./Reminders/Reminders";
 import Identify from "./Identify/Identify";
 import MyPlants from "./MyPlants/MyPlants";
-import { Navigate, createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import SignIn from "./SignIn/SignIn";
 import ProtectedRoute from "components/ProtectedRoute";
 import { MyPlantsRoute, Route } from "shared/types/route";
-import MyPlantsList from "features/MyPlants/MyPlantsList/MyPlantsList";
-import MySitesList from "features/MyPlants/MySitesList/MySitesList";
+import PlantsTab from "features/MyPlants/PlantsTab/PlantsTab";
+import SitesTab from "features/MyPlants/SitesTab/SitesTab";
 
 export const router = createBrowserRouter([
     {
         path: "",
         element: <App />,
         children: [
-            {
-                path: Route.HOME,
-                element: <Navigate to={Route.MY_PLANTS} replace />,
-            },
+            // {
+            //     path: Route.HOME,
+            //     element: <Navigate to={Route.MY_PLANTS} replace />,
+            // },
             {
                 path: Route.SIGN_IN,
                 element: <SignIn />,
@@ -32,11 +32,11 @@ export const router = createBrowserRouter([
                 children: [
                     {
                         path: Route.MY_PLANTS + MyPlantsRoute.PLANTS,
-                        element: <MyPlantsList />,
+                        element: <PlantsTab />,
                     },
                     {
                         path: Route.MY_PLANTS + MyPlantsRoute.SITES,
-                        element: <MySitesList />,
+                        element: <SitesTab />,
                     },
                 ],
             },
