@@ -7,13 +7,14 @@ import useLocalStorage from "shared/hooks/useLocalStorage";
 import useFetchData from "shared/hooks/useFetchData";
 import SitesList from "./SitesList/SitesList";
 import LoaderBackdrop from "components/LoaderBackdrop";
+import QueryKey from "shared/types/queryKeys";
 
 const SitesTab: FC = () => {
     const user = JSON.parse(useLocalStorage().user);
     const { handleOpen } = useOutletContext<MyPlantsOutletContext>();
 
     const { loading, data } = useFetchData({
-        keys: ["userSites"],
+        keys: [QueryKey.USER_SITES],
         url: `/users/${user!._id}/sites`,
     });
 

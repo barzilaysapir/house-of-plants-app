@@ -3,6 +3,7 @@ import useLocalStorage from "shared/hooks/useLocalStorage";
 import useMutateData from "shared/hooks/useMutateData";
 import { steps } from "./AddPlantDialog.util";
 import { AddPlantData } from "./AddPlantDialog.types";
+import QueryKey from "shared/types/queryKeys";
 
 type UseAddPlantDialogProps = {
     handleClose: () => void;
@@ -26,11 +27,10 @@ const useAddPlantDialog = (props: UseAddPlantDialogProps) => {
     const { mutate } = useMutateData({
         url: `/users/${JSON.parse(user!)._id}/addPlant`,
         onComplete: onClose,
-        refetchOnSuccessKey: "usersPlants",
+        refetchOnSuccessKey: QueryKey.USER_PLANTS,
     });
 
     const handleNextStep = (newData?: Partial<AddPlantData>) => {
-        // console.log({ data });
         const plantData = plantFormData;
         if (newData) Object.assign(plantData, newData);
 
