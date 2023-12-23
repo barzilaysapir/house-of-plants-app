@@ -22,7 +22,6 @@ const PageHeader: FC<PageHeaderProps> = (props) => {
             alignItems="center"
             justifyContent="space-between"
             component="header"
-            marginBottom={1}
             paddingY={1}
         >
             <Box>
@@ -41,7 +40,12 @@ const PageHeader: FC<PageHeaderProps> = (props) => {
             </Box>
 
             {callToAction && (
-                <Button variant="text" color="primary" {...buttonProps}>
+                <Button
+                    size="small"
+                    variant="contained"
+                    color="primary"
+                    {...buttonProps}
+                >
                     {label}
                 </Button>
             )}
