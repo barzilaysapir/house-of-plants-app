@@ -1,5 +1,5 @@
 export type SpeciesRes = {
-    data: SpecieLight[];
+    data: SpeciesLight[];
     to: number;
     per_page: number;
     current_page: number;
@@ -29,7 +29,7 @@ enum Sunlight {
     PART_SUN = "sun-part_shade",
 }
 
-export type SpecieLight = {
+export type SpeciesLight = {
     id: number;
     common_name: string;
     scientific_name: string[];

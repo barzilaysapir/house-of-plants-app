@@ -40,7 +40,7 @@ export const googleUserAuth = async (req: Request<any>, res: Response) => {
 
 export const addUsersPlant = async (req: Request<any>, res: Response) => {
     try {
-        const plant = await getSpeciesById(req.body.specie.id);
+        const plant = await getSpeciesById(req.body.species.id);
         const addRes = await Logic.addUsersPlant(req.params.id, plant);
         res.json(addRes);
     } catch (error) {

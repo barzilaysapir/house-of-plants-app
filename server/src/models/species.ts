@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Plant } from "utils/types/plants";
-import { SpecieLight } from "utils/types/species";
+import { SpeciesLight } from "utils/types/species";
 
 const speciesAPI = `${Bun.env.BASE_URL}/species`;
 const key = Bun.env.API_TOKEN;
@@ -26,12 +26,12 @@ export const searchSpecies = async (q: string): Promise<Plant[]> => {
                 q,
             },
         });
-        const data: Plant[] = result.data.data.map((specie: SpecieLight) => ({
-            id: specie.id,
-            primaryName: specie.scientific_name[0],
-            secondaryName: specie.common_name,
-            scientificName: specie.scientific_name[0],
-            image: specie.default_image?.thumbnail,
+        const data: Plant[] = result.data.data.map((species: SpeciesLight) => ({
+            id: species.id,
+            primaryName: species.scientific_name[0],
+            secondaryName: species.common_name,
+            scientificName: species.scientific_name[0],
+            image: species.default_image?.thumbnail,
         }));
         return data;
     } catch (error) {
