@@ -12,6 +12,7 @@ import { OverridableComponent } from "@mui/types";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 type CardMenuProps = {
+    id?: string;
     header: {
         Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>;
         title: string;
@@ -21,7 +22,7 @@ type CardMenuProps = {
 };
 
 const CardMenu: FC<CardMenuProps> = (props) => {
-    const { header, isGalleryView, options } = props;
+    const { id, header, isGalleryView, options } = props;
 
     const {
         onOpenClick,
@@ -54,7 +55,7 @@ const CardMenu: FC<CardMenuProps> = (props) => {
                 anchorElSettings={desktopAnchor}
                 handleClosePagesMenu={handleCloseDesktop}
             >
-                <CardMenuList options={options} />
+                <CardMenuList id={id} options={options} />
             </DesktopMenu>
 
             <MobileMenu
@@ -62,7 +63,7 @@ const CardMenu: FC<CardMenuProps> = (props) => {
                 handleClose={handleCloseMobile}
                 header={header}
             >
-                <CardMenuList options={options} />
+                <CardMenuList id={id} options={options} />
             </MobileMenu>
         </Box>
     );
