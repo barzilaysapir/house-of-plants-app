@@ -6,7 +6,7 @@ import SignIn from "../SignIn/SignIn";
 import ProtectedRoute from "components/ProtectedRoute";
 import { Route } from "shared/types/route";
 import myPlantsRoutes from "./myPlantsRoutes";
-import SuspenseWrapper from "components/SuspenseWrapper";
+import LoaderWrapper from "components/Loader/LoaderWrapper";
 
 const router = createBrowserRouter([
     {
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
                 element: <SignIn />,
             },
             {
-                element: <SuspenseWrapper />,
+                element: <LoaderWrapper />,
                 children: myPlantsRoutes,
             },
             {
