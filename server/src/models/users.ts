@@ -92,7 +92,8 @@ export const addUsersPlant = async (
                         primaryName: scientific_name[0],
                         secondaryName: common_name,
                         scientificName: scientific_name[0],
-                        image: default_image?.thumbnail,
+                        thumbnail: default_image?.thumbnail,
+                        image: default_image?.regular_url,
                         // TODO: remove mock
                         care: CARE_MOCK,
                     },

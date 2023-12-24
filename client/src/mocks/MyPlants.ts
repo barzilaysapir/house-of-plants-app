@@ -25,7 +25,8 @@ export const CARE: PlantCare = {
     },
 };
 
-const MY_PLANTS_DATA: Plant[] = [
+// Plant[]
+const MY_PLANTS_DATA: any[] = [
     {
         id: "1",
         primaryName: "Snake Plant",

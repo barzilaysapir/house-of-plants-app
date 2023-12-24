@@ -14,6 +14,7 @@ const PageHeader: FC<PageHeaderProps> = (props) => {
         subtitle,
         callToAction,
         callToAction: { label, ...buttonProps } = {},
+        ...rest
     } = props;
 
     return (
@@ -23,6 +24,7 @@ const PageHeader: FC<PageHeaderProps> = (props) => {
             justifyContent="space-between"
             component="header"
             paddingY={1}
+            {...rest}
         >
             <Box>
                 <Typography variant="h2" component="h1">

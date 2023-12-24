@@ -22,8 +22,9 @@ export type Plant = {
     primaryName: string;
     secondaryName: string;
     scientificName: string;
+    thumbnail: string;
     image: string;
-    site?: string;
+    site: string | undefined;
     care?: PlantCare;
 };
 
