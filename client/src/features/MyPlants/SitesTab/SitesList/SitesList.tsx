@@ -2,39 +2,21 @@ import { Grid } from "@mui/material";
 import { FC } from "react";
 import Card from "components/Card";
 import { Site } from "shared/types/sites";
-import { MENU_OPTIONS } from "./MySitesList.util";
+import { MENU_OPTIONS } from "./SitesList.util";
 import useCardsList from "shared/hooks/useCardsList";
 import LocationCityOutlinedIcon from "@mui/icons-material/LocationCityOutlined";
-import EmptyState from "components/EmptyState";
-import i18n from "config/locales/i18n";
-import { useOutletContext } from "react-router";
-import useFetchData from "shared/hooks/useFetchData";
-import useLocalStorage from "shared/hooks/useLocalStorage";
-import LoaderBackdrop from "components/LoaderBackdrop";
-import { MyPlantsOutletContext } from "shared/types/UI";
+import { CardView } from "shared/types/card";
 
-const MySitesList: FC = () => {
-    const user = JSON.parse(useLocalStorage().user);
-    const { view, handleOpen } = useOutletContext<MyPlantsOutletContext>();
+type SitesListProps = {
+    data: Site[];
+};
 
-    const { loading, data } = useFetchData({
-        keys: ["userSites"],
-        url: `/users/${user!._id}/sites`,
-    });
+const SitesList: FC<SitesListProps> = (props) => {
+    const { data } = props;
 
     const { isCardVertical, getGridColumns, getImageSize } = useCardsList({
-        view,
+        view: CardView.CARDS,
     });
-
-    if (loading) return <LoaderBackdrop />;
-
-    if (data.length === 0)
-        return (
-            <EmptyState
-                handleOpen={handleOpen}
-                callToAction={{ label: i18n.t("myPlants.sites.emptyState") }}
-            />
-        );
 
     return (
         <Grid
@@ -62,4 +44,4 @@ const MySitesList: FC = () => {
     );
 };
 
-export default MySitesList;
+export default SitesList;
