@@ -1,12 +1,12 @@
 import MyPlants from "../MyPlants/MyPlants";
-import { Navigate } from "react-router-dom";
+import { Navigate, RouteObject } from "react-router-dom";
 import ProtectedRoute from "components/ProtectedRoute";
 import { MyPlantsRoute, PlantSettingsRoute, Route } from "shared/types/route";
 import PlantsTab from "features/MyPlants/PlantsTab/PlantsTab";
 import SitesTab from "features/MyPlants/SitesTab/SitesTab";
-import PlantPreview from "../MyPlants/PlantPreview";
+import PlantPreview, { plantPreviewLoader } from "../MyPlants/PlantPreview";
 
-const myPlantsRouter = [
+const myPlantsRoutes: RouteObject[] = [
     {
         path: Route.MY_PLANTS,
         element: (
@@ -36,9 +36,10 @@ const myPlantsRouter = [
     },
 
     {
-        path: `${Route.MY_PLANTS}${MyPlantsRoute.PLANTS}/:id${PlantSettingsRoute.PREVIEW}`,
+        path: `${Route.MY_PLANTS}${MyPlantsRoute.PLANTS}/:plantId${PlantSettingsRoute.PREVIEW}`,
         element: <PlantPreview />,
+        loader: plantPreviewLoader,
     },
 ];
 
-export default myPlantsRouter;
+export default myPlantsRoutes;

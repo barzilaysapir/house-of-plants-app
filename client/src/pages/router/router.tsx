@@ -5,7 +5,8 @@ import { Navigate, createBrowserRouter } from "react-router-dom";
 import SignIn from "../SignIn/SignIn";
 import ProtectedRoute from "components/ProtectedRoute";
 import { Route } from "shared/types/route";
-import myPlantsRouter from "./myPlantsRouter";
+import myPlantsRoutes from "./myPlantsRoutes";
+import SuspenseWrapper from "components/SuspenseWrapper";
 
 const router = createBrowserRouter([
     {
@@ -20,7 +21,10 @@ const router = createBrowserRouter([
                 path: Route.SIGN_IN,
                 element: <SignIn />,
             },
-            ...myPlantsRouter,
+            {
+                element: <SuspenseWrapper />,
+                children: myPlantsRoutes,
+            },
             {
                 path: Route.REMINDERS,
                 element: (
