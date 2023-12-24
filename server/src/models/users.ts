@@ -88,7 +88,7 @@ export const addUsersPlant = async (
                 $push: {
                     plants: {
                         id: new ObjectId(),
-                        plantId: id,
+                        speciesId: id,
                         primaryName: scientific_name[0],
                         secondaryName: common_name,
                         scientificName: scientific_name[0],

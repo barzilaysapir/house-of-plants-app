@@ -27,7 +27,7 @@ export const CARE: PlantCare = {
 
 const MY_PLANTS_DATA: Plant[] = [
     {
-        id: 1,
+        id: "1",
         primaryName: "Snake Plant",
         secondaryName: "Snake Plant 1",
         scientificName: "Sansevieria Trifasciata Laurentii",
@@ -54,7 +54,7 @@ const MY_PLANTS_DATA: Plant[] = [
         image: ImageBirkin,
     },
     {
-        id: 2,
+        id: "2",
         primaryName: "Nanuk",
         secondaryName: "Wandering Jew 2",
         scientificName: "Tradescantia-nanouk",
@@ -81,7 +81,7 @@ const MY_PLANTS_DATA: Plant[] = [
         image: ImagePolkaDot,
     },
     {
-        id: 3,
+        id: "3",
         primaryName: "Monsty",
         secondaryName: "Swiss Cheese Plant",
         scientificName: "Monstera Minima",
@@ -108,7 +108,7 @@ const MY_PLANTS_DATA: Plant[] = [
         image: ImagePothos,
     },
     {
-        id: 5,
+        id: "5",
         primaryName: "Custom name 5",
         secondaryName: "Snake Plant 5",
         scientificName: "Sansevieria Trifasciata Laurentii",

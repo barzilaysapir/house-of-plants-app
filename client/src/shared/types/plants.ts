@@ -18,7 +18,7 @@ export type PlantCare = {
 };
 
 export type Plant = {
-    id: number;
+    id: string;
     primaryName: string;
     secondaryName: string;
     scientificName: string;
