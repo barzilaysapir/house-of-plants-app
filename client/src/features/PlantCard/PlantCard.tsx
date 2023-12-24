@@ -1,4 +1,4 @@
-import { FC, MouseEventHandler, PropsWithChildren } from "react";
+import React, { FC, MouseEventHandler, PropsWithChildren } from "react";
 import { Plant } from "shared/types/plants";
 import { CardImageSize } from "shared/types/card";
 import Card from "components/Card";
