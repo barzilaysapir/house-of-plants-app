@@ -1,10 +1,12 @@
-import MyPlants from "../MyPlants/MyPlants";
 import { Navigate, RouteObject } from "react-router-dom";
 import ProtectedRoute from "components/ProtectedRoute";
 import { MyPlantsRoute, PlantSettingsRoute, Route } from "shared/types/route";
-import PlantsTab from "features/MyPlants/PlantsTab/PlantsTab";
-import SitesTab from "features/MyPlants/SitesTab/SitesTab";
-import PlantPreview, { plantPreviewLoader } from "../MyPlants/PlantPreview";
+import MyPlants, {
+    PlantsTab,
+    SitesTab,
+    PlantPreview,
+    plantPreviewLoader,
+} from "pages/MyPlants";
 
 const myPlantsRoutes: RouteObject[] = [
     {

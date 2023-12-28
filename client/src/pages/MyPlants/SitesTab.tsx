@@ -5,7 +5,7 @@ import { useOutletContext } from "react-router";
 import { MyPlantsOutletContext } from "shared/types/UI";
 import useLocalStorage from "shared/hooks/useLocalStorage";
 import useFetchData from "shared/hooks/useFetchData";
-import SitesList from "./SitesList/SitesList";
+import SitesList from "features/MyPlants/SitesList/SitesList";
 import QueryKey from "shared/types/queryKeys";
 import Loader from "components/Loader/Loader";
 

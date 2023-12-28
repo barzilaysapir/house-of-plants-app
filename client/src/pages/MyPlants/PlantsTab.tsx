@@ -4,9 +4,9 @@ import i18n from "config/locales/i18n";
 import { useOutletContext } from "react-router";
 import { MyPlantsOutletContext } from "shared/types/UI";
 import useCardsView from "shared/hooks/useCardsView";
-import useMyPlants from "features/MyPlants/PlantsTab/usePlantsTab";
-import PlantsList from "./PlantsList/PlantsList";
-import PlantsToolbar from "./PlantsToolbar/PlantsToolbar";
+import usePlantsTab from "./usePlantsTab";
+import PlantsList from "features/MyPlants/PlantsList/PlantsList";
+import PlantsToolbar from "features/MyPlants/PlantsToolbar/PlantsToolbar";
 import Loader from "components/Loader/Loader";
 
 const PlantsTab: FC = () => {
@@ -15,7 +15,7 @@ const PlantsTab: FC = () => {
 
     const { view, onChangeView } = useCardsView();
 
-    const { onSearchPlant, filteredPlants } = useMyPlants({
+    const { onSearchPlant, filteredPlants } = usePlantsTab({
         plants,
     });
 
