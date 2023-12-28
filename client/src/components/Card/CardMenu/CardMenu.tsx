@@ -3,9 +3,9 @@ import { Box, SvgIconTypeMap } from "@mui/material";
 import i18n from "config/locales/i18n";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { MenuOption } from "shared/types/UI";
-import DesktopMenu from "./DesktopMenu";
-import MobileMenu from "./MobileMenu";
-import { StyledMenuIconBtn } from "./CardMenu.style";
+import CardMenuDesktop from "./CardMenuDesktop";
+import CardMenuMobile from "./CardMenuMobile";
+import { StyledCardMenuOpenBtn } from "./CardMenu.style";
 import CardMenuList from "./CardMenuList";
 import useCardMenu from "./useCardMenu";
 import { OverridableComponent } from "@mui/types";
@@ -34,7 +34,7 @@ const CardMenu: FC<CardMenuProps> = (props) => {
 
     return (
         <Box borderRadius="inherit">
-            <StyledMenuIconBtn
+            <StyledCardMenuOpenBtn
                 aria-label={i18n.t("settings")}
                 onClick={onOpenClick}
                 isGalleryView={isGalleryView}
@@ -49,22 +49,22 @@ const CardMenu: FC<CardMenuProps> = (props) => {
                         display: { xs: "none", md: "block" },
                     }}
                 />
-            </StyledMenuIconBtn>
+            </StyledCardMenuOpenBtn>
 
-            <DesktopMenu
+            <CardMenuDesktop
                 anchorElSettings={desktopAnchor}
                 handleClosePagesMenu={handleCloseDesktop}
             >
                 <CardMenuList id={id} options={options} />
-            </DesktopMenu>
+            </CardMenuDesktop>
 
-            <MobileMenu
+            <CardMenuMobile
                 isOpen={isOpenMobile}
                 handleClose={handleCloseMobile}
                 header={header}
             >
                 <CardMenuList id={id} options={options} />
-            </MobileMenu>
+            </CardMenuMobile>
         </Box>
     );
 };

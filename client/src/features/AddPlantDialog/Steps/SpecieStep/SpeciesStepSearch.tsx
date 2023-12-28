@@ -18,6 +18,7 @@ const SpeciesStepSearch: FC<SpeciesStepSearchProps> = (props) => {
             onChange={debounce(onChange, 300)}
             label={i18n.t("addPlants.searchByName")}
             InputProps={{
+                autoFocus: true,
                 endAdornment: (
                     <InputAdornment position="end">
                         <Search />

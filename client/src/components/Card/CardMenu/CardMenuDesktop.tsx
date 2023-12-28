@@ -1,12 +1,12 @@
 import { FC, PropsWithChildren } from "react";
 import { Menu, PopoverProps } from "@mui/material";
 
-type DesktopMenuProps = PropsWithChildren & {
+type CardMenuDesktopProps = PropsWithChildren & {
     anchorElSettings: PopoverProps["anchorEl"];
     handleClosePagesMenu: () => void;
 };
 
-const DesktopMenu: FC<DesktopMenuProps> = (props) => {
+const CardMenuDesktop: FC<CardMenuDesktopProps> = (props) => {
     const { children, anchorElSettings, handleClosePagesMenu } = props;
 
     return (
@@ -33,4 +33,4 @@ const DesktopMenu: FC<DesktopMenuProps> = (props) => {
     );
 };
 
-export default DesktopMenu;
+export default CardMenuDesktop;
