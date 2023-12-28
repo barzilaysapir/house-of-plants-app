@@ -21,7 +21,11 @@ const MyPlants: FC = () => {
 
     const { isOpen, handleOpen, handleClose } = useToggleDisplay(); // toggleAddPlantDialogDisplay
 
-    const context: MyPlantsOutletContext = { plants: data, handleOpen };
+    const context: MyPlantsOutletContext = {
+        plants: data,
+        loadingPlants: loading,
+        handleOpen,
+    };
 
     if (loading) return <LoaderBackdrop />;
 

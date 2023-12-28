@@ -13,5 +13,6 @@ export type MenuOption = {
 
 export type MyPlantsOutletContext = {
     plants: Plant[];
+    loadingPlants: boolean;
     handleOpen: () => void;
 };

@@ -1,17 +1,17 @@
 import { useState, ChangeEvent, useEffect } from "react";
 import { Plant } from "shared/types/plants";
 
-type UseMyPlantsListProps = {
+type UsePlantsTabProps = {
     plants: Plant[];
 };
 
-const useMyPlants = (props: UseMyPlantsListProps) => {
+const usePlantsTab = (props: UsePlantsTabProps) => {
     const { plants } = props;
 
-    const [filteredPlants, setFilteredPlants] = useState<Plant[]>([]);
+    const [filteredPlants, setFilteredPlants] = useState<Plant[]>();
 
     useEffect(() => {
-        if (plants) setFilteredPlants(plants);
+        setFilteredPlants(plants);
     }, [plants]);
 
     const onSearchPlant = (event: ChangeEvent<HTMLInputElement>) => {
@@ -35,4 +35,4 @@ const useMyPlants = (props: UseMyPlantsListProps) => {
     };
 };
 
-export default useMyPlants;
+export default usePlantsTab;

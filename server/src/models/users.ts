@@ -89,8 +89,8 @@ export const addUsersPlant = async (
                     plants: {
                         id: new ObjectId(),
                         speciesId: id,
-                        primaryName: scientific_name[0],
-                        secondaryName: common_name,
+                        primaryName: common_name,
+                        secondaryName: scientific_name[0],
                         scientificName: scientific_name[0],
                         thumbnail: default_image?.thumbnail,
                         image: default_image?.regular_url,
