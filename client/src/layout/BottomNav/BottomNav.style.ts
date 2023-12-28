@@ -2,17 +2,17 @@ import { Paper, styled } from "@mui/material";
 import { BOTTOM_NAV_WIDTH } from "config/theme/theme";
 
 export const StyledBottomNavWrapper = styled(Paper)`
-    position: fixed;
     z-index: ${({ theme }) => theme.zIndex.appBar + 1};
-    bottom: 0;
-    inset-inline-start: 0;
 
     ${({ theme }) => theme.breakpoints.down("sm")} {
-        inset-inline-end: 0;
+        position: relative;
     }
 
     ${({ theme }) => theme.breakpoints.up("sm")} {
+        position: fixed;
+        bottom: 0;
         top: 0;
+        inset-inline-start: 0;
         padding-block: ${({ theme }) => theme.spacing(2)};
         & .MuiBottomNavigation-root {
             width: ${BOTTOM_NAV_WIDTH};

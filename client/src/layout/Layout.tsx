@@ -11,9 +11,7 @@ const Layout: FC<LayoutProps> = (props) => {
     return (
         <StyledLayout maxWidth="xl" sx={{ paddingX: { xs: 0 } }}>
             <TopNav />
-            <StyledLayoutChildren maxWidth={false}>
-                {children}
-            </StyledLayoutChildren>
+            <StyledLayoutChildren>{children}</StyledLayoutChildren>
             <BottomNav />
         </StyledLayout>
     );

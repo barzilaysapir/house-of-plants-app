@@ -27,6 +27,9 @@ const PlantsList: FC<PlantsListProps> = (props) => {
             spacing={1}
             columns={getGridColumns()}
             alignItems="stretch"
+            sx={{
+                overflow: "auto",
+            }}
         >
             {filteredPlants.map((plant) => (
                 <Grid item xs={1} key={plant.id}>

@@ -10,7 +10,7 @@ export const StyledPreviewPageHeader = styled(PageHeader)`
 `;
 
 export const StyledPlantImage = styled("img")`
-    margin: -16px;
+    margin-inline: -16px;
     width: -webkit-fill-available;
     aspect-ratio: 16 / 9;
     object-fit: cover;

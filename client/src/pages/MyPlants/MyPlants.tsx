@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { Box, Stack } from "@mui/material";
 import AddPlantDialog from "features/AddPlantDialog/AddPlantDialog";
 import useToggleDisplay from "shared/hooks/useToggleDisplay";
 import MyPlantsHeader from "features/MyPlants/MyPlantsHeader";
@@ -36,13 +35,9 @@ const MyPlants: FC = () => {
                 handleOpen={handleOpen}
             />
 
-            <Stack sx={{ height: "100%" }} spacing={2}>
-                <MyPlantsTabs />
+            <MyPlantsTabs />
 
-                <Box sx={{ height: "100%" }} component="main">
-                    <Outlet context={context} />
-                </Box>
-            </Stack>
+            <Outlet context={context} />
 
             <AddPlantDialog open={isOpen} handleClose={handleClose} />
         </>
