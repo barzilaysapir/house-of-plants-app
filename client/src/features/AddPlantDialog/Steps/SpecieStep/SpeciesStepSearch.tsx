@@ -4,11 +4,11 @@ import { ChangeEvent, FC } from "react";
 import i18n from "i18next";
 import useActiveDevice from "shared/hooks/useActiveDevice";
 
-type SpecieStepSearchProps = {
+type SpeciesStepSearchProps = {
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
-const SpecieStepSearch: FC<SpecieStepSearchProps> = (props) => {
+const SpeciesStepSearch: FC<SpeciesStepSearchProps> = (props) => {
     const { onChange } = props;
 
     const { isMobile } = useActiveDevice();
@@ -18,6 +18,7 @@ const SpecieStepSearch: FC<SpecieStepSearchProps> = (props) => {
             onChange={debounce(onChange, 300)}
             label={i18n.t("addPlants.searchByName")}
             InputProps={{
+                autoFocus: true,
                 endAdornment: (
                     <InputAdornment position="end">
                         <Search />
@@ -33,4 +34,4 @@ const SpecieStepSearch: FC<SpecieStepSearchProps> = (props) => {
     );
 };
 
-export default SpecieStepSearch;
+export default SpeciesStepSearch;

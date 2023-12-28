@@ -1,3 +1,5 @@
+import { ObjectId } from "mongodb";
+
 export enum PlantCareRoutine {
     WATER = "water",
     FERTILIZE = "fertilize",
@@ -18,7 +20,7 @@ export type PlantCare = {
 };
 
 export type Plant = {
-    id: number;
+    id: ObjectId;
     primaryName: string;
     commonName: string;
     scientificName: string;

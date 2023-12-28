@@ -3,14 +3,16 @@ import { Box, SvgIconTypeMap } from "@mui/material";
 import i18n from "config/locales/i18n";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { MenuOption } from "shared/types/UI";
-import DesktopMenu from "./DesktopMenu";
-import MobileMenu from "./MobileMenu";
-import { StyledMenuIconBtn } from "./CardMenu.style";
+import CardMenuDesktop from "./CardMenuDesktop";
+import CardMenuMobile from "./CardMenuMobile";
+import { StyledCardMenuOpenBtn } from "./CardMenu.style";
 import CardMenuList from "./CardMenuList";
 import useCardMenu from "./useCardMenu";
 import { OverridableComponent } from "@mui/types";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 type CardMenuProps = {
+    id?: string;
     header: {
         Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>;
         title: string;
@@ -20,7 +22,7 @@ type CardMenuProps = {
 };
 
 const CardMenu: FC<CardMenuProps> = (props) => {
-    const { header, isGalleryView, options } = props;
+    const { id, header, isGalleryView, options } = props;
 
     const {
         onOpenClick,
@@ -31,29 +33,38 @@ const CardMenu: FC<CardMenuProps> = (props) => {
     } = useCardMenu();
 
     return (
-        <Box>
-            <StyledMenuIconBtn
+        <Box borderRadius="inherit">
+            <StyledCardMenuOpenBtn
                 aria-label={i18n.t("settings")}
                 onClick={onOpenClick}
                 isGalleryView={isGalleryView}
             >
-                <MoreVertIcon />
-            </StyledMenuIconBtn>
+                <ChevronLeftIcon
+                    sx={{
+                        display: { xs: "block", md: "none" },
+                    }}
+                />
+                <MoreVertIcon
+                    sx={{
+                        display: { xs: "none", md: "block" },
+                    }}
+                />
+            </StyledCardMenuOpenBtn>
 
-            <DesktopMenu
+            <CardMenuDesktop
                 anchorElSettings={desktopAnchor}
                 handleClosePagesMenu={handleCloseDesktop}
             >
-                <CardMenuList options={options} />
-            </DesktopMenu>
+                <CardMenuList id={id} options={options} />
+            </CardMenuDesktop>
 
-            <MobileMenu
+            <CardMenuMobile
                 isOpen={isOpenMobile}
                 handleClose={handleCloseMobile}
                 header={header}
             >
-                <CardMenuList options={options} />
-            </MobileMenu>
+                <CardMenuList id={id} options={options} />
+            </CardMenuMobile>
         </Box>
     );
 };

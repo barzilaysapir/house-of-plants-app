@@ -7,22 +7,29 @@ import {
     MenuList,
 } from "@mui/material";
 import { MenuOption } from "shared/types/UI";
+import { Link } from "react-router-dom";
 
 type CardMenuListProps = MenuItemProps & {
+    id?: string;
     options: MenuOption[];
 };
 
 const CardMenuList: FC<CardMenuListProps> = (props) => {
-    const { options, ...menuItemProps } = props;
+    const { id, options, ...menuItemProps } = props;
 
     return (
         <MenuList>
-            {options.map(({ name, icon }) => (
-                <MenuItem key={name} {...menuItemProps}>
-                    <ListItemIcon>{icon}</ListItemIcon>
-                    <ListItemText primary={name} />
-                </MenuItem>
-            ))}
+            {options.map(({ name, icon, to }) => {
+                const props =
+                    to && id ? { component: Link, to: `./${id}${to}` } : {};
+
+                return (
+                    <MenuItem key={name} {...props} {...menuItemProps}>
+                        <ListItemIcon>{icon}</ListItemIcon>
+                        <ListItemText primary={name} />
+                    </MenuItem>
+                );
+            })}
         </MenuList>
     );
 };

@@ -7,11 +7,12 @@ export type CallToAction = ButtonProps & {
 
 export type MenuOption = {
     name: string;
-    link: string;
+    to: string | null;
     icon?: JSX.Element;
 };
 
 export type MyPlantsOutletContext = {
     plants: Plant[];
+    loadingPlants: boolean;
     handleOpen: () => void;
 };

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider } from "react-router-dom";
 import LoaderBackdrop from "components/LoaderBackdrop";
-import { router } from "pages/router";
+import router from "pages/router";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import "config/locales";
 

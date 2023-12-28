@@ -17,6 +17,7 @@ type CardProps = PropsWithChildren & {
     onClick?: MouseEventHandler<HTMLButtonElement>;
     noWrap?: boolean;
     menu?: {
+        id?: string;
         options: MenuOption[];
         Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>;
     };
@@ -52,6 +53,7 @@ const Card: FC<CardProps> = (props) => {
 
             {menu && (
                 <CardMenu
+                    id={menu.id}
                     isGalleryView={isGalleryView}
                     options={menu.options}
                     header={{ title: data.name, Icon: menu.Icon }}

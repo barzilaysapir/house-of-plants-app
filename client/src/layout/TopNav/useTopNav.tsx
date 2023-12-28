@@ -11,16 +11,16 @@ export const PAGES = ["About", "Recommendation", "Products"];
 export const SETTINGS: MenuOption[] = [
     {
         name: i18n.t("settingsMenu.myAccount"),
-        link: "/account",
+        to: "/account",
     },
     {
         name: i18n.t("settingsMenu.settings"),
-        link: "/settings",
+        to: "/settings",
         icon: <Settings fontSize="small" />,
     },
     {
         name: i18n.t("settingsMenu.logout"),
-        link: "/",
+        to: "/",
         icon: <Logout fontSize="small" />,
     },
 ];

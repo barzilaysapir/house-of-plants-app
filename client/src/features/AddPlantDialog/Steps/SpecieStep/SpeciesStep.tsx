@@ -3,25 +3,25 @@ import i18n from "i18next";
 import IdentifyPlant from "./IdentifyPlant";
 import SearchResults from "./SearchResults/SearchResults";
 import { FC } from "react";
-import useSpecieStep from "./useSpecieStep";
-import StyledSpecieStep from "./SpecieStep.style";
-import SpecieStepSearch from "./SpecieStepSearch";
+import useSpeciesStep from "./useSpeciesStep";
+import StyledSpeciesStep from "./SpeciesStep.style";
+import SpeciesStepSearch from "./SpeciesStepSearch";
 import { AddPlantData } from "features/AddPlantDialog/AddPlantDialog.types";
 
-type SpecieStepProps = {
+type SpeciesStepProps = {
     handleNextStep: (stepData?: Partial<AddPlantData>) => void;
 };
 
-const SpecieStep: FC<SpecieStepProps> = (props) => {
+const SpeciesStep: FC<SpeciesStepProps> = (props) => {
     const { handleNextStep } = props;
 
-    const { searchInputVal, handleChange, selectPlant } = useSpecieStep({
+    const { searchInputVal, handleChange, selectPlant } = useSpeciesStep({
         handleNextStep,
     });
 
     return (
-        <StyledSpecieStep>
-            <SpecieStepSearch onChange={handleChange} />
+        <StyledSpeciesStep>
+            <SpeciesStepSearch onChange={handleChange} />
 
             {searchInputVal ? (
                 <SearchResults
@@ -36,8 +36,8 @@ const SpecieStep: FC<SpecieStepProps> = (props) => {
                     <IdentifyPlant />
                 </>
             )}
-        </StyledSpecieStep>
+        </StyledSpeciesStep>
     );
 };
 
-export default SpecieStep;
+export default SpeciesStep;

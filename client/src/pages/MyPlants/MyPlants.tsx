@@ -9,18 +9,23 @@ import LoaderBackdrop from "components/LoaderBackdrop";
 import { Outlet } from "react-router";
 import { MyPlantsOutletContext } from "shared/types/UI";
 import MyPlantsTabs from "features/MyPlants/MyPlantsTabs";
+import QueryKey from "shared/types/queryKeys";
 
 const MyPlants: FC = () => {
     const user = JSON.parse(useLocalStorage().user);
 
     const { loading, data } = useFetchData({
-        keys: ["userPlants"],
+        keys: [QueryKey.USER_PLANTS],
         url: `/users/${user._id}/plants`,
     });
 
     const { isOpen, handleOpen, handleClose } = useToggleDisplay(); // toggleAddPlantDialogDisplay
 
-    const context: MyPlantsOutletContext = { plants: data, handleOpen };
+    const context: MyPlantsOutletContext = {
+        plants: data,
+        loadingPlants: loading,
+        handleOpen,
+    };
 
     if (loading) return <LoaderBackdrop />;
 
@@ -31,7 +36,7 @@ const MyPlants: FC = () => {
                 handleOpen={handleOpen}
             />
 
-            <Stack sx={{ height: "100%" }} direction="column" spacing={1}>
+            <Stack sx={{ height: "100%" }} spacing={2}>
                 <MyPlantsTabs />
 
                 <Box sx={{ height: "100%" }} component="main">

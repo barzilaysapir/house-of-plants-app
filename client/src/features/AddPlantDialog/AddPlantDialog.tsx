@@ -55,7 +55,7 @@ const AddPlantDialog: FC<AddPlantDialogProps> = (props) => {
                         handleNext={handleNextStep}
                         handlePrev={handlePrevStep}
                         amountOfSteps={steps.length}
-                        disableNext={!plantFormData[AddPlantField.SPECIE]}
+                        disableNext={!plantFormData[AddPlantField.SPECIES]}
                     />
                 )}
             </DialogContent>

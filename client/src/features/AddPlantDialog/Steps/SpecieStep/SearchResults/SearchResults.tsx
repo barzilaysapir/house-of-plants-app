@@ -5,6 +5,7 @@ import { Plant } from "shared/types/plants";
 import { CardImageSize } from "shared/types/card";
 import SearchResultsSkeleton from "./SearchResultsSkeleton";
 import StyledStep from "../../Step.style";
+import QueryKey from "shared/types/queryKeys";
 
 type SearchResultsProps = {
     searchInputVal: string;
@@ -15,7 +16,7 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
     const { searchInputVal, selectPlant } = props;
 
     const { data, loading, error } = useFetchData({
-        keys: ["plantsSearch"],
+        keys: [QueryKey.PLANTS_SEARCH],
         url: `/species/search?q=${searchInputVal}`,
         trigger: searchInputVal,
     });

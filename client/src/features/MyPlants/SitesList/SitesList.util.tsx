@@ -5,22 +5,22 @@ import { MenuOption } from "shared/types/UI";
 export const MENU_OPTIONS: MenuOption[] = [
     {
         name: i18n.t("siteMenu.preview"),
-        link: "/preview",
+        to: "/preview",
         icon: <Preview />,
     },
     {
         name: i18n.t("siteMenu.editSite"),
-        link: "/edit",
+        to: "/edit",
         icon: <Edit />,
     },
     {
         name: i18n.t("siteMenu.uploadPhoto"),
-        link: "/photo",
+        to: "/photo",
         icon: <AddAPhoto />,
     },
     {
         name: i18n.t("siteMenu.reminders"),
-        link: "/edit/reminders",
+        to: "/edit/reminders",
         icon: <Notifications />,
     },
 ];

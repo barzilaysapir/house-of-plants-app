@@ -1,15 +1,22 @@
-import { Button, Stack } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
 import ScheffleraImg from "assets/images/schefflera_paint.png";
 import { FC } from "react";
 import { CallToAction } from "shared/types/UI";
 
-type EmptyStateProps = {
-    handleOpen: () => void;
-    callToAction?: CallToAction;
-};
+type EmptyStateProps =
+    | {
+          text: string;
+          handleOpen?: never;
+          callToAction?: never;
+      }
+    | {
+          handleOpen: () => void;
+          callToAction: CallToAction;
+          text?: never;
+      };
 
 const EmptyState: FC<EmptyStateProps> = (props) => {
-    const { handleOpen, callToAction } = props;
+    const { handleOpen, callToAction, text } = props;
 
     return (
         <Stack
@@ -22,7 +29,7 @@ const EmptyState: FC<EmptyStateProps> = (props) => {
                 backgroundColor: "ThreeDFace",
             }}
         >
-            {callToAction && (
+            {callToAction ? (
                 <Button
                     variant="contained"
                     color="primary"
@@ -30,6 +37,8 @@ const EmptyState: FC<EmptyStateProps> = (props) => {
                 >
                     {callToAction.label}
                 </Button>
+            ) : (
+                <Typography variant="body2">{text}</Typography>
             )}
 
             <img

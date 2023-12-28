@@ -88,11 +88,12 @@ export const addUsersPlant = async (
                 $push: {
                     plants: {
                         id: new ObjectId(),
-                        plantId: id,
-                        primaryName: scientific_name[0],
-                        secondaryName: common_name,
+                        speciesId: id,
+                        primaryName: common_name,
+                        secondaryName: scientific_name[0],
                         scientificName: scientific_name[0],
-                        image: default_image?.thumbnail,
+                        thumbnail: default_image?.thumbnail,
+                        image: default_image?.regular_url,
                         // TODO: remove mock
                         care: CARE_MOCK,
                     },

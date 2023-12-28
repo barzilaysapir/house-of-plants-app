@@ -7,6 +7,13 @@ export enum Route {
 }
 
 export enum MyPlantsRoute {
-    PLANTS = "/",
+    PLANTS = "/plants",
     SITES = "/sites",
+}
+
+export enum PlantSettingsRoute {
+    PREVIEW = "/preview",
+    EDIT = "/edit",
+    EDIT_REMINDERS = "/editReminders",
+    SPECIES = "/species",
 }
