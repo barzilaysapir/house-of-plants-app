@@ -8,15 +8,22 @@ import useFetchData from "shared/hooks/useFetchData";
 import SitesList from "features/MyPlants/SitesList/SitesList";
 import QueryKey from "shared/types/queryKeys";
 import Loader from "components/Loader/Loader";
+import {Site} from "../../shared/types/sites";
 
 const SitesTab: FC = () => {
     const user = JSON.parse(useLocalStorage().user);
     const { handleOpen } = useOutletContext<MyPlantsOutletContext>();
 
-    const { loading, data } = useFetchData({
+    const { loading } = useFetchData({
         keys: [QueryKey.USER_SITES],
         url: `/users/${user!._id}/sites`,
     });
+
+    const data: Site[] =  [{
+        id: "1",
+        name: "Salon",
+        image: "https://via.placeholder.com/100?text=Hello+World&font=roboto",
+    }]
 
     if (loading) return <Loader />;
 

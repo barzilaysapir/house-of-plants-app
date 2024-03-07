@@ -29,6 +29,10 @@ const MuiBaseline = css`
             color: #fff;
         }
     }
+    
+    .MuiInputBase-root {
+        background-color: #ffffff80;
+    }
 `;
 
 export default MuiBaseline;

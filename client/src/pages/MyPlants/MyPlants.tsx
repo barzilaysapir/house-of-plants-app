@@ -9,6 +9,7 @@ import { Outlet } from "react-router";
 import { MyPlantsOutletContext } from "shared/types/UI";
 import MyPlantsTabs from "features/MyPlants/MyPlantsTabs";
 import QueryKey from "shared/types/queryKeys";
+import AddSiteDialog from "../../features/AddSiteDialog/AddSiteDialog";
 
 const MyPlants: FC = () => {
     const user = JSON.parse(useLocalStorage().user);
@@ -40,6 +41,8 @@ const MyPlants: FC = () => {
             <Outlet context={context} />
 
             <AddPlantDialog open={isOpen} handleClose={handleClose} />
+
+            <AddSiteDialog open={isOpen} handleClose={handleClose} />
         </>
     );
 };

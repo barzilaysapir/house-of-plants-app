@@ -8,7 +8,7 @@ type StepperProps = {
     activeStep: number;
     handleNext: (stepData?: any) => void;
     handlePrev: () => void;
-    disableNext: boolean;
+    disableNext?: boolean;
 };
 
 const Stepper: FC<StepperProps> = (props) => {
