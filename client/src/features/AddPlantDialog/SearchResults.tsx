@@ -1,13 +1,8 @@
-import {
-    CircularProgress,
-    List,
-    ListItem,
-    ListItemText,
-    Stack,
-} from "@mui/material";
+import { CircularProgress, Stack } from "@mui/material";
 import { FC } from "react";
 import useFetchData from "shared/hooks/useFetchData";
-import { SpecieLight } from "../../../../shared/types/API/species";
+import PlantCard from "features/PlantCard/PlantCard";
+import { Plant } from "shared/types/Plants";
 
 type SearchResultsProps = {
     searchInputVal: string;
@@ -16,7 +11,7 @@ type SearchResultsProps = {
 const SearchResults: FC<SearchResultsProps> = (props) => {
     const { searchInputVal } = props;
 
-    const { data, loading, error } = useFetchData<SpecieLight[]>(
+    const { data, loading, error } = useFetchData<Plant[]>(
         `/species/search?q=${searchInputVal}`
     );
 
@@ -28,16 +23,14 @@ const SearchResults: FC<SearchResultsProps> = (props) => {
         );
     if (error) return <div>Error</div>;
     if (!data) return <>No Data</>;
+    console.log(data);
 
     return (
-        <List>
-            {data.map((item: SpecieLight) => (
-                <ListItem key={item.id} sx={{ flexDirection: "column" }}>
-                    <ListItemText>{item.scientific_name}</ListItemText>
-                    <img src={item.image_url || ""} alt="" height={300} />
-                </ListItem>
+        <div>
+            {data.map((item) => (
+                <PlantCard key={item.id} plant={item} />
             ))}
-        </List>
+        </div>
     );
 };
 

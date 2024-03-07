@@ -7,14 +7,11 @@ import StyledPlantCard from "./PlantCard.style";
 type PlantCardProps = {
     plant: Plant;
     horizontal?: boolean;
+    withRoutines?: boolean;
 };
 
 const PlantCard: FC<PlantCardProps> = (props) => {
-    const {
-        plant,
-        plant: { default_image },
-        horizontal = false,
-    } = props;
+    const { plant, horizontal = false, withRoutines = false } = props;
 
     return (
         <StyledPlantCard
@@ -25,8 +22,8 @@ const PlantCard: FC<PlantCardProps> = (props) => {
             }}
             horizontal={Number(horizontal)}
         >
-            <PlantCardImage image={default_image.thumbnail} />
-            <PlantCardContent plant={plant} />
+            <PlantCardImage image={plant.image} />
+            <PlantCardContent plant={plant} withRoutines={withRoutines} />
         </StyledPlantCard>
     );
 };

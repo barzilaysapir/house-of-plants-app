@@ -3,11 +3,11 @@ import { FC } from "react";
 
 type PlantNamesProps = {
     name: string;
-    moreNames: string[];
+    anotherName: string;
 };
 
 const PlantNames: FC<PlantNamesProps> = (props) => {
-    const { name, moreNames } = props;
+    const { name, anotherName } = props;
 
     return (
         <Box>
@@ -15,7 +15,7 @@ const PlantNames: FC<PlantNamesProps> = (props) => {
                 {name}
             </Typography>
             <Typography variant="body2" color="textSecondary">
-                {moreNames.map((name) => name + " ")}
+                {anotherName}
             </Typography>
         </Box>
     );

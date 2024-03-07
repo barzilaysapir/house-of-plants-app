@@ -7,19 +7,23 @@ import PlantRoutines from "./PlantRoutines";
 
 type PlantCardContentProps = {
     plant: Plant;
+    withRoutines: boolean;
 };
 
 const PlantCardContent: FC<PlantCardContentProps> = (props) => {
     const {
-        plant: { primary_name, scientific_name, care },
+        plant: { primaryName, scientificName, care },
+        withRoutines,
     } = props;
 
     return (
         <StyledPlantCardContent>
             <Stack direction="column" rowGap={1} justifyContent="space-between">
-                <PlantNames name={primary_name} moreNames={scientific_name} />
+                <PlantNames name={primaryName} anotherName={scientificName} />
                 <Divider />
-                <PlantRoutines name={primary_name} care={care} />
+                {withRoutines && (
+                    <PlantRoutines name={primaryName} care={care} />
+                )}
             </Stack>
         </StyledPlantCardContent>
     );
