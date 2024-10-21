@@ -16,7 +16,7 @@ type PlantCardProps = PropsWithChildren & {
 
 const PlantCard: FC<PlantCardProps> = (props) => {
     const {
-        plant: { id, primaryName, site, image },
+        plant: { id, primaryName, site, image, thumbnail },
         size = CardImageSize.MEDIUM,
         vertical = false,
         children,
@@ -26,6 +26,7 @@ const PlantCard: FC<PlantCardProps> = (props) => {
 
     const menuProps = menuOptions
         ? {
+              id,
               options: menuOptions,
               Icon: YardOutlinedIcon,
           }
@@ -34,10 +35,10 @@ const PlantCard: FC<PlantCardProps> = (props) => {
     return (
         <Card
             data={{
-                id: id.toString(), // not unique. change to _id
+                id,
                 name: primaryName,
                 description: site || i18n.t("unassigned"),
-                image,
+                image: thumbnail || image,
             }}
             size={size}
             onClick={onClick}

@@ -1,19 +1,20 @@
 import App from "App";
-import Reminders from "./Reminders/Reminders";
-import Identify from "./Identify/Identify";
-import MyPlants from "./MyPlants/MyPlants";
+import Reminders from "../Reminders/Reminders";
+import Identify from "../Identify/Identify";
 import { Navigate, createBrowserRouter } from "react-router-dom";
-import SignIn from "./SignIn/SignIn";
+import SignIn from "../SignIn/SignIn";
 import ProtectedRoute from "components/ProtectedRoute";
 import { Route } from "shared/types/route";
+import myPlantsRoutes from "./myPlantsRoutes";
+import LoaderWrapper from "components/Loader/LoaderWrapper";
 
-export const router = createBrowserRouter([
+const router = createBrowserRouter([
     {
         path: "",
         element: <App />,
         children: [
             {
-                path: "/",
+                index: true,
                 element: <Navigate to={Route.MY_PLANTS} replace />,
             },
             {
@@ -21,12 +22,8 @@ export const router = createBrowserRouter([
                 element: <SignIn />,
             },
             {
-                path: Route.MY_PLANTS,
-                element: (
-                    <ProtectedRoute>
-                        <MyPlants />
-                    </ProtectedRoute>
-                ),
+                element: <LoaderWrapper />,
+                children: myPlantsRoutes,
             },
             {
                 path: Route.REMINDERS,
@@ -45,6 +42,8 @@ export const router = createBrowserRouter([
                 ),
             },
         ],
-        errorElement: <div>Error</div>,
+        errorElement: <div>404 - Page Not Fount</div>,
     },
 ]);
+
+export default router;

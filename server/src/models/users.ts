@@ -1,14 +1,17 @@
 import { getDb } from "utils/db";
-import { ObjectId, UpdateFilter } from "mongodb";
+import { Document, ObjectId, UpdateFilter, WithId } from "mongodb";
 import { GoogleUserData } from "utils/types/googleUser";
 import axios from "axios";
 import { Plant } from "utils/types/plants";
 
 const getUsersCollection = () => getDb().collection("users");
 
-export const getUserById = async (id: string) => {
+export const getUserById = async (
+    id: string | ObjectId
+): Promise<WithId<Document> | null> => {
     try {
-        return await getUsersCollection().findOne({ _id: new ObjectId(id) });
+        if (typeof id === "string") id = new ObjectId(id);
+        return await getUsersCollection().findOne({ _id: id });
     } catch (error) {
         throw error;
     }
@@ -32,6 +35,15 @@ export const getUserSites = async (id: string) => {
     }
 };
 
+const createUser = async (googleUserData: Partial<GoogleUserData>) => {
+    return await getUsersCollection().insertOne({
+        ...googleUserData,
+        plants: [],
+        sites: [],
+        settings: {},
+    });
+};
+
 export const googleUserAuth = async (token: string) => {
     try {
         const fetchToken = await axios.get(Bun.env.GOOGLE_AUTH_API!, {
@@ -39,29 +51,31 @@ export const googleUserAuth = async (token: string) => {
                 id_token: token.split(" ")[1],
             },
         });
-        const { email, name, picture }: GoogleUserData = fetchToken.data;
-        const user = await getUsersCollection().findOneAndUpdate(
-            { email: email },
-            {
-                $set: {
-                    name,
-                    email,
-                    picture,
-                    // this removes all plants when login:
-                    plants: [],
-                    sites: [],
-                    settings: {},
-                },
-            },
-            { upsert: true }
-        );
-        return user.value;
+
+        const { name, email, picture }: GoogleUserData = fetchToken.data;
+        const googleUserData = { name, email, picture };
+
+        let userId = (await getUsersCollection().findOne({ email }))?._id;
+        if (!userId) {
+            userId = (await createUser(googleUserData)).insertedId;
+        } else {
+            await getUsersCollection().updateOne(
+                { email },
+                { $set: googleUserData }
+            );
+        }
+
+        const updatedUser = await getUserById(userId);
+        return updatedUser;
     } catch (error) {
         throw error;
     }
 };
 
-export const addUsersPlant = async (userId: string, plant: any) => {
+export const addUsersPlant = async (
+    userId: string,
+    plant: any
+): Promise<UpdateFilter<Document>> => {
     type UserDocument = {
         _id: string;
         plants?: Plant[];
@@ -74,11 +88,12 @@ export const addUsersPlant = async (userId: string, plant: any) => {
                 $push: {
                     plants: {
                         id: new ObjectId(),
-                        plantId: id,
-                        primaryName: scientific_name[0],
-                        secondaryName: common_name,
+                        speciesId: id,
+                        primaryName: common_name,
+                        secondaryName: scientific_name[0],
                         scientificName: scientific_name[0],
-                        image: default_image?.thumbnail,
+                        thumbnail: default_image?.thumbnail,
+                        image: default_image?.regular_url,
                         // TODO: remove mock
                         care: CARE_MOCK,
                     },

@@ -1,18 +1,18 @@
 import { Grid } from "@mui/material";
 import { FC } from "react";
-import { Plant } from "shared/types/plants";
+import PlantRoutines from "./PlantRoutines/PlantRoutines";
 import PlantCard from "features/PlantCard/PlantCard";
-import PlantRoutines from "features/MyPlants/MyPlantsList/PlantRoutines/PlantRoutines";
 import { CardView } from "shared/types/card";
-import { MENU_OPTIONS } from "./MyPlantsList.util";
+import { MENU_OPTIONS } from "./PlantsList.util";
 import useCardsList from "shared/hooks/useCardsList";
+import { Plant } from "shared/types/plants";
 
-type MyPlantsListProps = {
+type PlantsListProps = {
     filteredPlants: Plant[];
     view: CardView;
 };
 
-const MyPlantsList: FC<MyPlantsListProps> = (props) => {
+const PlantsList: FC<PlantsListProps> = (props) => {
     const { filteredPlants, view } = props;
 
     const showPlantRoutines = view !== CardView.ROWS;
@@ -50,4 +50,4 @@ const MyPlantsList: FC<MyPlantsListProps> = (props) => {
     );
 };
 
-export default MyPlantsList;
+export default PlantsList;

@@ -1,63 +1,49 @@
 import { FC } from "react";
-import { Box } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import AddPlantDialog from "features/AddPlantDialog/AddPlantDialog";
 import useToggleDisplay from "shared/hooks/useToggleDisplay";
-import MyPlantsToolbar from "features/MyPlants/MyPlantsToolbar/MyPlantsToolbar";
-import useMyPlants from "./useMyPlants";
 import MyPlantsHeader from "features/MyPlants/MyPlantsHeader";
-import useCardsView from "shared/hooks/useCardsView";
 import useFetchData from "shared/hooks/useFetchData";
 import useLocalStorage from "shared/hooks/useLocalStorage";
 import LoaderBackdrop from "components/LoaderBackdrop";
 import MyPlantsContent from "features/MyPlants/MyPlantsContent";
+import { Outlet } from "react-router";
+import { MyPlantsOutletContext } from "shared/types/UI";
+import MyPlantsTabs from "features/MyPlants/MyPlantsTabs";
+import QueryKey from "shared/types/queryKeys";
 
 const MyPlants: FC = () => {
     const user = JSON.parse(useLocalStorage().user);
 
-    const { loading: loadingPlants, data: plants } = useFetchData({
-        keys: ["userPlants"],
+    const { loading, data } = useFetchData({
+        keys: [QueryKey.USER_PLANTS],
         url: `/users/${user._id}/plants`,
     });
 
-    const { loading: loadingSites, data: sites } = useFetchData({
-        keys: ["userSites"],
-        url: `/users/${user!._id}/sites`,
-    });
+    const { isOpen, handleOpen, handleClose } = useToggleDisplay(); // toggleAddPlantDialogDisplay
 
-    const { isOpen, handleOpen, handleClose } = useToggleDisplay();
-    const { view, onChangeView } = useCardsView();
+    const context: MyPlantsOutletContext = {
+        plants: data,
+        loadingPlants: loading,
+        handleOpen,
+    };
 
-    const { onSearchPlant, filteredPlants, currentTab, handleTabChange } =
-        useMyPlants({
-            plants,
-        });
-
-    if (loadingPlants || loadingSites) return <LoaderBackdrop />;
+    if (loading) return <LoaderBackdrop />;
 
     return (
         <>
             <MyPlantsHeader
-                myPlantsAmount={plants.length}
+                myPlantsAmount={data.length}
                 handleOpen={handleOpen}
             />
 
-            <MyPlantsToolbar
-                onSearchPlant={onSearchPlant}
-                view={view}
-                onChangeView={onChangeView}
-                currentTab={currentTab}
-                handleTabChange={handleTabChange}
-            />
+            <Stack sx={{ height: "100%" }} spacing={2}>
+                <MyPlantsTabs />
 
-            <Box sx={{ height: "100%" }} component="main">
-                <MyPlantsContent
-                    tab={currentTab}
-                    plants={filteredPlants}
-                    sites={sites}
-                    handleOpen={handleOpen}
-                    view={view}
-                />
-            </Box>
+                <Box sx={{ height: "100%" }} component="main">
+                    <Outlet context={context} />
+                </Box>
+            </Stack>
 
             <AddPlantDialog open={isOpen} handleClose={handleClose} />
         </>

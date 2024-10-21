@@ -1,22 +1,21 @@
 import { Grid } from "@mui/material";
 import { FC } from "react";
-import { CardView } from "shared/types/card";
 import Card from "components/Card";
 import { Site } from "shared/types/sites";
-import { MENU_OPTIONS } from "./MySitesList.util";
+import { MENU_OPTIONS } from "./SitesList.util";
 import useCardsList from "shared/hooks/useCardsList";
 import LocationCityOutlinedIcon from "@mui/icons-material/LocationCityOutlined";
+import { CardView } from "shared/types/card";
 
-type MySitesListProps = {
-    sites: Site[];
-    view: CardView;
+type SitesListProps = {
+    data: Site[];
 };
 
-const MySitesList: FC<MySitesListProps> = (props) => {
-    const { sites, view } = props;
+const SitesList: FC<SitesListProps> = (props) => {
+    const { data } = props;
 
     const { isCardVertical, getGridColumns, getImageSize } = useCardsList({
-        view,
+        view: CardView.CARDS,
     });
 
     return (
@@ -27,7 +26,7 @@ const MySitesList: FC<MySitesListProps> = (props) => {
             columns={getGridColumns()}
             alignItems="stretch"
         >
-            {sites.map((site) => (
+            {data.map((site: Site) => (
                 <Grid item xs={1} key={site.id}>
                     <Card
                         key={site.id}
@@ -45,4 +44,4 @@ const MySitesList: FC<MySitesListProps> = (props) => {
     );
 };
 
-export default MySitesList;
+export default SitesList;

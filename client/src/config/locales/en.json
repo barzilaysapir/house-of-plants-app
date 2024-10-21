@@ -17,7 +17,12 @@
         "addButton": "Add",
         "addButtonAlt": "Add Plant",
         "searchPlaceholder": "Search in your plants",
-        "emptyState": "Add your first plant",
+        "plants": {
+            "emptyState": "Add your first plant"
+        },
+        "filteredPlants": {
+            "emptyState": "You don't have any plant with this name"
+        },
         "sites": {
             "emptyState": "Add your first site"
         }
@@ -98,7 +103,7 @@
         "uploadPhoto": "Upload Photo",
         "changeSite": "Update Site",
         "reminders": "Reminders",
-        "specieInfo": "Specie Info"
+        "speciesInfo": "Species Info"
     },
 
     "siteMenu": {

@@ -31,7 +31,7 @@ const DetailsStep: FC<DetailsStepProps> = (props) => {
                 <img
                     height={150}
                     width={150}
-                    src={image || formData[AddPlantField.SPECIE].image}
+                    src={image || formData[AddPlantField.SPECIES].image}
                     alt=""
                     style={{
                         objectFit: "cover",
@@ -44,9 +44,11 @@ const DetailsStep: FC<DetailsStepProps> = (props) => {
                         label="Name"
                         variant="standard"
                         defaultValue={
-                            formData[AddPlantField.SPECIE].primaryName
+                            formData[AddPlantField.SPECIES].primaryName
                         }
-                        placeholder={formData[AddPlantField.SPECIE].primaryName}
+                        placeholder={
+                            formData[AddPlantField.SPECIES].primaryName
+                        }
                         fullWidth
                     />
                     <Button
