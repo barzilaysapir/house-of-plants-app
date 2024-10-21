@@ -1,4 +1,4 @@
-import { RoutineAction } from "features/PlantRoutineDialog/PlantRoutineDialog.util";
+import { RoutineAction } from "features/PlantRoutines/PlantRoutineDialog/PlantRoutineDialog.util";
 import { useState } from "react";
 
 type UsePlantCardContentProps = {

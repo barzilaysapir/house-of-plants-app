@@ -1,28 +1,29 @@
 import { Divider, Stack } from "@mui/material";
-import { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import { StyledPlantCardContent } from "../PlantCard.style";
 import { Plant } from "shared/types/Plants";
 import PlantNames from "./PlantNames";
-import PlantRoutines from "./PlantRoutines";
 
 type PlantCardContentProps = {
     plant: Plant;
-    withRoutines: boolean;
+    children?: ReactNode;
 };
 
 const PlantCardContent: FC<PlantCardContentProps> = (props) => {
     const {
-        plant: { primaryName, scientificName, care },
-        withRoutines,
+        plant: { primaryName, scientificName },
+        children,
     } = props;
 
     return (
         <StyledPlantCardContent>
             <Stack direction="column" rowGap={1} justifyContent="space-between">
                 <PlantNames name={primaryName} anotherName={scientificName} />
-                <Divider />
-                {withRoutines && (
-                    <PlantRoutines name={primaryName} care={care} />
+                {children && (
+                    <>
+                        <Divider />
+                        {children}
+                    </>
                 )}
             </Stack>
         </StyledPlantCardContent>

@@ -7,7 +7,7 @@ const fetcher = async <Data>(url: string): Promise<Data> => {
 
 const useFetchData = <Data>(path: string) => {
     const { data, error } = useSWR<Data>(
-        "http://localhost:4000" + path,
+        process.env.REACT_APP_BASE_URL + path,
         fetcher<Data>
     );
     

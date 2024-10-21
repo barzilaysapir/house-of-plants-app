@@ -1,25 +1,25 @@
 import App from "App";
-import Home from "pages/Home/Home";
+import Reminders from "pages/Reminders/Reminders";
 import Identify from "pages/Identify/Identify";
 import MyPlants from "pages/MyPlants/MyPlants";
 import { myPlantsLoader } from "pages/MyPlants/MyPlants.util";
 import { createBrowserRouter } from "react-router-dom";
-import { appLoader } from "./AppLoader";
+import { appLoader } from "./appLoader";
 
-export const ROUTER = createBrowserRouter([
+export const router = createBrowserRouter([
     {
         path: "/",
         element: <App />,
         loader: appLoader,
         children: [
             {
-                path: "",
-                element: <Home />,
-            },
-            {
-                path: "/myPlants",
+                path: "/",
                 element: <MyPlants />,
                 loader: myPlantsLoader,
+            },
+            {
+                path: "/reminders",
+                element: <Reminders />,
             },
             {
                 path: "/identify",

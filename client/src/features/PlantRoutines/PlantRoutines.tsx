@@ -1,6 +1,6 @@
 import { Stack } from "@mui/material";
 import { FC } from "react";
-import { PLANT_ROUTINES } from "../PlantCard.util";
+import { PLANT_ROUTINES } from "../PlantCard/PlantCard.util";
 import { PlantCare } from "shared/types/Plants";
 import PlantRoutineButton from "./PlantRoutineButton";
 
