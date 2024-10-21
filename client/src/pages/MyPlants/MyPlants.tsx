@@ -6,7 +6,6 @@ import MyPlantsHeader from "features/MyPlants/MyPlantsHeader";
 import useFetchData from "shared/hooks/useFetchData";
 import useLocalStorage from "shared/hooks/useLocalStorage";
 import LoaderBackdrop from "components/LoaderBackdrop";
-import MyPlantsContent from "features/MyPlants/MyPlantsContent";
 import { Outlet } from "react-router";
 import { MyPlantsOutletContext } from "shared/types/UI";
 import MyPlantsTabs from "features/MyPlants/MyPlantsTabs";
