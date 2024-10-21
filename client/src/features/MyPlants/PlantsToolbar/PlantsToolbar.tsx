@@ -14,7 +14,7 @@ const PlantsToolbar: FC<PlantsToolbarProps> = (props) => {
     const { onSearchPlant, view, onChangeView } = props;
 
     return (
-        <Stack direction="row" alignItems="center" spacing={2}>
+        <Stack direction="row" alignItems="center" spacing={2} mt={2}>
             <SearchInput onSearchPlant={onSearchPlant} />
             <ViewPicker view={view} onChangeView={onChangeView} />
         </Stack>

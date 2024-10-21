@@ -1,5 +1,5 @@
-import { Container, styled } from "@mui/material";
-import theme, { BOTTOM_NAV_WIDTH } from "config/theme/theme";
+import { Container, Stack, styled } from "@mui/material";
+import theme, { BOTTOM_NAV_WIDTH, NAVS_HEIGHT } from "config/theme/theme";
 
 const StyledLayout = styled(Container)`
     height: 100%;
@@ -10,9 +10,9 @@ const StyledLayout = styled(Container)`
     }
 `;
 
-export const StyledLayoutChildren = styled(Container)`
-    height: 100%;
-    padding-bottom: ${theme.spacing(10)};
+export const StyledLayoutChildren = styled(Stack)`
+    height: calc(100% - ${NAVS_HEIGHT} * 2);
+    padding-inline: ${theme.spacing(1)};
 `;
 
 export default StyledLayout;
