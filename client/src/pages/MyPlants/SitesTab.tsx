@@ -1,7 +1,7 @@
 import { FC } from "react";
 import EmptyState from "components/EmptyState";
 import i18n from "config/locales/i18n";
-import { useOutletContext } from "react-router";
+import { useOutletContext } from "react-router-dom";
 import { MyPlantsOutletContext } from "shared/types/UI";
 import useLocalStorage from "shared/hooks/useLocalStorage";
 import useFetchData from "shared/hooks/useFetchData";

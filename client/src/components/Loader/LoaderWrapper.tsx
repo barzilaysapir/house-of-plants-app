@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Outlet, useNavigation } from "react-router";
+import { Outlet, useNavigation } from "react-router-dom";
 import Loader from "./Loader";
 
 const LoaderWrapper: FC = () => {
