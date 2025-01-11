@@ -1,3 +1,3 @@
-import { QueryClient } from "react-query";
+import { QueryClient } from "@tanstack/react-query";
 
 export const QUERY_CLIENT = new QueryClient();
