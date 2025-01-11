@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 setip.sh
+.idea
 
 # testing
 /coverage
