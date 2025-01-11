@@ -4,26 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0057467c-a8ef-4a2d-85bf-63e407278aab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/.npmrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/vite-env.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/vite.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.env" beforeDir="false" afterPath="$PROJECT_DIR$/client/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layout/BottomNav/BottomNav.util.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layout/BottomNav/BottomNav.util.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/MyPlants/PlantPreview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/MyPlants/PlantPreview.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/SignIn/useSignIn.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/SignIn/useSignIn.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/react-app-env.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/serviceWorkerRegistration.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/serviceWorkerRegistration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/shared/hooks/useFetchData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/hooks/useFetchData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/shared/hooks/useMutateData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/hooks/useMutateData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/GlobalStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/GlobalStyles.ts" afterDir="false" />
+    <list default="true" id="0057467c-a8ef-4a2d-85bf-63e407278aab" name="Changes" comment=".idea files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +91,7 @@
     "npm.start.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "/Users/sapirba/workspace/more/house-of-plants-app/client/node_modules/prettier",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "settings.editor.selected.configurable": "actions.on.save",
     "ts.external.directory.path": "/Users/sapirba/workspace/more/house-of-plants-app/client/node_modules/typescript/lib",
     "two.files.diff.last.used.folder": "/Users/sapirbarzilay/workspace/projects/house-of-plants-app/client/src/features/AddSiteDialog/Steps/DetailsStep",
     "vue.rearranger.settings.migration": "true"
@@ -181,11 +165,33 @@
       <workItem from="1709738150446" duration="9948000" />
       <workItem from="1709838097168" duration="697000" />
       <workItem from="1736587084516" duration="537000" />
-      <workItem from="1736587624491" duration="5510000" />
+      <workItem from="1736587624491" duration="6155000" />
     </task>
+    <task id="LOCAL-00001" summary="fix infra &amp; migrate to vite">
+      <option name="closed" value="true" />
+      <created>1736593204185</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1736593204185</updated>
+    </task>
+    <task id="LOCAL-00002" summary=".idea files">
+      <option name="closed" value="true" />
+      <created>1736593273921</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1736593273921</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix infra &amp; migrate to vite" />
+    <MESSAGE value=".idea files" />
+    <option name="LAST_COMMIT_MESSAGE" value=".idea files" />
   </component>
 </project>

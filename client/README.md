@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# Getting Started with Vite React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project has been migrated to **Vite**, a fast build tool and dev server for modern web applications.
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run the following commands:
 
-### `npm start`
+### `npm run start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Runs the app in development mode using the `.env.local` environment variables.  
+Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The page will reload if you make edits, and any lint errors will appear in the console.
 
-### `npm test`
+### `npm run start-p`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs the app in development mode using the `.env` environment variables.  
+This is useful for different environments or configurations, as it loads from the specified `.env` file.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+First, TypeScript checks your project using `tsc`, ensuring there are no type errors. Then it builds the app for production into the `dist` folder using Vite.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+It optimizes the build for the best performance. The output is minified, and filenames include content hashes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Your app is now ready to be deployed!
 
-### `npm run eject`
+### `npm run preview`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This command serves the production build (after running `npm run build`) on a local server.  
+It's a good way to preview your production site locally before deploying.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Environment Variables
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Vite uses `.env` files for environment variables. Note that all environment variables need to be prefixed with `VITE_` to be exposed to the frontend.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Example: `VITE_API_URL=https://example.com`
+
+You can use `.env.local` for local development, `.env` for production or other environments, and `.env.*` for specific environments like `.env.staging`.
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To learn more about Vite and React:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [Vite Documentation](https://vitejs.dev/)
+- [React Documentation](https://reactjs.org/)
+
+For more details about managing environment variables and scripts, refer to Vite’s documentation.

@@ -26,11 +26,11 @@
   },
   "include": [
     "src",
+    "vite-env.d.ts",
     "../shared/*.ts"
   ],
   "exclude": [
     "node_modules",
     "build",
-    "vite-env.d.ts"
   ]
 }
