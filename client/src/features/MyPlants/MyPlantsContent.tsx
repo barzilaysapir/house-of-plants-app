@@ -1,5 +1,5 @@
-import MyPlantsList from "features/MyPlants/MyPlantsList/MyPlantsList";
-import MySitesList from "features/MyPlants/MySitesList/MySitesList";
+// import MyPlantsList from "features/MyPlants/MyPlantsList/MyPlantsList";
+// import MySitesList from "features/MyPlants/MySitesList/MySitesList";
 import { Plant } from "shared/types/plants";
 import { CardView } from "shared/types/card";
 import EmptyState from "components/EmptyState";
@@ -19,30 +19,31 @@ type MyPlantsContentProps = {
 const MyPlantsContent: FC<MyPlantsContentProps> = (props) => {
     const { view, tab, plants, sites, handleOpen } = props;
 
-    switch (tab) {
-        case MyPlantsToolbarTab.PLANTS:
-            return plants.length ? (
-                <MyPlantsList filteredPlants={plants} view={view} />
-            ) : (
-                <EmptyState
-                    handleOpen={handleOpen}
-                    callToAction={{ label: i18n.t("myPlants.emptyState") }}
-                />
-            );
-        case MyPlantsToolbarTab.SITES:
-            return sites.length ? (
-                <MySitesList sites={sites} view={view} />
-            ) : (
-                <EmptyState
-                    handleOpen={handleOpen}
-                    callToAction={{
-                        label: i18n.t("myPlants.sites.emptyState"),
-                    }}
-                />
-            );
-        default:
-            return null;
-    }
+    // switch (tab) {
+    //     case MyPlantsToolbarTab.PLANTS:
+    //         return plants.length ? (
+    //             <MyPlantsList filteredPlants={plants} view={view} />
+    //         ) : (
+    //             <EmptyState
+    //                 handleOpen={handleOpen}
+    //                 callToAction={{ label: i18n.t("myPlants.emptyState") }}
+    //             />
+    //         );
+    //     case MyPlantsToolbarTab.SITES:
+    //         return sites.length ? (
+    //             <MySitesList sites={sites} view={view} />
+    //         ) : (
+    //             <EmptyState
+    //                 handleOpen={handleOpen}
+    //                 callToAction={{
+    //                     label: i18n.t("myPlants.sites.emptyState"),
+    //                 }}
+    //             />
+    //         );
+    //     default:
+    //         return null;
+    // }
+    return null;
 };
 
 export default MyPlantsContent;

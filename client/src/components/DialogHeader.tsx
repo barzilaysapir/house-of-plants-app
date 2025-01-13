@@ -1,10 +1,10 @@
 import { AppBar, DialogTitle, IconButton } from "@mui/material";
-import { FC } from "react";
+import { FC, ReactElement } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import i18n from "config/locales/i18n";
 
 type DialogHeaderProps = {
-    title: string | JSX.Element;
+    title: string | ReactElement;
 } & (
     | {
           closable: true;

@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { FC, ReactElement } from "react";
 import { Navigate } from "react-router-dom";
 import useLocalStorage from "shared/hooks/useLocalStorage";
 import { Route } from "shared/types/route";
 
 type ProtectedRouteProps = {
-    children: JSX.Element;
+    children: ReactElement;
 };
 
 const ProtectedRoute: FC<ProtectedRouteProps> = (props) => {

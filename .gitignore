@@ -11,8 +11,7 @@ setip.sh
 /coverage
 
 # production
-client/build
-server/dist
+*/dist
 serverNodeTS/dist
 
 # misc
