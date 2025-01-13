@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { googleLogout } from "@react-oauth/google";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { Route } from "shared/types/route";
 import { Logout, Settings } from "@mui/icons-material";
 import { MenuOption } from "shared/types/UI";

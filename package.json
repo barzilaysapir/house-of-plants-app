@@ -1,0 +1,23 @@
+{
+  "name": "house-of-plants-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barzilaysapir/house-of-plants-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/barzilaysapir/house-of-plants-app/issues"
+  },
+  "homepage": "https://github.com/barzilaysapir/house-of-plants-app#readme",
+  "description": "",
+  "devDependencies": {
+    "eslint-config-prettier": "^9.1.0"
+  }
+}

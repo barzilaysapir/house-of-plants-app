@@ -10,14 +10,12 @@ app.use(express.json());
 app.use("/", router);
 
 connectToDB((err) => {
-    if (err) {
-        console.log("Failed to connect to DB");
-        throw err;
-    } else {
-        app.listen(Bun.env.PORT, () => {
-            console.log(
-                `Server is running on http://localhost:${Bun.env.PORT}`
-            );
-        });
-    }
+  if (err) {
+    console.log("Failed to connect to DB");
+    throw err;
+  } else {
+    app.listen(Bun.env.PORT, () => {
+      console.log(`Server is running on http://localhost:${Bun.env.PORT}`);
+    });
+  }
 });

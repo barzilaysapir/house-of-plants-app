@@ -1,4 +1,4 @@
-import { useMutation } from "react-query";
+import { useMutation } from "@tanstack/react-query";
 import { CredentialResponse } from "./SignIn.types";
 import { useNavigate } from "react-router-dom";
 import useLocalStorage from "shared/hooks/useLocalStorage";
@@ -10,7 +10,7 @@ const useSignIn = () => {
 
     const { mutate } = useMutation({
         mutationFn: async (credential: string) =>
-            fetch(`${process.env.REACT_APP_API}/users/auth`, {
+            fetch(`${import.meta.env.VITE_APP_API}/users/auth`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

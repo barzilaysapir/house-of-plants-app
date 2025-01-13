@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from "react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 type UseMutateDataProps = {
     url: string;
@@ -13,13 +13,13 @@ const useMutateData = <TData, TError, TVariables>({
 }: UseMutateDataProps) => {
     const queryClient = useQueryClient();
 
-    const { mutate, isLoading, isError, error, data } = useMutation<
+    const { mutate, isPending, isError, error, data } = useMutation<
         TData,
         TError,
         TVariables
     >({
         mutationFn: async (variables: TVariables) =>
-            fetch(process.env.REACT_APP_API + url, {
+            fetch(import.meta.env.VITE_APP_API + url, {
                 method: "POST",
                 body: JSON.stringify(variables),
                 headers: {
@@ -28,7 +28,9 @@ const useMutateData = <TData, TError, TVariables>({
             }).then((res) => res.json()),
         onSuccess: () => {
             refetchOnSuccessKey &&
-                queryClient.invalidateQueries(refetchOnSuccessKey);
+                queryClient.invalidateQueries({
+                    queryKey: refetchOnSuccessKey,
+                });
             onComplete();
         },
     });
@@ -37,7 +39,7 @@ const useMutateData = <TData, TError, TVariables>({
 
     return {
         mutate,
-        loading: isLoading,
+        loading: isPending,
         error,
         data,
     };

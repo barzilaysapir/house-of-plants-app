@@ -3,12 +3,12 @@ import Loader from "components/Loader/Loader";
 import PlantPreviewContent from "features/PlantPreview/PlantPreviewContent";
 import PlantPreviewHeader from "features/PlantPreview/PlantPreviewHeader";
 import { FC, useState } from "react";
-import { LoaderFunction, useLoaderData } from "react-router";
+import { LoaderFunction, useLoaderData } from "react-router-dom";
 import { Plant } from "shared/types/plants";
 
 export const plantPreviewLoader: LoaderFunction<Plant> = async ({ params }) => {
     const res = await fetch(
-        `${process.env.REACT_APP_API}/plants/${params.plantId}`
+        `${import.meta.env.VITE_APP_API}/plants/${params.plantId}`
     );
     return await res.json();
 };
