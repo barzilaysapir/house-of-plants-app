@@ -1,7 +1,7 @@
 import axios from "axios";
 import fs from "fs";
 import path from "path";
-import { houseplants } from "./data.json";
+import houseplants from "./data.json";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -66,10 +66,10 @@ const saveImage = async (
 };
 
 const generateAllImages = async (): Promise<void> => {
-  for (const plant of houseplants) {
-    const imageUrl = await generateImage(plant);
+  for (const { common_name } of houseplants) {
+    const imageUrl = await generateImage(common_name);
     if (imageUrl) {
-      await saveImage(plant, imageUrl);
+      await saveImage(common_name, imageUrl);
     }
   }
 };

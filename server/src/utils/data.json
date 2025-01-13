@@ -1,101 +1,778 @@
-{
-  "houseplants": [
-    "Orchids",
-    "Christmas Cactus",
-    "Amaryllis",
-    "Begonia",
-    "Kalanchoe Blossfeldiana",
-    "Jasmine",
-    "Gardenia",
-    "English Ivy",
-    "String of Hearts",
-    "Creeping Fig",
-    "Philodendron Brasil",
-    "Wandering Jew",
-    "Hoya",
-    "Grape Ivy",
-    "Golden Pothos",
-    "Swiss Cheese Vine",
-    "Black Eyed Susan Vine",
-    "Basil",
-    "Mint",
-    "Thyme",
-    "Rosemary",
-    "Parsley",
-    "Chives",
-    "Oregano",
-    "Lavender",
-    "Dill",
-    "Sage",
-    "Bamboo Palm",
-    "Lady Palm",
-    "Red-Edged Dracaena",
-    "Weeping Fig",
-    "Bird of Paradise",
-    "Oxalis",
-    "Pitcher Plant",
-    "Venus Flytrap",
-    "Elephant Ear",
-    "Money Tree",
-    "Ti Plant",
-    "Ponytail Palm",
-    "Coral Bead Plant",
-    "Baby Tears",
-    "Pilea Peperomioides",
-    "Fittonia",
-    "Peperomia Obtusifolia",
-    "Bonsai Tree",
-    "Lithops",
-    "Calathea Orbifolia",
-    "Asparagus Fern",
-    "Polka Dot Plant",
-    "Dwarf Umbrella Tree",
-    "Bromeliads",
-    "Elephant Bush",
-    "Hawaiian Ti Plant",
-    "Hibiscus",
-    "Schefflera",
-    "Alocasia Amazonica",
-    "Dieffenbachia Camille",
-    "Philodendron Xanadu",
-    "Coffee Plant",
-    "Areca Palm",
-    "Snake Plant",
-    "Peace Lily",
-    "Spider Plant",
-    "Boston Fern",
-    "Aloe Vera",
-    "Snake Plant",
-    "ZZ Plant",
-    "Peace Lily",
-    "Cast Iron Plant",
-    "Pothos",
-    "Heartleaf Philodendron",
-    "Parlor Palm",
-    "Chinese Evergreen",
-    "Spider Plant",
-    "Dumb Cane",
-    "Fiddle Leaf Fig",
-    "Rubber Plant",
-    "Monstera Deliciosa",
-    "Areca Palm",
-    "Boston Fern",
-    "Bird's Nest Fern",
-    "Staghorn Fern",
-    "Calathea",
-    "Croton",
-    "Dracaena Marginata",
-    "Jade Plant",
-    "Aloe Vera",
-    "Echeveria",
-    "Haworthia",
-    "Barrel Cactus",
-    "Bunny Ear Cactus",
-    "String of Pearls",
-    "Burro's Tail",
-    "Panda Plant",
-    "Zebra Plant",
-    "African Violet",
-    "Anthurium"
-  ]
-}
+[
+  {
+    "id": 1,
+    "scientific_name": "Orchids scientificus",
+    "common_name": "Orchids",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 2,
+    "scientific_name": "Christmas Cactus scientificus",
+    "common_name": "Christmas Cactus",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 3,
+    "scientific_name": "Amaryllis scientificus",
+    "common_name": "Amaryllis",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 4,
+    "scientific_name": "Begonia scientificus",
+    "common_name": "Begonia",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 5,
+    "scientific_name": "Kalanchoe Blossfeldiana scientificus",
+    "common_name": "Kalanchoe Blossfeldiana",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 6,
+    "scientific_name": "Jasmine scientificus",
+    "common_name": "Jasmine",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 7,
+    "scientific_name": "Gardenia scientificus",
+    "common_name": "Gardenia",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 8,
+    "scientific_name": "English Ivy scientificus",
+    "common_name": "English Ivy",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 9,
+    "scientific_name": "String of Hearts scientificus",
+    "common_name": "String of Hearts",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 10,
+    "scientific_name": "Creeping Fig scientificus",
+    "common_name": "Creeping Fig",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 11,
+    "scientific_name": "Philodendron Brasil scientificus",
+    "common_name": "Philodendron Brasil",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 12,
+    "scientific_name": "Wandering Jew scientificus",
+    "common_name": "Wandering Jew",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 13,
+    "scientific_name": "Hoya scientificus",
+    "common_name": "Hoya",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 14,
+    "scientific_name": "Grape Ivy scientificus",
+    "common_name": "Grape Ivy",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 15,
+    "scientific_name": "Golden Pothos scientificus",
+    "common_name": "Golden Pothos",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 16,
+    "scientific_name": "Swiss Cheese Vine scientificus",
+    "common_name": "Swiss Cheese Vine",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 17,
+    "scientific_name": "Black Eyed Susan Vine scientificus",
+    "common_name": "Black Eyed Susan Vine",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 18,
+    "scientific_name": "Basil scientificus",
+    "common_name": "Basil",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 19,
+    "scientific_name": "Mint scientificus",
+    "common_name": "Mint",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 20,
+    "scientific_name": "Thyme scientificus",
+    "common_name": "Thyme",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 21,
+    "scientific_name": "Rosemary scientificus",
+    "common_name": "Rosemary",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 22,
+    "scientific_name": "Parsley scientificus",
+    "common_name": "Parsley",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 23,
+    "scientific_name": "Chives scientificus",
+    "common_name": "Chives",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 24,
+    "scientific_name": "Oregano scientificus",
+    "common_name": "Oregano",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 25,
+    "scientific_name": "Lavender scientificus",
+    "common_name": "Lavender",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 26,
+    "scientific_name": "Dill scientificus",
+    "common_name": "Dill",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 27,
+    "scientific_name": "Sage scientificus",
+    "common_name": "Sage",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 28,
+    "scientific_name": "Bamboo Palm scientificus",
+    "common_name": "Bamboo Palm",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 29,
+    "scientific_name": "Lady Palm scientificus",
+    "common_name": "Lady Palm",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 30,
+    "scientific_name": "Red-Edged Dracaena scientificus",
+    "common_name": "Red-Edged Dracaena",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 31,
+    "scientific_name": "Weeping Fig scientificus",
+    "common_name": "Weeping Fig",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 32,
+    "scientific_name": "Bird of Paradise scientificus",
+    "common_name": "Bird of Paradise",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 33,
+    "scientific_name": "Oxalis scientificus",
+    "common_name": "Oxalis",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 34,
+    "scientific_name": "Pitcher Plant scientificus",
+    "common_name": "Pitcher Plant",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 35,
+    "scientific_name": "Venus Flytrap scientificus",
+    "common_name": "Venus Flytrap",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 36,
+    "scientific_name": "Elephant Ear scientificus",
+    "common_name": "Elephant Ear",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 37,
+    "scientific_name": "Money Tree scientificus",
+    "common_name": "Money Tree",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 38,
+    "scientific_name": "Ti Plant scientificus",
+    "common_name": "Ti Plant",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 39,
+    "scientific_name": "Ponytail Palm scientificus",
+    "common_name": "Ponytail Palm",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 40,
+    "scientific_name": "Coral Bead Plant scientificus",
+    "common_name": "Coral Bead Plant",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 41,
+    "scientific_name": "Baby Tears scientificus",
+    "common_name": "Baby Tears",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 42,
+    "scientific_name": "Pilea Peperomioides scientificus",
+    "common_name": "Pilea Peperomioides",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 43,
+    "scientific_name": "Fittonia scientificus",
+    "common_name": "Fittonia",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 44,
+    "scientific_name": "Peperomia Obtusifolia scientificus",
+    "common_name": "Peperomia Obtusifolia",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 45,
+    "scientific_name": "Bonsai Tree scientificus",
+    "common_name": "Bonsai Tree",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 46,
+    "scientific_name": "Lithops scientificus",
+    "common_name": "Lithops",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 47,
+    "scientific_name": "Calathea Orbifolia scientificus",
+    "common_name": "Calathea Orbifolia",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 48,
+    "scientific_name": "Asparagus Fern scientificus",
+    "common_name": "Asparagus Fern",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 49,
+    "scientific_name": "Polka Dot Plant scientificus",
+    "common_name": "Polka Dot Plant",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 50,
+    "scientific_name": "Dwarf Umbrella Tree scientificus",
+    "common_name": "Dwarf Umbrella Tree",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 51,
+    "scientific_name": "Bromeliads scientificus",
+    "common_name": "Bromeliads",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 52,
+    "scientific_name": "Elephant Bush scientificus",
+    "common_name": "Elephant Bush",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 53,
+    "scientific_name": "Hawaiian Ti Plant scientificus",
+    "common_name": "Hawaiian Ti Plant",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 54,
+    "scientific_name": "Hibiscus scientificus",
+    "common_name": "Hibiscus",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 55,
+    "scientific_name": "Schefflera scientificus",
+    "common_name": "Schefflera",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 56,
+    "scientific_name": "Alocasia Amazonica scientificus",
+    "common_name": "Alocasia Amazonica",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 57,
+    "scientific_name": "Dieffenbachia Camille scientificus",
+    "common_name": "Dieffenbachia Camille",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 58,
+    "scientific_name": "Philodendron Xanadu scientificus",
+    "common_name": "Philodendron Xanadu",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 59,
+    "scientific_name": "Coffee Plant scientificus",
+    "common_name": "Coffee Plant",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 60,
+    "scientific_name": "Areca Palm scientificus",
+    "common_name": "Areca Palm",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 61,
+    "scientific_name": "Snake Plant scientificus",
+    "common_name": "Snake Plant",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 62,
+    "scientific_name": "Peace Lily scientificus",
+    "common_name": "Peace Lily",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 63,
+    "scientific_name": "Spider Plant scientificus",
+    "common_name": "Spider Plant",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 64,
+    "scientific_name": "Boston Fern scientificus",
+    "common_name": "Boston Fern",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 65,
+    "scientific_name": "Aloe Vera scientificus",
+    "common_name": "Aloe Vera",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 66,
+    "scientific_name": "Snake Plant scientificus",
+    "common_name": "Snake Plant",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 67,
+    "scientific_name": "ZZ Plant scientificus",
+    "common_name": "ZZ Plant",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 68,
+    "scientific_name": "Peace Lily scientificus",
+    "common_name": "Peace Lily",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 69,
+    "scientific_name": "Cast Iron Plant scientificus",
+    "common_name": "Cast Iron Plant",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 70,
+    "scientific_name": "Pothos scientificus",
+    "common_name": "Pothos",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 71,
+    "scientific_name": "Heartleaf Philodendron scientificus",
+    "common_name": "Heartleaf Philodendron",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 72,
+    "scientific_name": "Parlor Palm scientificus",
+    "common_name": "Parlor Palm",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 73,
+    "scientific_name": "Chinese Evergreen scientificus",
+    "common_name": "Chinese Evergreen",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 74,
+    "scientific_name": "Spider Plant scientificus",
+    "common_name": "Spider Plant",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 75,
+    "scientific_name": "Dumb Cane scientificus",
+    "common_name": "Dumb Cane",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 76,
+    "scientific_name": "Fiddle Leaf Fig scientificus",
+    "common_name": "Fiddle Leaf Fig",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 77,
+    "scientific_name": "Rubber Plant scientificus",
+    "common_name": "Rubber Plant",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 78,
+    "scientific_name": "Monstera Deliciosa scientificus",
+    "common_name": "Monstera Deliciosa",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 79,
+    "scientific_name": "Areca Palm scientificus",
+    "common_name": "Areca Palm",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 80,
+    "scientific_name": "Boston Fern scientificus",
+    "common_name": "Boston Fern",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 81,
+    "scientific_name": "Bird's Nest Fern scientificus",
+    "common_name": "Bird's Nest Fern",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 82,
+    "scientific_name": "Staghorn Fern scientificus",
+    "common_name": "Staghorn Fern",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 83,
+    "scientific_name": "Calathea scientificus",
+    "common_name": "Calathea",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 84,
+    "scientific_name": "Croton scientificus",
+    "common_name": "Croton",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 85,
+    "scientific_name": "Dracaena Marginata scientificus",
+    "common_name": "Dracaena Marginata",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 86,
+    "scientific_name": "Jade Plant scientificus",
+    "common_name": "Jade Plant",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 87,
+    "scientific_name": "Aloe Vera scientificus",
+    "common_name": "Aloe Vera",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 88,
+    "scientific_name": "Echeveria scientificus",
+    "common_name": "Echeveria",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 89,
+    "scientific_name": "Haworthia scientificus",
+    "common_name": "Haworthia",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 90,
+    "scientific_name": "Barrel Cactus scientificus",
+    "common_name": "Barrel Cactus",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 91,
+    "scientific_name": "Bunny Ear Cactus scientificus",
+    "common_name": "Bunny Ear Cactus",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 92,
+    "scientific_name": "String of Pearls scientificus",
+    "common_name": "String of Pearls",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 93,
+    "scientific_name": "Burro's Tail scientificus",
+    "common_name": "Burro's Tail",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 94,
+    "scientific_name": "Panda Plant scientificus",
+    "common_name": "Panda Plant",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 95,
+    "scientific_name": "Zebra Plant scientificus",
+    "common_name": "Zebra Plant",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 96,
+    "scientific_name": "African Violet scientificus",
+    "common_name": "African Violet",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  },
+  {
+    "id": 97,
+    "scientific_name": "Anthurium scientificus",
+    "common_name": "Anthurium",
+    "family": "Unknown Family",
+    "watering": "Moderate",
+    "sunlight": "Indirect sunlight"
+  }
+]
