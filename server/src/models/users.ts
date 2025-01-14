@@ -3,6 +3,7 @@ import { Document, ObjectId, UpdateFilter, WithId } from "mongodb";
 import { GoogleUserData } from "utils/types/googleUser";
 import axios from "axios";
 import { Plant } from "utils/types/plants";
+import { Site } from "utils/types/sites";
 
 const getUsersCollection = () => getDb().collection("users");
 
@@ -96,6 +97,34 @@ export const addUsersPlant = async (
                         image: default_image?.regular_url,
                         // TODO: remove mock
                         care: CARE_MOCK,
+                    },
+                } as UpdateFilter<UserDocument>,
+            },
+            { upsert: true }
+        );
+        return result;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const addUsersSite = async (
+    userId: string,
+    site: any
+): Promise<UpdateFilter<Document>> => {
+    type UserDocument = {
+        _id: string;
+        sites?: Site[];
+    };
+    try {
+        const { name } = site;
+        const result = await getUsersCollection().findOneAndUpdate(
+            { _id: new ObjectId(userId) },
+            {
+                $push: {
+                    sites: {
+                        id: new ObjectId(),
+                        name,
                     },
                 } as UpdateFilter<UserDocument>,
             },

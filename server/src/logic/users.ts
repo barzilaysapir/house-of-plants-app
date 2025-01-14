@@ -20,3 +20,7 @@ export const googleUserAuth = async (token: string) => {
 export const addUsersPlant = async (userId: string, plant: Plant) => {
     return await Models.addUsersPlant(userId, plant);
 };
+
+export const addUserSite = async (userId: string, site: Plant) => {
+    return await Models.addUsersSite(userId, site);
+};

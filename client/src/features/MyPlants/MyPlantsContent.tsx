@@ -2,8 +2,8 @@
 // import MySitesList from "features/MyPlants/MySitesList/MySitesList";
 import { Plant } from "shared/types/plants";
 import { CardView } from "shared/types/card";
-import EmptyState from "components/EmptyState";
-import i18n from "i18next";
+// import EmptyState from "components/EmptyState";
+// import i18n from "i18next";
 import { FC } from "react";
 import { Site } from "shared/types/sites";
 import { MyPlantsToolbarTab } from "shared/types/UI";

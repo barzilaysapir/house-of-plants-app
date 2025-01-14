@@ -47,3 +47,12 @@ export const addUsersPlant = async (req: Request<any>, res: Response) => {
         res.status(500).json({ error: "Failed to add user's plant" });
     }
 };
+
+export const addUserSite = async (req: Request<any>, res: Response) => {
+    try {
+        const addRes = await Logic.addUserSite(req.params.id, req.body.name);
+        res.json(addRes);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to add user's site" });
+    }
+};

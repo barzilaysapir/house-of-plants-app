@@ -1,11 +1,12 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, ButtonProps, Stack, Typography } from "@mui/material";
 import { FC, ReactElement } from "react";
-import { CallToAction } from "shared/types/UI";
 
 type PageHeaderProps = {
     title: string | ReactElement;
     subtitle?: string;
-    callToAction?: CallToAction;
+    callToAction?: ButtonProps & {
+        inputLabel: string;
+    };
 };
 
 const PageHeader: FC<PageHeaderProps> = (props) => {
@@ -13,7 +14,7 @@ const PageHeader: FC<PageHeaderProps> = (props) => {
         title,
         subtitle,
         callToAction,
-        callToAction: { label, ...buttonProps } = {},
+        callToAction: { inputLabel, ...buttonProps } = {},
         ...rest
     } = props;
 
@@ -48,7 +49,7 @@ const PageHeader: FC<PageHeaderProps> = (props) => {
                     color="primary"
                     {...buttonProps}
                 >
-                    {label}
+                    {inputLabel}
                 </Button>
             )}
         </Stack>

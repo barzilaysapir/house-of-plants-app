@@ -11,37 +11,34 @@ import MyPlantsTabs from "features/MyPlants/MyPlantsTabs";
 import QueryKey from "shared/types/queryKeys";
 
 const MyPlants: FC = () => {
-    const user = JSON.parse(useLocalStorage().user);
+  const user = JSON.parse(useLocalStorage().user);
 
-    const { loading, data } = useFetchData({
-        keys: [QueryKey.USER_PLANTS],
-        url: `/users/${user._id}/plants`,
-    });
+  const { loading, data } = useFetchData({
+    keys: [QueryKey.USER_PLANTS],
+    url: `/users/${user._id}/plants`,
+  });
 
-    const { isOpen, handleOpen, handleClose } = useToggleDisplay(); // toggleAddPlantDialogDisplay
+  const { isOpen, handleOpen, handleClose } = useToggleDisplay(); // toggleAddPlantDialogDisplay
 
-    const context: MyPlantsOutletContext = {
-        plants: data,
-        loadingPlants: loading,
-        handleOpen,
-    };
+  const context: MyPlantsOutletContext = {
+    plants: data,
+    loadingPlants: loading,
+    handleOpen,
+  };
 
-    if (loading) return <LoaderBackdrop />;
+  if (loading) return <LoaderBackdrop />;
 
-    return (
-        <>
-            <MyPlantsHeader
-                myPlantsAmount={data.length}
-                handleOpen={handleOpen}
-            />
+  return (
+    <>
+      <MyPlantsHeader myPlantsAmount={data.length} handleOpen={handleOpen} />
 
-            <MyPlantsTabs />
+      <MyPlantsTabs />
 
-            <Outlet context={context} />
+      <Outlet context={context} />
 
-            <AddPlantDialog open={isOpen} handleClose={handleClose} />
-        </>
-    );
+      <AddPlantDialog open={isOpen} handleClose={handleClose} />
+    </>
+  );
 };
 
 export default MyPlants;

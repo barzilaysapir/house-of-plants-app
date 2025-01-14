@@ -31,7 +31,7 @@ const MyPlantsHeader: FC<MyPlantsHeaderProps> = (props) => {
             callToAction={{
                 endIcon: <AddIcon sx={{ marginInlineStart: 1 }} />,
                 onClick: handleOpen,
-                label: i18n.t("myPlants.addButton"),
+                inputLabel: i18n.t("myPlants.addButton"),
                 "aria-label": i18n.t("myPlants.addButtonAlt"),
             }}
         />

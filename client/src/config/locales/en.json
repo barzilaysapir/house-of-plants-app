@@ -18,13 +18,20 @@
         "addButtonAlt": "Add Plant",
         "searchPlaceholder": "Search in your plants",
         "plants": {
-            "emptyState": "Add your first plant"
+            "emptyStateInput": "Plant Name",
+            "emptyStateButton": "Add your first plant!"
         },
         "filteredPlants": {
             "emptyState": "You don't have any plant with this name"
         },
         "sites": {
-            "emptyState": "Add your first site"
+            "emptyStateInput": "Site Name",
+            "emptyStateButton": "Add your first site!"
+        },
+        "tabs": {
+            "aria": "My plants tabs nav",
+            "plants": "Plants",
+            "sites": "Sites"
         }
     },
     "identify": {

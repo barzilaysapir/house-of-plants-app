@@ -27,10 +27,15 @@ const PlantsTab: FC = () => {
                 <EmptyState
                     handleOpen={handleOpen}
                     callToAction={{
-                        label: i18n.t(
+                        inputLabel: i18n.t(
                             !plants.length
-                                ? "myPlants.plants.emptyState"
-                                : "myPlants.filteredPlants.emptyState"
+                                ? "myPlants.plants.emptyStateInput"
+                                : "myPlants.filteredPlants.emptyState",
+                        ),
+                        buttonLabel: i18n.t(
+                            !plants.length
+                                ? "myPlants.plants.emptyStateButton"
+                                : "myPlants.filteredPlants.emptyStateButton",
                         ),
                     }}
                 />

@@ -1,7 +1,11 @@
-import { Button, Stack, Typography } from "@mui/material";
+import { Button, ButtonProps, Stack, Typography } from "@mui/material";
 import ScheffleraImg from "assets/images/schefflera_paint.png";
 import { FC } from "react";
-import { CallToAction } from "shared/types/UI";
+
+export type CallToAction = ButtonProps & {
+    inputLabel: string;
+    buttonLabel: string;
+};
 
 type EmptyStateProps =
     | {
@@ -35,7 +39,7 @@ const EmptyState: FC<EmptyStateProps> = (props) => {
                     color="primary"
                     onClick={handleOpen}
                 >
-                    {callToAction.label}
+                    {callToAction.buttonLabel}
                 </Button>
             ) : (
                 <Typography variant="body2">{text}</Typography>

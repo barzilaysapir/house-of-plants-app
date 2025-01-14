@@ -2,10 +2,6 @@ import { ButtonProps } from "@mui/material";
 import { Plant } from "./plants";
 import { ReactElement } from "react";
 
-export type CallToAction = ButtonProps & {
-    label: string;
-};
-
 export enum MyPlantsToolbarTab {
     PLANTS = "Plants",
     SITES = "Sites",
