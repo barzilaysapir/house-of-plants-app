@@ -33,24 +33,22 @@ const SiteCard: FC<SiteCardProps> = (props) => {
         : undefined;
 
     return (
-        <>
-            <Card
-                data={site}
-                size={size}
-                onClick={onClick}
-                vertical={vertical}
-                menu={menuProps}
-                noWrap
-            >
-                {children}
-            </Card>
+        <Card
+            data={site}
+            size={size}
+            onClick={onClick}
+            vertical={vertical}
+            menu={menuProps}
+            noWrap
+        >
+            {children}
 
             <DeleteSiteModal
-                siteId={site.id}
+                site={site}
                 open={openDeleteModal}
                 setOpen={setOpenDeleteModal}
             />
-        </>
+        </Card>
     );
 };
 

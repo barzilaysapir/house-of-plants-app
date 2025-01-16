@@ -1,55 +1,63 @@
-import { Box, Button, ButtonProps, Stack, TextField } from "@mui/material";
-import { FC, useState } from "react";
+import { Box, Button, ButtonProps, Paper, Stack } from "@mui/material";
+import { minWidth } from "@mui/system";
+import { FC, PropsWithChildren } from "react";
 
-type QuickActionProps = ButtonProps & {
-    inputLabel?: string;
-    buttonLabel: string;
-    onClick: (text: string) => void;
-};
+export type QuickActionProps = PropsWithChildren<
+    ButtonProps & {
+        submit: () => void;
+        submitLabel: string;
+    } & (
+            | {
+                  cancel: () => void;
+                  cancelLabel: string;
+              }
+            | {
+                  cancel?: never;
+                  cancelLabel?: never;
+              }
+        )
+>;
 
 const style = {
     position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 400,
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
+    minWidth: 300,
     p: 4,
 };
 
 const QuickAction: FC<QuickActionProps> = (props) => {
-    const { inputLabel, buttonLabel, onClick } = props;
-
-    const [text, setText] = useState("");
-
-    const submit = () => {
-        onClick(text);
-    };
+    const { submit, submitLabel, cancel, cancelLabel, children } = props;
 
     return (
-        <Box sx={style}>
-            <Stack spacing={2}>
-                {inputLabel && (
-                    <TextField
-                        label={inputLabel}
-                        variant="standard"
-                        onChange={(e) => setText(e.target.value)}
-                        autoFocus
-                        onKeyDown={(e) => {
-                            if (e.key === "Enter") {
-                                submit();
-                            }
-                        }}
-                    />
-                )}
+        <Paper sx={style}>
+            <Stack spacing={3}>
+                {children}
 
-                <Button variant="contained" color="primary" onClick={submit}>
-                    {buttonLabel}
-                </Button>
+                <Stack direction="row" spacing={1}>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={submit}
+                        fullWidth
+                    >
+                        {submitLabel}
+                    </Button>
+
+                    {cancel && (
+                        <Button
+                            variant="outlined"
+                            color="primary"
+                            onClick={cancel}
+                            fullWidth
+                        >
+                            {cancelLabel}
+                        </Button>
+                    )}
+                </Stack>
             </Stack>
-        </Box>
+        </Paper>
     );
 };
 

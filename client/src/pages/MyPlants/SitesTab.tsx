@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import i18n from "config/locales/i18n";
 import useLocalStorage from "shared/hooks/useLocalStorage";
 import useFetchData from "shared/hooks/useFetchData";
@@ -7,6 +7,7 @@ import QueryKey from "shared/types/queryKeys";
 import Loader from "components/Loader/Loader";
 import useMutateData from "shared/hooks/useMutateData";
 import QuickAction from "components/QuickAction";
+import TextField from "@mui/material/TextField";
 
 const SitesTab: FC = () => {
     const user = JSON.parse(useLocalStorage().user);
@@ -21,15 +22,33 @@ const SitesTab: FC = () => {
         refetchOnSuccessKey: QueryKey.USER_SITES,
     });
 
+    const [siteName, setSiteName] = useState("");
+
+    const submit = () => {
+        mutate({ name: siteName });
+        setSiteName("");
+    };
+
     if (loading) return <Loader />;
 
     if (data.length === 0)
         return (
             <QuickAction
-                onClick={(name) => mutate({ name })}
-                buttonLabel={i18n.t("myPlants.sites.emptyStateButton")}
-                inputLabel={i18n.t("myPlants.sites.emptyStateInput")}
-            />
+                submit={submit}
+                submitLabel={i18n.t("myPlants.sites.emptyStateButton")}
+            >
+                <TextField
+                    label={i18n.t("myPlants.sites.emptyStateInput")}
+                    variant="standard"
+                    onChange={(e) => setSiteName(e.target.value)}
+                    autoFocus
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                            submit();
+                        }
+                    }}
+                />
+            </QuickAction>
         );
 
     return <SitesList data={data} />;

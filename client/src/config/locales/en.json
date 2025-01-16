@@ -119,5 +119,12 @@
         "uploadPhoto": "Upload Photo",
         "reminders": "Reminders",
         "delete": "Remove Site"
+    },
+
+    "removeSite": {
+        "title": "Remove Site",
+        "description": "Are you sure you want to remove {{site}} site?",
+        "cancel": "Cancel",
+        "remove": "Remove"
     }
 }

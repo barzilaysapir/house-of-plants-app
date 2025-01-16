@@ -1,25 +1,18 @@
 import { ButtonProps, Modal } from "@mui/material";
 import { Dispatch, FC, SetStateAction, useState } from "react";
-import QuickAction from "./QuickAction";
+import QuickAction, { QuickActionProps } from "./QuickAction";
 
-type QuickActionModalProps = ButtonProps & {
-    inputLabel?: string;
-    buttonLabel: string;
-    onClick: any;
+type QuickActionModalProps = QuickActionProps & {
     open: boolean;
     setOpen: Dispatch<SetStateAction<boolean>>;
 };
 
 const QuickActionModal: FC<QuickActionModalProps> = (props) => {
-    const { open, setOpen, inputLabel, buttonLabel, onClick } = props;
+    const { open, setOpen, submit, submitLabel, ...rest } = props;
 
     return (
         <Modal open={open} onClose={() => setOpen(false)}>
-            <QuickAction
-                inputLabel={inputLabel}
-                buttonLabel={buttonLabel}
-                onClick={onClick}
-            />
+            <QuickAction submit={submit} submitLabel={submitLabel} {...rest} />
         </Modal>
     );
 };
