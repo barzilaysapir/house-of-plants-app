@@ -1,5 +1,4 @@
-import { Box, Button, ButtonProps, Paper, Stack } from "@mui/material";
-import { minWidth } from "@mui/system";
+import { Button, ButtonProps, Paper, Stack } from "@mui/material";
 import { FC, PropsWithChildren } from "react";
 
 export type QuickActionProps = PropsWithChildren<

@@ -1,4 +1,3 @@
-import { ButtonProps } from "@mui/material";
 import { Plant } from "./plants";
 import { ReactElement } from "react";
 

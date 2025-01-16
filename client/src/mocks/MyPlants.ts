@@ -1,4 +1,4 @@
-import { Plant, PlantCare } from "shared/types/plants";
+import { PlantCare } from "shared/types/plants";
 import ImagePolkaDot from "./images/PXL_20230920_102537694.jpg";
 import ImageBirkin from "./images/PXL_20230924_095148382.jpg";
 import ImageZZ from "./images/PXL_20230925_043336803.jpg";

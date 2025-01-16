@@ -1,5 +1,4 @@
 import i18n from "config/locales";
-import { Site } from "shared/types/sites";
 import { MenuOption } from "shared/types/UI";
 import {
     AddAPhoto,

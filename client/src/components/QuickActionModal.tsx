@@ -1,5 +1,5 @@
-import { ButtonProps, Modal } from "@mui/material";
-import { Dispatch, FC, SetStateAction, useState } from "react";
+import { Modal } from "@mui/material";
+import { Dispatch, FC, SetStateAction } from "react";
 import QuickAction, { QuickActionProps } from "./QuickAction";
 
 type QuickActionModalProps = QuickActionProps & {

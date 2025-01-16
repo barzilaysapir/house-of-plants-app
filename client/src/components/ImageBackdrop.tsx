@@ -1,26 +1,26 @@
-import { Backdrop, BackdropProps, Zoom } from "@mui/material";
-import { FC } from "react";
+import { Backdrop, BackdropProps, Zoom } from '@mui/material'
+import { FC } from 'react'
 
 type ImageBackdropProps = BackdropProps & {
-    image: string;
-};
+  image: string
+}
 
 const ImageBackdrop: FC<ImageBackdropProps> = (props) => {
-    const { open, image, ...backdropProps } = props;
+  const { open, image, ...backdropProps } = props
 
-    return (
-        <Backdrop
-            open={open}
-            sx={{
-                zIndex: (theme) => theme.zIndex.drawer + 1,
-            }}
-            {...backdropProps}
-        >
-            <Zoom in={open}>
-                <img src={image} />
-            </Zoom>
-        </Backdrop>
-    );
-};
+  return (
+    <Backdrop
+      open={open}
+      sx={{
+        zIndex: (theme) => theme.zIndex.drawer + 1,
+      }}
+      {...backdropProps}
+    >
+      <Zoom in={open}>
+        <img src={image} alt="" />
+      </Zoom>
+    </Backdrop>
+  )
+}
 
-export default ImageBackdrop;
+export default ImageBackdrop
