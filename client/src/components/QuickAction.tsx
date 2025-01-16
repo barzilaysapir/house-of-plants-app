@@ -1,23 +1,19 @@
 import { Button, ButtonProps, Stack, TextField } from "@mui/material";
 import { FC, useState } from "react";
 
-export type CallToAction = ButtonProps & {
-    inputLabel: string;
+type QuickActionProps = ButtonProps & {
+    inputLabel?: string;
     buttonLabel: string;
-    onClick: any;
-};
-
-type QuickActionProps = {
-    callToAction: CallToAction;
+    onClick: (text: string) => void;
 };
 
 const QuickAction: FC<QuickActionProps> = (props) => {
-    const { callToAction } = props;
+    const { inputLabel, buttonLabel, onClick } = props;
 
     const [text, setText] = useState("");
 
     const submit = () => {
-        callToAction.onClick(text);
+        onClick(text);
     };
 
     return (
@@ -32,21 +28,22 @@ const QuickAction: FC<QuickActionProps> = (props) => {
             }}
         >
             <Stack spacing={2}>
-                <TextField
-                    label={callToAction.inputLabel}
-                    variant="standard"
-                    onChange={(e) => setText(e.target.value)}
-                    autoFocus
-                    onKeyDown={(e) => {
-                        console.log(e.key);
+                {inputLabel && (
+                    <TextField
+                        label={inputLabel}
+                        variant="standard"
+                        onChange={(e) => setText(e.target.value)}
+                        autoFocus
+                        onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                                submit();
+                            }
+                        }}
+                    />
+                )}
 
-                        if (e.key === "Enter") {
-                            submit();
-                        }
-                    }}
-                />
                 <Button variant="contained" color="primary" onClick={submit}>
-                    {callToAction.buttonLabel}
+                    {buttonLabel}
                 </Button>
             </Stack>
         </Stack>

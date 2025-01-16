@@ -1,11 +1,9 @@
 import { Grid } from "@mui/material";
 import { FC } from "react";
-import Card from "components/Card";
 import { Site } from "shared/types/sites";
-import { MENU_OPTIONS } from "./SitesList.util";
 import useCardsList from "shared/hooks/useCardsList";
-import LocationCityOutlinedIcon from "@mui/icons-material/LocationCityOutlined";
 import { CardView } from "shared/types/card";
+import SiteCard from "features/SiteCard/SiteCard";
 
 type SitesListProps = {
     data: Site[];
@@ -26,17 +24,13 @@ const SitesList: FC<SitesListProps> = (props) => {
             columns={getGridColumns()}
             alignItems="stretch"
         >
-            {data.map((site: Site) => (
+            {data.map((site) => (
                 <Grid item xs={1} key={site.id}>
-                    <Card
+                    <SiteCard
                         key={site.id}
-                        data={site}
+                        site={site}
                         size={getImageSize()}
                         vertical={isCardVertical}
-                        menu={{
-                            options: MENU_OPTIONS,
-                            Icon: LocationCityOutlinedIcon,
-                        }}
                     />
                 </Grid>
             ))}

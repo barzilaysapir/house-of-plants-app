@@ -9,7 +9,8 @@ export enum MyPlantsToolbarTab {
 
 export type MenuOption = {
     name: string;
-    to: string | null;
+    to?: string | null;
+    onClick?: () => void;
     icon?: ReactElement;
 };
 

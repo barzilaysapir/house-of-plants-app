@@ -117,6 +117,7 @@
         "preview": "Preview",
         "editSite": "Edit Site",
         "uploadPhoto": "Upload Photo",
-        "reminders": "Reminders"
+        "reminders": "Reminders",
+        "delete": "Remove Site"
     }
 }
