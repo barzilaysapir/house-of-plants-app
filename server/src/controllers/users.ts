@@ -56,3 +56,15 @@ export const addUserSite = async (req: Request<any>, res: Response) => {
         res.status(500).json({ error: "Failed to add user's site" });
     }
 };
+
+export const deleteUserSite = async (req: Request<any>, res: Response) => {
+    try {
+        const deleteRes = await Logic.deleteUserSite(
+            req.params.id,
+            req.params.siteId
+        );
+        res.json(deleteRes);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to delete user's site" });
+    }
+};

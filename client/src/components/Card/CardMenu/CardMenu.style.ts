@@ -42,6 +42,6 @@ export const StyledCardMenuMobile = styled(Drawer)`
     }
     & .MuiDrawer-paper {
         flex-direction: row;
-        width: 240px;
+        // width: 240px;
     }
 `;

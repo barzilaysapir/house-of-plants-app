@@ -136,6 +136,33 @@ export const addUsersSite = async (
     }
 };
 
+export const deleteUserSite = async (
+    userId: string,
+    siteId: string
+): Promise<UpdateFilter<Document>> => {
+    type UserDocument = {
+        _id: string;
+        sites?: Site[];
+    };
+
+    try {
+        const result = await getUsersCollection().findOneAndUpdate(
+            { _id: new ObjectId(userId) },
+            {
+                $pull: {
+                    sites: {
+                        id: new ObjectId(siteId),
+                    },
+                } as UpdateFilter<UserDocument>,
+            },
+            { upsert: false }
+        );
+        return result;
+    } catch (error) {
+        throw error;
+    }
+};
+
 const CARE_MOCK = {
     fertilize: {
         freq: 5,

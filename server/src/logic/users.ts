@@ -24,3 +24,7 @@ export const addUsersPlant = async (userId: string, plant: Plant) => {
 export const addUserSite = async (userId: string, site: Plant) => {
     return await Models.addUsersSite(userId, site);
 };
+
+export const deleteUserSite = async (userId: string, siteId: string) => {
+    return await Models.deleteUserSite(userId, siteId);
+};

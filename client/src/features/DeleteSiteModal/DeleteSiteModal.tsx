@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction, useState } from "react";
+import { Dispatch, FC, SetStateAction } from "react";
 import QuickActionModal from "components/QuickActionModal";
 import i18n from "config/locales";
 import useMutateData from "shared/hooks/useMutateData";
@@ -23,7 +23,7 @@ const DeleteSiteModal: FC<DeleteSiteModalProps> = (props) => {
 
     return (
         <QuickActionModal
-            buttonLabel={i18n.t("buttonLabel")}
+            buttonLabel={i18n.t("siteMenu.delete")}
             onClick={() => mutate({})}
             open={open}
             setOpen={setOpen}

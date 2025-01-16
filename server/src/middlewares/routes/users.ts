@@ -6,6 +6,7 @@ const router: Router = express.Router();
 router.post("/auth", Controller.googleUserAuth);
 router.post("/:id/addPlant", Controller.addUsersPlant);
 router.post("/:id/addSite", Controller.addUserSite);
+router.post("/:id/deleteSite/:siteId", Controller.deleteUserSite);
 
 router.get("/:id/plants", Controller.getUsersPlants);
 router.get("/:id/sites", Controller.getUserSites);

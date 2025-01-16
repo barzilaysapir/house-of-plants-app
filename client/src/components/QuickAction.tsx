@@ -1,10 +1,22 @@
-import { Button, ButtonProps, Stack, TextField } from "@mui/material";
+import { Box, Button, ButtonProps, Stack, TextField } from "@mui/material";
 import { FC, useState } from "react";
 
 type QuickActionProps = ButtonProps & {
     inputLabel?: string;
     buttonLabel: string;
     onClick: (text: string) => void;
+};
+
+const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
 };
 
 const QuickAction: FC<QuickActionProps> = (props) => {
@@ -17,16 +29,7 @@ const QuickAction: FC<QuickActionProps> = (props) => {
     };
 
     return (
-        <Stack
-            spacing={1}
-            alignItems="center"
-            justifyContent="center"
-            flex={1}
-            sx={{
-                justifyContent: "center",
-                backgroundColor: "ThreeDFace",
-            }}
-        >
+        <Box sx={style}>
             <Stack spacing={2}>
                 {inputLabel && (
                     <TextField
@@ -46,7 +49,7 @@ const QuickAction: FC<QuickActionProps> = (props) => {
                     {buttonLabel}
                 </Button>
             </Stack>
-        </Stack>
+        </Box>
     );
 };
 
