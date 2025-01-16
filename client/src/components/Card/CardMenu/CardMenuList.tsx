@@ -19,12 +19,17 @@ const CardMenuList: FC<CardMenuListProps> = (props) => {
 
     return (
         <MenuList>
-            {options.map(({ name, icon, to }) => {
+            {options.map(({ name, icon, to, ...restOptions }) => {
                 const props =
                     to && id ? { component: Link, to: `./${id}${to}` } : {};
 
                 return (
-                    <MenuItem key={name} {...props} {...menuItemProps}>
+                    <MenuItem
+                        key={name}
+                        {...props}
+                        {...restOptions}
+                        {...menuItemProps}
+                    >
                         <ListItemIcon>{icon}</ListItemIcon>
                         <ListItemText primary={name} />
                     </MenuItem>

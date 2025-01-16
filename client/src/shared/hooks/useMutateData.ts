@@ -29,7 +29,7 @@ const useMutateData = <TData, TError, TVariables>({
         onSuccess: () => {
             refetchOnSuccessKey &&
                 queryClient.invalidateQueries({
-                    queryKey: refetchOnSuccessKey,
+                    queryKey: [refetchOnSuccessKey],
                 });
             onComplete();
         },
