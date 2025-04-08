@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { ChangeEvent, FC, useEffect, useState } from 'react'
 import {
   AddPlantData,
   AddPlantField,
@@ -19,10 +19,39 @@ const DetailsStep: FC<DetailsStepProps> = (props) => {
 
   const [image, setImage] = useState<string>('')
 
-  const onImageChange = (event: any) => {
-    if (event.target.files && event.target.files[0]) {
-      setImage(URL.createObjectURL(event.target.files[0]))
+  useEffect(() => {
+    return () => {
+      URL.revokeObjectURL(image)
     }
+  }, [])
+
+  const onImageChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const file: File | undefined = event.target.files?.[0]
+
+    if (file) {
+      const img = URL.createObjectURL(file)
+      setImage(img)
+      saveBlobToDB(file).then((result) => console.log('Saved:', result))
+    }
+  }
+
+  const blobToBase64 = (blob: Blob) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader()
+      reader.onloadend = () => resolve(reader.result)
+      reader.onerror = reject
+      reader.readAsDataURL(blob)
+    })
+  }
+
+  const saveBlobToDB = async (blob: Blob) => {
+    const base64Data = await blobToBase64(blob)
+    const response = await fetch('/api/saveBlob', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ data: base64Data }),
+    })
+    return response.json()
   }
 
   return (
